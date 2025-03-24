@@ -5,11 +5,15 @@ using UnityEngine.EventSystems;
 
 public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler 
 {
-    Transform parentToReturnTo = null;
+    public Transform hand = null;
+
+    public void Start()
+    {
+        hand = GameObject.FindGameObjectWithTag("Hand").transform;
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        parentToReturnTo = this.transform.parent;
         this.transform.SetParent(this.transform.parent.parent);
         Debug.Log("Begin Drag");
     }
@@ -21,7 +25,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        this.transform.SetParent(parentToReturnTo);
+        this.transform.SetParent(hand);
     }
 
 }
