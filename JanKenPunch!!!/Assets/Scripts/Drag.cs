@@ -6,16 +6,17 @@ using UnityEngine.EventSystems;
 public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler 
 {
     public Transform hand = null;
+    public Transform playArea = null;
 
     public void Start()
     {
         hand = GameObject.FindGameObjectWithTag("Hand").transform;
+        playArea = GameObject.FindGameObjectWithTag("Play Area").transform;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         this.transform.SetParent(this.transform.parent.parent);
-        Debug.Log("Begin Drag");
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -25,7 +26,15 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        this.transform.SetParent(hand);
+        if (this.transform.parent.tag == "Cards" && playArea.childCount == 0)
+        {
+            this.transform.SetParent(playArea);
+        }
+        else
+        {
+            this.transform.SetParent(hand);
+        }
+            
     }
 
 }
