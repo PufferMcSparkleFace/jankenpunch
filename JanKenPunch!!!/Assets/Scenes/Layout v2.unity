@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 62926196}
   - component: {fileID: 62926198}
   - component: {fileID: 62926197}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 241657751}
   - component: {fileID: 241657753}
   - component: {fileID: 241657752}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 311326305}
   - component: {fileID: 311326307}
   - component: {fileID: 311326306}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,7 +1098,6 @@ GameObject:
   - component: {fileID: 314077894}
   - component: {fileID: 314077893}
   - component: {fileID: 314077895}
-  - component: {fileID: 314077896}
   m_Layer: 5
   m_Name: Block Low
   m_TagString: Untagged
@@ -1180,51 +1179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41968258a75bc04bb31376f1389767b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &314077896
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314077891}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &323892140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,7 +1324,7 @@ GameObject:
   - component: {fileID: 414189302}
   - component: {fileID: 414189304}
   - component: {fileID: 414189303}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1618,7 +1572,8 @@ GameObject:
   - component: {fileID: 544758461}
   - component: {fileID: 544758463}
   - component: {fileID: 544758462}
-  m_Layer: 5
+  - component: {fileID: 544758464}
+  m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1682,6 +1637,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544758460}
   m_CullTransparentMesh: 1
+--- !u!225 &544758464
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544758460}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &561227974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,7 +1869,7 @@ GameObject:
   - component: {fileID: 750614283}
   - component: {fileID: 750614285}
   - component: {fileID: 750614284}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2344,8 +2311,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1623642696}
   - {fileID: 1110705316}
+  - {fileID: 1623642696}
   - {fileID: 2138413577}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2500,7 +2467,6 @@ GameObject:
   - component: {fileID: 858354032}
   - component: {fileID: 858354031}
   - component: {fileID: 858354033}
-  - component: {fileID: 858354034}
   m_Layer: 5
   m_Name: Dash Back
   m_TagString: Untagged
@@ -2582,51 +2548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41968258a75bc04bb31376f1389767b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &858354034
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858354029}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &876843449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,7 +2559,7 @@ GameObject:
   - component: {fileID: 876843450}
   - component: {fileID: 876843452}
   - component: {fileID: 876843451}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3148,7 +3069,7 @@ GameObject:
   - component: {fileID: 1082858930}
   - component: {fileID: 1082858932}
   - component: {fileID: 1082858931}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3223,7 +3144,7 @@ GameObject:
   - component: {fileID: 1091446238}
   - component: {fileID: 1091446240}
   - component: {fileID: 1091446239}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3430,7 +3351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1110705316}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3472,7 +3393,6 @@ GameObject:
   - component: {fileID: 1143810241}
   - component: {fileID: 1143810240}
   - component: {fileID: 1143810242}
-  - component: {fileID: 1143810243}
   m_Layer: 5
   m_Name: Dash Forward
   m_TagString: Untagged
@@ -3554,51 +3474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41968258a75bc04bb31376f1389767b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1143810243
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143810238}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1149378342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3610,7 +3485,7 @@ GameObject:
   - component: {fileID: 1149378343}
   - component: {fileID: 1149378345}
   - component: {fileID: 1149378344}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3820,7 +3695,6 @@ GameObject:
   - component: {fileID: 1229421071}
   - component: {fileID: 1229421070}
   - component: {fileID: 1229421072}
-  - component: {fileID: 1229421073}
   m_Layer: 5
   m_Name: Dodge
   m_TagString: Untagged
@@ -3902,51 +3776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41968258a75bc04bb31376f1389767b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1229421073
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229421068}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1240299110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4226,7 +4055,7 @@ GameObject:
   - component: {fileID: 1291670236}
   - component: {fileID: 1291670238}
   - component: {fileID: 1291670237}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4723,7 +4552,6 @@ GameObject:
   - component: {fileID: 1485475093}
   - component: {fileID: 1485475092}
   - component: {fileID: 1485475094}
-  - component: {fileID: 1485475095}
   m_Layer: 5
   m_Name: Block High
   m_TagString: Untagged
@@ -4805,51 +4633,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41968258a75bc04bb31376f1389767b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1485475095
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485475090}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1623642695
 GameObject:
   m_ObjectHideFlags: 0
@@ -5302,7 +5085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720113215}
   - component: {fileID: 1720113216}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Stage Positions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5585,7 +5368,7 @@ GameObject:
   - component: {fileID: 1907631758}
   - component: {fileID: 1907631760}
   - component: {fileID: 1907631759}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6271,7 +6054,7 @@ GameObject:
   - component: {fileID: 2047355258}
   - component: {fileID: 2047355260}
   - component: {fileID: 2047355259}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6480,7 +6263,7 @@ GameObject:
   - component: {fileID: 2095953493}
   - component: {fileID: 2095953495}
   - component: {fileID: 2095953494}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SP7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
