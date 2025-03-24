@@ -7,7 +7,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 {
     public void OnBeginDrag(PointerEventData eventData)
     {
-        
+        Debug.Log("Begin Drag");
     }
 
     public void OnDrag(PointerEventData eventData)

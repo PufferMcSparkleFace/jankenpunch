@@ -1097,6 +1097,7 @@ GameObject:
   - component: {fileID: 314077892}
   - component: {fileID: 314077894}
   - component: {fileID: 314077893}
+  - component: {fileID: 314077895}
   m_Layer: 5
   m_Name: Block Low
   m_TagString: Untagged
@@ -1166,6 +1167,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314077891}
   m_CullTransparentMesh: 1
+--- !u!114 &314077895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314077891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41968258a75bc04bb31376f1389767b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &323892140
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,6 +2453,7 @@ GameObject:
   - component: {fileID: 858354030}
   - component: {fileID: 858354032}
   - component: {fileID: 858354031}
+  - component: {fileID: 858354033}
   m_Layer: 5
   m_Name: Dash Back
   m_TagString: Untagged
@@ -2509,6 +2523,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858354029}
   m_CullTransparentMesh: 1
+--- !u!114 &858354033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858354029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41968258a75bc04bb31376f1389767b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &876843449
 GameObject:
   m_ObjectHideFlags: 0
@@ -3655,6 +3681,7 @@ GameObject:
   - component: {fileID: 1229421069}
   - component: {fileID: 1229421071}
   - component: {fileID: 1229421070}
+  - component: {fileID: 1229421072}
   m_Layer: 5
   m_Name: Dodge
   m_TagString: Untagged
@@ -3724,6 +3751,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229421068}
   m_CullTransparentMesh: 1
+--- !u!114 &1229421072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229421068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41968258a75bc04bb31376f1389767b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1240299110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,6 +4538,7 @@ GameObject:
   - component: {fileID: 1485475091}
   - component: {fileID: 1485475093}
   - component: {fileID: 1485475092}
+  - component: {fileID: 1485475094}
   m_Layer: 5
   m_Name: Block High
   m_TagString: Untagged
@@ -4568,6 +4608,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485475090}
   m_CullTransparentMesh: 1
+--- !u!114 &1485475094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485475090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41968258a75bc04bb31376f1389767b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1623642695
 GameObject:
   m_ObjectHideFlags: 0
