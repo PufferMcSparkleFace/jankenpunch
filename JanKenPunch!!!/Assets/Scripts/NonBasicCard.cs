@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class NonBasicCard : MonoBehaviour
 {
-    public float id;
+    public int id;
     public string cardName;
     public int cost;
     public string type;
@@ -23,7 +23,7 @@ public class NonBasicCard : MonoBehaviour
 
     }
 
-    public NonBasicCard(float Id, string CardName, int Cost, string Type, string Subtype, int Range, string Guard, string Effect, int Damage, int OnHit, int OnBlock, int OnWhiff)
+    public NonBasicCard(int Id, string CardName, int Cost, string Type, string Subtype, int Range, string Guard, string Effect, int Damage, int OnHit, int OnBlock, int OnWhiff)
     {
         id = Id;
         cardName = CardName;

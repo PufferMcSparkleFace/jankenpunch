@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BasicCard : MonoBehaviour
 {
-    public float id;
+    public int id;
     public string cardName;
     public int cost;
     public string type;
@@ -16,7 +16,7 @@ public class BasicCard : MonoBehaviour
 
     }
 
-    public BasicCard(float Id, string CardName, int Cost, string Type, string Effect)
+    public BasicCard(int Id, string CardName, int Cost, string Type, string Effect)
     {
         id = Id;
         cardName = CardName;
