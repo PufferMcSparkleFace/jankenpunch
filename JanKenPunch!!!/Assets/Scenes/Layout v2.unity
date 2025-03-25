@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 6461538}
   - component: {fileID: 6461537}
   - component: {fileID: 6461536}
+  - component: {fileID: 6461539}
   m_Layer: 5
   m_Name: Card 1
   m_TagString: Non-Basic Cards
@@ -223,6 +224,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6461534}
   m_CullTransparentMesh: 1
+--- !u!114 &6461539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayCard: []
+  displayID: 0
+  id: 0
+  cardName: 
+  cost: 0
+  type: 
+  subtype: 
+  range: 0
+  guard: 
+  effect: 
+  damage: 0
+  onHit: 0
+  onBlock: 0
+  onWhiff: 0
+  nameText: {fileID: 0}
+  costText: {fileID: 0}
+  typeText: {fileID: 0}
+  rangeText: {fileID: 0}
+  effectText: {fileID: 0}
+  damageText: {fileID: 0}
+  onHitText: {fileID: 0}
+  onBlockText: {fileID: 0}
+  onWhiffText: {fileID: 0}
 --- !u!1 &29266988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3393,6 +3429,7 @@ GameObject:
   - component: {fileID: 650671330}
   - component: {fileID: 650671329}
   - component: {fileID: 650671328}
+  - component: {fileID: 650671331}
   m_Layer: 5
   m_Name: Card 3
   m_TagString: Non-Basic Cards
@@ -3481,6 +3518,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650671326}
   m_CullTransparentMesh: 1
+--- !u!114 &650671331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650671326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayCard: []
+  displayID: 0
+  id: 0
+  cardName: 
+  cost: 0
+  type: 
+  subtype: 
+  range: 0
+  guard: 
+  effect: 
+  damage: 0
+  onHit: 0
+  onBlock: 0
+  onWhiff: 0
+  nameText: {fileID: 0}
+  costText: {fileID: 0}
+  typeText: {fileID: 0}
+  rangeText: {fileID: 0}
+  effectText: {fileID: 0}
+  damageText: {fileID: 0}
+  onHitText: {fileID: 0}
+  onBlockText: {fileID: 0}
+  onWhiffText: {fileID: 0}
 --- !u!1 &705817885
 GameObject:
   m_ObjectHideFlags: 0
@@ -7766,6 +7838,7 @@ GameObject:
   - component: {fileID: 1532640086}
   - component: {fileID: 1532640085}
   - component: {fileID: 1532640084}
+  - component: {fileID: 1532640087}
   m_Layer: 5
   m_Name: Card 2
   m_TagString: Non-Basic Cards
@@ -7854,6 +7927,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532640082}
   m_CullTransparentMesh: 1
+--- !u!114 &1532640087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532640082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayCard: []
+  displayID: 0
+  id: 0
+  cardName: 
+  cost: 0
+  type: 
+  subtype: 
+  range: 0
+  guard: 
+  effect: 
+  damage: 0
+  onHit: 0
+  onBlock: 0
+  onWhiff: 0
+  nameText: {fileID: 0}
+  costText: {fileID: 0}
+  typeText: {fileID: 0}
+  rangeText: {fileID: 0}
+  effectText: {fileID: 0}
+  damageText: {fileID: 0}
+  onHitText: {fileID: 0}
+  onBlockText: {fileID: 0}
+  onWhiffText: {fileID: 0}
 --- !u!1 &1623642695
 GameObject:
   m_ObjectHideFlags: 0
