@@ -1326,9 +1326,10 @@ GameObject:
   - component: {fileID: 414189302}
   - component: {fileID: 414189304}
   - component: {fileID: 414189303}
+  - component: {fileID: 414189305}
   m_Layer: 0
   m_Name: P2
-  m_TagString: Untagged
+  m_TagString: P2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1390,6 +1391,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414189301}
   m_CullTransparentMesh: 1
+--- !u!114 &414189305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414189301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ddfebed37c28643b385c2945135c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherPlayer: {fileID: 2047355258}
+  flipCheck: 0
 --- !u!1 &450922165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,8 +1726,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playArea: {fileID: 1635508476}
   lockInButton: {fileID: 517004742}
-  player1: {fileID: 2047355257}
-  player2: {fileID: 414189301}
 --- !u!1 &544758460
 GameObject:
   m_ObjectHideFlags: 0
@@ -6410,9 +6423,10 @@ GameObject:
   - component: {fileID: 2047355258}
   - component: {fileID: 2047355260}
   - component: {fileID: 2047355259}
+  - component: {fileID: 2047355261}
   m_Layer: 0
   m_Name: P1
-  m_TagString: Untagged
+  m_TagString: P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6474,6 +6488,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047355257}
   m_CullTransparentMesh: 1
+--- !u!114 &2047355261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047355257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ddfebed37c28643b385c2945135c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherPlayer: {fileID: 414189302}
+  flipCheck: 0
 --- !u!1 &2072101767
 GameObject:
   m_ObjectHideFlags: 0

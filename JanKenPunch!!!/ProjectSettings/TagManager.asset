@@ -7,6 +7,8 @@ TagManager:
   - Hand
   - Play Area
   - Cards
+  - P1
+  - P2
   layers:
   - Default
   - TransparentFX
