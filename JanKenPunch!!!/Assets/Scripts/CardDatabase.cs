@@ -6,8 +6,6 @@ public class CardDatabase : MonoBehaviour
 {
     public static List<NonBasicCard> cardList = new List<NonBasicCard>();
 
-    public static List<BasicCard> basicCardList = new List<BasicCard>();
-
     private void Awake()
     {
         //cardList.Add(new NonBasicCard(ID, "Name", Cost, "Type", "Subtype", Range, "Guard", "Effect", Damage, On Hit, On Block, On Whiff));
@@ -21,12 +19,5 @@ public class CardDatabase : MonoBehaviour
         cardList.Add(new NonBasicCard(7, "Focus Attack", 5, "Attack", "Strike", 1, "Mid", "Armored, Raw: +3/+0/+0", 5, +3, -3, -5));
         cardList.Add(new NonBasicCard(8, "Far Slash", 3, "Attack", "Strike", 1, "Mid", "", 3, 2, 1, -2));
         cardList.Add(new NonBasicCard(9, "Standing Medium Kick", 3, "Attack", "Strike", 2, "Mid", "", 3, 2, -1, -3));
-
-        /*basicCardList.Add(new BasicCard(ID, "Name", Cost, "Type", "Effect"));
-        basicCardList.Add(new BasicCard(0.1f, "Dash Forward", 1, "Basic Movement", "Move forward 1 unit."));
-        basicCardList.Add(new BasicCard(0.2f, "Dash Back", 1, "Basic Movement", "Move backwards 1 unit."));
-        basicCardList.Add(new BasicCard(0.3f, "Block High", 1, "Basic Defense", "Blocks highs and mids, loses to lows and throws."));
-        basicCardList.Add(new BasicCard(0.4f, "Block Low", 1, "Basic Defense", "Blocks lows and mids, loses to highs and throws."));
-        basicCardList.Add(new BasicCard(0.5f, "Dodge", 1, "Basic Defense", "Avoid all attacks. If your opponent did not play an attack this interaction, you are -3."));*/
     }
 }
