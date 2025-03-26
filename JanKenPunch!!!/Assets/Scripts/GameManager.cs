@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public Transform playArea;
     public GameObject lockInButton;
+    public GameObject playedCard;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +20,24 @@ public class GameManager : MonoBehaviour
         if(playArea.childCount == 0)
         {
             lockInButton.SetActive(false);
+            playedCard = null;
         }
         else
         {
             lockInButton.SetActive(true);
+            playedCard = playArea.GetChild(0).gameObject;
         }
     }
 
     public void LockIn()
     {
-        Debug.Log("Card Played");
+        if(playedCard.tag == "Basic Cards")
+        {
+            Debug.Log("Played Basic Card");
+        }
+        else
+        {
+            Debug.Log("Played Non-Basic Card");
+        }
     }
 }

@@ -2805,6 +2805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playArea: {fileID: 1635508476}
   lockInButton: {fileID: 517004742}
+  playedCard: {fileID: 0}
 --- !u!114 &522628965
 MonoBehaviour:
   m_ObjectHideFlags: 0
