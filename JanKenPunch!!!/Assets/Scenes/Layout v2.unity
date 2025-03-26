@@ -236,29 +236,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayCard: []
-  displayID: 0
-  id: 0
-  cardName: 
-  cost: 0
-  type: 
-  subtype: 
-  range: 0
-  guard: 
-  effect: 
-  damage: 0
-  onHit: 0
-  onBlock: 0
-  onWhiff: 0
-  nameText: {fileID: 0}
-  costText: {fileID: 0}
-  typeText: {fileID: 0}
-  rangeText: {fileID: 0}
-  effectText: {fileID: 0}
-  damageText: {fileID: 0}
-  onHitText: {fileID: 0}
-  onBlockText: {fileID: 0}
-  onWhiffText: {fileID: 0}
+  card: {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
+  nameText: {fileID: 385259327}
+  costText: {fileID: 1258000164}
+  typeText: {fileID: 1386933030}
+  rangeText: {fileID: 1689041683}
+  effectText: {fileID: 1429412478}
+  damageText: {fileID: 1097912105}
+  onHitText: {fileID: 1274736035}
+  onBlockText: {fileID: 547159871}
+  onWhiffText: {fileID: 705817887}
 --- !u!1 &29266988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,8 +2754,6 @@ GameObject:
   m_Component:
   - component: {fileID: 522628963}
   - component: {fileID: 522628964}
-  - component: {fileID: 522628965}
-  - component: {fileID: 522628966}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2806,53 +2791,6 @@ MonoBehaviour:
   playArea: {fileID: 1635508476}
   lockInButton: {fileID: 517004742}
   playedCard: {fileID: 0}
---- !u!114 &522628965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522628962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e707f8dbe12fb79408da237afdcf3c11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &522628966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522628962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayCard: []
-  displayID: 0
-  id: 0
-  cardName: 
-  cost: 0
-  type: 
-  subtype: 
-  range: 0
-  guard: 
-  effect: 
-  damage: 0
-  onHit: 0
-  onBlock: 0
-  onWhiff: 0
-  nameText: {fileID: 0}
-  costText: {fileID: 0}
-  typeText: {fileID: 0}
-  rangeText: {fileID: 0}
-  effectText: {fileID: 0}
-  damageText: {fileID: 0}
-  onHitText: {fileID: 0}
-  onBlockText: {fileID: 0}
-  onWhiffText: {fileID: 0}
 --- !u!1 &544758460
 GameObject:
   m_ObjectHideFlags: 0
@@ -3531,29 +3469,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayCard: []
-  displayID: 0
-  id: 0
-  cardName: 
-  cost: 0
-  type: 
-  subtype: 
-  range: 0
-  guard: 
-  effect: 
-  damage: 0
-  onHit: 0
-  onBlock: 0
-  onWhiff: 0
-  nameText: {fileID: 0}
-  costText: {fileID: 0}
-  typeText: {fileID: 0}
-  rangeText: {fileID: 0}
-  effectText: {fileID: 0}
-  damageText: {fileID: 0}
-  onHitText: {fileID: 0}
-  onBlockText: {fileID: 0}
-  onWhiffText: {fileID: 0}
+  card: {fileID: 0}
+  nameText: {fileID: 805794944}
+  costText: {fileID: 129357834}
+  typeText: {fileID: 494914151}
+  rangeText: {fileID: 132261761}
+  effectText: {fileID: 1955094955}
+  damageText: {fileID: 2082261397}
+  onHitText: {fileID: 643271182}
+  onBlockText: {fileID: 2081546520}
+  onWhiffText: {fileID: 163588996}
 --- !u!1 &705817885
 GameObject:
   m_ObjectHideFlags: 0
@@ -7940,29 +7865,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayCard: []
-  displayID: 0
-  id: 0
-  cardName: 
-  cost: 0
-  type: 
-  subtype: 
-  range: 0
-  guard: 
-  effect: 
-  damage: 0
-  onHit: 0
-  onBlock: 0
-  onWhiff: 0
-  nameText: {fileID: 0}
-  costText: {fileID: 0}
-  typeText: {fileID: 0}
-  rangeText: {fileID: 0}
-  effectText: {fileID: 0}
-  damageText: {fileID: 0}
-  onHitText: {fileID: 0}
-  onBlockText: {fileID: 0}
-  onWhiffText: {fileID: 0}
+  card: {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
+  nameText: {fileID: 1188408070}
+  costText: {fileID: 772046964}
+  typeText: {fileID: 1992355669}
+  rangeText: {fileID: 146979336}
+  effectText: {fileID: 1279561651}
+  damageText: {fileID: 2062830870}
+  onHitText: {fileID: 50303095}
+  onBlockText: {fileID: 1744070355}
+  onWhiffText: {fileID: 1817926562}
 --- !u!1 &1623642695
 GameObject:
   m_ObjectHideFlags: 0
