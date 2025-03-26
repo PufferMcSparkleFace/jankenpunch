@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         if(playArea.childCount == 0)
         {
+            playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
             lockInButton.SetActive(false);
             playedCard = null;
         }
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
         {
             lockInButton.SetActive(true);
             playedCard = playArea.GetChild(0).gameObject;
+            playedCard.transform.localScale = new Vector3(5, 7, 0);
         }
     }
 
