@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
+  card: {fileID: 0}
   nameText: {fileID: 385259327}
   costText: {fileID: 1258000164}
   typeText: {fileID: 1386933030}
@@ -7865,7 +7865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
+  card: {fileID: 0}
   nameText: {fileID: 1188408070}
   costText: {fileID: 772046964}
   typeText: {fileID: 1992355669}
