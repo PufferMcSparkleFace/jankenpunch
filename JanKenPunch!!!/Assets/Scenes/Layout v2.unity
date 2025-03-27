@@ -239,6 +239,7 @@ MonoBehaviour:
   card: {fileID: 0}
   nameText: {fileID: 385259327}
   costText: {fileID: 1258000164}
+  image: {fileID: 191491636}
   typeText: {fileID: 1386933030}
   rangeText: {fileID: 1689041683}
   effectText: {fileID: 1429412478}
@@ -3472,6 +3473,7 @@ MonoBehaviour:
   card: {fileID: 0}
   nameText: {fileID: 805794944}
   costText: {fileID: 129357834}
+  image: {fileID: 1348554245}
   typeText: {fileID: 494914151}
   rangeText: {fileID: 132261761}
   effectText: {fileID: 1955094955}
@@ -7868,6 +7870,7 @@ MonoBehaviour:
   card: {fileID: 0}
   nameText: {fileID: 1188408070}
   costText: {fileID: 772046964}
+  image: {fileID: 1166524034}
   typeText: {fileID: 1992355669}
   rangeText: {fileID: 146979336}
   effectText: {fileID: 1279561651}

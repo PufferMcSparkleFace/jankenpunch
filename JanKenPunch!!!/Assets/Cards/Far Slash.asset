@@ -15,6 +15,7 @@ MonoBehaviour:
   id: 1.8
   cardName: Far Slash
   cost: 3
+  image: {fileID: 21300000, guid: 047c84dd729f6d24cab6d3e22f599fee, type: 3}
   type: Attack
   subtype: Strike
   range: 1

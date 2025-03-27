@@ -15,6 +15,7 @@ MonoBehaviour:
   id: 1.5
   cardName: Dragon Uppercut
   cost: 2
+  image: {fileID: 21300000, guid: dca2d08e3477f794490d619cbc530b64, type: 3}
   type: Attack
   subtype: Strike
   range: 1
