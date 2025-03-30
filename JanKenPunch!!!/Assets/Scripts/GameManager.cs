@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public Transform playArea;
     public GameObject lockInButton;
     public GameObject playedCard;
+    public GameObject playedCardObject;
+    public TMP_Text playedCardName;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +34,16 @@ public class GameManager : MonoBehaviour
                 lockInButton.SetActive(true);
                 playedCard = playArea.GetChild(0).gameObject;
                 playedCard.transform.localScale = new Vector3(5, 7, 0);
+                playedCardObject = playedCard.transform.GetChild(0).gameObject;
+                playedCardName = playedCardObject.GetComponent<TMP_Text>();
             }
         
     }
 
     public void LockIn()
     {
+        Debug.Log("" + playedCardName.text);
+
         if(playedCard.tag == "Basic Cards")
         {
             Debug.Log("Played Basic Card");

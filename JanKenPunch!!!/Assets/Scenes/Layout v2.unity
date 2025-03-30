@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 0}
+  card: {fileID: 11400000, guid: 9b1268002e90480449ec11bf8c0c98f8, type: 2}
   nameText: {fileID: 385259327}
   costText: {fileID: 1258000164}
   image: {fileID: 191491636}
@@ -4020,6 +4020,7 @@ MonoBehaviour:
   playArea: {fileID: 1635508476}
   lockInButton: {fileID: 517004742}
   playedCard: {fileID: 0}
+  card: {fileID: 0}
 --- !u!1 &544758460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4623,7 +4624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: a9a23dcc18620db4fa2ab3eb8a8feb94, type: 2}
+  card: {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
   nameText: {fileID: 805794944}
   costText: {fileID: 129357834}
   image: {fileID: 1348554245}
@@ -10834,7 +10835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 0}
+  card: {fileID: 11400000, guid: b5f200ced1d385e43a531da19af8f987, type: 2}
   nameText: {fileID: 1188408070}
   costText: {fileID: 772046964}
   image: {fileID: 1166524034}
