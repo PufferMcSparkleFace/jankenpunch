@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public Transform playArea;
     public GameObject lockInButton;
-    public GameObject playedCard;
+    public GameObject playedCard = null;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playArea.childCount == 0)
+        if (playArea.childCount == 0)
         {
             playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
             lockInButton.SetActive(false);

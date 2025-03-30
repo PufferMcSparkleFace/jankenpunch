@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91427cdf45d421a4abcf21c0e6e3ed73, type: 3}
+  m_Name: Focus Attack
+  m_EditorClassIdentifier: 
+  id: 1.7
+  cardName: Focus Attack
+  cost: 5
+  image: {fileID: 21300000, guid: c66c2ccb368c2c14da1409fa4603aa46, type: 3}
+  cardBack: {fileID: 21300000, guid: 962553fa68aee284692e7d6fe6a6e036, type: 3}
+  type: Attack
+  subtype: Strike
+  range: 1
+  guard: Mid
+  effect: Armored. Raw - +3/0/0
+  damage: 5
+  onHit: 3
+  onBlock: -3
+  onWhiff: -5

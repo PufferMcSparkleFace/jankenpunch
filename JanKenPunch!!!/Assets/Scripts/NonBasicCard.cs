@@ -10,6 +10,7 @@ public class NonBasicCard : ScriptableObject
     public string cardName;
     public int cost;
     public Sprite image;
+    public Sprite cardBack;
     public string type;
     public string subtype;
     public int range;

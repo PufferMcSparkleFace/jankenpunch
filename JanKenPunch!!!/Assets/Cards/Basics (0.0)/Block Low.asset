@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91427cdf45d421a4abcf21c0e6e3ed73, type: 3}
-  m_Name: Grab
+  m_Name: Block Low
   m_EditorClassIdentifier: 
-  id: 1.3
-  cardName: Grab
-  cost: 3
-  image: {fileID: 21300000, guid: 09e0c54569da18441a42765bfdd58cbc, type: 3}
-  type: Attack
-  subtype: Throw
-  range: 1
-  guard: N/A
-  effect: Either knock the target back 1 unit or swap spaces with them.
-  damage: 5
-  onHit: 1
+  id: 0.2
+  cardName: Block Low
+  cost: 1
+  image: {fileID: 21300000, guid: f63317b2eb00b244a923dfe5d30094a6, type: 3}
+  cardBack: {fileID: 21300000, guid: 84f2d41ece1c3a346acf63cd8e901600, type: 3}
+  type: Basic Defense
+  subtype: 
+  range: 0
+  guard: 
+  effect: Blocks lows and mids, loses to highs and throws.
+  damage: 0
+  onHit: 0
   onBlock: 0
-  onWhiff: -3
+  onWhiff: 0

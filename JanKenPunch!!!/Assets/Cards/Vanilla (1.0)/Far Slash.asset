@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91427cdf45d421a4abcf21c0e6e3ed73, type: 3}
-  m_Name: Fireball
+  m_Name: Far Slash
   m_EditorClassIdentifier: 
-  id: 1.4
-  cardName: Fireball
-  cost: 4
-  image: {fileID: 21300000, guid: 3883d278c1fb1f847a5cde936e6c44fa, type: 3}
+  id: 1.8
+  cardName: Far Slash
+  cost: 3
+  image: {fileID: 21300000, guid: 047c84dd729f6d24cab6d3e22f599fee, type: 3}
+  cardBack: {fileID: 21300000, guid: 962553fa68aee284692e7d6fe6a6e036, type: 3}
   type: Attack
-  subtype: Projectile
-  range: 4
+  subtype: Strike
+  range: 1
   guard: Mid
-  effect: Knock the target back 1 unit.
-  damage: 2
-  onHit: 0
-  onBlock: -2
-  onWhiff: -5
+  effect: 
+  damage: 3
+  onHit: 2
+  onBlock: 1
+  onWhiff: -2

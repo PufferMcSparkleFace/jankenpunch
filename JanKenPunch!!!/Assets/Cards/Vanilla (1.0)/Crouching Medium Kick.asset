@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91427cdf45d421a4abcf21c0e6e3ed73, type: 3}
-  m_Name: Focus Attack
+  m_Name: Crouching Medium Kick
   m_EditorClassIdentifier: 
-  id: 1.7
-  cardName: Focus Attack
-  cost: 5
-  image: {fileID: 21300000, guid: c66c2ccb368c2c14da1409fa4603aa46, type: 3}
+  id: 1.1
+  cardName: Crouching Medium Kick
+  cost: 3
+  image: {fileID: 21300000, guid: 20b5d6711ca060c4aac1e8a7c633b31a, type: 3}
+  cardBack: {fileID: 21300000, guid: 962553fa68aee284692e7d6fe6a6e036, type: 3}
   type: Attack
   subtype: Strike
-  range: 1
-  guard: Mid
-  effect: Armored. Raw - +3/0/0
-  damage: 5
-  onHit: 3
-  onBlock: -3
-  onWhiff: -5
+  range: 2
+  guard: Low
+  effect: 
+  damage: 2
+  onHit: 2
+  onBlock: -2
+  onWhiff: -2

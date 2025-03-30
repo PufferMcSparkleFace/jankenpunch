@@ -12,6 +12,7 @@ public class DisplayCard : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text costText;
     public Image image;
+    public Image cardBack;
     public TMP_Text typeText;
     public TMP_Text rangeText;
     public TMP_Text effectText;
@@ -26,10 +27,18 @@ public class DisplayCard : MonoBehaviour
         nameText.text = card.cardName;
         costText.text = card.cost.ToString();
         image.sprite = card.image;
-        rangeText.text = card.range.ToString();
+        cardBack.sprite = card.cardBack;
         effectText.text = card.effect;
-        damageText.text = card.damage.ToString();
-        onHitText.text = card.onHit.ToString();
+        if(card.type != "Attack")
+        {
+            typeText.text = card.type;
+            rangeText.text = " ";
+            damageText.text = " ";
+            onHitText.text = " ";
+            onBlockText.text = " ";
+            onWhiffText.text = " ";
+            return;
+        }
         if (card.subtype == "Throw")
         {
             onBlockText.text = "*";
@@ -40,6 +49,9 @@ public class DisplayCard : MonoBehaviour
             onBlockText.text = card.onBlock.ToString();
             typeText.text = card.type + " - " + card.subtype + " - " + card.guard;
         }
+        rangeText.text = card.range.ToString();
+        damageText.text = card.damage.ToString();
+        onHitText.text = card.onHit.ToString();
         onWhiffText.text = card.onWhiff.ToString();
     }
 

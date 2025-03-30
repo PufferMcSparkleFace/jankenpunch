@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91427cdf45d421a4abcf21c0e6e3ed73, type: 3}
-  m_Name: Hurricane Kick
+  m_Name: Dash Back
   m_EditorClassIdentifier: 
-  id: 1.6
-  cardName: Hurricane Kick
-  cost: 4
-  image: {fileID: 21300000, guid: d7c56b192533d59459d1dadc51a79b2d, type: 3}
-  type: Attack
-  subtype: Strike
-  range: 1
-  guard: Mid
-  effect: Airborne. Move forward 2 units.
-  damage: 3
-  onHit: 3
-  onBlock: -3
-  onWhiff: -4
+  id: 0.3
+  cardName: Dash Back
+  cost: 1
+  image: {fileID: 21300000, guid: 817aa88e4e60eb840b0e80e6cb9b07ca, type: 3}
+  cardBack: {fileID: 21300000, guid: 84f2d41ece1c3a346acf63cd8e901600, type: 3}
+  type: Basic Movement
+  subtype: 
+  range: 0
+  guard: 
+  effect: Move back 1 unit.
+  damage: 0
+  onHit: 0
+  onBlock: 0
+  onWhiff: 0
