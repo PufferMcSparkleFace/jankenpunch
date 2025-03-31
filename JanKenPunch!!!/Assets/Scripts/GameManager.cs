@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public int turnTimer;
     public TMP_Text turnTimerText;
 
+    public Transform hand = null;
+
     public int p1Health;
     public int p1Energy;
     public int p1PlusFrames;
@@ -36,6 +38,8 @@ public class GameManager : MonoBehaviour
         p1EnergyText.text = p1Energy.ToString();
         p2HealthText.text = p2Health.ToString();
         p2EnergyText.text = p2Energy.ToString();
+
+        hand = GameObject.FindGameObjectWithTag("Hand").transform;
     }
 
     // Update is called once per frame
@@ -73,23 +77,25 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("" + playedCardName.text);
 
-        //finalCardCost = card cost - plus frames normalized 
+        //finalCardCost = card cost - plus frames
+        if(finalCardCost < 0)
+        {
+            finalCardCost = 0;
+        }
 
         if(playedCard.tag == "Basic Cards")
         {
-            if(p1Energy < p2Energy || p1Energy == 0)
-            {
-                return;
-            }
-            else
+            if(p1Energy >= p2Energy)
             {
                 p1Energy--;
-                p1EnergyText.text = p1Energy.ToString();
+                //replace with p1Energy = p1Energy - finalCardCost;
             }
+            playedCard.transform.SetParent(hand);
+            playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
+            playedCard = null;
+            lockInButton.SetActive(false);
         }
-        else
-        {
-            
-        }
+
+        p1EnergyText.text = p1Energy.ToString();
     }
 }
