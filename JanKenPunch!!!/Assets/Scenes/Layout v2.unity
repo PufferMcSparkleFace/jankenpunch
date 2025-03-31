@@ -309,12 +309,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29266988}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1274.9999, y: -717.18744, z: 0}
+  m_LocalScale: {x: 0.9960937, y: 0.9960937, z: 0.9960937}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2138413577}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &35919523
 GameObject:
@@ -1953,7 +1953,7 @@ GameObject:
   - component: {fileID: 200202321}
   m_Layer: 5
   m_Name: P1 Energy
-  m_TagString: Untagged
+  m_TagString: P1 UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 6
+  m_text: Energy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4020,7 +4020,20 @@ MonoBehaviour:
   playArea: {fileID: 1635508476}
   lockInButton: {fileID: 517004742}
   playedCard: {fileID: 0}
-  card: {fileID: 0}
+  playedCardObject: {fileID: 0}
+  playedCardName: {fileID: 0}
+  p1Health: 30
+  p1Energy: 5
+  p1PlusFrames: 0
+  p2Health: 30
+  p2Energy: 5
+  p2PlusFrames: 0
+  p1HealthText: {fileID: 806464938}
+  p1EnergyText: {fileID: 200202321}
+  p1PlusFramesText: {fileID: 0}
+  p2HealthText: {fileID: 2030163351}
+  p2EnergyText: {fileID: 1453486345}
+  p2PlusFramesText: {fileID: 0}
 --- !u!1 &544758460
 GameObject:
   m_ObjectHideFlags: 0
@@ -5787,7 +5800,7 @@ GameObject:
   - component: {fileID: 806464938}
   m_Layer: 5
   m_Name: P1 Health
-  m_TagString: Untagged
+  m_TagString: P1 UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5831,7 +5844,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 30
+  m_text: Health
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6099,12 +6112,12 @@ GameObject:
   - component: {fileID: 881705960}
   - component: {fileID: 881705959}
   m_Layer: 5
-  m_Name: P2 Advantage
+  m_Name: P2 Plus Frames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &881705958
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6144,7 +6157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +1
+  m_text: Plus Frames
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10181,7 +10194,7 @@ GameObject:
   - component: {fileID: 1453486345}
   m_Layer: 5
   m_Name: P2 Energy
-  m_TagString: Untagged
+  m_TagString: P2 UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10225,7 +10238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '6
+  m_text: 'Energy
 
 '
   m_isRightToLeft: 0
@@ -13266,12 +13279,12 @@ GameObject:
   - component: {fileID: 1971247335}
   - component: {fileID: 1971247334}
   m_Layer: 5
-  m_Name: P1 Advantage
+  m_Name: P1 Plus Frames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1971247333
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13311,7 +13324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +1
+  m_text: Plus Frames
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13669,7 +13682,7 @@ GameObject:
   - component: {fileID: 2030163351}
   m_Layer: 5
   m_Name: P2 Health
-  m_TagString: Untagged
+  m_TagString: P2 UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13713,7 +13726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 30
+  m_text: Health
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14394,6 +14407,7 @@ RectTransform:
   - {fileID: 1453486344}
   - {fileID: 1635508476}
   - {fileID: 517004743}
+  - {fileID: 29266991}
   m_Father: {fileID: 850381696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -14541,5 +14555,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 963194228}
   - {fileID: 850381696}
-  - {fileID: 29266991}
   - {fileID: 522628963}

@@ -9,6 +9,8 @@ TagManager:
   - Cards
   - Basic Cards
   - Non-Basic Cards
+  - P1 UI
+  - P2 UI
   layers:
   - Default
   - TransparentFX

@@ -8,13 +8,30 @@ public class GameManager : MonoBehaviour
     public Transform playArea;
     public GameObject lockInButton;
     public GameObject playedCard;
+    
     public GameObject playedCardObject;
     public TMP_Text playedCardName;
+
+    public int p1Health;
+    public int p1Energy;
+    public int p1PlusFrames;
+    public int p2Health;
+    public int p2Energy;
+    public int p2PlusFrames;
+    public TMP_Text p1HealthText;
+    public TMP_Text p1EnergyText;
+    public TMP_Text p1PlusFramesText;
+    public TMP_Text p2HealthText;
+    public TMP_Text p2EnergyText;
+    public TMP_Text p2PlusFramesText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        p1HealthText.text = p1Health.ToString();
+        p1EnergyText.text = p1Energy.ToString();
+        p2HealthText.text = p2Health.ToString();
+        p2EnergyText.text = p2Energy.ToString();
     }
 
     // Update is called once per frame
@@ -37,7 +54,15 @@ public class GameManager : MonoBehaviour
                 playedCardObject = playedCard.transform.GetChild(0).gameObject;
                 playedCardName = playedCardObject.GetComponent<TMP_Text>();
             }
-        
+            if(p1PlusFrames == 0)
+        {
+            p1PlusFramesText.text = "";
+        }
+        if (p2PlusFrames == 0)
+        {
+            p2PlusFramesText.text = "";
+        }
+
     }
 
     public void LockIn()
@@ -46,11 +71,11 @@ public class GameManager : MonoBehaviour
 
         if(playedCard.tag == "Basic Cards")
         {
-            Debug.Log("Played Basic Card");
+            
         }
         else
         {
-            Debug.Log("Played Non-Basic Card");
+            
         }
     }
 }
