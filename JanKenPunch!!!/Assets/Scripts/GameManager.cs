@@ -12,12 +12,16 @@ public class GameManager : MonoBehaviour
     public GameObject playedCardObject;
     public TMP_Text playedCardName;
 
+    public int turnTimer;
+    public TMP_Text turnTimerText;
+
     public int p1Health;
     public int p1Energy;
     public int p1PlusFrames;
     public int p2Health;
     public int p2Energy;
     public int p2PlusFrames;
+    public int finalCardCost;
     public TMP_Text p1HealthText;
     public TMP_Text p1EnergyText;
     public TMP_Text p1PlusFramesText;
@@ -69,9 +73,19 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("" + playedCardName.text);
 
+        //finalCardCost = card cost - plus frames normalized 
+
         if(playedCard.tag == "Basic Cards")
         {
-            
+            if(p1Energy < p2Energy || p1Energy == 0)
+            {
+                return;
+            }
+            else
+            {
+                p1Energy--;
+                p1EnergyText.text = p1Energy.ToString();
+            }
         }
         else
         {
