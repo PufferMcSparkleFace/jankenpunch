@@ -8,9 +8,7 @@ public class GameManager : MonoBehaviour
     public Transform playArea;
     public GameObject lockInButton;
     public GameObject playedCard;
-    
-    public GameObject playedCardObject;
-    public TMP_Text playedCardName;
+    public NonBasicCard card;
 
     public int turnTimer;
     public TMP_Text turnTimerText;
@@ -59,8 +57,7 @@ public class GameManager : MonoBehaviour
                 lockInButton.SetActive(true);
                 playedCard = playArea.GetChild(0).gameObject;
                 playedCard.transform.localScale = new Vector3(5, 7, 0);
-                playedCardObject = playedCard.transform.GetChild(0).gameObject;
-                playedCardName = playedCardObject.GetComponent<TMP_Text>();
+                card = playedCard.GetComponent<DisplayCard>().card;
             }
             if(p1PlusFrames == 0)
         {
@@ -75,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void LockIn()
     {
-        Debug.Log("" + playedCardName.text);
+        Debug.Log("" + card.cardName);
 
         //finalCardCost = card cost - plus frames
         if(finalCardCost < 0)
