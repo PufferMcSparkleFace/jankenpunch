@@ -80,18 +80,10 @@ public class GameManager : MonoBehaviour
             finalCardCost = 0;
         }
 
-        if(playedCard.tag == "Basic Cards")
-        {
-            if(p1Energy >= p2Energy)
-            {
-                p1Energy--;
-                //replace with p1Energy = p1Energy - finalCardCost;
-            }
-            playedCard.transform.SetParent(hand);
-            playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
-            playedCard = null;
-            lockInButton.SetActive(false);
-        }
+       playedCard.transform.SetParent(hand);
+       playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
+       playedCard = null;
+       lockInButton.SetActive(false);
 
         p1EnergyText.text = p1Energy.ToString();
     }

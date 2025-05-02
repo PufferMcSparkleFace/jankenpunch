@@ -350,7 +350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 241, y: 615}
+  m_AnchoredPosition: {x: 210, y: 615}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &35919525
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3945,16 +3945,17 @@ MonoBehaviour:
   playArea: {fileID: 1635508476}
   lockInButton: {fileID: 517004742}
   playedCard: {fileID: 0}
-  playedCardObject: {fileID: 0}
-  playedCardName: {fileID: 0}
+  card: {fileID: 0}
   turnTimer: 0
   turnTimerText: {fileID: 35919525}
+  hand: {fileID: 0}
   p1Health: 30
   p1Energy: 5
   p1PlusFrames: 0
   p2Health: 30
   p2Energy: 5
   p2PlusFrames: 0
+  finalCardCost: 0
   p1HealthText: {fileID: 806464938}
   p1EnergyText: {fileID: 200202321}
   p1PlusFramesText: {fileID: 1971247334}

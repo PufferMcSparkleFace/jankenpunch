@@ -23,6 +23,6 @@ MonoBehaviour:
   guard: Mid
   effect: Knock the target back 1 unit.
   damage: 2
-  onHit: 0
+  onHit: 1
   onBlock: -2
-  onWhiff: -5
+  onWhiff: -4

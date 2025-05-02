@@ -22,7 +22,7 @@ MonoBehaviour:
   range: 1
   guard: N/A
   effect: Either knock the target back 1 unit or swap spaces with them.
-  damage: 5
+  damage: 3
   onHit: 1
   onBlock: 0
   onWhiff: -3

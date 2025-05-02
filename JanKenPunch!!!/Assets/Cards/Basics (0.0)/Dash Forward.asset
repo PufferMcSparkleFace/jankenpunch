@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0.4
   cardName: Dash Forward
-  cost: 1
+  cost: 0
   image: {fileID: 21300000, guid: 9944646f001361b4587338643961bd5f, type: 3}
   cardBack: {fileID: 21300000, guid: 84f2d41ece1c3a346acf63cd8e901600, type: 3}
   type: Basic Movement
