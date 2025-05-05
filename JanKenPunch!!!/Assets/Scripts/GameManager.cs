@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public int p2Energy;
     public int p2PlusFrames;
     public int finalCardCost;
+    public int timer;
+    public TMP_Text timerText;
     public TMP_Text p1HealthText;
     public TMP_Text p1EnergyText;
     public TMP_Text p1PlusFramesText;
@@ -32,10 +34,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer = 100;
         p1HealthText.text = p1Health.ToString();
         p1EnergyText.text = p1Energy.ToString();
         p2HealthText.text = p2Health.ToString();
         p2EnergyText.text = p2Energy.ToString();
+        p1PlusFramesText.text = "";
+        p2PlusFramesText.text = "";
 
         hand = GameObject.FindGameObjectWithTag("Hand").transform;
     }
@@ -59,32 +64,46 @@ public class GameManager : MonoBehaviour
                 playedCard.transform.localScale = new Vector3(5, 7, 0);
                 card = playedCard.GetComponent<DisplayCard>().card;
             }
-            if(p1PlusFrames == 0)
-        {
-            p1PlusFramesText.text = "";
-        }
-        if (p2PlusFrames == 0)
-        {
-            p2PlusFramesText.text = "";
-        }
 
     }
 
     public void LockIn()
     {
-        Debug.Log("" + card.cardName);
 
-        //finalCardCost = card cost - plus frames
-        if(finalCardCost < 0)
+        finalCardCost = card.cost - p1PlusFrames;
+
+        p1PlusFrames = 0;
+        p2PlusFrames = 0;
+        p1PlusFramesText.text = "";
+        p2PlusFramesText.text = "";
+
+        if (finalCardCost < 0)
         {
             finalCardCost = 0;
         }
+        if(finalCardCost <= p1Energy)
+        {
+            p1Energy = p1Energy - finalCardCost;
+            p1EnergyText.text = "" + p1Energy;
+            Debug.Log("" + card.cardName);
+            //play the card
+        }
 
-       playedCard.transform.SetParent(hand);
-       playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
-       playedCard = null;
-       lockInButton.SetActive(false);
+        playedCard.transform.SetParent(hand);
+        playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
+        playedCard = null;
+        lockInButton.SetActive(false);
 
-        p1EnergyText.text = p1Energy.ToString();
+        timer--;
+        timerText.text = " " + timer;
+        if (timer == 0)
+        {
+            //game over!
+        }
+        if (timer % 5 == 0)
+        {
+            Debug.Log("Energy Refresh");
+        }
+        
     }
 }

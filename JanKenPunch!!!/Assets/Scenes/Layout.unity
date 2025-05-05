@@ -3956,6 +3956,8 @@ MonoBehaviour:
   p2Energy: 5
   p2PlusFrames: 0
   finalCardCost: 0
+  timer: 0
+  timerText: {fileID: 35919525}
   p1HealthText: {fileID: 806464938}
   p1EnergyText: {fileID: 200202321}
   p1PlusFramesText: {fileID: 1971247334}
