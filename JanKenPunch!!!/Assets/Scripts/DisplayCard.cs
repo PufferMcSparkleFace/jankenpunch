@@ -32,10 +32,6 @@ public class DisplayCard : MonoBehaviour
         if(card.type != "Attack")
         {
             typeText.text = card.type;
-            if(card.type == "Basic Defense" || card.type == "Basic Movement")
-            {
-                costText.text = " ";
-            }
             rangeText.text = " ";
             damageText.text = " ";
             onHitText.text = " ";

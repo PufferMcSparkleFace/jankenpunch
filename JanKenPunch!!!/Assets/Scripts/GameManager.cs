@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = 100;
+        timer = 10;
         p1HealthText.text = p1Health.ToString();
         p1EnergyText.text = p1Energy.ToString();
         p2HealthText.text = p2Health.ToString();
@@ -70,40 +70,77 @@ public class GameManager : MonoBehaviour
     public void LockIn()
     {
 
+        //calculates actual cost of the card with plus frames factored in
         finalCardCost = card.cost - p1PlusFrames;
 
-        p1PlusFrames = 0;
-        p2PlusFrames = 0;
-        p1PlusFramesText.text = "";
-        p2PlusFramesText.text = "";
-
+        //makes sure the card doesn't cost a negative number
         if (finalCardCost < 0)
         {
             finalCardCost = 0;
         }
-        if(finalCardCost <= p1Energy)
+
+        //if you have less energy than your opponent or 0 energy, basic cards cost 0
+        if((card.type == "Basic Defense" || card.type == "Basic Movement") && (p1Energy < p2Energy || p1Energy == 0))
+        {
+            Debug.Log("" + card.cardName);
+            //play the card
+        }
+        //otherwise, if you can afford the card, play it
+        else if(finalCardCost <= p1Energy)
         {
             p1Energy = p1Energy - finalCardCost;
             p1EnergyText.text = "" + p1Energy;
             Debug.Log("" + card.cardName);
             //play the card
         }
+        else if(finalCardCost > p1Energy)
+        {
+            if(p1Energy >= p2Energy)
+            {
+                p1Energy--;
+                p1EnergyText.text = "" + p1Energy;
+            }
+            Debug.Log("Do Nothing");
+            //draw a card
+        }
 
+        //returns card to your hand and turns off the lock in ui
         playedCard.transform.SetParent(hand);
         playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
         playedCard = null;
         lockInButton.SetActive(false);
 
-        timer--;
-        timerText.text = " " + timer;
-        if (timer == 0)
+        //replace the card with another card from your deck
+
+        //sets both players plus frames to 0
+        p1PlusFrames = 0;
+        p2PlusFrames = 0;
+        p1PlusFramesText.text = "";
+        p2PlusFramesText.text = "";
+
+        //if both players run out of energy, move on to the next round
+        if (p1Energy == 0 && p2Energy == 0)
         {
-            //game over!
+            timer--;
+            timerText.text = "" + timer;
+            //if the timer gets to 0, game over
+            if (timer == 0)
+            {
+                if (p1Health > p2Health)
+                {
+                    Debug.Log("Player 1 Wins");
+                }
+                else if (p1Health < p2Health)
+                {
+                    Debug.Log("Player 2 Wins");
+                }
+                else if (p1Health == p2Health)
+                {
+                    Debug.Log("Draw");
+                }
+            }
+            //if the timer's not 0, refill energy
         }
-        if (timer % 5 == 0)
-        {
-            Debug.Log("Energy Refresh");
-        }
-        
+  
     }
 }

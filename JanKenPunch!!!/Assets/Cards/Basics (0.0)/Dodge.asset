@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0.5
   cardName: Dodge
-  cost: 0
+  cost: 1
   image: {fileID: 21300000, guid: 27ddc512984c0084b85c960a6d9f9807, type: 3}
-  cardBack: {fileID: 21300000, guid: 2cbb0ed5c914090419f7f1b1ee0c8aac, type: 3}
+  cardBack: {fileID: 21300000, guid: 84f2d41ece1c3a346acf63cd8e901600, type: 3}
   type: Basic Defense
   subtype: 
   range: 0
