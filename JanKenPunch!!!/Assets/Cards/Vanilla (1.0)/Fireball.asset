@@ -21,7 +21,7 @@ MonoBehaviour:
   subtype: Projectile
   range: 4
   guard: Mid
-  effect: Knock the target back 1 unit.
+  effect: 
   damage: 2
   onHit: 1
   onBlock: -2
