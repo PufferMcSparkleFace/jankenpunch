@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91427cdf45d421a4abcf21c0e6e3ed73, type: 3}
   m_Name: Standing Medium Kick
   m_EditorClassIdentifier: 
-  id: 1.9
+  id: 1.5
   cardName: Standing Medium Kick
   cost: 3
   image: {fileID: 21300000, guid: fa55be08207fdd441b36decdc9733f18, type: 3}
