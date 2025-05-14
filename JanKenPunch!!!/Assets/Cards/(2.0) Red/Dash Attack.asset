@@ -24,5 +24,5 @@ MonoBehaviour:
   effect: Move forward 2 spaces.
   damage: 3
   onHit: 2
-  onBlock: -2
+  onBlock: -3
   onWhiff: -3

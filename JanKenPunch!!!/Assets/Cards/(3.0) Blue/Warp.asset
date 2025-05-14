@@ -21,7 +21,7 @@ MonoBehaviour:
   subtype: 
   range: 0
   guard: 
-  effect: Teleport 5 spaces behind your opponent.
+  effect: Teleport 4 spaces behind your opponent.
   damage: 0
   onHit: 0
   onBlock: 0

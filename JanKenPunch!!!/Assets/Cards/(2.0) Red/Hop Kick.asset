@@ -25,4 +25,4 @@ MonoBehaviour:
   damage: 3
   onHit: 2
   onBlock: -3
-  onWhiff: -1
+  onWhiff: -2
