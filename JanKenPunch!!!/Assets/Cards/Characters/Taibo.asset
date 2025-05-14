@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce3767ee2b81474ca9c6203cc1d4ba8, type: 3}
+  m_Name: Taibo
+  m_EditorClassIdentifier: 
+  cardBack: {fileID: 21300000, guid: 2380ef31fe643a44ba45eec0e49c594b, type: 3}
+  cardName: Taibo
+  image: {fileID: 0}
+  passiveAbility: When you hit a projectile, look at the top two cards of your deck,
+    then put one in your hand and the other on the bottom of your deck.
+  firstAbility: Draw a card, then discard a card.
+  secondAbilityCost: 3
+  secondAbility: For the next 5 interactions, your projectiles deal 1 more damage
+    on hit, have 1 extra range, and knock targets back 1 space further.

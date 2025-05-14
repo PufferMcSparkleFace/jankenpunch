@@ -39,7 +39,7 @@ public class DisplayCard : MonoBehaviour
             onWhiffText.text = " ";
             return;
         }
-        if (card.subtype == "Throw")
+        if (card.guard == "N/A")
         {
             onBlockText.text = "*";
             typeText.text = card.type + " - " + card.subtype;
