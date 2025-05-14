@@ -21,7 +21,7 @@ MonoBehaviour:
   subtype: 
   range: 0
   guard: 
-  effect: Move forward 1 unit.
+  effect: Move forward 1 space.
   damage: 0
   onHit: 0
   onBlock: 0

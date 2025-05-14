@@ -21,7 +21,8 @@ MonoBehaviour:
   subtype: 
   range: 0
   guard: 
-  effect: Avoid all attacks. If your opponent did not play an attack, they are +3.
+  effect: Avoid all attacks. If your opponent did not play an attack, they gain 3
+    plus frames.
   damage: 0
   onHit: 0
   onBlock: 0
