@@ -52,7 +52,7 @@ public class Draw : MonoBehaviour
             discardPile.Add(card8Card);
             card8.UpdateCard();
         }
-        if(deck.Count == 0)
+        if (deck.Count == 0)
         {
             foreach(NonBasicCard card in discardPile)
             {
