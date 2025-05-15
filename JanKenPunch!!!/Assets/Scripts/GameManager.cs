@@ -101,7 +101,6 @@ public class GameManager : MonoBehaviour
                 p1EnergyText.text = "" + p1Energy;
             }
             Debug.Log("Do Nothing");
-            //draw a card
         }
 
         //returns card to your hand and turns off the lock in ui
@@ -110,10 +109,14 @@ public class GameManager : MonoBehaviour
         playedCard = null;
         lockInButton.SetActive(false);
 
-        //replace the card with another card from your deck
+        if ((card.type != "Basic Defense" && card.type != "Basic Movement"))
+        {
+            Debug.Log("Draw a card");
+            //draw a card
+        }
 
         //sets both players plus frames to 0
-        p1PlusFrames = 0;
+            p1PlusFrames = 0;
         p2PlusFrames = 0;
         p1PlusFramesText.text = "";
         p2PlusFramesText.text = "";
