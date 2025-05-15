@@ -7,19 +7,19 @@ public class CharacterSelect : MonoBehaviour
 {
     public void SelectZyla()
     {
-        SceneManager.LoadScene("Game");
         Debug.Log("Zyla");
+        this.gameObject.SetActive(false);
     }
 
     public void SelectTaibo()
     {
-        SceneManager.LoadScene("Game");
         Debug.Log("Taibo");
+        this.gameObject.SetActive(false);
     }
 
     public void SelectRynox()
     {
-        SceneManager.LoadScene("Game");
         Debug.Log("Rynox");
+        this.gameObject.SetActive(false);
     }
 }

@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject characterSelectScreen;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !characterSelectScreen.activeSelf)
         {
             if (!pauseMenu.activeSelf)
             {

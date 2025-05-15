@@ -7,7 +7,7 @@ public class StartMenu : MonoBehaviour
 {
     public void CharacterSelect()
     {
-        SceneManager.LoadScene("Character Select");
+        SceneManager.LoadScene("Game");
     }
 
     public void CardGallery()
