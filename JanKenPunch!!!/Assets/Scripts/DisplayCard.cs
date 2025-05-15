@@ -55,4 +55,37 @@ public class DisplayCard : MonoBehaviour
         onWhiffText.text = card.onWhiff.ToString();
     }
 
+    public void UpdateCard()
+    {
+        nameText.text = card.cardName;
+        costText.text = card.cost.ToString();
+        image.sprite = card.image;
+        cardBack.sprite = card.cardBack;
+        effectText.text = card.effect;
+        if (card.type != "Attack")
+        {
+            typeText.text = card.type;
+            rangeText.text = " ";
+            damageText.text = " ";
+            onHitText.text = " ";
+            onBlockText.text = " ";
+            onWhiffText.text = " ";
+            return;
+        }
+        if (card.guard == "N/A")
+        {
+            onBlockText.text = "*";
+            typeText.text = card.type + " - " + card.subtype;
+        }
+        else
+        {
+            onBlockText.text = card.onBlock.ToString();
+            typeText.text = card.type + " - " + card.subtype + " - " + card.guard;
+        }
+        rangeText.text = card.range.ToString();
+        damageText.text = card.damage.ToString();
+        onHitText.text = card.onHit.ToString();
+        onWhiffText.text = card.onWhiff.ToString();
+    }
+
 }

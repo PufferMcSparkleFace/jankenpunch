@@ -6,18 +6,52 @@ public class Draw : MonoBehaviour
 {
     public DisplayCard card6, card7, card8;
 
-    public ScriptableObject[] zylaDeck = new ScriptableObject[30];
-    public ScriptableObject[] discardPile = new ScriptableObject[30];
+    public List<NonBasicCard> deck = new List<NonBasicCard>();
+    public List<NonBasicCard> discardPile = new List<NonBasicCard>();
 
     // Start is called before the first frame update
     void Start()
     {
-
+        NonBasicCard card6Card = deck[Random.Range(0, deck.Count)];
+        card6.card = card6Card;
+        deck.Remove(card6Card);
+        discardPile.Add(card6Card);
+        NonBasicCard card7Card = deck[Random.Range(0, deck.Count)];
+        card7.card = card7Card;
+        deck.Remove(card7Card);
+        discardPile.Add(card7Card);
+        NonBasicCard card8Card = deck[Random.Range(0, deck.Count)];
+        card8.card = card8Card;
+        deck.Remove(card8Card);
+        discardPile.Add(card8Card);
     }
 
-    public void DrawCard()
+    private void Update()
     {
-        Debug.Log("Draw a card");
+        if (card6.card == null)
+        {
+            NonBasicCard card6Card = deck[Random.Range(0, deck.Count)];
+            card6.card = card6Card;
+            deck.Remove(card6Card);
+            discardPile.Add(card6Card);
+            card6.UpdateCard();
+        }
+        if (card7.card == null)
+        {
+            NonBasicCard card7Card = deck[Random.Range(0, deck.Count)];
+            card7.card = card7Card;
+            deck.Remove(card7Card);
+            discardPile.Add(card7Card);
+            card7.UpdateCard();
+        }
+        if (card8.card == null)
+        {
+            NonBasicCard card8Card = deck[Random.Range(0, deck.Count)];
+            card8.card = card8Card;
+            deck.Remove(card8Card);
+            discardPile.Add(card8Card);
+            card8.UpdateCard();
+        }
     }
 
 }

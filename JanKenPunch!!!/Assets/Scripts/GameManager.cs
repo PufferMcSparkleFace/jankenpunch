@@ -105,19 +105,20 @@ public class GameManager : MonoBehaviour
             Debug.Log("Do Nothing");
         }
 
+        if ((card.type != "Basic Defense" && card.type != "Basic Movement"))
+        {
+            DisplayCard card = playedCard.GetComponent<DisplayCard>();
+            card.card = null;
+        }
+
         //returns card to your hand and turns off the lock in ui
         playedCard.transform.SetParent(hand);
         playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
         playedCard = null;
         lockInButton.SetActive(false);
 
-        if ((card.type != "Basic Defense" && card.type != "Basic Movement"))
-        {
-            deck.DrawCard();
-        }
-
         //sets both players plus frames to 0
-            p1PlusFrames = 0;
+        p1PlusFrames = 0;
         p2PlusFrames = 0;
         p1PlusFramesText.text = "";
         p2PlusFramesText.text = "";
