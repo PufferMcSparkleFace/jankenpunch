@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public Transform hand = null;
 
+    public Draw deck;
+
     public int p1Health;
     public int p1Energy;
     public int p1PlusFrames;
@@ -111,8 +113,7 @@ public class GameManager : MonoBehaviour
 
         if ((card.type != "Basic Defense" && card.type != "Basic Movement"))
         {
-            Debug.Log("Draw a card");
-            //draw a card
+            deck.DrawCard();
         }
 
         //sets both players plus frames to 0

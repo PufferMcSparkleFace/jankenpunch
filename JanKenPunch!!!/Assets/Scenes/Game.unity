@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 9b1268002e90480449ec11bf8c0c98f8, type: 2}
+  card: {fileID: 0}
   nameText: {fileID: 385259327}
   costText: {fileID: 1258000164}
   image: {fileID: 191491636}
@@ -3956,7 +3956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd92aa3f7b15434c98fb483f518d28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 5999e30705a6cc542a6fdc1853e90060, type: 2}
+  character: {fileID: 11400000, guid: 505e518f622d9434ba06e563ab812b74, type: 2}
   nameText: {fileID: 1305861579}
   passiveText: {fileID: 478176000}
   firstAbilityText: {fileID: 475207458}
@@ -4320,6 +4320,7 @@ MonoBehaviour:
   turnTimer: 0
   turnTimerText: {fileID: 35919525}
   hand: {fileID: 0}
+  deck: {fileID: 1785747173}
   p1Health: 30
   p1Energy: 5
   p1PlusFrames: 0
@@ -4938,7 +4939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
+  card: {fileID: 0}
   nameText: {fileID: 805794944}
   costText: {fileID: 129357834}
   image: {fileID: 1348554245}
@@ -11406,7 +11407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: b5f200ced1d385e43a531da19af8f987, type: 2}
+  card: {fileID: 0}
   nameText: {fileID: 1188408070}
   costText: {fileID: 772046964}
   image: {fileID: 1166524034}
@@ -11655,10 +11656,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1785747170}
   - {fileID: 457016053}
   - {fileID: 1471161534}
   - {fileID: 480619460}
-  - {fileID: 1785747170}
   m_Father: {fileID: 850381696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -13073,6 +13074,7 @@ GameObject:
   - component: {fileID: 1785747170}
   - component: {fileID: 1785747172}
   - component: {fileID: 1785747171}
+  - component: {fileID: 1785747173}
   m_Layer: 5
   m_Name: Deck
   m_TagString: Untagged
@@ -13137,6 +13139,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785747169}
   m_CullTransparentMesh: 1
+--- !u!114 &1785747173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785747169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748892b1a5c75b94fa34ea1df55a25fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card6: {fileID: 6461539}
+  card7: {fileID: 1532640087}
+  card8: {fileID: 650671331}
+  zylaDeck:
+  - {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
+  - {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
+  - {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
+  - {fileID: 11400000, guid: 9b1268002e90480449ec11bf8c0c98f8, type: 2}
+  - {fileID: 11400000, guid: 9b1268002e90480449ec11bf8c0c98f8, type: 2}
+  - {fileID: 11400000, guid: 9b1268002e90480449ec11bf8c0c98f8, type: 2}
+  - {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
+  - {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
+  - {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
+  - {fileID: 11400000, guid: b5f200ced1d385e43a531da19af8f987, type: 2}
+  - {fileID: 11400000, guid: b5f200ced1d385e43a531da19af8f987, type: 2}
+  - {fileID: 11400000, guid: b5f200ced1d385e43a531da19af8f987, type: 2}
+  - {fileID: 11400000, guid: 96cb7ee42d0f9174ebd503387a4fec7d, type: 2}
+  - {fileID: 11400000, guid: 96cb7ee42d0f9174ebd503387a4fec7d, type: 2}
+  - {fileID: 11400000, guid: 96cb7ee42d0f9174ebd503387a4fec7d, type: 2}
+  - {fileID: 11400000, guid: 39ff947736259674ab8c9151d179d0be, type: 2}
+  - {fileID: 11400000, guid: 39ff947736259674ab8c9151d179d0be, type: 2}
+  - {fileID: 11400000, guid: 39ff947736259674ab8c9151d179d0be, type: 2}
+  - {fileID: 11400000, guid: 8f7273077afa3c54a9a9675294f42424, type: 2}
+  - {fileID: 11400000, guid: 8f7273077afa3c54a9a9675294f42424, type: 2}
+  - {fileID: 11400000, guid: 8f7273077afa3c54a9a9675294f42424, type: 2}
+  - {fileID: 11400000, guid: 8b03a4488de2b994585b4415a394ae71, type: 2}
+  - {fileID: 11400000, guid: 8b03a4488de2b994585b4415a394ae71, type: 2}
+  - {fileID: 11400000, guid: 8b03a4488de2b994585b4415a394ae71, type: 2}
+  - {fileID: 11400000, guid: a0b6b6a8f77398246a30ca9000ad22b2, type: 2}
+  - {fileID: 11400000, guid: a0b6b6a8f77398246a30ca9000ad22b2, type: 2}
+  - {fileID: 11400000, guid: a0b6b6a8f77398246a30ca9000ad22b2, type: 2}
+  - {fileID: 11400000, guid: 9779d6b0d0c4b874ba181d417304c3ab, type: 2}
+  - {fileID: 11400000, guid: 9779d6b0d0c4b874ba181d417304c3ab, type: 2}
+  - {fileID: 11400000, guid: 9779d6b0d0c4b874ba181d417304c3ab, type: 2}
+  discardPile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1817926560
 GameObject:
   m_ObjectHideFlags: 0
@@ -15254,7 +15333,7 @@ PrefabInstance:
     - target: {fileID: 7227035715227099844, guid: 6d5fe92c2cd1e4645996dba0af4d49c4, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}
+      objectReference: {fileID: 11400000, guid: 5999e30705a6cc542a6fdc1853e90060, type: 2}
     - target: {fileID: 7451423519216031858, guid: 6d5fe92c2cd1e4645996dba0af4d49c4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
