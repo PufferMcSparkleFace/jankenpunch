@@ -4962,6 +4962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 386193922}
+  characterSelectScreen: {fileID: 920937979}
 --- !u!1 &544758460
 GameObject:
   m_ObjectHideFlags: 0
