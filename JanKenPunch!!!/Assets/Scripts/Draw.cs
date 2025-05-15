@@ -52,6 +52,11 @@ public class Draw : MonoBehaviour
             discardPile.Add(card8Card);
             card8.UpdateCard();
         }
+        if(deck.Count == 0)
+        {
+            deck = discardPile;
+            discardPile.Clear();
+        }
     }
 
 }
