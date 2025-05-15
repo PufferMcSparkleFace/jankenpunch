@@ -3956,7 +3956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd92aa3f7b15434c98fb483f518d28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 505e518f622d9434ba06e563ab812b74, type: 2}
+  character: {fileID: 11400000, guid: 5999e30705a6cc542a6fdc1853e90060, type: 2}
   nameText: {fileID: 1305861579}
   passiveText: {fileID: 478176000}
   firstAbilityText: {fileID: 475207458}
@@ -13155,16 +13155,36 @@ MonoBehaviour:
   card7: {fileID: 1532640087}
   card8: {fileID: 650671331}
   deck:
-  - {fileID: 11400000, guid: 39ff947736259674ab8c9151d179d0be, type: 2}
-  - {fileID: 11400000, guid: 8f7273077afa3c54a9a9675294f42424, type: 2}
-  - {fileID: 11400000, guid: 8b03a4488de2b994585b4415a394ae71, type: 2}
-  - {fileID: 11400000, guid: a0b6b6a8f77398246a30ca9000ad22b2, type: 2}
-  - {fileID: 11400000, guid: 9779d6b0d0c4b874ba181d417304c3ab, type: 2}
-  - {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
-  - {fileID: 11400000, guid: 9b1268002e90480449ec11bf8c0c98f8, type: 2}
-  - {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
-  - {fileID: 11400000, guid: b5f200ced1d385e43a531da19af8f987, type: 2}
-  - {fileID: 11400000, guid: 96cb7ee42d0f9174ebd503387a4fec7d, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   discardPile: []
 --- !u!1 &1817926560
 GameObject:
@@ -15283,7 +15303,7 @@ PrefabInstance:
     - target: {fileID: 7227035715227099844, guid: 6d5fe92c2cd1e4645996dba0af4d49c4, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 11400000, guid: 5999e30705a6cc542a6fdc1853e90060, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7451423519216031858, guid: 6d5fe92c2cd1e4645996dba0af4d49c4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

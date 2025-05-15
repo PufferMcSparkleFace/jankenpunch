@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    public void Fight()
+    public void CharacterSelect()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Character Select");
     }
 
     public void CardGallery()
