@@ -20,6 +20,8 @@ public class CharacterSelect : MonoBehaviour
         p1Character.character = zyla;
         p1Character.UpdateCharacter();
         deck.deck = zylaDeck;
+        deck.DrawHand();
+        deck.characterSelected = true;
         this.gameObject.SetActive(false);
     }
 
@@ -29,6 +31,8 @@ public class CharacterSelect : MonoBehaviour
         p1Character.character = taibo;
         p1Character.UpdateCharacter();
         deck.deck = taiboDeck;
+        deck.DrawHand();
+        deck.characterSelected = true;
         this.gameObject.SetActive(false);
     }
 
@@ -38,6 +42,8 @@ public class CharacterSelect : MonoBehaviour
         p1Character.character = rynox;
         p1Character.UpdateCharacter();
         deck.deck = rynoxDeck;
+        deck.DrawHand();
+        deck.characterSelected = true;
         this.gameObject.SetActive(false);
     }
 }
