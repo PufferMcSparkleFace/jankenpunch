@@ -31,4 +31,15 @@ public class DisplayCharacterCard : MonoBehaviour
 
     }
 
+    public void UpdateCharacter()
+    {
+        nameText.text = character.cardName;
+        passiveText.text = character.passiveAbility;
+        firstAbilityText.text = character.firstAbility;
+        secondAbilityCostText.text = "+" + character.secondAbilityCost.ToString();
+        secondAbilityText.text = character.secondAbility;
+        image.sprite = character.image;
+        cardBack.sprite = character.cardBack;
+    }
+
 }

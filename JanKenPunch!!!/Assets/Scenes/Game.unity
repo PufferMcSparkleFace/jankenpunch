@@ -7518,6 +7518,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566b0e9294346104386ba896a2117d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1Character: {fileID: 1471161535}
+  zyla: {fileID: 11400000, guid: 505e518f622d9434ba06e563ab812b74, type: 2}
+  taibo: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}
+  rynox: {fileID: 11400000, guid: 5999e30705a6cc542a6fdc1853e90060, type: 2}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -12955,6 +12959,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7451423519216031858, guid: 6d5fe92c2cd1e4645996dba0af4d49c4, type: 3}
   m_PrefabInstance: {fileID: 3512987277929051253}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1471161535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7227035715227099844, guid: 6d5fe92c2cd1e4645996dba0af4d49c4, type: 3}
+  m_PrefabInstance: {fileID: 3512987277929051253}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd92aa3f7b15434c98fb483f518d28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1474715371
 GameObject:
   m_ObjectHideFlags: 0
