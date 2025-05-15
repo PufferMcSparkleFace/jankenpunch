@@ -54,7 +54,10 @@ public class Draw : MonoBehaviour
         }
         if(deck.Count == 0)
         {
-            deck = discardPile;
+            foreach(NonBasicCard card in discardPile)
+            {
+                deck.Add(card);
+            }
             discardPile.Clear();
         }
     }
