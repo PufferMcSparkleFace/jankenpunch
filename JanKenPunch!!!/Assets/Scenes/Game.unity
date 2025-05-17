@@ -15562,7 +15562,6 @@ GameObject:
   - component: {fileID: 1725777914}
   - component: {fileID: 1725777913}
   - component: {fileID: 1725777912}
-  - component: {fileID: 1725777916}
   m_Layer: 5
   m_Name: Card 1
   m_TagString: Basic Cards
@@ -15675,18 +15674,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725777910}
   m_CullTransparentMesh: 1
---- !u!114 &1725777916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725777910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c7ffc5272fa5741804ab374e0d72e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1731678787
 GameObject:
   m_ObjectHideFlags: 0
