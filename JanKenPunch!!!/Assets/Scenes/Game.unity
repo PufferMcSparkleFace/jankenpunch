@@ -7830,7 +7830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566b0e9294346104386ba896a2117d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1Character: {fileID: 0}
+  p1Character: {fileID: 294869673}
   deck: {fileID: 1785747173}
   zyla: {fileID: 11400000, guid: 505e518f622d9434ba06e563ab812b74, type: 2}
   taibo: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}
