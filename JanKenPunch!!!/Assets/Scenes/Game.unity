@@ -186,8 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
   playArea: {fileID: 0}
-  handPosition: 0
   isInHand: 1
+  gameManager: {fileID: 522628964}
 --- !u!114 &6461537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2699,8 +2699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
   playArea: {fileID: 0}
-  handPosition: 0
   isInHand: 1
+  gameManager: {fileID: 522628964}
 --- !u!114 &201240465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3495,8 +3495,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
   playArea: {fileID: 0}
-  handPosition: 0
   isInHand: 1
+  gameManager: {fileID: 522628964}
 --- !u!114 &289268852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5759,8 +5759,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
   playArea: {fileID: 0}
-  handPosition: 0
   isInHand: 1
+  gameManager: {fileID: 522628964}
 --- !u!114 &650671329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6452,8 +6452,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
   playArea: {fileID: 0}
-  handPosition: 0
   isInHand: 1
+  gameManager: {fileID: 522628964}
 --- !u!114 &761092630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13835,8 +13835,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
   playArea: {fileID: 0}
-  handPosition: 0
   isInHand: 1
+  gameManager: {fileID: 522628964}
 --- !u!114 &1532640085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14539,9 +14539,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1785747170}
-  - {fileID: 457016053}
   - {fileID: 294869672}
   - {fileID: 480619460}
+  - {fileID: 457016053}
   m_Father: {fileID: 850381696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -15648,8 +15648,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
   playArea: {fileID: 0}
-  handPosition: 0
   isInHand: 1
+  gameManager: {fileID: 522628964}
 --- !u!114 &1725777914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16043,8 +16043,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
   playArea: {fileID: 0}
-  handPosition: 0
   isInHand: 1
+  gameManager: {fileID: 522628964}
 --- !u!114 &1781080416
 MonoBehaviour:
   m_ObjectHideFlags: 0

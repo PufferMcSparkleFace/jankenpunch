@@ -8,6 +8,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public Transform hand = null;
     public Transform playArea = null;
     public bool isInHand = true;
+    public GameManager gameManager;
 
     public void Start()
     {
@@ -38,14 +39,13 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         else
         {
             transform.SetParent(hand);
-            isInHand = true;
         }
             
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(isInHand == true)
+        if(isInHand == true && gameManager.playedCard == null)
         {
             gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.25f);
             StartCoroutine("Enlarge");
@@ -64,7 +64,15 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         yield return new WaitForSeconds(1);
         transform.localScale = new Vector3(5, 7, 0);
-        gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.21f);
+        gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, -0.4f);
+    }
+
+    private void Update()
+    {
+        if (transform.parent.name == "Hand")
+        {
+            isInHand = true;
+        }
     }
 
 }
