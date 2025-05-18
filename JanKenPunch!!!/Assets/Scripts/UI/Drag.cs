@@ -7,7 +7,6 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 {
     public Transform hand = null;
     public Transform playArea = null;
-    public int handPosition;
     public bool isInHand = true;
 
     public void Start()
@@ -18,7 +17,6 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        handPosition = transform.GetSiblingIndex();
         transform.SetParent(this.transform.parent.parent);
         isInHand = false;
         gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.5f);
@@ -40,7 +38,6 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         else
         {
             transform.SetParent(hand);
-            transform.SetSiblingIndex(handPosition);
             isInHand = true;
         }
             
