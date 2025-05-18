@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler 
+public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler 
 {
     public Transform hand = null;
     public Transform playArea = null;
@@ -35,6 +35,26 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             this.transform.SetParent(hand);
         }
             
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.25f);
+        StartCoroutine("Enlarge");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.5f);
+        transform.localScale = new Vector3(2.5f, 3.5f, 0);
+        StopCoroutine("Enlarge");
+    }
+
+    IEnumerator Enlarge()
+    {
+        yield return new WaitForSeconds(1);
+        transform.localScale = new Vector3(5, 7, 0);
+        gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.21f);
     }
 
 }
