@@ -7,6 +7,8 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 {
     public Transform hand = null;
     public Transform playArea = null;
+    public int handPosition;
+    public bool isInHand = true;
 
     public void Start()
     {
@@ -16,31 +18,42 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        this.transform.SetParent(this.transform.parent.parent);
+        handPosition = transform.GetSiblingIndex();
+        transform.SetParent(this.transform.parent.parent);
+        isInHand = false;
+        gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.5f);
+        transform.localScale = new Vector3(2.5f, 3.5f, 0);
+        StopCoroutine("Enlarge");
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        this.transform.position = eventData.position;
+        transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (this.transform.parent.tag == "Cards" && playArea.childCount == 0)
+        if (transform.parent.tag == "Cards" && playArea.childCount == 0)
         {
-            this.transform.SetParent(playArea);
+            transform.SetParent(playArea);
         }
         else
         {
-            this.transform.SetParent(hand);
+            transform.SetParent(hand);
+            transform.SetSiblingIndex(handPosition);
+            isInHand = true;
         }
             
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.25f);
-        StartCoroutine("Enlarge");
+        if(isInHand == true)
+        {
+            gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.25f);
+            StartCoroutine("Enlarge");
+        }
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
