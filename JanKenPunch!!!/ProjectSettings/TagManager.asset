@@ -11,6 +11,8 @@ TagManager:
   - Non-Basic Cards
   - P1 UI
   - P2 UI
+  - P1
+  - P2
   layers:
   - Default
   - TransparentFX

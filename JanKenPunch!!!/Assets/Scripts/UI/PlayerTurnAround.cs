@@ -6,11 +6,19 @@ public class PlayerTurnAround : MonoBehaviour
 {
     public Transform otherPlayer;
     public float flipCheck;
+    public GameObject[] stagePositions;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(this.gameObject.tag == "P1")
+        {
+            this.transform.position = stagePositions[2].transform.position;
+        }
+        else
+        {
+            this.transform.position = stagePositions[6].transform.position;
+        }
     }
 
     // Update is called once per frame
