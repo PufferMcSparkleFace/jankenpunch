@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text p2HealthText;
     public TMP_Text p2EnergyText;
     public TMP_Text p2PlusFramesText;
-    public PlayerTurnAround p1, p2;
+    public Player p1, p2;
     public int distance;
 
     // Start is called before the first frame update
@@ -79,6 +79,12 @@ public class GameManager : MonoBehaviour
         //calculates actual cost of the card with plus frames factored in
         finalCardCost = card.cost - p1PlusFrames;
 
+        //sets both players plus frames to 0
+        p1PlusFrames = 0;
+        p2PlusFrames = 0;
+        p1PlusFramesText.text = "";
+        p2PlusFramesText.text = "";
+
         //makes sure the card doesn't cost a negative number
         if (finalCardCost < 0)
         {
@@ -89,7 +95,7 @@ public class GameManager : MonoBehaviour
         if((card.type == "Basic Defense" || card.type == "Basic Movement") && (p1Energy < p2Energy || p1Energy == 0))
         {
             Debug.Log("" + card.cardName);
-            //play the card
+            StartCoroutine("FrameDelay");
         }
         //otherwise, if you can afford the card, play it
         else if(finalCardCost <= p1Energy)
@@ -97,8 +103,9 @@ public class GameManager : MonoBehaviour
             p1Energy = p1Energy - finalCardCost;
             p1EnergyText.text = "" + p1Energy;
             Debug.Log("" + card.cardName);
-            //play the card
+            StartCoroutine("FrameDelay");
         }
+        //if you can't afford the card, you do nothing, which costs 1 energy if you have more energy than your opponent
         else if(finalCardCost > p1Energy)
         {
             if(p1Energy >= p2Energy)
@@ -109,6 +116,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("Do Nothing");
         }
 
+
+        //if you play a nonbasic card, set the card to null (so that it gets replaced)
         if ((card.type != "Basic Defense" && card.type != "Basic Movement"))
         {
             DisplayCard card = playedCard.GetComponent<DisplayCard>();
@@ -121,11 +130,15 @@ public class GameManager : MonoBehaviour
         playedCard = null;
         lockInButton.SetActive(false);
 
-        //sets both players plus frames to 0
-        p1PlusFrames = 0;
-        p2PlusFrames = 0;
-        p1PlusFramesText.text = "";
-        p2PlusFramesText.text = "";
+        //return to neutral
+        p1.isBlockingHigh = false;
+        p1.isBlockingLow = false;
+        p1.isDodging = false;
+        p2.isBlockingHigh = false;
+        p2.isBlockingLow = false;
+        p2.isDodging = false;
+        Debug.Log("Return to Neutral");
+
 
         //if both players run out of energy, move on to the next round
         if (p1Energy == 0 && p2Energy == 0)
@@ -151,5 +164,20 @@ public class GameManager : MonoBehaviour
             //if the timer's not 0, refill energy
         }
   
+    }
+
+    IEnumerator FrameDelay()
+    {
+        yield return new WaitForSeconds(finalCardCost * 0.1f);
+        PlayCard();
+    }
+
+    public void PlayCard()
+    {
+        if(card.cardName == "Block High")
+        {
+            p1.isBlockingHigh = true;
+            Debug.Log("Blocking High");
+        }
     }
 }

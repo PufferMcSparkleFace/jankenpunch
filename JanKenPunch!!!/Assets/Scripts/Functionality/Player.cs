@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTurnAround : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Transform otherPlayer;
     public float flipCheck;
     public GameObject[] stagePositions;
     public int position;
+    public bool isBlockingHigh, isBlockingLow, isDodging = false;
 
     // Start is called before the first frame update
     void Start()

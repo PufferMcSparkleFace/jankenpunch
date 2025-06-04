@@ -17,7 +17,7 @@ MonoBehaviour:
   image: {fileID: 0}
   passiveAbility: When you hit a projectile, look at the top two cards of your deck,
     then put one in your hand and the other on the bottom of your deck.
-  firstAbility: Draw a card, then discard a card.
+  firstAbility: Discard a card, then draw a card.
   secondAbilityCost: 2
   secondAbility: For the next 3 interactions, your projectiles deal 1 more damage
     on hit, have 1 extra range, and knock targets back 1 space further.
