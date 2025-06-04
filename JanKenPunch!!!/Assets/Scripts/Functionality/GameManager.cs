@@ -73,6 +73,70 @@ public class GameManager : MonoBehaviour
 
     }
 
+    IEnumerator FrameDelay()
+    {
+        yield return new WaitForSeconds(finalCardCost * 0.1f);
+        PlayCard();
+    }
+
+    public void PlayCard()
+    {
+        if (card.cardName == "Block High")
+        {
+            p1.isBlockingHigh = true;
+            Debug.Log("Blocking High");
+        }
+        else if (card.cardName == "Block Low")
+        {
+            p1.isBlockingLow = true;
+            Debug.Log("Blocking Low");
+        }
+        else if (card.cardName == "Dodge")
+        {
+            p1.isDodging = true;
+            Debug.Log("Dodging");
+        }
+        //check if the other person is still resolving an attack, if not, end interaction
+        EndInteraction();
+    }
+    
+    public void EndInteraction()
+    {
+        //return to neutral
+        p1.isBlockingHigh = false;
+        p1.isBlockingLow = false;
+        p1.isDodging = false;
+        p2.isBlockingHigh = false;
+        p2.isBlockingLow = false;
+        p2.isDodging = false;
+        Debug.Log("Return to Neutral");
+
+
+        //if both players run out of energy, move on to the next round
+        if (p1Energy == 0 && p2Energy == 0)
+        {
+            timer--;
+            timerText.text = "" + timer;
+            //if the timer gets to 0, game over
+            if (timer == 0)
+            {
+                if (p1Health > p2Health)
+                {
+                    Debug.Log("Player 1 Wins");
+                }
+                else if (p1Health < p2Health)
+                {
+                    Debug.Log("Player 2 Wins");
+                }
+                else if (p1Health == p2Health)
+                {
+                    Debug.Log("Draw");
+                }
+            }
+            //if the timer's not 0, refill energy
+        }
+    }
+
     public void LockIn()
     {
 
@@ -94,7 +158,7 @@ public class GameManager : MonoBehaviour
         //if you have less energy than your opponent or 0 energy, basic cards cost 0
         if((card.type == "Basic Defense" || card.type == "Basic Movement") && (p1Energy < p2Energy || p1Energy == 0))
         {
-            Debug.Log("" + card.cardName);
+            Debug.Log("" + card.cardName + " No Cost");
             StartCoroutine("FrameDelay");
         }
         //otherwise, if you can afford the card, play it
@@ -129,55 +193,8 @@ public class GameManager : MonoBehaviour
         playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
         playedCard = null;
         lockInButton.SetActive(false);
-
-        //return to neutral
-        p1.isBlockingHigh = false;
-        p1.isBlockingLow = false;
-        p1.isDodging = false;
-        p2.isBlockingHigh = false;
-        p2.isBlockingLow = false;
-        p2.isDodging = false;
-        Debug.Log("Return to Neutral");
-
-
-        //if both players run out of energy, move on to the next round
-        if (p1Energy == 0 && p2Energy == 0)
-        {
-            timer--;
-            timerText.text = "" + timer;
-            //if the timer gets to 0, game over
-            if (timer == 0)
-            {
-                if (p1Health > p2Health)
-                {
-                    Debug.Log("Player 1 Wins");
-                }
-                else if (p1Health < p2Health)
-                {
-                    Debug.Log("Player 2 Wins");
-                }
-                else if (p1Health == p2Health)
-                {
-                    Debug.Log("Draw");
-                }
-            }
-            //if the timer's not 0, refill energy
-        }
   
     }
 
-    IEnumerator FrameDelay()
-    {
-        yield return new WaitForSeconds(finalCardCost * 0.1f);
-        PlayCard();
-    }
-
-    public void PlayCard()
-    {
-        if(card.cardName == "Block High")
-        {
-            p1.isBlockingHigh = true;
-            Debug.Log("Blocking High");
-        }
-    }
+    
 }
