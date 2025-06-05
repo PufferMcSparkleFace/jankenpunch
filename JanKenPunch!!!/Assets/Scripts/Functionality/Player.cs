@@ -10,19 +10,21 @@ public class Player : MonoBehaviour
     public int position;
     public bool isBlockingHigh, isBlockingLow, isDodging, isMoving, isPushing = false;
     public int unitsActual;
+    public GameManager gameManager;
+    public Player opponent;
 
     // Start is called before the first frame update
     void Start()
     {
         if(this.gameObject.tag == "P1")
         {
-            this.transform.position = stagePositions[2].transform.position;
-            position = 3;
+            this.transform.position = stagePositions[6].transform.position;
+            position = 7;
         }
         else
         {
-            this.transform.position = stagePositions[6].transform.position;
-            position = 7;
+            this.transform.position = stagePositions[2].transform.position;
+            position = 3;
         }
     }
 
@@ -43,16 +45,30 @@ public class Player : MonoBehaviour
     public void Move(int units)
     {
         Debug.Log("Move " + units.ToString() + " units");
+
+        //if you're facing right
         if(flipCheck < 0)
         {
             unitsActual = units;
+
+            if(unitsActual > 0 && gameManager.distance == 1)
+            {
+                return;
+            }
+            this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
+            position = position + units;
         }
+        //if you're facing left
         else
         {
             unitsActual = -units;
+            if (unitsActual < 0 && gameManager.distance == 1)
+            {
+                return;
+            }
+            this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
+            position = position - units;
         }
 
-        this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
-        position = position + units;
     }
 }

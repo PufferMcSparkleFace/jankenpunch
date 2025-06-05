@@ -21,7 +21,7 @@ MonoBehaviour:
   subtype: 
   range: 0
   guard: 
-  effect: Move forward 3 spaces while blocking high. This movement can push opponents
+  effect: Move forward 2 spaces while blocking high. This movement can push opponents
     back.
   damage: 0
   onHit: 0

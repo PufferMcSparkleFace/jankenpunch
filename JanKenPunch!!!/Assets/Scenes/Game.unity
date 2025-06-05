@@ -4061,6 +4061,9 @@ MonoBehaviour:
   isDodging: 0
   isMoving: 0
   isPushing: 0
+  unitsActual: 0
+  gameManager: {fileID: 522628964}
+  opponent: {fileID: 2047355261}
 --- !u!1 &457016052
 GameObject:
   m_ObjectHideFlags: 0
@@ -15636,6 +15639,9 @@ MonoBehaviour:
   isDodging: 0
   isMoving: 0
   isPushing: 0
+  unitsActual: 0
+  gameManager: {fileID: 522628964}
+  opponent: {fileID: 414189305}
 --- !u!1 &2062830868
 GameObject:
   m_ObjectHideFlags: 0
