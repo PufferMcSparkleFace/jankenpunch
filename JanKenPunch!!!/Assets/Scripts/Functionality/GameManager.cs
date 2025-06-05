@@ -96,6 +96,16 @@ public class GameManager : MonoBehaviour
             p1.isDodging = true;
             Debug.Log("Dodging");
         }
+        else if (card.cardName == "Dash Forward")
+        {
+            p1.isMoving = true;
+            p1.Move(1);
+        }
+        else if (card.cardName == "Dash Back")
+        {
+            p1.isMoving = true;
+            p1.Move(-1);
+        }
         //check if the other person is still resolving an attack, if not, end interaction
         EndInteraction();
     }
@@ -106,9 +116,13 @@ public class GameManager : MonoBehaviour
         p1.isBlockingHigh = false;
         p1.isBlockingLow = false;
         p1.isDodging = false;
+        p1.isMoving = false;
+        p1.isPushing = false;
         p2.isBlockingHigh = false;
         p2.isBlockingLow = false;
         p2.isDodging = false;
+        p2.isMoving = false;
+        p2.isPushing = false;
         Debug.Log("Return to Neutral");
 
 

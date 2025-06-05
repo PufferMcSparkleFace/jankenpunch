@@ -4056,6 +4056,11 @@ MonoBehaviour:
   - {fileID: 1082858929}
   - {fileID: 1907631757}
   position: 0
+  isBlockingHigh: 0
+  isBlockingLow: 0
+  isDodging: 0
+  isMoving: 0
+  isPushing: 0
 --- !u!1 &457016052
 GameObject:
   m_ObjectHideFlags: 0
@@ -15626,6 +15631,11 @@ MonoBehaviour:
   - {fileID: 1082858929}
   - {fileID: 1907631757}
   position: 0
+  isBlockingHigh: 0
+  isBlockingLow: 0
+  isDodging: 0
+  isMoving: 0
+  isPushing: 0
 --- !u!1 &2062830868
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     public float flipCheck;
     public GameObject[] stagePositions;
     public int position;
-    public bool isBlockingHigh, isBlockingLow, isDodging = false;
+    public bool isBlockingHigh, isBlockingLow, isDodging, isMoving, isPushing = false;
+    public int unitsActual;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +38,21 @@ public class Player : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
+    }
+
+    public void Move(int units)
+    {
+        Debug.Log("Move " + units.ToString() + " units");
+        if(flipCheck < 0)
+        {
+            unitsActual = units;
+        }
+        else
+        {
+            unitsActual = -units;
+        }
+
+        this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
+        position = position + units;
     }
 }
