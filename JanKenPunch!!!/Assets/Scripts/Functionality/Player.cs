@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public GameObject[] stagePositions;
     public int position;
     public bool isBlockingHigh, isBlockingLow, isDodging, isMoving, isPushing = false;
+    public int unitsActual;
     public GameManager gameManager;
     public Player opponent;
 
@@ -48,22 +49,25 @@ public class Player : MonoBehaviour
         //if you're facing right
         if(flipCheck < 0)
         {
-            if(gameManager.distance == 1)
+            unitsActual = units;
+
+            if(unitsActual > 0 && gameManager.distance == 1)
             {
                 return;
             }
-            this.transform.position = stagePositions[(position - 1) + 1].transform.position;
-            position = position + 1;
+            this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
+            position = position + units;
         }
         //if you're facing left
         else
         {
-            if (gameManager.distance == 1)
+            unitsActual = -units;
+            if (unitsActual < 0 && gameManager.distance == 1)
             {
                 return;
             }
-            this.transform.position = stagePositions[(position - 1) -1].transform.position;
-            position = position - 1;
+            this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
+            position = position - units;
         }
 
     }
