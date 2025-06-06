@@ -130,12 +130,17 @@ public class GameManager : MonoBehaviour
             {
                 if(p2.flipCheck < 0)
                 {
-                    Debug.Log("Teleport Left");
+                    p1.transform.position = p1.stagePositions[p2.position - 2].transform.position;
+                    p1.position = p2.position - 1;
+                    distance = Mathf.Abs(p1.position - p2.position);
                 }
                 if(p2.flipCheck > 0)
                 {
-                    Debug.Log("Teleport Right");
+                    p1.transform.position = p1.stagePositions[p2.position].transform.position;
+                    p1.position = p2.position + 1;
+                    distance = Mathf.Abs(p1.position - p2.position);
                 }
+
                 p1.Move(-3);
             }
         }
