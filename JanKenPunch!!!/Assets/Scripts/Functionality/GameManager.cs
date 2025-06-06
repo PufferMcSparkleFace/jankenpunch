@@ -133,12 +133,14 @@ public class GameManager : MonoBehaviour
                     p1.transform.position = p1.stagePositions[p2.position - 2].transform.position;
                     p1.position = p2.position - 1;
                     distance = Mathf.Abs(p1.position - p2.position);
+                    p1.flipCheck = -1;
                 }
                 if(p2.flipCheck > 0)
                 {
                     p1.transform.position = p1.stagePositions[p2.position].transform.position;
                     p1.position = p2.position + 1;
                     distance = Mathf.Abs(p1.position - p2.position);
+                    p1.flipCheck = 1;
                 }
 
                 p1.Move(-3);

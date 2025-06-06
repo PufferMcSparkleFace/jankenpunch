@@ -18,13 +18,13 @@ public class Player : MonoBehaviour
     {
         if(this.gameObject.tag == "P1")
         {
-            this.transform.position = stagePositions[6].transform.position;
-            position = 7;
+            this.transform.position = stagePositions[2].transform.position;
+            position = 3;
         }
         else
         {
-            this.transform.position = stagePositions[2].transform.position;
-            position = 3;
+            this.transform.position = stagePositions[6].transform.position;
+            position = 7;
         }
     }
 
