@@ -117,11 +117,12 @@ public class GameManager : MonoBehaviour
         else if (card.cardName == "Tackle")
         {
             p1.Move(1);
-            Strike();
+            Throw();
         }
         else if (card.cardName == "CHARGE!!!")
         {
             p1.isBlockingHigh = true;
+            //push
             p1.Move(2);
         }
         else if (card.cardName == "Warp")
@@ -173,20 +174,64 @@ public class GameManager : MonoBehaviour
 
     public void Strike()
     {
-
+        if (card.range < distance || p2.isDodging == true)
+        {
+            Debug.Log("Whiff!");
+            p2PlusFrames = Mathf.Abs(card.onWhiff);
+            p2PlusFramesText.text = "+" + p2PlusFrames;
+        }
+        //if distance =< range and opponent blocked correctly, it's blocked and your energy is refunded
+        //if distance =< range and opponent isn't blocking/blocked incorrectly, it hits and you knock them back 1 while moving forward 1
     }
 
     public void Throw()
     {
-
+        if(card.range < distance || p2.isDodging == true)
+        {
+            Debug.Log("Whiff!");
+            p2PlusFrames = Mathf.Abs(card.onWhiff);
+            p2PlusFramesText.text = "+" + p2PlusFrames;
+        }
+        else
+        {
+            Debug.Log("Hit!");
+            p2Health = p2Health - card.damage;
+            p2HealthText.text = "" + p2Health;
+            p1PlusFrames = card.onHit;
+            p1PlusFramesText.text = "+" + p1PlusFrames;
+            if(card.cardName == "Grab")
+            {
+                if(p1.flipCheck < 0)
+                {
+                    p1.transform.position = p1.stagePositions[p2.position -1].transform.position;
+                    p1.position = p2.position;
+                    p2.transform.position = p2.stagePositions[p1.position -2].transform.position;
+                    p2.position = p1.position - 1;
+                }
+                else
+                {
+                    p1.transform.position = p1.stagePositions[p2.position - 1].transform.position;
+                    p1.position = p2.position;
+                    p2.transform.position = p2.stagePositions[p1.position].transform.position;
+                    p2.position = p1.position + 1;
+                }
+            }
+        }
     }
 
     public void Projectile()
     {
-
+        if (card.range < distance || p2.isDodging == true)
+        {
+            Debug.Log("Whiff!");
+            p2PlusFrames = Mathf.Abs(card.onWhiff);
+            p2PlusFramesText.text = "+" + p2PlusFrames;
+        }
+        //if distance =< range and opponent blocked correctly, it's blocked
+        //if distance =< range and opponent isn't blocking/blocked incorrectly, it hits and you knock them back 1 and drain their energy
     }
 
-    
+
     public void EndInteraction()
     {
         //return to neutral
