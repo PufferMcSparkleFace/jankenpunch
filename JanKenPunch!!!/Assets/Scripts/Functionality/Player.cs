@@ -46,28 +46,46 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Move " + units.ToString() + " units");
 
-        //if you're facing right
-        if(flipCheck < 0)
+        for (int i = 0; i < Mathf.Abs(units); i++)
         {
-            unitsActual = units;
-
-            if(unitsActual > 0 && gameManager.distance == 1)
+            //if you're facing right
+            if (flipCheck < 0)
             {
-                return;
+                if (units > 0)
+                {
+                    unitsActual = 1;
+                }
+                else
+                {
+                    unitsActual = -1;
+                }
+                if (unitsActual > 0 && gameManager.distance == 1)
+                {
+                    return;
+                }
+                this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
+                position = position + unitsActual;
+                gameManager.distance = Mathf.Abs(position - opponent.position);
             }
-            this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
-            position = position + units;
-        }
-        //if you're facing left
-        else
-        {
-            unitsActual = -units;
-            if (unitsActual < 0 && gameManager.distance == 1)
+            //if you're facing left
+            else
             {
-                return;
+                if(units > 0)
+                {
+                    unitsActual = -1;
+                }
+                else
+                {
+                    unitsActual = 1;
+                }
+                if (unitsActual < 0 && gameManager.distance == 1)
+                {
+                    return;
+                }
+                this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
+                position = position + unitsActual;
+                gameManager.distance = Mathf.Abs(position - opponent.position);
             }
-            this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
-            position = position - units;
         }
 
     }

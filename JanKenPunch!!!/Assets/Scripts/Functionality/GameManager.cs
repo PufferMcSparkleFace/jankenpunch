@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text p2EnergyText;
     public TMP_Text p2PlusFramesText;
     public Player p1, p2;
-    public int distance;
+    public int distance = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -52,8 +52,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Mathf.Abs(p1.position - p2.position);
-
         if (playArea.childCount == 0)
             {
                 if(playedCard != null)
