@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float flipCheck;
     public GameObject[] stagePositions;
     public int position;
-    public bool isBlockingHigh, isBlockingLow, isDodging, isMoving = false;
+    public bool isBlockingHigh, isBlockingLow, isDodging, isMoving, isPushing = false;
     public int unitsActual;
     public GameManager gameManager;
     public Player opponent;
@@ -61,7 +61,19 @@ public class Player : MonoBehaviour
                 }
                 if (unitsActual > 0 && gameManager.distance == 1)
                 {
-                   return;
+                    if(isPushing == false)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        if (opponent.position == 9 || opponent.position == 1)
+                        {
+                            return;
+                        }
+                        opponent.transform.position = stagePositions[opponent.position].transform.position;
+                        opponent.position++;
+                    }
 
                 }
                 this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
@@ -80,8 +92,20 @@ public class Player : MonoBehaviour
                     unitsActual = 1;
                 }
                 if (unitsActual < 0 && gameManager.distance == 1)
-                { 
-                    return;
+                {
+                    if (isPushing == false)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        if(opponent.position == 9 || opponent.position == 1)
+                        {
+                            return;
+                        }
+                        opponent.transform.position = stagePositions[opponent.position -2].transform.position;
+                        opponent.position--;
+                    }
                 }
                 this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
                 position = position + unitsActual;

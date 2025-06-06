@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
         else if (card.cardName == "CHARGE!!!")
         {
             p1.isBlockingHigh = true;
-            //push
+            p1.isPushing = true;
             p1.Move(2);
         }
         else if (card.cardName == "Warp")
@@ -201,6 +201,12 @@ public class GameManager : MonoBehaviour
                 return;
             }
             Debug.Log("Hit!");
+            p2Health = p2Health - card.damage;
+            p2HealthText.text = "" + p2Health;
+            p1PlusFrames = card.onHit;
+            p1PlusFramesText.text = "+" + p1PlusFrames;
+            p1.isPushing = true;
+            p1.Move(1);
             //hits and you knock them back 1 while moving forward 1
         }
 
@@ -266,7 +272,17 @@ public class GameManager : MonoBehaviour
                 return;
             }
             Debug.Log("Hit!");
-            //hits and you knock them back 1 and drain their energy
+            p2Health = p2Health - card.damage;
+            p2HealthText.text = "" + p2Health;
+            p1PlusFrames = card.onHit;
+            p1PlusFramesText.text = "+" + p1PlusFrames;
+            p2Energy = p2Energy - card.cost;
+            if(p2Energy < 0)
+            {
+                p2Energy = 0;
+            }
+            p2EnergyText.text = "" + p2Energy;
+            p2.Move(-1);
         }
     }
 
@@ -278,10 +294,12 @@ public class GameManager : MonoBehaviour
         p1.isBlockingLow = false;
         p1.isDodging = false;
         p1.isMoving = false;
+        p1.isPushing = false;
         p2.isBlockingHigh = false;
         p2.isBlockingLow = false;
         p2.isDodging = false;
         p2.isMoving = false;
+        p2.isPushing = false;
         Debug.Log("Return to Neutral");
 
 
