@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public int p2PlusFrames;
     public int finalCardCost;
     public int timer;
+    public int spacesBehindP1;
+    public int spacesBehindP2;
     public TMP_Text timerText;
     public TMP_Text p1HealthText;
     public TMP_Text p1EnergyText;
@@ -156,6 +158,30 @@ public class GameManager : MonoBehaviour
             }
          
         }
+        else if(card.cardName == "Force Choke")
+        {
+            if (card.range < distance || p2.isDodging == true)
+            {
+                Debug.Log("Whiff!");
+                p2PlusFrames = Mathf.Abs(card.onWhiff);
+                p2PlusFramesText.text = "+" + p2PlusFrames;
+            }
+            else
+            {
+                Debug.Log("Hit!");
+                p2Health = p2Health - card.damage;
+                p2HealthText.text = "" + p2Health;
+                p1PlusFrames = card.onHit;
+                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p2Energy = p2Energy - card.cost;
+                if (p2Energy < 0)
+                {
+                    p2Energy = 0;
+                }
+                p2EnergyText.text = "" + p2Energy;
+                p2.Move(-1);
+            }
+        }
         else if (card.subtype == "Strike")
         {
             Strike();
@@ -207,6 +233,10 @@ public class GameManager : MonoBehaviour
             p1PlusFramesText.text = "+" + p1PlusFrames;
             p1.isPushing = true;
             p1.Move(1);
+            if(card.cardName == "Flash Kick")
+            {
+                p2.Move(-3);
+            }
             //hits and you knock them back 1 while moving forward 1
         }
 
@@ -324,7 +354,32 @@ public class GameManager : MonoBehaviour
                     Debug.Log("Draw");
                 }
             }
-            //if the timer's not 0, refill energy
+            else
+            {
+                //if the timer's not 0, refill energy
+                if(p1.flipCheck < 0)
+                {
+                    spacesBehindP1 = p1.position - 1;
+                    spacesBehindP2 = 9 - p2.position;
+                }
+                else
+                {
+                    spacesBehindP1 = 9 - p1.position;
+                    spacesBehindP2 = p2.position - 1;
+                }
+                if(spacesBehindP1 > 4)
+                {
+                    spacesBehindP1 = 4;
+                }
+                if (spacesBehindP2 > 4)
+                {
+                    spacesBehindP2 = 4;
+                }
+                p1Energy = 3 + spacesBehindP1;
+                p1EnergyText.text = "" + p1Energy;
+                p2Energy = 3 + spacesBehindP2;
+                p2EnergyText.text = "" + p2Energy;
+            }
         }
     }
 
