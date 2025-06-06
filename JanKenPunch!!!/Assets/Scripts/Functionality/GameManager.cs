@@ -104,9 +104,83 @@ public class GameManager : MonoBehaviour
             p1.isMoving = true;
             p1.Move(-1);
         }
+        else if (card.cardName == "Dash Attack")
+        {
+            p1.Move(2);
+            Strike();
+        }
+        else if (card.cardName == "Hop Kick")
+        {
+            p1.Move(1);
+            Strike();
+        }
+        else if (card.cardName == "Tackle")
+        {
+            p1.Move(1);
+            Strike();
+        }
+        else if (card.cardName == "CHARGE!!!")
+        {
+            p1.isBlockingHigh = true;
+            p1.Move(2);
+        }
+        else if (card.cardName == "Grab")
+        {
+            Throw();
+        }
+        else if (card.cardName == "Warp")
+        {
+
+        }
+        else if (card.cardName == "Flash Kick")
+        {
+            Strike();
+            p2.Move(-3);
+        }
+        else if (card.cardName == "Force Choke")
+        {
+            //unique hit effect
+        }
+        else if (card.cardName == "YOU SCARED, BUD?!")
+        {
+            if (p2.isBlockingHigh == true || p2.isBlockingLow == true || p2.isDodging == true)
+            {
+                p1PlusFrames = 5;
+                p1PlusFramesText.text = "+5";
+            }
+         
+        }
+        else if (card.subtype == "Strike")
+        {
+            Strike();
+        }
+        else if (card.subtype == "Throw")
+        {
+            Throw();
+        }
+        else if (card.subtype == "Projectile")
+        {
+            Projectile();
+        }
         //check if the other person is still resolving an attack, if not, end interaction
         EndInteraction();
     }
+
+    public void Strike()
+    {
+
+    }
+
+    public void Throw()
+    {
+
+    }
+
+    public void Projectile()
+    {
+
+    }
+
     
     public void EndInteraction()
     {
@@ -115,12 +189,10 @@ public class GameManager : MonoBehaviour
         p1.isBlockingLow = false;
         p1.isDodging = false;
         p1.isMoving = false;
-        p1.isPushing = false;
         p2.isBlockingHigh = false;
         p2.isBlockingLow = false;
         p2.isDodging = false;
         p2.isMoving = false;
-        p2.isPushing = false;
         Debug.Log("Return to Neutral");
 
 

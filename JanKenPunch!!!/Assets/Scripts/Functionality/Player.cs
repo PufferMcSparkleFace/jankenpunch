@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float flipCheck;
     public GameObject[] stagePositions;
     public int position;
-    public bool isBlockingHigh, isBlockingLow, isDodging, isMoving, isPushing = false;
+    public bool isBlockingHigh, isBlockingLow, isDodging, isMoving = false;
     public int unitsActual;
     public GameManager gameManager;
     public Player opponent;
@@ -18,13 +18,13 @@ public class Player : MonoBehaviour
     {
         if(this.gameObject.tag == "P1")
         {
-            this.transform.position = stagePositions[6].transform.position;
-            position = 7;
+            this.transform.position = stagePositions[2].transform.position;
+            position = 3;
         }
         else
         {
-            this.transform.position = stagePositions[2].transform.position;
-            position = 3;
+            this.transform.position = stagePositions[6].transform.position;
+            position = 7;
         }
     }
 
@@ -61,7 +61,8 @@ public class Player : MonoBehaviour
                 }
                 if (unitsActual > 0 && gameManager.distance == 1)
                 {
-                    return;
+                   return;
+
                 }
                 this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
                 position = position + unitsActual;
@@ -79,7 +80,7 @@ public class Player : MonoBehaviour
                     unitsActual = 1;
                 }
                 if (unitsActual < 0 && gameManager.distance == 1)
-                {
+                { 
                     return;
                 }
                 this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
