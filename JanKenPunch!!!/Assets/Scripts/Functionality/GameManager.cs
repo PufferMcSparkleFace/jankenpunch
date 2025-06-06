@@ -124,22 +124,9 @@ public class GameManager : MonoBehaviour
             p1.isBlockingHigh = true;
             p1.Move(2);
         }
-        else if (card.cardName == "Grab")
-        {
-            Throw();
-        }
         else if (card.cardName == "Warp")
         {
-
-        }
-        else if (card.cardName == "Flash Kick")
-        {
-            Strike();
-            p2.Move(-3);
-        }
-        else if (card.cardName == "Force Choke")
-        {
-            //unique hit effect
+            //teleport 4 spaces behind the opponent
         }
         else if (card.cardName == "YOU SCARED, BUD?!")
         {
