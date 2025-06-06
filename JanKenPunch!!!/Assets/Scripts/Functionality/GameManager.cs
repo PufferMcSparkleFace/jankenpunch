@@ -126,7 +126,18 @@ public class GameManager : MonoBehaviour
         }
         else if (card.cardName == "Warp")
         {
-            //teleport 4 spaces behind the opponent
+            if(p2.position != 1 && p2.position != 9)
+            {
+                if(p2.flipCheck < 0)
+                {
+                    Debug.Log("Teleport Left");
+                }
+                if(p2.flipCheck > 0)
+                {
+                    Debug.Log("Teleport Right");
+                }
+                p1.Move(-3);
+            }
         }
         else if (card.cardName == "YOU SCARED, BUD?!")
         {
