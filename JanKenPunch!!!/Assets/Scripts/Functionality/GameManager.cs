@@ -180,8 +180,30 @@ public class GameManager : MonoBehaviour
             p2PlusFrames = Mathf.Abs(card.onWhiff);
             p2PlusFramesText.text = "+" + p2PlusFrames;
         }
-        //if distance =< range and opponent blocked correctly, it's blocked and your energy is refunded
-        //if distance =< range and opponent isn't blocking/blocked incorrectly, it hits and you knock them back 1 while moving forward 1
+        if (card.range >= distance)
+        {
+            if (p2.isBlockingHigh == true && (card.guard == "High" || card.guard == "Mid"))
+            {
+                Debug.Log("Blocked!");
+                p2PlusFrames = Mathf.Abs(card.onBlock);
+                p2PlusFramesText.text = "+" + p2PlusFrames;
+                p1Energy = p1Energy + card.cost;
+                p1EnergyText.text = "" + p1Energy;
+                return;
+            }
+            if (p2.isBlockingLow == true && (card.guard == "Low" || card.guard == "Mid"))
+            {
+                Debug.Log("Blocked!");
+                p2PlusFrames = Mathf.Abs(card.onBlock);
+                p2PlusFramesText.text = "+" + p2PlusFrames;
+                p1Energy = p1Energy + card.cost;
+                p1EnergyText.text = "" + p1Energy;
+                return;
+            }
+            Debug.Log("Hit!");
+            //hits and you knock them back 1 while moving forward 1
+        }
+
     }
 
     public void Throw()
@@ -227,8 +249,25 @@ public class GameManager : MonoBehaviour
             p2PlusFrames = Mathf.Abs(card.onWhiff);
             p2PlusFramesText.text = "+" + p2PlusFrames;
         }
-        //if distance =< range and opponent blocked correctly, it's blocked
-        //if distance =< range and opponent isn't blocking/blocked incorrectly, it hits and you knock them back 1 and drain their energy
+        if(card.range >= distance)
+        {
+            if(p2.isBlockingHigh == true && (card.guard == "High" || card.guard == "Mid"))
+            {
+                Debug.Log("Blocked!");
+                p2PlusFrames = Mathf.Abs(card.onBlock);
+                p2PlusFramesText.text = "+" + p2PlusFrames;
+                return;
+            }
+            if(p2.isBlockingLow == true && (card.guard == "Low" || card.guard == "Mid"))
+            {
+                Debug.Log("Blocked!");
+                p2PlusFrames = Mathf.Abs(card.onBlock);
+                p2PlusFramesText.text = "+" + p2PlusFrames;
+                return;
+            }
+            Debug.Log("Hit!");
+            //hits and you knock them back 1 and drain their energy
+        }
     }
 
 
