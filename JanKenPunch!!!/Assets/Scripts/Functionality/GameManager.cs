@@ -72,6 +72,15 @@ public class GameManager : MonoBehaviour
                 card = playedCard.GetComponent<DisplayCard>().card;
             }
 
+        if(p1PlusFrames == 0)
+        {
+            p1PlusFramesText.text = "";
+        }
+        if (p2PlusFrames == 0)
+        {
+            p2PlusFramesText.text = "";
+        }
+
     }
 
     IEnumerator FrameDelay()
@@ -122,19 +131,6 @@ public class GameManager : MonoBehaviour
         {
             p1.isDodging = true;
             Debug.Log("Dodging");
-            if (p2.isDodging == true)
-            {
-                if (p1.character.cardName == "Rynox")
-                {
-                    p1PlusFrames = p1PlusFrames + 4;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
-                }
-                else
-                {
-                    p1PlusFrames = p1PlusFrames + 3;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
-                }
-            }
         }
         else if (card.cardName == "Dash Forward")
         {
@@ -308,40 +304,127 @@ public class GameManager : MonoBehaviour
         {
             if (p2.isBlockingHigh == true && (card.guard == "High" || card.guard == "Mid"))
             {
-                Debug.Log("Blocked!");
-                p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
-                p2PlusFramesText.text = "+" + p2PlusFrames;
-                p1Energy = p1Energy + card.cost;
-                p1EnergyText.text = "" + p1Energy;
-                return;
+                if (p1.dragonInstall > 0)
+                {
+                    Debug.Log("Blocked!");
+                    if(card.onBlock +1 >= 0)
+                    {
+                        p1PlusFrames = p1PlusFrames + Mathf.Abs(card.onBlock + 1);
+                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                    }
+                    else
+                    {
+                        p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock + 1);
+                        p2PlusFramesText.text = "+" + p2PlusFrames;
+                    }
+                    p1Energy = p1Energy + card.cost;
+                    p1EnergyText.text = "" + p1Energy;
+                    return;
+                }
+                else
+                {
+                    Debug.Log("Blocked!");
+                    if (card.onBlock >= 0)
+                    {
+                        p1PlusFrames = p1PlusFrames + Mathf.Abs(card.onBlock);
+                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                    }
+                    else
+                    {
+                        p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
+                        p2PlusFramesText.text = "+" + p2PlusFrames;
+                    }
+                    p1Energy = p1Energy + card.cost;
+                    p1EnergyText.text = "" + p1Energy;
+                    return;
+                }
+               
             }
             if (p2.isBlockingLow == true && (card.guard == "Low" || card.guard == "Mid"))
             {
-                Debug.Log("Blocked!");
-                p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
-                p2PlusFramesText.text = "+" + p2PlusFrames;
-                p1Energy = p1Energy + card.cost;
-                p1EnergyText.text = "" + p1Energy;
-                return;
+                if (p1.dragonInstall > 0)
+                {
+                    if (card.onBlock + 1 >= 0)
+                    {
+                        p1PlusFrames = p1PlusFrames + Mathf.Abs(card.onBlock + 1);
+                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                    }
+                    else
+                    {
+                        p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock + 1);
+                        p2PlusFramesText.text = "+" + p2PlusFrames;
+                    }
+                    Debug.Log("Blocked!");
+                    p1Energy = p1Energy + card.cost;
+                    p1EnergyText.text = "" + p1Energy;
+                    return;
+                }
+                else
+                {
+                    Debug.Log("Blocked!");
+                    if (card.onBlock >= 0)
+                    {
+                        p1PlusFrames = p1PlusFrames + Mathf.Abs(card.onBlock);
+                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                    }
+                    else
+                    {
+                        p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
+                        p2PlusFramesText.text = "+" + p2PlusFrames;
+                    }
+                    p1Energy = p1Energy + card.cost;
+                    p1EnergyText.text = "" + p1Energy;
+                    return;
+                }
+                
             }
             if(p1.character.cardName == "Zyla" && (p2.isBlockingLow == true && card.guard == "High") || (p2.isBlockingHigh == true && card.guard == "Low"))
             {
-                Debug.Log("Get Mixed!");
-                p2Health = p2Health - card.damage;
+                if (p1.dragonInstall > 0)
+                {
+                    Debug.Log("Get Mixed!");
+                    p2Health = p2Health - (card.damage + 2);
+                    p2HealthText.text = "" + p2Health;
+                    p1PlusFrames = p1PlusFrames + card.onHit + 1;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.isPushing = true;
+                    p1.Move(1);
+                    return;
+                }
+                else
+                {
+                    Debug.Log("Get Mixed!");
+                    p2Health = p2Health - card.damage;
+                    p2HealthText.text = "" + p2Health;
+                    p1PlusFrames = p1PlusFrames + card.onHit + 1;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.isPushing = true;
+                    p1.Move(1);
+                    return;
+                }
+                
+            }
+            if(p1.dragonInstall > 0)
+            {
+                Debug.Log("Hit!");
+                p2Health = p2Health - (card.damage + 2);
                 p2HealthText.text = "" + p2Health;
-                p1PlusFrames = p1PlusFrames + card.onHit + 1;
+                p1PlusFrames = p1PlusFrames + card.onHit;
                 p1PlusFramesText.text = "+" + p1PlusFrames;
                 p1.isPushing = true;
                 p1.Move(1);
-                return;
             }
-            Debug.Log("Hit!");
-            p2Health = p2Health - card.damage;
-            p2HealthText.text = "" + p2Health;
-            p1PlusFrames = p1PlusFrames + card.onHit;
-            p1PlusFramesText.text = "+" + p1PlusFrames;
-            p1.isPushing = true;
-            p1.Move(1);
+            else
+            {
+                Debug.Log("Hit!");
+                p2Health = p2Health - card.damage;
+                p2HealthText.text = "" + p2Health;
+                p1PlusFrames = p1PlusFrames + card.onHit;
+                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p1.isPushing = true;
+                p1.Move(1);
+            }
+        
             if(card.cardName == "Flash Kick")
             {
                 p2.Move(-3);
@@ -454,6 +537,8 @@ public class GameManager : MonoBehaviour
         p2.isDodging = false;
         p2.isMoving = false;
         p2.isPushing = false;
+        p1.dragonInstall--;
+        p2.dragonInstall--;
         Debug.Log("Return to Neutral");
 
 

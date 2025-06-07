@@ -63,9 +63,13 @@ public class Player : MonoBehaviour
         {
             abilityTwoButton.gameObject.SetActive(true);
         }
-        if (empowered == false && dragonInstall == 0 && forceBreak == 0)
+        if (empowered == false && dragonInstall <= 0 && forceBreak <= 0)
         {
             installText.text = "";
+        }
+        if(dragonInstall > 0)
+        {
+            installText.text = "Dragon Install: " + dragonInstall;
         }
     }
 
@@ -187,6 +191,8 @@ public class Player : MonoBehaviour
 
         if (character.cardName == "Zyla")
         {
+            dragonInstall = 5;
+            installText.text = "Dragon Install: 5";
             Debug.Log("Zyla +3");
         }
         if (character.cardName == "Taibo")
