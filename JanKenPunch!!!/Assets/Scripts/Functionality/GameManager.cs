@@ -86,31 +86,91 @@ public class GameManager : MonoBehaviour
         {
             p1.isBlockingHigh = true;
             Debug.Log("Blocking High");
-            //if opponent played dodge, you're +3. if you're rynox, you're +4
+            if (p2.isDodging == true)
+            {
+                if(p1.character.cardName == "Rynox")
+                {
+                    p1PlusFrames = p1PlusFrames + 4;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+                else
+                {
+                    p1PlusFrames = p1PlusFrames + 3;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+            }
         }
         else if (card.cardName == "Block Low")
         {
             p1.isBlockingLow = true;
             Debug.Log("Blocking Low");
-            //if opponent played dodge, you're +3. if you're rynox, you're +4
+            if (p2.isDodging == true)
+            {
+                if (p1.character.cardName == "Rynox")
+                {
+                    p1PlusFrames = p1PlusFrames + 4;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+                else
+                {
+                    p1PlusFrames = p1PlusFrames + 3;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+            }
         }
         else if (card.cardName == "Dodge")
         {
             p1.isDodging = true;
             Debug.Log("Dodging");
-            //if opponent played dodge, you're +3. if you're rynox, you're +4
+            if (p2.isDodging == true)
+            {
+                if (p1.character.cardName == "Rynox")
+                {
+                    p1PlusFrames = p1PlusFrames + 4;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+                else
+                {
+                    p1PlusFrames = p1PlusFrames + 3;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+            }
         }
         else if (card.cardName == "Dash Forward")
         {
             p1.isMoving = true;
             p1.Move(1);
-            //if opponent played dodge, you're +3. if you're rynox, you're +4
+            if (p2.isDodging == true)
+            {
+                if (p1.character.cardName == "Rynox")
+                {
+                    p1PlusFrames = p1PlusFrames + 4;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+                else
+                {
+                    p1PlusFrames = p1PlusFrames + 3;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+            }
         }
         else if (card.cardName == "Dash Back")
         {
             p1.isMoving = true;
             p1.Move(-1);
-            //if opponent played dodge, you're +3. if you're rynox, you're +4
+            if (p2.isDodging == true)
+            {
+                if (p1.character.cardName == "Rynox")
+                {
+                    p1PlusFrames = p1PlusFrames + 4;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+                else
+                {
+                    p1PlusFrames = p1PlusFrames + 3;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+            }
         }
         else if (card.cardName == "Dash Attack")
         {
@@ -132,7 +192,19 @@ public class GameManager : MonoBehaviour
             p1.isBlockingHigh = true;
             p1.isPushing = true;
             p1.Move(2);
-            //if opponent played dodge, you're +3. if you're rynox, you're +4
+            if (p2.isDodging == true)
+            {
+                if (p1.character.cardName == "Rynox")
+                {
+                    p1PlusFrames = p1PlusFrames + 4;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+                else
+                {
+                    p1PlusFrames = p1PlusFrames + 3;
+                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                }
+            }
         }
         else if (card.cardName == "Warp")
         {
@@ -154,15 +226,32 @@ public class GameManager : MonoBehaviour
                 }
 
                 p1.Move(-3);
-                //if opponent played dodge, you're +3. if you're rynox, you're +4
+                if (p2.isDodging == true)
+                {
+                    if (p1.character.cardName == "Rynox")
+                    {
+                        p1PlusFrames = p1PlusFrames + 4;
+                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                    }
+                    else
+                    {
+                        p1PlusFrames = p1PlusFrames + 3;
+                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                    }
+                }
             }
         }
         else if (card.cardName == "YOU SCARED, BUD?!")
         {
             //replace this with "if opponent.card = a block, you're +5, if they played a dodge you're +9"
-            if (p2.isBlockingHigh == true || p2.isBlockingLow == true || p2.isDodging == true)
+            if (p2.isBlockingHigh == true || p2.isBlockingLow == true)
             {
                 p1PlusFrames = p1PlusFrames + 5;
+                p1PlusFramesText.text = "+" + p1PlusFrames;
+            }
+            else if (p2.isDodging == true)
+            {
+                p1PlusFrames = p1PlusFrames + 9;
                 p1PlusFramesText.text = "+" + p1PlusFrames;
             }
          
