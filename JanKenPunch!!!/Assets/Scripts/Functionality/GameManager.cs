@@ -324,6 +324,17 @@ public class GameManager : MonoBehaviour
                 p1EnergyText.text = "" + p1Energy;
                 return;
             }
+            if(p1.character.cardName == "Zyla" && (p2.isBlockingLow == true && card.guard == "High") || (p2.isBlockingHigh == true && card.guard == "Low"))
+            {
+                Debug.Log("Get Mixed!");
+                p2Health = p2Health - card.damage;
+                p2HealthText.text = "" + p2Health;
+                p1PlusFrames = p1PlusFrames + card.onHit + 1;
+                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p1.isPushing = true;
+                p1.Move(1);
+                return;
+            }
             Debug.Log("Hit!");
             p2Health = p2Health - card.damage;
             p2HealthText.text = "" + p2Health;
