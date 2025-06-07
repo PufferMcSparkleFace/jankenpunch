@@ -18,6 +18,8 @@ public class DisplayCharacterCard : MonoBehaviour
     public Image image;
     public Image cardBack;
 
+    public Player player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,7 @@ public class DisplayCharacterCard : MonoBehaviour
         secondAbilityText.text = character.secondAbility;
         image.sprite = character.image;
         cardBack.sprite = character.cardBack;
+        player.character = character;
     }
 
 }

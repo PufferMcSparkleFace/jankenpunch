@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class Player : MonoBehaviour
     public int unitsActual;
     public GameManager gameManager;
     public Player opponent;
+    public CharacterCards character;
+
+    public Button abilityOneButton, abilityTwoButton;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +43,19 @@ public class Player : MonoBehaviour
         else
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        if (gameManager.p1PlusFrames == 0)
+        {
+            abilityOneButton.gameObject.SetActive(false);
+            abilityTwoButton.gameObject.SetActive(false);
+        }
+        if (gameManager.p1PlusFrames >= 1)
+        {
+            abilityOneButton.gameObject.SetActive(true);
+        }
+        if (gameManager.p1PlusFrames >= 3)
+        {
+            abilityTwoButton.gameObject.SetActive(true);
         }
     }
 
@@ -113,5 +130,58 @@ public class Player : MonoBehaviour
             }
         }
 
+    }
+
+    public void AbilityOne()
+    {
+        if(gameManager.discarding == true)
+        {
+            return;
+        }
+        gameManager.p1PlusFrames--;
+        gameManager.p1PlusFramesText.text = "+" + gameManager.p1PlusFrames;
+        if(gameManager.p1PlusFrames == 0)
+        {
+            gameManager.p1PlusFramesText.text = "";
+        }
+        if(character.cardName == "Zyla")
+        {
+            Debug.Log("Zyla +1");
+            Move(1);
+        }
+        if (character.cardName == "Taibo")
+        {
+            Debug.Log("Taibo +1");
+            gameManager.discarding = true;
+        }
+        if (character.cardName == "Rynox")
+        {
+            Debug.Log("Rynox +1");
+            gameManager.p1Energy++;
+            gameManager.p1EnergyText.text = "" + gameManager.p1Energy;
+        }
+    }
+
+    public void AbilityTwo()
+    {
+        gameManager.p1PlusFrames = gameManager.p1PlusFrames -3;
+        gameManager.p1PlusFramesText.text = "" + gameManager.p1PlusFrames;
+        if (gameManager.p1PlusFrames == 0)
+        {
+            gameManager.p1PlusFramesText.text = "";
+        }
+
+        if (character.cardName == "Zyla")
+        {
+            Debug.Log("Zyla +3");
+        }
+        if (character.cardName == "Taibo")
+        {
+            Debug.Log("Taibo +3");
+        }
+        if (character.cardName == "Rynox")
+        {
+            Debug.Log("Rynox +3");
+        }
     }
 }

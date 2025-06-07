@@ -17,6 +17,6 @@ MonoBehaviour:
   image: {fileID: 0}
   passiveAbility: "Strikes that beat the opponent\u2019s block get +1/+0/+0."
   firstAbility: Move forward 1 space.
-  secondAbilityCost: 2
-  secondAbility: For the next 3 interactions, your strikes deal 2 more damage and
+  secondAbilityCost: 3
+  secondAbility: For the next 5 interactions, your strikes deal 2 more damage and
     get +0/+1/+0.

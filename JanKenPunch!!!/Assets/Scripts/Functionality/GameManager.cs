@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text p2PlusFramesText;
     public Player p1, p2;
     public int distance = 4;
+    public bool discarding;
 
     // Start is called before the first frame update
     void Start()
@@ -85,26 +86,31 @@ public class GameManager : MonoBehaviour
         {
             p1.isBlockingHigh = true;
             Debug.Log("Blocking High");
+            //if opponent played dodge, you're +3. if you're rynox, you're +4
         }
         else if (card.cardName == "Block Low")
         {
             p1.isBlockingLow = true;
             Debug.Log("Blocking Low");
+            //if opponent played dodge, you're +3. if you're rynox, you're +4
         }
         else if (card.cardName == "Dodge")
         {
             p1.isDodging = true;
             Debug.Log("Dodging");
+            //if opponent played dodge, you're +3. if you're rynox, you're +4
         }
         else if (card.cardName == "Dash Forward")
         {
             p1.isMoving = true;
             p1.Move(1);
+            //if opponent played dodge, you're +3. if you're rynox, you're +4
         }
         else if (card.cardName == "Dash Back")
         {
             p1.isMoving = true;
             p1.Move(-1);
+            //if opponent played dodge, you're +3. if you're rynox, you're +4
         }
         else if (card.cardName == "Dash Attack")
         {
@@ -126,6 +132,7 @@ public class GameManager : MonoBehaviour
             p1.isBlockingHigh = true;
             p1.isPushing = true;
             p1.Move(2);
+            //if opponent played dodge, you're +3. if you're rynox, you're +4
         }
         else if (card.cardName == "Warp")
         {
@@ -147,14 +154,16 @@ public class GameManager : MonoBehaviour
                 }
 
                 p1.Move(-3);
+                //if opponent played dodge, you're +3. if you're rynox, you're +4
             }
         }
         else if (card.cardName == "YOU SCARED, BUD?!")
         {
+            //replace this with "if opponent.card = a block, you're +5, if they played a dodge you're +9"
             if (p2.isBlockingHigh == true || p2.isBlockingLow == true || p2.isDodging == true)
             {
-                p1PlusFrames = 5;
-                p1PlusFramesText.text = "+5";
+                p1PlusFrames = p1PlusFrames + 5;
+                p1PlusFramesText.text = "+" + p1PlusFrames;
             }
          
         }
@@ -163,7 +172,7 @@ public class GameManager : MonoBehaviour
             if (card.range < distance || p2.isDodging == true)
             {
                 Debug.Log("Whiff!");
-                p2PlusFrames = Mathf.Abs(card.onWhiff);
+                p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onWhiff);
                 p2PlusFramesText.text = "+" + p2PlusFrames;
             }
             else
@@ -171,7 +180,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Hit!");
                 p2Health = p2Health - card.damage;
                 p2HealthText.text = "" + p2Health;
-                p1PlusFrames = card.onHit;
+                p1PlusFrames = p1PlusFrames + card.onHit;
                 p1PlusFramesText.text = "+" + p1PlusFrames;
                 p2Energy = p2Energy - card.cost;
                 if (p2Energy < 0)
@@ -203,7 +212,7 @@ public class GameManager : MonoBehaviour
         if (card.range < distance || p2.isDodging == true)
         {
             Debug.Log("Whiff!");
-            p2PlusFrames = Mathf.Abs(card.onWhiff);
+            p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onWhiff);
             p2PlusFramesText.text = "+" + p2PlusFrames;
         }
         if (card.range >= distance)
@@ -211,7 +220,7 @@ public class GameManager : MonoBehaviour
             if (p2.isBlockingHigh == true && (card.guard == "High" || card.guard == "Mid"))
             {
                 Debug.Log("Blocked!");
-                p2PlusFrames = Mathf.Abs(card.onBlock);
+                p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
                 p2PlusFramesText.text = "+" + p2PlusFrames;
                 p1Energy = p1Energy + card.cost;
                 p1EnergyText.text = "" + p1Energy;
@@ -220,7 +229,7 @@ public class GameManager : MonoBehaviour
             if (p2.isBlockingLow == true && (card.guard == "Low" || card.guard == "Mid"))
             {
                 Debug.Log("Blocked!");
-                p2PlusFrames = Mathf.Abs(card.onBlock);
+                p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
                 p2PlusFramesText.text = "+" + p2PlusFrames;
                 p1Energy = p1Energy + card.cost;
                 p1EnergyText.text = "" + p1Energy;
@@ -229,7 +238,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Hit!");
             p2Health = p2Health - card.damage;
             p2HealthText.text = "" + p2Health;
-            p1PlusFrames = card.onHit;
+            p1PlusFrames = p1PlusFrames + card.onHit;
             p1PlusFramesText.text = "+" + p1PlusFrames;
             p1.isPushing = true;
             p1.Move(1);
@@ -247,7 +256,7 @@ public class GameManager : MonoBehaviour
         if(card.range < distance || p2.isDodging == true)
         {
             Debug.Log("Whiff!");
-            p2PlusFrames = Mathf.Abs(card.onWhiff);
+            p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onWhiff);
             p2PlusFramesText.text = "+" + p2PlusFrames;
         }
         else
@@ -255,7 +264,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Hit!");
             p2Health = p2Health - card.damage;
             p2HealthText.text = "" + p2Health;
-            p1PlusFrames = card.onHit;
+            p1PlusFrames = p1PlusFrames + card.onHit;
             p1PlusFramesText.text = "+" + p1PlusFrames;
             if(card.cardName == "Grab")
             {
@@ -282,7 +291,7 @@ public class GameManager : MonoBehaviour
         if (card.range < distance || p2.isDodging == true)
         {
             Debug.Log("Whiff!");
-            p2PlusFrames = Mathf.Abs(card.onWhiff);
+            p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onWhiff);
             p2PlusFramesText.text = "+" + p2PlusFrames;
         }
         if(card.range >= distance)
@@ -290,21 +299,21 @@ public class GameManager : MonoBehaviour
             if(p2.isBlockingHigh == true && (card.guard == "High" || card.guard == "Mid"))
             {
                 Debug.Log("Blocked!");
-                p2PlusFrames = Mathf.Abs(card.onBlock);
+                p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
                 p2PlusFramesText.text = "+" + p2PlusFrames;
                 return;
             }
             if(p2.isBlockingLow == true && (card.guard == "Low" || card.guard == "Mid"))
             {
                 Debug.Log("Blocked!");
-                p2PlusFrames = Mathf.Abs(card.onBlock);
+                p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
                 p2PlusFramesText.text = "+" + p2PlusFrames;
                 return;
             }
             Debug.Log("Hit!");
             p2Health = p2Health - card.damage;
             p2HealthText.text = "" + p2Health;
-            p1PlusFrames = card.onHit;
+            p1PlusFrames = p1PlusFrames + card.onHit;
             p1PlusFramesText.text = "+" + p1PlusFrames;
             p2Energy = p2Energy - card.cost;
             if(p2Energy < 0)
@@ -385,7 +394,25 @@ public class GameManager : MonoBehaviour
 
     public void LockIn()
     {
-
+        if (discarding == true)
+        { 
+            if(card.type == "Basic Defense" || card.type == "Basic Movement")
+            {
+                playedCard.transform.SetParent(hand);
+                playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
+                playedCard = null;
+                lockInButton.SetActive(false);
+                return;
+            }
+            DisplayCard discardingCard = playedCard.GetComponent<DisplayCard>();
+            discardingCard.card = null;
+            playedCard.transform.SetParent(hand);
+            playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
+            playedCard = null;
+            lockInButton.SetActive(false);
+            discarding = false;
+            return;
+        }
         //calculates actual cost of the card with plus frames factored in
         finalCardCost = card.cost - p1PlusFrames;
 
