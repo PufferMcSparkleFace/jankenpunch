@@ -254,6 +254,10 @@ public class GameManager : MonoBehaviour
         }
         else if(card.cardName == "Force Choke")
         {
+            if (p1.forceBreak > 0)
+            {
+                card.range++;
+            }
             if (card.range < distance || p2.isDodging == true)
             {
                 Debug.Log("Whiff!");
@@ -262,9 +266,17 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                if(p1.forceBreak > 0)
+                {
+                    p2Health = p2Health - (card.damage + 1);
+                    p2HealthText.text = "" + p2Health;
+                }
+                else
+                {
+                    p2Health = p2Health - card.damage;
+                    p2HealthText.text = "" + p2Health;
+                }
                 Debug.Log("Hit!");
-                p2Health = p2Health - card.damage;
-                p2HealthText.text = "" + p2Health;
                 p1PlusFrames = p1PlusFrames + card.onHit;
                 p1PlusFramesText.text = "+" + p1PlusFrames;
                 p2Energy = p2Energy - card.cost;
@@ -273,7 +285,15 @@ public class GameManager : MonoBehaviour
                     p2Energy = 0;
                 }
                 p2EnergyText.text = "" + p2Energy;
-                p2.Move(-1);
+                if(p1.forceBreak > 0)
+                {
+                    p2.Move(-2);
+                }
+                else
+                {
+                    p2.Move(-1);
+                }
+
             }
         }
         else if (card.subtype == "Strike")
@@ -483,6 +503,10 @@ public class GameManager : MonoBehaviour
 
     public void Projectile()
     {
+        if(p1.forceBreak > 0)
+        {
+            card.range++;
+        }
         if (card.range < distance || p2.isDodging == true)
         {
             Debug.Log("Whiff!");
@@ -505,12 +529,24 @@ public class GameManager : MonoBehaviour
                 p2PlusFramesText.text = "+" + p2PlusFrames;
                 return;
             }
-            Debug.Log("Hit!");
-            p2Health = p2Health - card.damage;
-            p2HealthText.text = "" + p2Health;
-            p1PlusFrames = p1PlusFrames + card.onHit;
-            p1PlusFramesText.text = "+" + p1PlusFrames;
-            p2Energy = p2Energy - card.cost;
+            if(p1.forceBreak > 0)
+            {
+                Debug.Log("Hit!");
+                p2Health = p2Health - (card.damage +1);
+                p2HealthText.text = "" + p2Health;
+                p1PlusFrames = p1PlusFrames + card.onHit;
+                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p2Energy = p2Energy - card.cost;
+            }
+            else
+            {
+                Debug.Log("Hit!");
+                p2Health = p2Health - card.damage;
+                p2HealthText.text = "" + p2Health;
+                p1PlusFrames = p1PlusFrames + card.onHit;
+                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p2Energy = p2Energy - card.cost;
+            }
             if(p2Energy < 0)
             {
                 p2Energy = 0;
@@ -518,7 +554,15 @@ public class GameManager : MonoBehaviour
             p2EnergyText.text = "" + p2Energy;
             if(p1.character.cardName == "Taibo")
             {
-                p2.Move(-1);
+                if(p1.forceBreak > 0)
+                {
+                    p2.Move(-2);
+                }
+                else
+                {
+                    p2.Move(-1);
+                }
+                
             }
         }
     }
@@ -539,6 +583,8 @@ public class GameManager : MonoBehaviour
         p2.isPushing = false;
         p1.dragonInstall--;
         p2.dragonInstall--;
+        p1.forceBreak--;
+        p2.forceBreak--;
         Debug.Log("Return to Neutral");
 
 

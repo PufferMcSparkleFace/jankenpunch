@@ -71,6 +71,10 @@ public class Player : MonoBehaviour
         {
             installText.text = "Dragon Install: " + dragonInstall;
         }
+        if (forceBreak > 0)
+        {
+            installText.text = "Force Break: " + forceBreak;
+        }
     }
 
     public void Move(int units)
@@ -192,11 +196,11 @@ public class Player : MonoBehaviour
         if (character.cardName == "Zyla")
         {
             dragonInstall = 5;
-            installText.text = "Dragon Install: 5";
             Debug.Log("Zyla +3");
         }
         if (character.cardName == "Taibo")
         {
+            forceBreak = 5;
             Debug.Log("Taibo +3");
         }
         if (character.cardName == "Rynox")
