@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class Player : MonoBehaviour
     public GameManager gameManager;
     public Player opponent;
     public CharacterCards character;
+    public TMP_Text installText;
+    public int dragonInstall = 0;
+    public int forceBreak = 0;
+    public bool empowered = false;
 
     public Button abilityOneButton, abilityTwoButton;
 
@@ -30,6 +35,7 @@ public class Player : MonoBehaviour
             this.transform.position = stagePositions[6].transform.position;
             position = 7;
         }
+        installText.text = "";
     }
 
     // Update is called once per frame
@@ -56,6 +62,10 @@ public class Player : MonoBehaviour
         if (gameManager.p1PlusFrames >= 3)
         {
             abilityTwoButton.gameObject.SetActive(true);
+        }
+        if (empowered == false && dragonInstall == 0 && forceBreak == 0)
+        {
+            installText.text = "";
         }
     }
 
@@ -164,6 +174,10 @@ public class Player : MonoBehaviour
 
     public void AbilityTwo()
     {
+        if(dragonInstall > 0 || forceBreak > 0 || empowered == true)
+        {
+            return;
+        }
         gameManager.p1PlusFrames = gameManager.p1PlusFrames -3;
         gameManager.p1PlusFramesText.text = "" + gameManager.p1PlusFrames;
         if (gameManager.p1PlusFrames == 0)
@@ -181,6 +195,8 @@ public class Player : MonoBehaviour
         }
         if (character.cardName == "Rynox")
         {
+            empowered = true;
+            installText.text = "Empowered";
             Debug.Log("Rynox +3");
         }
     }

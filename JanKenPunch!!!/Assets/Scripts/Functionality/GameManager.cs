@@ -361,11 +361,23 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Hit!");
-            p2Health = p2Health - card.damage;
-            p2HealthText.text = "" + p2Health;
-            p1PlusFrames = p1PlusFrames + card.onHit;
-            p1PlusFramesText.text = "+" + p1PlusFrames;
+            if(p1.empowered == true)
+            {
+                Debug.Log("Empowered Hit!");
+                p2Health = p2Health - (card.damage * 3);
+                p2HealthText.text = "" + p2Health;
+                p1PlusFrames = p1PlusFrames + card.onHit + 2;
+                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p1.empowered = false;
+            }
+            else
+            {
+                Debug.Log("Hit!");
+                p2Health = p2Health - card.damage;
+                p2HealthText.text = "" + p2Health;
+                p1PlusFrames = p1PlusFrames + card.onHit;
+                p1PlusFramesText.text = "+" + p1PlusFrames;
+            }
             if(card.cardName == "Grab")
             {
                 if(p1.flipCheck < 0)
