@@ -421,7 +421,10 @@ public class GameManager : MonoBehaviour
                 p2Energy = 0;
             }
             p2EnergyText.text = "" + p2Energy;
-            p2.Move(-1);
+            if(p1.character.cardName == "Taibo")
+            {
+                p2.Move(-1);
+            }
         }
     }
 
