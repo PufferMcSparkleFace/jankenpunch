@@ -587,6 +587,15 @@ public class GameManager : MonoBehaviour
         p2.forceBreak--;
         Debug.Log("Return to Neutral");
 
+        if(p1Health <= 0)
+        {
+            Debug.Log("Player 2 Wins");
+        }
+        if(p2Health <= 0)
+        {
+            Debug.Log("Player 1 Wins");
+        }
+
 
         //if both players run out of energy, move on to the next round
         if (p1Energy == 0 && p2Energy == 0)

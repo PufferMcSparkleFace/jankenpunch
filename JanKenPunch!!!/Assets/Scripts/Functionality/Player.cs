@@ -63,6 +63,10 @@ public class Player : MonoBehaviour
         {
             abilityTwoButton.gameObject.SetActive(true);
         }
+        if(empowered == true || dragonInstall > 0 || forceBreak > 0)
+        {
+            abilityTwoButton.gameObject.SetActive(false);
+        }
         if (empowered == false && dragonInstall <= 0 && forceBreak <= 0)
         {
             installText.text = "";
