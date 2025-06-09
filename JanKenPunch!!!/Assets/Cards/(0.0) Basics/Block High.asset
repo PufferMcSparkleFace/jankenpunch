@@ -15,8 +15,8 @@ MonoBehaviour:
   id: 0.1
   cardName: Block High
   cost: 1
-  image: {fileID: 21300000, guid: a70bedba4b1d54d479d1c4d71d0235fa, type: 3}
-  cardBack: {fileID: 21300000, guid: 84f2d41ece1c3a346acf63cd8e901600, type: 3}
+  image: {fileID: 21300000, guid: bddeb7242dfefbd49a20883a50d15c22, type: 3}
+  cardBack: {fileID: 21300000, guid: 31dcdb6ddd2318741bf0536b1e1dc6c6, type: 3}
   type: Basic Defense
   subtype: 
   range: 0

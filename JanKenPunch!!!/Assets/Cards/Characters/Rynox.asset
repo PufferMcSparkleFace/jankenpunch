@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardBack: {fileID: 21300000, guid: 9ab3493ebb7f56b47b57a9f80c605614, type: 3}
   cardName: Rynox
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 1d8413dfef4a4574eaffa5c528f32e5c, type: 3}
   passiveAbility: When your opponent plays Dodge, if you did not play an attack,
     you get 1 extra plus frame.
   firstAbility: Gain 1 energy.
