@@ -17,23 +17,11 @@ public class GameManager : MonoBehaviour
 
     public Draw deck;
 
-    public int p1Health;
-    public int p1Energy;
-    public int p1PlusFrames;
-    public int p2Health;
-    public int p2Energy;
-    public int p2PlusFrames;
     public int finalCardCost;
     public int timer;
     public int spacesBehindP1;
     public int spacesBehindP2;
     public TMP_Text timerText;
-    public TMP_Text p1HealthText;
-    public TMP_Text p1EnergyText;
-    public TMP_Text p1PlusFramesText;
-    public TMP_Text p2HealthText;
-    public TMP_Text p2EnergyText;
-    public TMP_Text p2PlusFramesText;
     public Player p1, p2;
     public int distance = 4;
     public bool discarding;
@@ -42,12 +30,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         timer = 10;
-        p1HealthText.text = p1Health.ToString();
-        p1EnergyText.text = p1Energy.ToString();
-        p2HealthText.text = p2Health.ToString();
-        p2EnergyText.text = p2Energy.ToString();
-        p1PlusFramesText.text = "";
-        p2PlusFramesText.text = "";
+        p1.healthText.text = p1.health.ToString();
+        p1.energyText.text = p1.energy.ToString();
+        p2.healthText.text = p2.health.ToString();
+        p2.energyText.text = p2.energy.ToString();
+        p1.plusFramesText.text = "";
+        p2.plusFramesText.text = "";
 
         hand = GameObject.FindGameObjectWithTag("Hand").transform;
     }
@@ -72,13 +60,13 @@ public class GameManager : MonoBehaviour
                 card = playedCard.GetComponent<DisplayCard>().card;
             }
 
-        if(p1PlusFrames == 0)
+        if(p1.plusFrames == 0)
         {
-            p1PlusFramesText.text = "";
+            p1.plusFramesText.text = "";
         }
-        if (p2PlusFrames == 0)
+        if (p2.plusFrames == 0)
         {
-            p2PlusFramesText.text = "";
+            p2.plusFramesText.text = "";
         }
 
     }
@@ -99,13 +87,13 @@ public class GameManager : MonoBehaviour
             {
                 if(p1.character.cardName == "Rynox")
                 {
-                    p1PlusFrames = p1PlusFrames + 4;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.plusFrames = p1.plusFrames + 4;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                 }
                 else
                 {
-                    p1PlusFrames = p1PlusFrames + 3;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.plusFrames = p1.plusFrames + 3;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                 }
             }
         }
@@ -117,13 +105,13 @@ public class GameManager : MonoBehaviour
             {
                 if (p1.character.cardName == "Rynox")
                 {
-                    p1PlusFrames = p1PlusFrames + 4;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.plusFrames = p1.plusFrames + 4;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                 }
                 else
                 {
-                    p1PlusFrames = p1PlusFrames + 3;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.plusFrames = p1.plusFrames + 3;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                 }
             }
         }
@@ -140,13 +128,13 @@ public class GameManager : MonoBehaviour
             {
                 if (p1.character.cardName == "Rynox")
                 {
-                    p1PlusFrames = p1PlusFrames + 4;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.plusFrames = p1.plusFrames + 4;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                 }
                 else
                 {
-                    p1PlusFrames = p1PlusFrames + 3;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.plusFrames = p1.plusFrames + 3;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                 }
             }
         }
@@ -158,13 +146,13 @@ public class GameManager : MonoBehaviour
             {
                 if (p1.character.cardName == "Rynox")
                 {
-                    p1PlusFrames = p1PlusFrames + 4;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.plusFrames = p1.plusFrames + 4;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                 }
                 else
                 {
-                    p1PlusFrames = p1PlusFrames + 3;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.plusFrames = p1.plusFrames + 3;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                 }
             }
         }
@@ -192,13 +180,13 @@ public class GameManager : MonoBehaviour
             {
                 if (p1.character.cardName == "Rynox")
                 {
-                    p1PlusFrames = p1PlusFrames + 4;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.plusFrames = p1.plusFrames + 4;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                 }
                 else
                 {
-                    p1PlusFrames = p1PlusFrames + 3;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p1.plusFrames = p1.plusFrames + 3;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                 }
             }
         }
@@ -226,13 +214,13 @@ public class GameManager : MonoBehaviour
                 {
                     if (p1.character.cardName == "Rynox")
                     {
-                        p1PlusFrames = p1PlusFrames + 4;
-                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                        p1.plusFrames = p1.plusFrames + 4;
+                        p1.plusFramesText.text = "+" + p1.plusFrames;
                     }
                     else
                     {
-                        p1PlusFrames = p1PlusFrames + 3;
-                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                        p1.plusFrames = p1.plusFrames + 3;
+                        p1.plusFramesText.text = "+" + p1.plusFrames;
                     }
                 }
             }
@@ -242,13 +230,13 @@ public class GameManager : MonoBehaviour
             //replace this with "if opponent.card = a block, you're +5, if they played a dodge you're +9"
             if (p2.isBlockingHigh == true || p2.isBlockingLow == true)
             {
-                p1PlusFrames = p1PlusFrames + 5;
-                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p1.plusFrames = p1.plusFrames + 5;
+                p1.plusFramesText.text = "+" + p1.plusFrames;
             }
             else if (p2.isDodging == true)
             {
-                p1PlusFrames = p1PlusFrames + 9;
-                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p1.plusFrames = p1.plusFrames + 9;
+                p1.plusFramesText.text = "+" + p1.plusFrames;
             }
          
         }
@@ -261,30 +249,30 @@ public class GameManager : MonoBehaviour
             if (card.range < distance || p2.isDodging == true)
             {
                 Debug.Log("Whiff!");
-                p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onWhiff);
-                p2PlusFramesText.text = "+" + p2PlusFrames;
+                p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onWhiff);
+                p2.plusFramesText.text = "+" + p2.plusFrames;
             }
             else
             {
                 if(p1.forceBreak > 0)
                 {
-                    p2Health = p2Health - (card.damage + 1);
-                    p2HealthText.text = "" + p2Health;
+                    p2.health = p2.health - (card.damage + 1);
+                    p2.healthText.text = "" + p2.health;
                 }
                 else
                 {
-                    p2Health = p2Health - card.damage;
-                    p2HealthText.text = "" + p2Health;
+                    p2.health = p2.health - card.damage;
+                    p2.healthText.text = "" + p2.health;
                 }
                 Debug.Log("Hit!");
-                p1PlusFrames = p1PlusFrames + card.onHit;
-                p1PlusFramesText.text = "+" + p1PlusFrames;
-                p2Energy = p2Energy - card.cost;
-                if (p2Energy < 0)
+                p1.plusFrames = p1.plusFrames + card.onHit;
+                p1.plusFramesText.text = "+" + p1.plusFrames;
+                p2.energy = p2.energy - card.cost;
+                if (p2.energy < 0)
                 {
-                    p2Energy = 0;
+                    p2.energy = 0;
                 }
-                p2EnergyText.text = "" + p2Energy;
+                p2.energyText.text = "" + p2.energy;
                 if(p1.forceBreak > 0)
                 {
                     p2.Move(-2);
@@ -317,8 +305,8 @@ public class GameManager : MonoBehaviour
         if (card.range < distance || p2.isDodging == true)
         {
             Debug.Log("Whiff!");
-            p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onWhiff);
-            p2PlusFramesText.text = "+" + p2PlusFrames;
+            p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onWhiff);
+            p2.plusFramesText.text = "+" + p2.plusFrames;
         }
         if (card.range >= distance)
         {
@@ -329,16 +317,16 @@ public class GameManager : MonoBehaviour
                     Debug.Log("Blocked!");
                     if(card.onBlock +1 >= 0)
                     {
-                        p1PlusFrames = p1PlusFrames + Mathf.Abs(card.onBlock + 1);
-                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                        p1.plusFrames = p1.plusFrames + Mathf.Abs(card.onBlock + 1);
+                        p1.plusFramesText.text = "+" + p1.plusFrames;
                     }
                     else
                     {
-                        p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock + 1);
-                        p2PlusFramesText.text = "+" + p2PlusFrames;
+                        p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onBlock + 1);
+                        p2.plusFramesText.text = "+" + p2.plusFrames;
                     }
-                    p1Energy = p1Energy + card.cost;
-                    p1EnergyText.text = "" + p1Energy;
+                    p1.energy = p1.energy + card.cost;
+                    p1.energyText.text = "" + p1.energy;
                     return;
                 }
                 else
@@ -346,16 +334,16 @@ public class GameManager : MonoBehaviour
                     Debug.Log("Blocked!");
                     if (card.onBlock >= 0)
                     {
-                        p1PlusFrames = p1PlusFrames + Mathf.Abs(card.onBlock);
-                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                        p1.plusFrames = p1.plusFrames + Mathf.Abs(card.onBlock);
+                        p1.plusFramesText.text = "+" + p1.plusFrames;
                     }
                     else
                     {
-                        p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
-                        p2PlusFramesText.text = "+" + p2PlusFrames;
+                        p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onBlock);
+                        p2.plusFramesText.text = "+" + p2.plusFrames;
                     }
-                    p1Energy = p1Energy + card.cost;
-                    p1EnergyText.text = "" + p1Energy;
+                    p1.energy = p1.energy + card.cost;
+                    p1.energyText.text = "" + p1.energy;
                     return;
                 }
                
@@ -366,17 +354,17 @@ public class GameManager : MonoBehaviour
                 {
                     if (card.onBlock + 1 >= 0)
                     {
-                        p1PlusFrames = p1PlusFrames + Mathf.Abs(card.onBlock + 1);
-                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                        p1.plusFrames = p1.plusFrames + Mathf.Abs(card.onBlock + 1);
+                        p1.plusFramesText.text = "+" + p1.plusFrames;
                     }
                     else
                     {
-                        p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock + 1);
-                        p2PlusFramesText.text = "+" + p2PlusFrames;
+                        p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onBlock + 1);
+                        p2.plusFramesText.text = "+" + p2.plusFrames;
                     }
                     Debug.Log("Blocked!");
-                    p1Energy = p1Energy + card.cost;
-                    p1EnergyText.text = "" + p1Energy;
+                    p1.energy = p1.energy + card.cost;
+                    p1.energyText.text = "" + p1.energy;
                     return;
                 }
                 else
@@ -384,16 +372,16 @@ public class GameManager : MonoBehaviour
                     Debug.Log("Blocked!");
                     if (card.onBlock >= 0)
                     {
-                        p1PlusFrames = p1PlusFrames + Mathf.Abs(card.onBlock);
-                        p1PlusFramesText.text = "+" + p1PlusFrames;
+                        p1.plusFrames = p1.plusFrames + Mathf.Abs(card.onBlock);
+                        p1.plusFramesText.text = "+" + p1.plusFrames;
                     }
                     else
                     {
-                        p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
-                        p2PlusFramesText.text = "+" + p2PlusFrames;
+                        p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onBlock);
+                        p2.plusFramesText.text = "+" + p2.plusFrames;
                     }
-                    p1Energy = p1Energy + card.cost;
-                    p1EnergyText.text = "" + p1Energy;
+                    p1.energy = p1.energy + card.cost;
+                    p1.energyText.text = "" + p1.energy;
                     return;
                 }
                 
@@ -403,10 +391,10 @@ public class GameManager : MonoBehaviour
                 if (p1.dragonInstall > 0)
                 {
                     Debug.Log("Get Mixed!");
-                    p2Health = p2Health - (card.damage + 2);
-                    p2HealthText.text = "" + p2Health;
-                    p1PlusFrames = p1PlusFrames + card.onHit + 1;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p2.health = p2.health - (card.damage + 2);
+                    p2.healthText.text = "" + p2.health;
+                    p1.plusFrames = p1.plusFrames + card.onHit + 1;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                     p1.isPushing = true;
                     p1.Move(1);
                     return;
@@ -414,10 +402,10 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Get Mixed!");
-                    p2Health = p2Health - card.damage;
-                    p2HealthText.text = "" + p2Health;
-                    p1PlusFrames = p1PlusFrames + card.onHit + 1;
-                    p1PlusFramesText.text = "+" + p1PlusFrames;
+                    p2.health = p2.health - card.damage;
+                    p2.healthText.text = "" + p2.health;
+                    p1.plusFrames = p1.plusFrames + card.onHit + 1;
+                    p1.plusFramesText.text = "+" + p1.plusFrames;
                     p1.isPushing = true;
                     p1.Move(1);
                     return;
@@ -427,20 +415,20 @@ public class GameManager : MonoBehaviour
             if(p1.dragonInstall > 0)
             {
                 Debug.Log("Hit!");
-                p2Health = p2Health - (card.damage + 2);
-                p2HealthText.text = "" + p2Health;
-                p1PlusFrames = p1PlusFrames + card.onHit;
-                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p2.health = p2.health - (card.damage + 2);
+                p2.healthText.text = "" + p2.health;
+                p1.plusFrames = p1.plusFrames + card.onHit;
+                p1.plusFramesText.text = "+" + p1.plusFrames;
                 p1.isPushing = true;
                 p1.Move(1);
             }
             else
             {
                 Debug.Log("Hit!");
-                p2Health = p2Health - card.damage;
-                p2HealthText.text = "" + p2Health;
-                p1PlusFrames = p1PlusFrames + card.onHit;
-                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p2.health = p2.health - card.damage;
+                p2.healthText.text = "" + p2.health;
+                p1.plusFrames = p1.plusFrames + card.onHit;
+                p1.plusFramesText.text = "+" + p1.plusFrames;
                 p1.isPushing = true;
                 p1.Move(1);
             }
@@ -459,27 +447,27 @@ public class GameManager : MonoBehaviour
         if(card.range < distance || p2.isDodging == true)
         {
             Debug.Log("Whiff!");
-            p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onWhiff);
-            p2PlusFramesText.text = "+" + p2PlusFrames;
+            p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onWhiff);
+            p2.plusFramesText.text = "+" + p2.plusFrames;
         }
         else
         {
             if(p1.empowered == true)
             {
                 Debug.Log("Empowered Hit!");
-                p2Health = p2Health - (card.damage * 3);
-                p2HealthText.text = "" + p2Health;
-                p1PlusFrames = p1PlusFrames + card.onHit + 2;
-                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p2.health = p2.health - (card.damage * 3);
+                p2.healthText.text = "" + p2.health;
+                p1.plusFrames = p1.plusFrames + card.onHit + 2;
+                p1.plusFramesText.text = "+" + p1.plusFrames;
                 p1.empowered = false;
             }
             else
             {
                 Debug.Log("Hit!");
-                p2Health = p2Health - card.damage;
-                p2HealthText.text = "" + p2Health;
-                p1PlusFrames = p1PlusFrames + card.onHit;
-                p1PlusFramesText.text = "+" + p1PlusFrames;
+                p2.health = p2.health - card.damage;
+                p2.healthText.text = "" + p2.health;
+                p1.plusFrames = p1.plusFrames + card.onHit;
+                p1.plusFramesText.text = "+" + p1.plusFrames;
             }
             if(card.cardName == "Grab")
             {
@@ -510,48 +498,48 @@ public class GameManager : MonoBehaviour
         if (card.range < distance || p2.isDodging == true)
         {
             Debug.Log("Whiff!");
-            p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onWhiff);
-            p2PlusFramesText.text = "+" + p2PlusFrames;
+            p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onWhiff);
+            p2.plusFramesText.text = "+" + p2.plusFrames;
         }
         if(card.range >= distance)
         {
             if(p2.isBlockingHigh == true && (card.guard == "High" || card.guard == "Mid"))
             {
                 Debug.Log("Blocked!");
-                p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
-                p2PlusFramesText.text = "+" + p2PlusFrames;
+                p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onBlock);
+                p2.plusFramesText.text = "+" + p2.plusFrames;
                 return;
             }
             if(p2.isBlockingLow == true && (card.guard == "Low" || card.guard == "Mid"))
             {
                 Debug.Log("Blocked!");
-                p2PlusFrames = p2PlusFrames + Mathf.Abs(card.onBlock);
-                p2PlusFramesText.text = "+" + p2PlusFrames;
+                p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onBlock);
+                p2.plusFramesText.text = "+" + p2.plusFrames;
                 return;
             }
             if(p1.forceBreak > 0)
             {
                 Debug.Log("Hit!");
-                p2Health = p2Health - (card.damage +1);
-                p2HealthText.text = "" + p2Health;
-                p1PlusFrames = p1PlusFrames + card.onHit;
-                p1PlusFramesText.text = "+" + p1PlusFrames;
-                p2Energy = p2Energy - card.cost;
+                p2.health = p2.health - (card.damage +1);
+                p2.healthText.text = "" + p2.health;
+                p1.plusFrames = p1.plusFrames + card.onHit;
+                p1.plusFramesText.text = "+" + p1.plusFrames;
+                p2.energy = p2.energy - card.cost;
             }
             else
             {
                 Debug.Log("Hit!");
-                p2Health = p2Health - card.damage;
-                p2HealthText.text = "" + p2Health;
-                p1PlusFrames = p1PlusFrames + card.onHit;
-                p1PlusFramesText.text = "+" + p1PlusFrames;
-                p2Energy = p2Energy - card.cost;
+                p2.health = p2.health - card.damage;
+                p2.healthText.text = "" + p2.health;
+                p1.plusFrames = p1.plusFrames + card.onHit;
+                p1.plusFramesText.text = "+" + p1.plusFrames;
+                p2.energy = p2.energy - card.cost;
             }
-            if(p2Energy < 0)
+            if(p2.energy < 0)
             {
-                p2Energy = 0;
+                p2.energy = 0;
             }
-            p2EnergyText.text = "" + p2Energy;
+            p2.energyText.text = "" + p2.energy;
             if(p1.character.cardName == "Taibo")
             {
                 if(p1.forceBreak > 0)
@@ -587,33 +575,33 @@ public class GameManager : MonoBehaviour
         p2.forceBreak--;
         Debug.Log("Return to Neutral");
 
-        if(p1Health <= 0)
+        if(p1.health <= 0)
         {
             Debug.Log("Player 2 Wins");
         }
-        if(p2Health <= 0)
+        if(p2.health <= 0)
         {
             Debug.Log("Player 1 Wins");
         }
 
 
         //if both players run out of energy, move on to the next round
-        if (p1Energy == 0 && p2Energy == 0)
+        if (p1.energy == 0 && p2.energy == 0)
         {
             timer--;
             timerText.text = "" + timer;
             //if the timer gets to 0, game over
             if (timer == 0)
             {
-                if (p1Health > p2Health)
+                if (p1.health > p2.health)
                 {
                     Debug.Log("Player 1 Wins");
                 }
-                else if (p1Health < p2Health)
+                else if (p1.health < p2.health)
                 {
                     Debug.Log("Player 2 Wins");
                 }
-                else if (p1Health == p2Health)
+                else if (p1.health == p2.health)
                 {
                     Debug.Log("Draw");
                 }
@@ -639,10 +627,10 @@ public class GameManager : MonoBehaviour
                 {
                     spacesBehindP2 = 4;
                 }
-                p1Energy = 3 + spacesBehindP1;
-                p1EnergyText.text = "" + p1Energy;
-                p2Energy = 3 + spacesBehindP2;
-                p2EnergyText.text = "" + p2Energy;
+                p1.energy = 3 + spacesBehindP1;
+                p1.energyText.text = "" + p1.energy;
+                p2.energy = 3 + spacesBehindP2;
+                p2.energyText.text = "" + p2.energy;
             }
         }
     }
@@ -669,13 +657,13 @@ public class GameManager : MonoBehaviour
             return;
         }
         //calculates actual cost of the card with plus frames factored in
-        finalCardCost = card.cost - p1PlusFrames;
+        finalCardCost = card.cost - p1.plusFrames;
 
         //sets both players plus frames to 0
-        p1PlusFrames = 0;
-        p2PlusFrames = 0;
-        p1PlusFramesText.text = "";
-        p2PlusFramesText.text = "";
+        p1.plusFrames = 0;
+        p2.plusFrames = 0;
+        p1.plusFramesText.text = "";
+        p2.plusFramesText.text = "";
 
         //makes sure the card doesn't cost a negative number
         if (finalCardCost < 0)
@@ -684,26 +672,26 @@ public class GameManager : MonoBehaviour
         }
 
         //if you have less energy than your opponent or 0 energy, basic cards cost 0
-        if((card.type == "Basic Defense" || card.type == "Basic Movement") && (p1Energy < p2Energy || p1Energy == 0))
+        if((card.type == "Basic Defense" || card.type == "Basic Movement") && (p1.energy < p2.energy || p1.energy == 0))
         {
             Debug.Log("" + card.cardName + " No Cost");
             StartCoroutine("FrameDelay");
         }
         //otherwise, if you can afford the card, play it
-        else if(finalCardCost <= p1Energy)
+        else if(finalCardCost <= p1.energy)
         {
-            p1Energy = p1Energy - finalCardCost;
-            p1EnergyText.text = "" + p1Energy;
+            p1.energy = p1.energy - finalCardCost;
+            p1.energyText.text = "" + p1.energy;
             Debug.Log("" + card.cardName);
             StartCoroutine("FrameDelay");
         }
         //if you can't afford the card, you do nothing, which costs 1 energy if you have more energy than your opponent
-        else if(finalCardCost > p1Energy)
+        else if(finalCardCost > p1.energy)
         {
-            if(p1Energy >= p2Energy)
+            if(p1.energy >= p2.energy)
             {
-                p1Energy--;
-                p1EnergyText.text = "" + p1Energy;
+                p1.energy--;
+                p1.energyText.text = "" + p1.energy;
             }
             Debug.Log("Do Nothing");
         }

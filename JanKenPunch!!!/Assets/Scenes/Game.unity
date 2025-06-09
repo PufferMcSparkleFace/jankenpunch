@@ -4711,6 +4711,12 @@ MonoBehaviour:
   dragonInstall: 0
   forceBreak: 0
   empowered: 0
+  health: 30
+  energy: 5
+  plusFrames: 0
+  healthText: {fileID: 2030163351}
+  energyText: {fileID: 1453486345}
+  plusFramesText: {fileID: 881705959}
   abilityOneButton: {fileID: 872167951}
   abilityTwoButton: {fileID: 2043070839}
 --- !u!1 &452527440
@@ -5236,23 +5242,11 @@ MonoBehaviour:
   turnTimerText: {fileID: 35919525}
   hand: {fileID: 0}
   deck: {fileID: 1785747173}
-  p1Health: 30
-  p1Energy: 5
-  p1PlusFrames: 0
-  p2Health: 30
-  p2Energy: 5
-  p2PlusFrames: 0
   finalCardCost: 0
   timer: 0
   spacesBehindP1: 0
   spacesBehindP2: 0
   timerText: {fileID: 35919525}
-  p1HealthText: {fileID: 806464938}
-  p1EnergyText: {fileID: 200202321}
-  p1PlusFramesText: {fileID: 1971247334}
-  p2HealthText: {fileID: 2030163351}
-  p2EnergyText: {fileID: 1453486345}
-  p2PlusFramesText: {fileID: 881705959}
   p1: {fileID: 2047355261}
   p2: {fileID: 414189305}
   distance: 4
@@ -16461,6 +16455,12 @@ MonoBehaviour:
   dragonInstall: 0
   forceBreak: 0
   empowered: 0
+  health: 30
+  energy: 5
+  plusFrames: 0
+  healthText: {fileID: 806464938}
+  energyText: {fileID: 200202321}
+  plusFramesText: {fileID: 1971247334}
   abilityOneButton: {fileID: 452527442}
   abilityTwoButton: {fileID: 2055026100}
 --- !u!1 &2055026098

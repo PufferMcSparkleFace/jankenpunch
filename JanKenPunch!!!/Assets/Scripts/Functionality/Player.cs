@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     public int forceBreak = 0;
     public bool empowered = false;
 
+    public int health, energy, plusFrames;
+    public TMP_Text healthText, energyText, plusFramesText;
+
     public Button abilityOneButton, abilityTwoButton;
 
     // Start is called before the first frame update
@@ -50,16 +53,16 @@ public class Player : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-        if (gameManager.p1PlusFrames == 0)
+        if (plusFrames == 0)
         {
             abilityOneButton.gameObject.SetActive(false);
             abilityTwoButton.gameObject.SetActive(false);
         }
-        if (gameManager.p1PlusFrames >= 1)
+        if (plusFrames >= 1)
         {
             abilityOneButton.gameObject.SetActive(true);
         }
-        if (gameManager.p1PlusFrames >= 3)
+        if (plusFrames >= 3)
         {
             abilityTwoButton.gameObject.SetActive(true);
         }
@@ -160,11 +163,11 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        gameManager.p1PlusFrames--;
-        gameManager.p1PlusFramesText.text = "+" + gameManager.p1PlusFrames;
-        if(gameManager.p1PlusFrames == 0)
+        plusFrames--;
+        plusFramesText.text = "+" + plusFrames;
+        if(plusFrames == 0)
         {
-            gameManager.p1PlusFramesText.text = "";
+            plusFramesText.text = "";
         }
         if(character.cardName == "Zyla")
         {
@@ -179,8 +182,8 @@ public class Player : MonoBehaviour
         if (character.cardName == "Rynox")
         {
             Debug.Log("Rynox +1");
-            gameManager.p1Energy++;
-            gameManager.p1EnergyText.text = "" + gameManager.p1Energy;
+            energy++;
+            energyText.text = "" + energy;
         }
     }
 
@@ -190,11 +193,11 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        gameManager.p1PlusFrames = gameManager.p1PlusFrames -3;
-        gameManager.p1PlusFramesText.text = "" + gameManager.p1PlusFrames;
-        if (gameManager.p1PlusFrames == 0)
+        plusFrames = plusFrames -3;
+        plusFramesText.text = "" + plusFrames;
+        if (plusFrames == 0)
         {
-            gameManager.p1PlusFramesText.text = "";
+            plusFramesText.text = "";
         }
 
         if (character.cardName == "Zyla")
