@@ -189,10 +189,6 @@ public class Player : MonoBehaviour
 
     public void AbilityTwo()
     {
-        if(dragonInstall > 0 || forceBreak > 0 || empowered == true)
-        {
-            return;
-        }
         plusFrames = plusFrames -3;
         plusFramesText.text = "+" + plusFrames;
         if (plusFrames == 0)
