@@ -194,7 +194,7 @@ public class Player : MonoBehaviour
             return;
         }
         plusFrames = plusFrames -3;
-        plusFramesText.text = "" + plusFrames;
+        plusFramesText.text = "+" + plusFrames;
         if (plusFrames == 0)
         {
             plusFramesText.text = "";
