@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: de4b84fa1da6630468edf6c954fed405, type: 2}
+  card: {fileID: 11400000, guid: fd59e31ffdd3be345be2b7b837ef28b0, type: 2}
   nameText: {fileID: 1001997636}
   costText: {fileID: 1873277798}
   image: {fileID: 862547850}
@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
+  card: {fileID: 11400000, guid: 96cb7ee42d0f9174ebd503387a4fec7d, type: 2}
   nameText: {fileID: 1704775028}
   costText: {fileID: 1852925296}
   image: {fileID: 749405469}
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: e65b7ba20401fe04bbaae30c14a4bc79, type: 2}
+  card: {fileID: 11400000, guid: 22a54feec889bd64ca48e546baa2f96b, type: 2}
   nameText: {fileID: 396032521}
   costText: {fileID: 656627032}
   image: {fileID: 700502672}
@@ -1712,7 +1712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 15e3cfde0eb62ec4b8a8822db5598446, type: 2}
+  card: {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
   nameText: {fileID: 1841997384}
   costText: {fileID: 1665468390}
   image: {fileID: 2035649955}
@@ -3894,7 +3894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 9b1268002e90480449ec11bf8c0c98f8, type: 2}
+  card: {fileID: 11400000, guid: b5f200ced1d385e43a531da19af8f987, type: 2}
   nameText: {fileID: 1892775470}
   costText: {fileID: 1145971105}
   image: {fileID: 591549538}
@@ -7289,7 +7289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 73a7274bb562f744a892d3f7d38f8b1f, type: 2}
+  card: {fileID: 11400000, guid: fd59e31ffdd3be345be2b7b837ef28b0, type: 2}
   nameText: {fileID: 1392851366}
   costText: {fileID: 325625324}
   image: {fileID: 125843911}
@@ -9358,7 +9358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 908878b96517d8a48b0bf25e27be3b67, type: 2}
+  card: {fileID: 11400000, guid: 1e500f488d29e5d40a3b2024ff447c6d, type: 2}
   nameText: {fileID: 1289136464}
   costText: {fileID: 1063637998}
   image: {fileID: 981129111}
@@ -9619,7 +9619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 8627b8740cb96724bb3d32793fb59b06, type: 2}
+  card: {fileID: 11400000, guid: 91f0314df2a875347823cadc392c1db7, type: 2}
   nameText: {fileID: 192681044}
   costText: {fileID: 1155373207}
   image: {fileID: 2112955963}
@@ -13376,7 +13376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
+  card: {fileID: 11400000, guid: 15e3cfde0eb62ec4b8a8822db5598446, type: 2}
   nameText: {fileID: 3883380761207847833}
   costText: {fileID: 7979168247319685002}
   image: {fileID: 3851639578214767461}
@@ -13778,7 +13778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd92aa3f7b15434c98fb483f518d28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 5999e30705a6cc542a6fdc1853e90060, type: 2}
+  character: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}
   nameText: {fileID: 7180164138269013182}
   passiveText: {fileID: 7582822722742990856}
   firstAbilityText: {fileID: 5035878861158724542}
@@ -13786,6 +13786,7 @@ MonoBehaviour:
   secondAbilityText: {fileID: 4992966572798968317}
   image: {fileID: 1087222627576256134}
   cardBack: {fileID: 5040200658180026414}
+  player: {fileID: 0}
 --- !u!1 &2034916613281329484
 GameObject:
   m_ObjectHideFlags: 0
@@ -14882,7 +14883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.5, y: -23.2}
+  m_AnchoredPosition: {x: 26.5, y: -29.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6745547452595219428
