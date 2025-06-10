@@ -47,11 +47,11 @@ public class Player : MonoBehaviour
         flipCheck = this.transform.position.x - otherPlayer.position.x;
         if(flipCheck > 0)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         else
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (plusFrames == 0)
         {

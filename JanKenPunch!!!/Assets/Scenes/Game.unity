@@ -4655,7 +4655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78a9f59a22a789a4583a8ae1716cfa5a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b63169b7242e6b54baf9e59669b0275a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8066,7 +8066,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.977295, y: -0.36547852}
+  m_AnchoredPosition: {x: 3.9770508, y: -0.36547852}
   m_SizeDelta: {x: 39.3406, y: 34.5933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920937981
@@ -8120,10 +8120,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p1Character: {fileID: 8915374461827077188}
+  p1Sprite: {fileID: 2047355259}
   deck: {fileID: 1785747173}
   zyla: {fileID: 11400000, guid: 505e518f622d9434ba06e563ab812b74, type: 2}
   taibo: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}
   rynox: {fileID: 11400000, guid: 5999e30705a6cc542a6fdc1853e90060, type: 2}
+  zylaSprite: {fileID: 21300000, guid: 4c08ec0dfce8c5e44a1c1e65ef3897f1, type: 3}
+  taiboSprite: {fileID: 21300000, guid: 237e8630c9a84064385186db6587925f, type: 3}
+  rynoxSprite: {fileID: 21300000, guid: b63169b7242e6b54baf9e59669b0275a, type: 3}
   zylaDeck:
   - {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
   - {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
