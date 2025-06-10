@@ -308,7 +308,7 @@ public class GameManager : MonoBehaviour
             p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onWhiff);
             p2.plusFramesText.text = "+" + p2.plusFrames;
         }
-        if (card.range >= distance)
+        if (card.range >= distance && p2.isDodging == false)
         {
             if (p2.isBlockingHigh == true && (card.guard == "High" || card.guard == "Mid"))
             {
@@ -501,7 +501,7 @@ public class GameManager : MonoBehaviour
             p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onWhiff);
             p2.plusFramesText.text = "+" + p2.plusFrames;
         }
-        if(card.range >= distance)
+        if(card.range >= distance && p2.isDodging == false)
         {
             if(p2.isBlockingHigh == true && (card.guard == "High" || card.guard == "Mid"))
             {
