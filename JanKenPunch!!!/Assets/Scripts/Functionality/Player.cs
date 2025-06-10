@@ -66,7 +66,11 @@ public class Player : MonoBehaviour
         {
             abilityTwoButton.gameObject.SetActive(true);
         }
-        if(empowered == true || dragonInstall > 0 || forceBreak > 0)
+        if (gameManager.discarding == true)
+        {
+            abilityOneButton.gameObject.SetActive(false);
+        }
+        if (empowered == true || dragonInstall > 0 || forceBreak > 0)
         {
             abilityTwoButton.gameObject.SetActive(false);
         }
