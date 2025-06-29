@@ -62,7 +62,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     IEnumerator Enlarge()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         transform.localScale = new Vector3(5, 7, 0);
         gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, -0.4f);
     }
