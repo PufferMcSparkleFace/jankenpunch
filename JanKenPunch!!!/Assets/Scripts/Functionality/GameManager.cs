@@ -449,6 +449,10 @@ public class GameManager : MonoBehaviour
             Debug.Log("Whiff!");
             p2.plusFrames = p2.plusFrames + Mathf.Abs(card.onWhiff);
             p2.plusFramesText.text = "+" + p2.plusFrames;
+            if (p1.empowered == true)
+            {
+                p1.empowered = false;
+            }
         }
         else
         {
@@ -457,7 +461,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Empowered Hit!");
                 p2.health = p2.health - (card.damage * 3);
                 p2.healthText.text = "" + p2.health;
-                p1.plusFrames = p1.plusFrames + card.onHit + 2;
+                p1.plusFrames = p1.plusFrames + card.onHit;
                 p1.plusFramesText.text = "+" + p1.plusFrames;
                 p1.empowered = false;
             }

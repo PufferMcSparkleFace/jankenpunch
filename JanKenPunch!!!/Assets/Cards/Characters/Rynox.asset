@@ -19,4 +19,4 @@ MonoBehaviour:
     you get 1 extra plus frame.
   firstAbility: Gain 1 energy.
   secondAbilityCost: 3
-  secondAbility: Your next throw gets +2/+0/+0 and deals triple damage.
+  secondAbility: Your next throw deals triple damage.
