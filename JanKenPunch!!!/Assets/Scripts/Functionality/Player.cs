@@ -236,6 +236,14 @@ public class Player : MonoBehaviour
     {
         if (isHit == true)
         {
+            isBlockingHigh = false;
+            isBlockingLow = false;
+            isDodging = false;
+            isMoving = false;
+            p1.isPushing = false;
+            p1.isHit = false;
+            p1.dragonInstall--;
+            p1.forceBreak--;
             gameManager.EndInteraction();
             return;
         }
