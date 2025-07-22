@@ -86,6 +86,10 @@ public class Player : MonoBehaviour
         {
             installText.text = "Force Break: " + forceBreak;
         }
+        if (plusFrames == 0)
+        {
+            plusFramesText.text = "";
+        }
     }
 
     public void Move(int units)

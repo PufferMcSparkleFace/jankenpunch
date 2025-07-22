@@ -60,15 +60,6 @@ public class GameManager : MonoBehaviour
                 card = playedCard.GetComponent<DisplayCard>().card;
             }
 
-        if(p1.plusFrames == 0)
-        {
-            p1.plusFramesText.text = "";
-        }
-        if (p2.plusFrames == 0)
-        {
-            p2.plusFramesText.text = "";
-        }
-
     }
 
 
