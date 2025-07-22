@@ -4760,6 +4760,7 @@ MonoBehaviour:
   dragonInstall: 0
   forceBreak: 0
   empowered: 0
+  distance: 4
   health: 30
   energy: 5
   plusFrames: 0
@@ -5300,7 +5301,6 @@ MonoBehaviour:
   timerText: {fileID: 35919525}
   p1: {fileID: 2047355261}
   p2: {fileID: 414189305}
-  distance: 4
   discarding: 0
 --- !u!114 &522628965
 MonoBehaviour:
@@ -16612,6 +16612,7 @@ MonoBehaviour:
   dragonInstall: 0
   forceBreak: 0
   empowered: 0
+  distance: 4
   health: 30
   energy: 5
   plusFrames: 0
