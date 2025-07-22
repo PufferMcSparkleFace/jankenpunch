@@ -319,7 +319,7 @@ MonoBehaviour:
   hand: {fileID: 0}
   playArea: {fileID: 0}
   isInHand: 1
-  gameManager: {fileID: 522628964}
+  gameManager: {fileID: 0}
 --- !u!114 &6461537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3106,7 +3106,7 @@ MonoBehaviour:
   hand: {fileID: 0}
   playArea: {fileID: 0}
   isInHand: 1
-  gameManager: {fileID: 522628964}
+  gameManager: {fileID: 0}
 --- !u!114 &201240465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3910,7 +3910,7 @@ MonoBehaviour:
   hand: {fileID: 0}
   playArea: {fileID: 0}
   isInHand: 1
-  gameManager: {fileID: 522628964}
+  gameManager: {fileID: 0}
 --- !u!114 &289268852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4657,6 +4657,7 @@ GameObject:
   - component: {fileID: 414189304}
   - component: {fileID: 414189303}
   - component: {fileID: 414189305}
+  - component: {fileID: 414189306}
   m_Layer: 0
   m_Name: P2
   m_TagString: P2
@@ -4768,6 +4769,35 @@ MonoBehaviour:
   plusFramesText: {fileID: 881705959}
   abilityOneButton: {fileID: 872167951}
   abilityTwoButton: {fileID: 2043070839}
+--- !u!114 &414189306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414189301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3647aec1baf9b040903e7ab21c979ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playArea: {fileID: 0}
+  lockInButton: {fileID: 0}
+  playedCard: {fileID: 0}
+  card: {fileID: 0}
+  turnTimer: 0
+  turnTimerText: {fileID: 0}
+  hand: {fileID: 0}
+  deck: {fileID: 0}
+  finalCardCost: 0
+  timer: 0
+  spacesBehindP1: 0
+  spacesBehindP2: 0
+  timerText: {fileID: 0}
+  p1: {fileID: 0}
+  p2: {fileID: 0}
+  distance: 4
+  discarding: 0
 --- !u!1 &452527440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5190,7 +5220,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 522628964}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LockIn
         m_Mode: 1
@@ -5727,7 +5757,7 @@ MonoBehaviour:
   hand: {fileID: 0}
   playArea: {fileID: 0}
   isInHand: 1
-  gameManager: {fileID: 522628964}
+  gameManager: {fileID: 0}
 --- !u!114 &650671329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6426,7 +6456,7 @@ MonoBehaviour:
   hand: {fileID: 0}
   playArea: {fileID: 0}
   isInHand: 1
-  gameManager: {fileID: 522628964}
+  gameManager: {fileID: 0}
 --- !u!114 &761092630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13204,7 +13234,7 @@ MonoBehaviour:
   hand: {fileID: 0}
   playArea: {fileID: 0}
   isInHand: 1
-  gameManager: {fileID: 522628964}
+  gameManager: {fileID: 0}
 --- !u!114 &1532640085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14694,7 +14724,7 @@ MonoBehaviour:
   hand: {fileID: 0}
   playArea: {fileID: 0}
   isInHand: 1
-  gameManager: {fileID: 522628964}
+  gameManager: {fileID: 0}
 --- !u!114 &1781080416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16509,6 +16539,7 @@ GameObject:
   - component: {fileID: 2047355260}
   - component: {fileID: 2047355259}
   - component: {fileID: 2047355261}
+  - component: {fileID: 2047355262}
   m_Layer: 0
   m_Name: P1
   m_TagString: P1
@@ -16620,6 +16651,35 @@ MonoBehaviour:
   plusFramesText: {fileID: 1971247334}
   abilityOneButton: {fileID: 452527442}
   abilityTwoButton: {fileID: 2055026100}
+--- !u!114 &2047355262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047355257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3647aec1baf9b040903e7ab21c979ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playArea: {fileID: 0}
+  lockInButton: {fileID: 0}
+  playedCard: {fileID: 0}
+  card: {fileID: 0}
+  turnTimer: 0
+  turnTimerText: {fileID: 0}
+  hand: {fileID: 0}
+  deck: {fileID: 1785747173}
+  finalCardCost: 0
+  timer: 0
+  spacesBehindP1: 0
+  spacesBehindP2: 0
+  timerText: {fileID: 0}
+  p1: {fileID: 0}
+  p2: {fileID: 0}
+  distance: 4
+  discarding: 0
 --- !u!1 &2055026098
 GameObject:
   m_ObjectHideFlags: 0
@@ -18066,7 +18126,7 @@ MonoBehaviour:
   hand: {fileID: 0}
   playArea: {fileID: 0}
   isInHand: 1
-  gameManager: {fileID: 522628964}
+  gameManager: {fileID: 0}
 --- !u!222 &556900175961334892
 CanvasRenderer:
   m_ObjectHideFlags: 0
