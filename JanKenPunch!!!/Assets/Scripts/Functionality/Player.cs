@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public int dragonInstall = 0;
     public int forceBreak = 0;
     public bool empowered = false;
+    public int distance = 4;
 
     public int health, energy, plusFrames;
     public TMP_Text healthText, energyText, plusFramesText;
@@ -112,7 +113,7 @@ public class Player : MonoBehaviour
                 {
                     unitsActual = -1;
                 }
-                if (unitsActual > 0 && gameManager.distance == 1)
+                if (unitsActual > 0 && distance == 1)
                 {
                     if(isPushing == false)
                     {
@@ -131,7 +132,7 @@ public class Player : MonoBehaviour
                 }
                 this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
                 position = position + unitsActual;
-                gameManager.distance = Mathf.Abs(position - opponent.position);
+                distance = Mathf.Abs(position - opponent.position);
             }
             //if you're facing left
             else
@@ -144,7 +145,7 @@ public class Player : MonoBehaviour
                 {
                     unitsActual = 1;
                 }
-                if (unitsActual < 0 && gameManager.distance == 1)
+                if (unitsActual < 0 && distance == 1)
                 {
                     if (isPushing == false)
                     {
@@ -162,7 +163,7 @@ public class Player : MonoBehaviour
                 }
                 this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
                 position = position + unitsActual;
-                gameManager.distance = Mathf.Abs(position - opponent.position);
+                distance = Mathf.Abs(position - opponent.position);
             }
         }
 
@@ -358,14 +359,14 @@ public class Player : MonoBehaviour
                 {
                     transform.position = stagePositions[opponent.position - 2].transform.position;
                     position = opponent.position - 1;
-                    gameManager.distance = Mathf.Abs(position - opponent.position);
+                    distance = Mathf.Abs(position - opponent.position);
                     flipCheck = -1;
                 }
                 if (opponent.flipCheck > 0)
                 {
                     transform.position = stagePositions[opponent.position].transform.position;
                     position = opponent.position + 1;
-                    gameManager.distance = Mathf.Abs(position - opponent.position);
+                    distance = Mathf.Abs(position - opponent.position);
                     flipCheck = 1;
                 }
 
@@ -406,7 +407,7 @@ public class Player : MonoBehaviour
             {
                 gameManager.card.range++;
             }
-            if (gameManager.card.range < gameManager.distance || opponent.isDodging == true)
+            if (gameManager.card.range < distance || opponent.isDodging == true)
             {
                 Debug.Log("Whiff!");
                 opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onWhiff);
@@ -463,13 +464,13 @@ public class Player : MonoBehaviour
 
     public void Strike()
     {
-        if (gameManager.card.range < gameManager.distance || opponent.isDodging == true)
+        if (gameManager.card.range < distance || opponent.isDodging == true)
         {
             Debug.Log("Whiff!");
             opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onWhiff);
             opponent.plusFramesText.text = "+" + opponent.plusFrames;
         }
-        if (gameManager.card.range >= gameManager.distance && opponent.isDodging == false)
+        if (gameManager.card.range >= distance && opponent.isDodging == false)
         {
             if (opponent.isBlockingHigh == true && (gameManager.card.guard == "High" || gameManager.card.guard == "Mid"))
             {
@@ -608,7 +609,7 @@ public class Player : MonoBehaviour
 
     public void Throw()
     {
-        if (gameManager.card.range < gameManager.distance || opponent.isDodging == true)
+        if (gameManager.card.range < distance || opponent.isDodging == true)
         {
             Debug.Log("Whiff!");
             opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onWhiff);
@@ -665,13 +666,13 @@ public class Player : MonoBehaviour
         {
             gameManager.card.range++;
         }
-        if (gameManager.card.range < gameManager.distance || opponent.isDodging == true)
+        if (gameManager.card.range < distance || opponent.isDodging == true)
         {
             Debug.Log("Whiff!");
             opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onWhiff);
             opponent.plusFramesText.text = "+" + opponent.plusFrames;
         }
-        if (gameManager.card.range >= gameManager.distance && opponent.isDodging == false)
+        if (gameManager.card.range >= distance && opponent.isDodging == false)
         {
             if (opponent.isBlockingHigh == true && (gameManager.card.guard == "High" || gameManager.card.guard == "Mid"))
             {

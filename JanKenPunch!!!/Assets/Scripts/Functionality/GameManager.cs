@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     public int spacesBehindP2;
     public TMP_Text timerText;
     public Player p1, p2;
-    public int distance = 4;
     public bool discarding;
 
     // Start is called before the first frame update
