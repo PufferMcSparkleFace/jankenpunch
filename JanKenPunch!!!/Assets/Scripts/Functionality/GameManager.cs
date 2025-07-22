@@ -59,8 +59,22 @@ public class GameManager : MonoBehaviour
     public void EndInteraction()
     {
         //return to neutral
-        
-       
+        p1.isBlockingHigh = false;
+        p1.isBlockingLow = false;
+        p1.isDodging = false;
+        p1.isMoving = false;
+        p1.isPushing = false;
+        p2.isBlockingHigh = false;
+        p2.isBlockingLow = false;
+        p2.isDodging = false;
+        p2.isMoving = false;
+        p2.isPushing = false;
+        p1.isHit = false;
+        p2.isHit = false;
+        p1.dragonInstall--;
+        p2.dragonInstall--;
+        p1.forceBreak--;
+        p2.forceBreak--;
         Debug.Log("Return to Neutral");
 
         if(p1.health <= 0)
