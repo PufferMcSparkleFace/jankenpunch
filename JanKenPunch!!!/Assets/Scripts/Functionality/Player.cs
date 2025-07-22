@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float flipCheck;
     public GameObject[] stagePositions;
     public int position;
-    public bool isBlockingHigh, isBlockingLow, isDodging, isMoving, isPushing = false;
+    public bool isBlockingHigh, isBlockingLow, isDodging, isMoving, isPushing, isHit = false;
     public int unitsActual;
     public GameManager gameManager;
     public Player opponent;

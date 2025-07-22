@@ -79,6 +79,12 @@ public class GameManager : MonoBehaviour
 
     public void PlayCard()
     {
+        if (p1.isHit == true)
+        {
+            EndInteraction();
+            return;
+        }
+
         if (card.cardName == "Block High")
         {
             p1.isBlockingHigh = true;
@@ -268,6 +274,7 @@ public class GameManager : MonoBehaviour
                 p1.plusFrames = p1.plusFrames + card.onHit;
                 p1.plusFramesText.text = "+" + p1.plusFrames;
                 p2.energy = p2.energy - card.cost;
+                p2.isHit = true;
                 if (p2.energy < 0)
                 {
                     p2.energy = 0;
@@ -397,6 +404,7 @@ public class GameManager : MonoBehaviour
                     p1.plusFramesText.text = "+" + p1.plusFrames;
                     p1.isPushing = true;
                     p1.Move(1);
+                    p2.isHit = true;
                     return;
                 }
                 else
@@ -408,6 +416,7 @@ public class GameManager : MonoBehaviour
                     p1.plusFramesText.text = "+" + p1.plusFrames;
                     p1.isPushing = true;
                     p1.Move(1);
+                    p2.isHit = true;
                     return;
                 }
                 
@@ -421,6 +430,7 @@ public class GameManager : MonoBehaviour
                 p1.plusFramesText.text = "+" + p1.plusFrames;
                 p1.isPushing = true;
                 p1.Move(1);
+                p2.isHit = true;
             }
             else
             {
@@ -431,13 +441,13 @@ public class GameManager : MonoBehaviour
                 p1.plusFramesText.text = "+" + p1.plusFrames;
                 p1.isPushing = true;
                 p1.Move(1);
+                p2.isHit = true;
             }
         
             if(card.cardName == "Flash Kick")
             {
                 p2.Move(-3);
             }
-            //hits and you knock them back 1 while moving forward 1
         }
 
     }
@@ -464,6 +474,7 @@ public class GameManager : MonoBehaviour
                 p1.plusFrames = p1.plusFrames + card.onHit;
                 p1.plusFramesText.text = "+" + p1.plusFrames;
                 p1.empowered = false;
+                p2.isHit = true;
             }
             else
             {
@@ -472,6 +483,7 @@ public class GameManager : MonoBehaviour
                 p2.healthText.text = "" + p2.health;
                 p1.plusFrames = p1.plusFrames + card.onHit;
                 p1.plusFramesText.text = "+" + p1.plusFrames;
+                p2.isHit = true;
             }
             if(card.cardName == "Grab")
             {
@@ -529,6 +541,7 @@ public class GameManager : MonoBehaviour
                 p1.plusFrames = p1.plusFrames + card.onHit;
                 p1.plusFramesText.text = "+" + p1.plusFrames;
                 p2.energy = p2.energy - card.cost;
+                p2.isHit = true;
             }
             else
             {
@@ -538,6 +551,7 @@ public class GameManager : MonoBehaviour
                 p1.plusFrames = p1.plusFrames + card.onHit;
                 p1.plusFramesText.text = "+" + p1.plusFrames;
                 p2.energy = p2.energy - card.cost;
+                p2.isHit = true;
             }
             if(p2.energy < 0)
             {
@@ -573,6 +587,8 @@ public class GameManager : MonoBehaviour
         p2.isDodging = false;
         p2.isMoving = false;
         p2.isPushing = false;
+        p1.isHit = false;
+        p2.isHit = false;
         p1.dragonInstall--;
         p2.dragonInstall--;
         p1.forceBreak--;
