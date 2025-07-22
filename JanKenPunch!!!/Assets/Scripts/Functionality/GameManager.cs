@@ -30,12 +30,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         timer = 10;
-        p1.healthText.text = p1.health.ToString();
-        p1.energyText.text = p1.energy.ToString();
-        p2.healthText.text = p2.health.ToString();
-        p2.energyText.text = p2.energy.ToString();
-        p1.plusFramesText.text = "";
-        p2.plusFramesText.text = "";
 
         hand = GameObject.FindGameObjectWithTag("Hand").transform;
     }

@@ -39,6 +39,9 @@ public class Player : MonoBehaviour
             position = 7;
         }
         installText.text = "";
+        healthText.text = health.ToString();
+        energyText.text = energy.ToString();
+        plusFramesText.text = "";
     }
 
     // Update is called once per frame
