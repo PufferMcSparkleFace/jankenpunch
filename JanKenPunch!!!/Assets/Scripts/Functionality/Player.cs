@@ -217,4 +217,506 @@ public class Player : MonoBehaviour
             Debug.Log("Rynox +3");
         }
     }
+
+    IEnumerator FrameDelay()
+    {
+        yield return new WaitForSeconds(gameManager.finalCardCost * 0.1f);
+        PlayCard();
+    }
+
+    public void PlayCard()
+    {
+        if (isHit == true)
+        {
+            gameManager.EndInteraction();
+            return;
+        }
+
+        if (gameManager.card.cardName == "Block High")
+        {
+            isBlockingHigh = true;
+            Debug.Log("Blocking High");
+            if (opponent.isDodging == true)
+            {
+                if (character.cardName == "Rynox")
+                {
+                    plusFrames = plusFrames + 4;
+                    plusFramesText.text = "+" + plusFrames;
+                }
+                else
+                {
+                    plusFrames = plusFrames + 3;
+                    plusFramesText.text = "+" + plusFrames;
+                }
+            }
+        }
+        else if (gameManager.card.cardName == "Block Low")
+        {
+            isBlockingLow = true;
+            Debug.Log("Blocking Low");
+            if (opponent.isDodging == true)
+            {
+                if (character.cardName == "Rynox")
+                {
+                    plusFrames = plusFrames + 4;
+                    plusFramesText.text = "+" + plusFrames;
+                }
+                else
+                {
+                    plusFrames = plusFrames + 3;
+                    plusFramesText.text = "+" + plusFrames;
+                }
+            }
+        }
+        else if (gameManager.card.cardName == "Dodge")
+        {
+            isDodging = true;
+            Debug.Log("Dodging");
+        }
+        else if (gameManager.card.cardName == "Dash Forward")
+        {
+            isMoving = true;
+            Move(1);
+            if (opponent.isDodging == true)
+            {
+                if (character.cardName == "Rynox")
+                {
+                    plusFrames = plusFrames + 4;
+                    plusFramesText.text = "+" + plusFrames;
+                }
+                else
+                {
+                    plusFrames = plusFrames + 3;
+                    plusFramesText.text = "+" + plusFrames;
+                }
+            }
+        }
+        else if (gameManager.card.cardName == "Dash Back")
+        {
+            isMoving = true;
+            Move(-1);
+            if (opponent.isDodging == true)
+            {
+                if (character.cardName == "Rynox")
+                {
+                    plusFrames = plusFrames + 4;
+                    plusFramesText.text = "+" + plusFrames;
+                }
+                else
+                {
+                    plusFrames = plusFrames + 3;
+                    plusFramesText.text = "+" + plusFrames;
+                }
+            }
+        }
+        else if (gameManager.card.cardName == "Dash Attack")
+        {
+            Move(2);
+            Strike();
+        }
+        else if (gameManager.card.cardName == "Hop Kick")
+        {
+            Move(1);
+            Strike();
+        }
+        else if (gameManager.card.cardName == "Tackle")
+        {
+            Move(1);
+            Throw();
+        }
+        else if (gameManager.card.cardName == "CHARGE!!!")
+        {
+            isBlockingHigh = true;
+            isPushing = true;
+            Move(2);
+            if (opponent.isDodging == true)
+            {
+                if (character.cardName == "Rynox")
+                {
+                    plusFrames = plusFrames + 4;
+                    plusFramesText.text = "+" + plusFrames;
+                }
+                else
+                {
+                    plusFrames = plusFrames + 3;
+                    plusFramesText.text = "+" + plusFrames;
+                }
+            }
+        }
+        else if (gameManager.card.cardName == "Warp")
+        {
+            if (opponent.position != 1 && opponent.position != 9)
+            {
+                if (opponent.flipCheck < 0)
+                {
+                    transform.position = stagePositions[opponent.position - 2].transform.position;
+                    position = opponent.position - 1;
+                    gameManager.distance = Mathf.Abs(position - opponent.position);
+                    flipCheck = -1;
+                }
+                if (opponent.flipCheck > 0)
+                {
+                    transform.position = stagePositions[opponent.position].transform.position;
+                    position = opponent.position + 1;
+                    gameManager.distance = Mathf.Abs(position - opponent.position);
+                    flipCheck = 1;
+                }
+
+                Move(-3);
+                if (opponent.isDodging == true)
+                {
+                    if (character.cardName == "Rynox")
+                    {
+                        plusFrames = plusFrames + 4;
+                        plusFramesText.text = "+" + plusFrames;
+                    }
+                    else
+                    {
+                        plusFrames = plusFrames + 3;
+                        plusFramesText.text = "+" + plusFrames;
+                    }
+                }
+            }
+        }
+        else if (gameManager.card.cardName == "YOU SCARED, BUD?!")
+        {
+            //replace this with "if opponent.card = a block, you're +5, if they played a dodge you're +9"
+            if (opponent.isBlockingHigh == true || opponent.isBlockingLow == true)
+            {
+                plusFrames = plusFrames + 5;
+                plusFramesText.text = "+" + plusFrames;
+            }
+            else if (opponent.isDodging == true)
+            {
+                plusFrames = plusFrames + 9;
+                plusFramesText.text = "+" + plusFrames;
+            }
+
+        }
+        else if (gameManager.card.cardName == "Force Choke")
+        {
+            if (forceBreak > 0)
+            {
+                gameManager.card.range++;
+            }
+            if (gameManager.card.range < gameManager.distance || opponent.isDodging == true)
+            {
+                Debug.Log("Whiff!");
+                opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onWhiff);
+                opponent.plusFramesText.text = "+" + opponent.plusFrames;
+            }
+            else
+            {
+                if (forceBreak > 0)
+                {
+                    opponent.health = opponent.health - (gameManager.card.damage + 1);
+                    opponent.healthText.text = "" + opponent.health;
+                }
+                else
+                {
+                    opponent.health = opponent.health - gameManager.card.damage;
+                    opponent.healthText.text = "" + opponent.health;
+                }
+                Debug.Log("Hit!");
+                plusFrames = plusFrames + gameManager.card.onHit;
+                plusFramesText.text = "+" + plusFrames;
+                opponent.energy = opponent.energy - gameManager.card.cost;
+                opponent.isHit = true;
+                if (opponent.energy < 0)
+                {
+                    opponent.energy = 0;
+                }
+                opponent.energyText.text = "" + opponent.energy;
+                if (forceBreak > 0)
+                {
+                    opponent.Move(-2);
+                }
+                else
+                {
+                    opponent.Move(-1);
+                }
+
+            }
+        }
+        else if (gameManager.card.subtype == "Strike")
+        {
+            Strike();
+        }
+        else if (gameManager.card.subtype == "Throw")
+        {
+            Throw();
+        }
+        else if (gameManager.card.subtype == "Projectile")
+        {
+            Projectile();
+        }
+        //check if the other person is still resolving an attack, if not, end interaction
+        gameManager.EndInteraction();
+    }
+
+    public void Strike()
+    {
+        if (gameManager.card.range < gameManager.distance || opponent.isDodging == true)
+        {
+            Debug.Log("Whiff!");
+            opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onWhiff);
+            opponent.plusFramesText.text = "+" + opponent.plusFrames;
+        }
+        if (gameManager.card.range >= gameManager.distance && opponent.isDodging == false)
+        {
+            if (opponent.isBlockingHigh == true && (gameManager.card.guard == "High" || gameManager.card.guard == "Mid"))
+            {
+                if (dragonInstall > 0)
+                {
+                    Debug.Log("Blocked!");
+                    if (gameManager.card.onBlock + 1 >= 0)
+                    {
+                        plusFrames = plusFrames + Mathf.Abs(gameManager.card.onBlock + 1);
+                        plusFramesText.text = "+" + plusFrames;
+                    }
+                    else
+                    {
+                        opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onBlock + 1);
+                        opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                    }
+                    energy = energy + gameManager.card.cost;
+                    energyText.text = "" + energy;
+                    return;
+                }
+                else
+                {
+                    Debug.Log("Blocked!");
+                    if (gameManager.card.onBlock >= 0)
+                    {
+                        plusFrames = plusFrames + Mathf.Abs(gameManager.card.onBlock);
+                        plusFramesText.text = "+" + plusFrames;
+                    }
+                    else
+                    {
+                        opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onBlock);
+                        opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                    }
+                    energy = energy + gameManager.card.cost;
+                    energyText.text = "" + energy;
+                    return;
+                }
+
+            }
+            if (opponent.isBlockingLow == true && (gameManager.card.guard == "Low" || gameManager.card.guard == "Mid"))
+            {
+                if (dragonInstall > 0)
+                {
+                    if (gameManager.card.onBlock + 1 >= 0)
+                    {
+                        plusFrames = plusFrames + Mathf.Abs(gameManager.card.onBlock + 1);
+                        plusFramesText.text = "+" + plusFrames;
+                    }
+                    else
+                    {
+                        opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onBlock + 1);
+                        opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                    }
+                    Debug.Log("Blocked!");
+                    energy = energy + gameManager.card.cost;
+                    energyText.text = "" + energy;
+                    return;
+                }
+                else
+                {
+                    Debug.Log("Blocked!");
+                    if (gameManager.card.onBlock >= 0)
+                    {
+                        plusFrames = plusFrames + Mathf.Abs(gameManager.card.onBlock);
+                        plusFramesText.text = "+" + plusFrames;
+                    }
+                    else
+                    {
+                        opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onBlock);
+                        opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                    }
+                    energy = energy + gameManager.card.cost;
+                    energyText.text = "" + energy;
+                    return;
+                }
+
+            }
+            if (character.cardName == "Zyla" && (opponent.isBlockingLow == true && gameManager.card.guard == "High") || (opponent.isBlockingHigh == true && gameManager.card.guard == "Low"))
+            {
+                if (dragonInstall > 0)
+                {
+                    Debug.Log("Get Mixed!");
+                    opponent.health = opponent.health - (gameManager.card.damage + 2);
+                    opponent.healthText.text = "" + opponent.health;
+                    plusFrames = plusFrames + gameManager.card.onHit + 1;
+                    plusFramesText.text = "+" + plusFrames;
+                    isPushing = true;
+                    Move(1);
+                    opponent.isHit = true;
+                    return;
+                }
+                else
+                {
+                    Debug.Log("Get Mixed!");
+                    opponent.health = opponent.health - gameManager.card.damage;
+                    opponent.healthText.text = "" + opponent.health;
+                    plusFrames = plusFrames + gameManager.card.onHit + 1;
+                    plusFramesText.text = "+" + plusFrames;
+                    isPushing = true;
+                    Move(1);
+                    opponent.isHit = true;
+                    return;
+                }
+
+            }
+            if (dragonInstall > 0)
+            {
+                Debug.Log("Hit!");
+                opponent.health = opponent.health - (gameManager.card.damage + 2);
+                opponent.healthText.text = "" + opponent.health;
+                plusFrames = plusFrames + gameManager.card.onHit;
+                plusFramesText.text = "+" + plusFrames;
+                isPushing = true;
+                Move(1);
+                opponent.isHit = true;
+            }
+            else
+            {
+                Debug.Log("Hit!");
+                opponent.health = opponent.health - gameManager.card.damage;
+                opponent.healthText.text = "" + opponent.health;
+                plusFrames = plusFrames + gameManager.card.onHit;
+                plusFramesText.text = "+" + plusFrames;
+                isPushing = true;
+                Move(1);
+                opponent.isHit = true;
+            }
+
+            if (gameManager.card.cardName == "Flash Kick")
+            {
+                opponent.Move(-3);
+            }
+        }
+
+    }
+
+    public void Throw()
+    {
+        if (gameManager.card.range < gameManager.distance || opponent.isDodging == true)
+        {
+            Debug.Log("Whiff!");
+            opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onWhiff);
+            opponent.plusFramesText.text = "+" + opponent.plusFrames;
+            if (empowered == true)
+            {
+                empowered = false;
+            }
+        }
+        else
+        {
+            if (empowered == true)
+            {
+                Debug.Log("Empowered Hit!");
+                opponent.health = opponent.health - (gameManager.card.damage * 3);
+                opponent.healthText.text = "" + opponent.health;
+                plusFrames = plusFrames + gameManager.card.onHit;
+                plusFramesText.text = "+" + plusFrames;
+                empowered = false;
+                opponent.isHit = true;
+            }
+            else
+            {
+                Debug.Log("Hit!");
+                opponent.health = opponent.health - gameManager.card.damage;
+                opponent.healthText.text = "" + opponent.health;
+                plusFrames = plusFrames + gameManager.card.onHit;
+                plusFramesText.text = "+" + plusFrames;
+                opponent.isHit = true;
+            }
+            if (gameManager.card.cardName == "Grab")
+            {
+                if (flipCheck < 0)
+                {
+                    transform.position = stagePositions[opponent.position - 1].transform.position;
+                    position = opponent.position;
+                    opponent.transform.position = opponent.stagePositions[position - 2].transform.position;
+                    opponent.position = position - 1;
+                }
+                else
+                {
+                    transform.position = stagePositions[opponent.position - 1].transform.position;
+                    position = opponent.position;
+                    opponent.transform.position = opponent.stagePositions[position].transform.position;
+                    opponent.position = position + 1;
+                }
+            }
+        }
+    }
+
+    public void Projectile()
+    {
+        if (forceBreak > 0)
+        {
+            gameManager.card.range++;
+        }
+        if (gameManager.card.range < gameManager.distance || opponent.isDodging == true)
+        {
+            Debug.Log("Whiff!");
+            opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onWhiff);
+            opponent.plusFramesText.text = "+" + opponent.plusFrames;
+        }
+        if (gameManager.card.range >= gameManager.distance && opponent.isDodging == false)
+        {
+            if (opponent.isBlockingHigh == true && (gameManager.card.guard == "High" || gameManager.card.guard == "Mid"))
+            {
+                Debug.Log("Blocked!");
+                opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onBlock);
+                opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                return;
+            }
+            if (opponent.isBlockingLow == true && (gameManager.card.guard == "Low" || gameManager.card.guard == "Mid"))
+            {
+                Debug.Log("Blocked!");
+                opponent.plusFrames = opponent.plusFrames + Mathf.Abs(gameManager.card.onBlock);
+                opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                return;
+            }
+            if (forceBreak > 0)
+            {
+                Debug.Log("Hit!");
+                opponent.health = opponent.health - (gameManager.card.damage + 1);
+                opponent.healthText.text = "" + opponent.health;
+                plusFrames = plusFrames + gameManager.card.onHit;
+                plusFramesText.text = "+" + plusFrames;
+                opponent.energy = opponent.energy - gameManager.card.cost;
+                opponent.isHit = true;
+            }
+            else
+            {
+                Debug.Log("Hit!");
+                opponent.health = opponent.health - gameManager.card.damage;
+                opponent.healthText.text = "" + opponent.health;
+                plusFrames = plusFrames + gameManager.card.onHit;
+                plusFramesText.text = "+" + plusFrames;
+                opponent.energy = opponent.energy - gameManager.card.cost;
+                opponent.isHit = true;
+            }
+            if (opponent.energy < 0)
+            {
+                opponent.energy = 0;
+            }
+            opponent.energyText.text = "" + opponent.energy;
+            if (character.cardName == "Taibo")
+            {
+                if (forceBreak > 0)
+                {
+                    opponent.Move(-2);
+                }
+                else
+                {
+                    opponent.Move(-1);
+                }
+
+            }
+        }
+    }
 }
