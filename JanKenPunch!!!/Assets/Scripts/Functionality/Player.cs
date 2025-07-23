@@ -60,6 +60,9 @@ public class Player : MonoBehaviour
         if (plusFrames == 0)
         {
             abilityOneButton.gameObject.SetActive(false);
+        }
+        if(plusFrames <= 2)
+        {
             abilityTwoButton.gameObject.SetActive(false);
         }
         if (plusFrames >= 1)
