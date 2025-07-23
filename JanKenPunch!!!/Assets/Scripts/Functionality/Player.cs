@@ -129,20 +129,10 @@ public class Player : MonoBehaviour
                         opponent.position++;
                     }
 
-                    if ((opponent.position != 1 && opponent.position != 9) && opponent.isDodging == true)
-                    {
-                        transform.position = stagePositions[opponent.position - 2].transform.position;
-                        position = opponent.position - 1;
-                        distance = Mathf.Abs(position - opponent.position);
-                        flipCheck = -1;
-                        return;
-                    }
-
                 }
                 this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
                 position = position + unitsActual;
                 distance = Mathf.Abs(position - opponent.position);
-
             }
             //if you're facing left
             else
@@ -169,15 +159,6 @@ public class Player : MonoBehaviour
                         }
                         opponent.transform.position = stagePositions[opponent.position -2].transform.position;
                         opponent.position--;
-                    }
-                    if ((opponent.position != 1 && opponent.position != 9) && opponent.isDodging == true)
-                    {
-                        
-                        transform.position = stagePositions[opponent.position].transform.position;
-                        position = opponent.position + 1;
-                        distance = Mathf.Abs(position - opponent.position);
-                        flipCheck = 1;
-                        return;
                     }
                 }
                 this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
