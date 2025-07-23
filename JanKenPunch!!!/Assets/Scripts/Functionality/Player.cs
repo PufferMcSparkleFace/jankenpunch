@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
                         position = opponent.position + 1;
                         distance = Mathf.Abs(position - opponent.position);
                         flipCheck = 1;
-                        return;
+                        Debug.Log("Schmove");
                     }
 
                     if (isPushing == false)
@@ -142,9 +142,14 @@ public class Player : MonoBehaviour
                     }
 
                 }
-                this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
-                position = position + unitsActual;
-                distance = Mathf.Abs(position - opponent.position);
+                else
+                {
+                    this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
+                    position = position + unitsActual;
+                    distance = Mathf.Abs(position - opponent.position);
+                    Debug.Log("Schmove");
+                }
+                
             }
             //if you're facing left
             else
@@ -165,7 +170,7 @@ public class Player : MonoBehaviour
                         position = opponent.position - 1;
                         distance = Mathf.Abs(position - opponent.position);
                         flipCheck = -1;
-                        return;
+                        Debug.Log("Schmove");
                     }
                     if (isPushing == false)
                     {
@@ -181,9 +186,13 @@ public class Player : MonoBehaviour
                         opponent.position--;
                     }
                 }
-                this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
-                position = position + unitsActual;
-                distance = Mathf.Abs(position - opponent.position);
+                else
+                {
+                    this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
+                    position = position + unitsActual;
+                    distance = Mathf.Abs(position - opponent.position);
+                    Debug.Log("Schmove");
+                }
             }
         }
 
