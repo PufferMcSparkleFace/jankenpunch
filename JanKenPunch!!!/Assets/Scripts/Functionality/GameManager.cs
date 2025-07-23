@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour
         if((card.type == "Basic Defense" || card.type == "Basic Movement") && (p1.energy < p2.energy || p1.energy == 0))
         {
             Debug.Log("" + card.cardName + " No Cost");
-            p1.StartCoroutine("WaitingforPlayers");
+            p1.StartCoroutine("FrameDelay");
         }
         //otherwise, if you can afford the card, play it
         else if(finalCardCost <= p1.energy)
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
             p1.energy = p1.energy - finalCardCost;
             p1.energyText.text = "" + p1.energy;
             Debug.Log("" + card.cardName);
-            p1.StartCoroutine("WaitingforPlayers");
+            p1.StartCoroutine("FrameDelay");
         }
         //if you can't afford the card, you do nothing, which costs 1 energy if you have more energy than your opponent
         else if(finalCardCost > p1.energy)
