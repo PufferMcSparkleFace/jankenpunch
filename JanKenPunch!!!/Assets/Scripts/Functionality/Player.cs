@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
 
     public Button abilityOneButton, abilityTwoButton;
 
+    public bool test = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -227,6 +229,17 @@ public class Player : MonoBehaviour
             installText.text = "Empowered";
             Debug.Log("Rynox +3");
         }
+    }
+
+    //have a separate coroutine that loops while both players haven't played a card. then, when a card is played, go into framedelay
+    
+    IEnumerator WaitingforPlayers()
+    {
+        while (test == false)
+        {
+            yield return null;
+        }
+        StartCoroutine(FrameDelay());
     }
 
     IEnumerator FrameDelay()
