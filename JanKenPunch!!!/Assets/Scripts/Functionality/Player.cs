@@ -118,7 +118,16 @@ public class Player : MonoBehaviour
                 }
                 if (unitsActual > 0 && distance == 1)
                 {
-                    if(isPushing == false)
+                    if ((opponent.position != 1 && opponent.position != 9) && opponent.isDodging == true)
+                    {
+                        transform.position = stagePositions[opponent.position].transform.position;
+                        position = opponent.position + 1;
+                        distance = Mathf.Abs(position - opponent.position);
+                        flipCheck = 1;
+                        return;
+                    }
+
+                    if (isPushing == false)
                     {
                         return;
                     }
@@ -150,6 +159,14 @@ public class Player : MonoBehaviour
                 }
                 if (unitsActual < 0 && distance == 1)
                 {
+                    if ((opponent.position != 1 && opponent.position != 9) && opponent.isDodging)
+                    {
+                        transform.position = stagePositions[opponent.position - 2].transform.position;
+                        position = opponent.position - 1;
+                        distance = Mathf.Abs(position - opponent.position);
+                        flipCheck = -1;
+                        return;
+                    }
                     if (isPushing == false)
                     {
                         return;
