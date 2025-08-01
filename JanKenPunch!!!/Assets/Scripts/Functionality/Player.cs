@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public int forceBreak = 0;
     public bool empowered = false;
     public int distance = 4;
+    public GameObject revealedCard;
 
     public int health, energy, plusFrames;
     public TMP_Text healthText, energyText, plusFramesText;
@@ -229,6 +230,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    IEnumerator RevealCards()
+    {
+        revealedCard.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        revealedCard.SetActive(false);
+        StartCoroutine("FrameDelay");
+    }
+    
     IEnumerator FrameDelay()
     {
         yield return new WaitForSeconds(gameManager.finalCardCost * 0.1f);
