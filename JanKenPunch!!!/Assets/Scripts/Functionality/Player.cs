@@ -235,7 +235,7 @@ public class Player : MonoBehaviour
 
     IEnumerator RevealCards()
     {
-        //cutscene = true
+        gameManager.cutscene = true;
         revealedCardScript.card = gameManager.card;
         revealedCardScript.UpdateCard();
         if(gameManager.finalCardCost != gameManager.card.cost)

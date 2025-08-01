@@ -5143,9 +5143,9 @@ MonoBehaviour:
   forceBreak: 0
   empowered: 0
   distance: 4
-  revealedCard: {fileID: 0}
-  revealedCardScript: {fileID: 0}
-  revealedCardCostText: {fileID: 0}
+  revealedCard: {fileID: 104080861}
+  revealedCardScript: {fileID: 104080863}
+  revealedCardCostText: {fileID: 2061320990}
   health: 30
   energy: 5
   plusFrames: 0
@@ -5687,6 +5687,7 @@ MonoBehaviour:
   p1: {fileID: 2047355261}
   p2: {fileID: 414189305}
   discarding: 0
+  cutscene: 0
 --- !u!114 &522628965
 MonoBehaviour:
   m_ObjectHideFlags: 0

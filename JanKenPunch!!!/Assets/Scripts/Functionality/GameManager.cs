@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text timerText;
     public Player p1, p2;
     public bool discarding;
+    public bool cutscene = false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
     public void EndInteraction()
     {
         //return to neutral
-        //cutscene = false
+        cutscene = false;
         p1.isBlockingHigh = false;
         p1.isBlockingLow = false;
         p1.isDodging = false;
