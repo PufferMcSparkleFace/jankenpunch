@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public bool empowered = false;
     public int distance = 4;
     public GameObject revealedCard;
+    public DisplayCard revealedCardScript;
 
     public int health, energy, plusFrames;
     public TMP_Text healthText, energyText, plusFramesText;
@@ -232,6 +233,8 @@ public class Player : MonoBehaviour
 
     IEnumerator RevealCards()
     {
+        revealedCardScript.card = gameManager.card;
+        revealedCardScript.UpdateCard();
         revealedCard.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         revealedCard.SetActive(false);
