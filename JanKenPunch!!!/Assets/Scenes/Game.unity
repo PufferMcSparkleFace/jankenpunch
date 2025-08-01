@@ -5144,6 +5144,8 @@ MonoBehaviour:
   empowered: 0
   distance: 4
   revealedCard: {fileID: 0}
+  revealedCardScript: {fileID: 0}
+  revealedCardCostText: {fileID: 0}
   health: 30
   energy: 5
   plusFrames: 0
@@ -17888,6 +17890,8 @@ MonoBehaviour:
   empowered: 0
   distance: 4
   revealedCard: {fileID: 8076846152211972896}
+  revealedCardScript: {fileID: 265400256477396693}
+  revealedCardCostText: {fileID: 0}
   health: 30
   energy: 5
   plusFrames: 0

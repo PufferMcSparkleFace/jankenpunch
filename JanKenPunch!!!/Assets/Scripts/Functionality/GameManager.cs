@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     public void EndInteraction()
     {
         //return to neutral
+        //cutscene = false
         p1.isBlockingHigh = false;
         p1.isBlockingLow = false;
         p1.isDodging = false;
