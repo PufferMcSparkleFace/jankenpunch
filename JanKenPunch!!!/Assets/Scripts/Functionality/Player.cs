@@ -241,6 +241,11 @@ public class Player : MonoBehaviour
         if(gameManager.finalCardCost != gameManager.card.cost)
         {
             revealedCardCostText.text = gameManager.finalCardCost.ToString();
+            revealedCardCostText.color = new Color(255, 115, 0, 255); 
+        }
+        else
+        {
+            revealedCardCostText.color = new Color(0, 0, 0, 255);
         }
         revealedCard.SetActive(true);
         yield return new WaitForSeconds(1.5f);
