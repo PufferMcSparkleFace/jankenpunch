@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class CharacterSelect : MonoBehaviour
 {
     public DisplayCharacterCard myCharacter;
+    public GameObject myCharacterGameObject, mySpriteGameObject;
     public Image mySprite;
     public bool isPlayer2 = false;
 
@@ -17,6 +18,24 @@ public class CharacterSelect : MonoBehaviour
     public List<NonBasicCard> zylaDeck = new List<NonBasicCard>();
     public List<NonBasicCard> taiboDeck = new List<NonBasicCard>();
     public List<NonBasicCard> rynoxDeck = new List<NonBasicCard>();
+
+    private void Start()
+    {
+        if (isPlayer2 == false)
+        {
+            myCharacterGameObject = GameObject.FindGameObjectWithTag("P1 Character");
+            myCharacter = myCharacterGameObject.GetComponent<DisplayCharacterCard>();
+            mySpriteGameObject = GameObject.FindGameObjectWithTag("P1");
+            mySprite = mySpriteGameObject.GetComponent<Image>();
+        }
+        else
+        {
+            myCharacterGameObject = GameObject.FindGameObjectWithTag("P2 Character");
+            myCharacter = myCharacterGameObject.GetComponent<DisplayCharacterCard>();
+            mySpriteGameObject = GameObject.FindGameObjectWithTag("P2");
+            mySprite = mySpriteGameObject.GetComponent<Image>();
+        }
+    }
 
     public void SelectZyla()
     {

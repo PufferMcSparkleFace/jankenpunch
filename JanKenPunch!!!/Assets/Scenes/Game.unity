@@ -2900,7 +2900,7 @@ GameObject:
   - component: {fileID: 197414735}
   m_Layer: 5
   m_Name: P2
-  m_TagString: Untagged
+  m_TagString: P2 Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5686,10 +5686,13 @@ MonoBehaviour:
   spacesBehindP1: 0
   spacesBehindP2: 0
   timerText: {fileID: 35919525}
-  me: {fileID: 2047355261}
-  opponent: {fileID: 414189305}
+  me: {fileID: 0}
+  opponent: {fileID: 0}
+  meGameObject: {fileID: 0}
+  opponentGameObject: {fileID: 0}
   discarding: 0
   cutscene: 0
+  isPlayer2: 1
 --- !u!114 &522628965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5989,7 +5992,7 @@ GameObject:
   - component: {fileID: 643729362}
   m_Layer: 5
   m_Name: Image
-  m_TagString: P2 Sprite
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8621,8 +8624,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566b0e9294346104386ba896a2117d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCharacter: {fileID: 8915374461827077188}
-  mySprite: {fileID: 2047355259}
+  myCharacter: {fileID: 0}
+  myCharacterGameObject: {fileID: 0}
+  mySpriteGameObject: {fileID: 0}
+  mySprite: {fileID: 0}
+  isPlayer2: 0
   deck: {fileID: 1785747173}
   zyla: {fileID: 11400000, guid: 505e518f622d9434ba06e563ab812b74, type: 2}
   taibo: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}
@@ -19743,7 +19749,7 @@ GameObject:
   - component: {fileID: 7905946571265996676}
   m_Layer: 5
   m_Name: Image
-  m_TagString: P1 Sprite
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21174,7 +21180,7 @@ GameObject:
   - component: {fileID: 8915374461827077188}
   m_Layer: 5
   m_Name: P1
-  m_TagString: Untagged
+  m_TagString: P1 Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

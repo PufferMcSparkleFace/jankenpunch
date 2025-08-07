@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public int spacesBehindP2;
     public TMP_Text timerText;
     public Player me, opponent;
+    public GameObject meGameObject, opponentGameObject;
     public bool discarding;
     public bool cutscene = false;
     public bool isPlayer2 = false;
@@ -33,6 +34,20 @@ public class GameManager : MonoBehaviour
         timer = 10;
 
         hand = GameObject.FindGameObjectWithTag("Hand").transform;
+        if(isPlayer2 == false)
+        {
+            meGameObject = GameObject.FindGameObjectWithTag("P1");
+            me = meGameObject.GetComponent<Player>();
+            opponentGameObject = GameObject.FindGameObjectWithTag("P2");
+            opponent = opponentGameObject.GetComponent<Player>();
+        }
+        else
+        {
+            meGameObject = GameObject.FindGameObjectWithTag("P2");
+            me = meGameObject.GetComponent<Player>();
+            opponentGameObject = GameObject.FindGameObjectWithTag("P1");
+            opponent = opponentGameObject.GetComponent<Player>();
+        }
     }
 
     // Update is called once per frame
