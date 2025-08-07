@@ -8,6 +8,7 @@ public class CharacterSelect : MonoBehaviour
 {
     public DisplayCharacterCard myCharacter;
     public Image mySprite;
+    public bool isPlayer2 = false;
 
     public Draw deck;
 

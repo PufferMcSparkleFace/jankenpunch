@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public Player me, opponent;
     public bool discarding;
     public bool cutscene = false;
+    public bool isPlayer2 = false;
 
     // Start is called before the first frame update
     void Start()
