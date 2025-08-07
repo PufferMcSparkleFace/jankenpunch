@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class CharacterSelect : MonoBehaviour
 {
-    public DisplayCharacterCard p1Character;
-    public Image p1Sprite;
+    public DisplayCharacterCard myCharacter;
+    public Image mySprite;
 
     public Draw deck;
 
@@ -20,36 +20,36 @@ public class CharacterSelect : MonoBehaviour
     public void SelectZyla()
     {
         Debug.Log("Zyla");
-        p1Character.character = zyla;
-        p1Character.UpdateCharacter();
+        myCharacter.character = zyla;
+        myCharacter.UpdateCharacter();
         deck.deck = zylaDeck;
         deck.DrawHand();
         deck.characterSelected = true;
-        p1Sprite.sprite = zylaSprite;
+        mySprite.sprite = zylaSprite;
         this.gameObject.SetActive(false);
     }
 
     public void SelectTaibo()
     {
         Debug.Log("Taibo");
-        p1Character.character = taibo;
-        p1Character.UpdateCharacter();
+        myCharacter.character = taibo;
+        myCharacter.UpdateCharacter();
         deck.deck = taiboDeck;
         deck.DrawHand();
         deck.characterSelected = true;
-        p1Sprite.sprite = taiboSprite;
+        mySprite.sprite = taiboSprite;
         this.gameObject.SetActive(false);
     }
 
     public void SelectRynox()
     {
         Debug.Log("Rynox");
-        p1Character.character = rynox;
-        p1Character.UpdateCharacter();
+        myCharacter.character = rynox;
+        myCharacter.UpdateCharacter();
         deck.deck = rynoxDeck;
         deck.DrawHand();
         deck.characterSelected = true;
-        p1Sprite.sprite = rynoxSprite;
+        mySprite.sprite = rynoxSprite;
         this.gameObject.SetActive(false);
     }
 }

@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public int spacesBehindP1;
     public int spacesBehindP2;
     public TMP_Text timerText;
-    public Player p1, p2;
+    public Player me, opponent;
     public bool discarding;
     public bool cutscene = false;
 
@@ -61,53 +61,53 @@ public class GameManager : MonoBehaviour
     {
         //return to neutral
         cutscene = false;
-        p1.isBlockingHigh = false;
-        p1.isBlockingLow = false;
-        p1.isDodging = false;
-        p1.isMoving = false;
-        p1.isPushing = false;
-        p2.isBlockingHigh = false;
-        p2.isBlockingLow = false;
-        p2.isDodging = false;
-        p2.isMoving = false;
-        p2.isPushing = false;
-        p1.isHit = false;
-        p2.isHit = false;
-        p1.dragonInstall--;
-        p2.dragonInstall--;
-        p1.forceBreak--;
-        p2.forceBreak--;
-        p1.playedCard = null;
-        p2.playedCard = null;
+        me.isBlockingHigh = false;
+        me.isBlockingLow = false;
+        me.isDodging = false;
+        me.isMoving = false;
+        me.isPushing = false;
+        opponent.isBlockingHigh = false;
+        opponent.isBlockingLow = false;
+        opponent.isDodging = false;
+        opponent.isMoving = false;
+        opponent.isPushing = false;
+        me.isHit = false;
+        opponent.isHit = false;
+        me.dragonInstall--;
+        opponent.dragonInstall--;
+        me.forceBreak--;
+        opponent.forceBreak--;
+        me.playedCard = null;
+        opponent.playedCard = null;
         Debug.Log("Return to Neutral");
 
-        if(p1.health <= 0)
+        if(me.health <= 0)
         {
             Debug.Log("Player 2 Wins");
         }
-        if(p2.health <= 0)
+        if(opponent.health <= 0)
         {
             Debug.Log("Player 1 Wins");
         }
 
 
         //if both players run out of energy, move on to the next round
-        if (p1.energy == 0 && p2.energy == 0)
+        if (me.energy == 0 && opponent.energy == 0)
         {
             timer--;
             timerText.text = "" + timer;
             //if the timer gets to 0, game over
             if (timer == 0)
             {
-                if (p1.health > p2.health)
+                if (me.health > opponent.health)
                 {
                     Debug.Log("Player 1 Wins");
                 }
-                else if (p1.health < p2.health)
+                else if (me.health < opponent.health)
                 {
                     Debug.Log("Player 2 Wins");
                 }
-                else if (p1.health == p2.health)
+                else if (me.health == opponent.health)
                 {
                     Debug.Log("Draw");
                 }
@@ -115,15 +115,15 @@ public class GameManager : MonoBehaviour
             else
             {
                 //if the timer's not 0, refill energy
-                if(p1.flipCheck < 0)
+                if(me.flipCheck < 0)
                 {
-                    spacesBehindP1 = p1.position - 1;
-                    spacesBehindP2 = 9 - p2.position;
+                    spacesBehindP1 = me.position - 1;
+                    spacesBehindP2 = 9 - opponent.position;
                 }
                 else
                 {
-                    spacesBehindP1 = 9 - p1.position;
-                    spacesBehindP2 = p2.position - 1;
+                    spacesBehindP1 = 9 - me.position;
+                    spacesBehindP2 = opponent.position - 1;
                 }
                 if(spacesBehindP1 > 4)
                 {
@@ -133,10 +133,10 @@ public class GameManager : MonoBehaviour
                 {
                     spacesBehindP2 = 4;
                 }
-                p1.energy = 3 + spacesBehindP1;
-                p1.energyText.text = "" + p1.energy;
-                p2.energy = 3 + spacesBehindP2;
-                p2.energyText.text = "" + p2.energy;
+                me.energy = 3 + spacesBehindP1;
+                me.energyText.text = "" + me.energy;
+                opponent.energy = 3 + spacesBehindP2;
+                opponent.energyText.text = "" + opponent.energy;
             }
         }
     }
@@ -163,13 +163,13 @@ public class GameManager : MonoBehaviour
             return;
         }
         //calculates actual cost of the card with plus frames factored in
-        finalCardCost = card.cost - p1.plusFrames;
+        finalCardCost = card.cost - me.plusFrames;
 
         //sets both players plus frames to 0
-        p1.plusFrames = 0;
-        p2.plusFrames = 0;
-        p1.plusFramesText.text = "";
-        p2.plusFramesText.text = "";
+        me.plusFrames = 0;
+        opponent.plusFrames = 0;
+        me.plusFramesText.text = "";
+        opponent.plusFramesText.text = "";
 
         //makes sure the card doesn't cost a negative number
         if (finalCardCost < 0)
@@ -178,26 +178,26 @@ public class GameManager : MonoBehaviour
         }
 
         //if you have less energy than your opponent or 0 energy, basic cards cost 0
-        if((card.type == "Basic Defense" || card.type == "Basic Movement") && (p1.energy < p2.energy || p1.energy == 0))
+        if((card.type == "Basic Defense" || card.type == "Basic Movement") && (me.energy < opponent.energy || me.energy == 0))
         {
             Debug.Log("" + card.cardName + " No Cost");
-            p1.StartCoroutine("WaitForOpponent");
+            me.StartCoroutine("WaitForOpponent");
         }
         //otherwise, if you can afford the card, play it
-        else if(finalCardCost <= p1.energy)
+        else if(finalCardCost <= me.energy)
         {
-            p1.energy = p1.energy - finalCardCost;
-            p1.energyText.text = "" + p1.energy;
+            me.energy = me.energy - finalCardCost;
+            me.energyText.text = "" + me.energy;
             Debug.Log("" + card.cardName);
-            p1.StartCoroutine("WaitForOpponent");
+            me.StartCoroutine("WaitForOpponent");
         }
         //if you can't afford the card, you do nothing, which costs 1 energy if you have more energy than your opponent
-        else if(finalCardCost > p1.energy)
+        else if(finalCardCost > me.energy)
         {
-            if(p1.energy >= p2.energy)
+            if(me.energy >= opponent.energy)
             {
-                p1.energy--;
-                p1.energyText.text = "" + p1.energy;
+                me.energy--;
+                me.energyText.text = "" + me.energy;
             }
             Debug.Log("Do Nothing");
         }

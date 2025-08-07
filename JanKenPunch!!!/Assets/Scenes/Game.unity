@@ -5686,8 +5686,8 @@ MonoBehaviour:
   spacesBehindP1: 0
   spacesBehindP2: 0
   timerText: {fileID: 35919525}
-  p1: {fileID: 2047355261}
-  p2: {fileID: 414189305}
+  me: {fileID: 2047355261}
+  opponent: {fileID: 414189305}
   discarding: 0
   cutscene: 0
 --- !u!114 &522628965
@@ -8621,8 +8621,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566b0e9294346104386ba896a2117d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1Character: {fileID: 8915374461827077188}
-  p1Sprite: {fileID: 2047355259}
+  myCharacter: {fileID: 8915374461827077188}
+  mySprite: {fileID: 2047355259}
   deck: {fileID: 1785747173}
   zyla: {fileID: 11400000, guid: 505e518f622d9434ba06e563ab812b74, type: 2}
   taibo: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}
