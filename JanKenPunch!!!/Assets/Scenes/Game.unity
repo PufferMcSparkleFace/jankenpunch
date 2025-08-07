@@ -5692,7 +5692,7 @@ MonoBehaviour:
   opponentGameObject: {fileID: 0}
   discarding: 0
   cutscene: 0
-  isPlayer2: 1
+  isPlayer2: 0
 --- !u!114 &522628965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8628,7 +8628,6 @@ MonoBehaviour:
   myCharacterGameObject: {fileID: 0}
   mySpriteGameObject: {fileID: 0}
   mySprite: {fileID: 0}
-  isPlayer2: 0
   deck: {fileID: 1785747173}
   zyla: {fileID: 11400000, guid: 505e518f622d9434ba06e563ab812b74, type: 2}
   taibo: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}
@@ -8729,6 +8728,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8627b8740cb96724bb3d32793fb59b06, type: 2}
   - {fileID: 11400000, guid: 8627b8740cb96724bb3d32793fb59b06, type: 2}
   - {fileID: 11400000, guid: 8627b8740cb96724bb3d32793fb59b06, type: 2}
+  gameManager: {fileID: 522628964}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

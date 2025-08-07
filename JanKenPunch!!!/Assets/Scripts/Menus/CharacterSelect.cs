@@ -9,7 +9,6 @@ public class CharacterSelect : MonoBehaviour
     public DisplayCharacterCard myCharacter;
     public GameObject myCharacterGameObject, mySpriteGameObject;
     public Image mySprite;
-    public bool isPlayer2 = false;
 
     public Draw deck;
 
@@ -19,9 +18,11 @@ public class CharacterSelect : MonoBehaviour
     public List<NonBasicCard> taiboDeck = new List<NonBasicCard>();
     public List<NonBasicCard> rynoxDeck = new List<NonBasicCard>();
 
+    public GameManager gameManager;
+
     private void Start()
     {
-        if (isPlayer2 == false)
+        if (gameManager.isPlayer2 == false)
         {
             myCharacterGameObject = GameObject.FindGameObjectWithTag("P1 Character");
             myCharacter = myCharacterGameObject.GetComponent<DisplayCharacterCard>();
