@@ -77,6 +77,8 @@ public class GameManager : MonoBehaviour
         p2.dragonInstall--;
         p1.forceBreak--;
         p2.forceBreak--;
+        p1.playedCard = null;
+        p2.playedCard = null;
         Debug.Log("Return to Neutral");
 
         if(p1.health <= 0)
@@ -179,7 +181,7 @@ public class GameManager : MonoBehaviour
         if((card.type == "Basic Defense" || card.type == "Basic Movement") && (p1.energy < p2.energy || p1.energy == 0))
         {
             Debug.Log("" + card.cardName + " No Cost");
-            p1.StartCoroutine("RevealCards");
+            p1.StartCoroutine("WaitForOpponent");
         }
         //otherwise, if you can afford the card, play it
         else if(finalCardCost <= p1.energy)
@@ -187,7 +189,7 @@ public class GameManager : MonoBehaviour
             p1.energy = p1.energy - finalCardCost;
             p1.energyText.text = "" + p1.energy;
             Debug.Log("" + card.cardName);
-            p1.StartCoroutine("RevealCards");
+            p1.StartCoroutine("WaitForOpponent");
         }
         //if you can't afford the card, you do nothing, which costs 1 energy if you have more energy than your opponent
         else if(finalCardCost > p1.energy)
