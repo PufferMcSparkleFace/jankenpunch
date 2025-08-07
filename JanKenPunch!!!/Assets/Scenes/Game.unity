@@ -7865,7 +7865,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2047355261}
+      - m_Target: {fileID: 414189305}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: AbilityOne
         m_Mode: 1
@@ -17862,7 +17862,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2047355261}
+      - m_Target: {fileID: 414189305}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: AbilityTwo
         m_Mode: 1
@@ -23018,7 +23018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd92aa3f7b15434c98fb483f518d28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 5999e30705a6cc542a6fdc1853e90060, type: 2}
+  character: {fileID: 11400000, guid: 505e518f622d9434ba06e563ab812b74, type: 2}
   nameText: {fileID: 73208237644584380}
   passiveText: {fileID: 836155142170401034}
   firstAbilityText: {fileID: 2828839563394699964}
