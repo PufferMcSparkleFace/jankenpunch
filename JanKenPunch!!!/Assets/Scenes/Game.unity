@@ -2953,7 +2953,7 @@ MonoBehaviour:
   secondAbilityText: {fileID: 2078897399}
   image: {fileID: 643729362}
   cardBack: {fileID: 197414736}
-  player: {fileID: 2047355261}
+  player: {fileID: 414189305}
 --- !u!114 &197414736
 MonoBehaviour:
   m_ObjectHideFlags: 0
