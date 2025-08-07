@@ -9,6 +9,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public Transform playArea = null;
     public bool isInHand = true;
     public GameManager gameManager;
+    public Player player;
 
     public void Start()
     {
@@ -59,7 +60,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         if (gameManager.cutscene == false)
         {
-            if (isInHand == true && gameManager.playedCard == null)
+            if (isInHand == true && player.playedCard == null)
             {
                 gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.25f);
                 StartCoroutine("Enlarge");
