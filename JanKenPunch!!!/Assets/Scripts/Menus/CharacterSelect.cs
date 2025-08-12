@@ -20,9 +20,7 @@ public class CharacterSelect : MonoBehaviour
 
     public GameManager gameManager;
 
-    private void Start()
-    {
-        /*if (gameManager.isPlayer2 == false)
+    /*if (gameManager.isPlayer2 == false)
         {
             myCharacterGameObject = GameObject.FindGameObjectWithTag("P1 Character");
             myCharacter = myCharacterGameObject.GetComponent<DisplayCharacterCard>();
@@ -36,7 +34,6 @@ public class CharacterSelect : MonoBehaviour
             mySpriteGameObject = GameObject.FindGameObjectWithTag("P2");
             mySprite = mySpriteGameObject.GetComponent<Image>();
         }*/
-    }
 
     public void SelectZyla()
     {
