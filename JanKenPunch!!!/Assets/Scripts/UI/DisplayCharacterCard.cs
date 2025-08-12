@@ -48,9 +48,9 @@ public class DisplayCharacterCard : MonoBehaviour
         player.character = character;
     }
 
-    public void SetCharacter(int playernumber)
+    public void SetCharacter(int playerNumber)
     {
-        if (playernumber == 1)
+        if (playerNumber == 1)
         {
             playerGameObject = GameObject.FindGameObjectWithTag("P1");
             player = playerGameObject.GetComponent<Player>();
