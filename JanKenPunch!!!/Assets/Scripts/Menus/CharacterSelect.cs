@@ -20,7 +20,7 @@ public class CharacterSelect : MonoBehaviour
 
     public GameManager gameManager;
 
-    /*if (gameManager.isPlayer2 == false)
+    /*if you're player 1
         {
             myCharacterGameObject = GameObject.FindGameObjectWithTag("P1 Character");
             myCharacter = myCharacterGameObject.GetComponent<DisplayCharacterCard>();
