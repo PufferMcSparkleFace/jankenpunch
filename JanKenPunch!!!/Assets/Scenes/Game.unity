@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 4284195}
   m_Layer: 5
   m_Name: P2 Install
-  m_TagString: P1 UI
+  m_TagString: P2 Install
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1899,11 +1899,11 @@ GameObject:
   - component: {fileID: 104080863}
   m_Layer: 5
   m_Name: P2 Played Card
-  m_TagString: Basic Cards
+  m_TagString: P2 Revealed Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &104080862
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2008,7 +2008,7 @@ GameObject:
   - component: {fileID: 120095122}
   m_Layer: 5
   m_Name: P1 Install
-  m_TagString: P1 UI
+  m_TagString: P1 Install
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2953,7 +2953,8 @@ MonoBehaviour:
   secondAbilityText: {fileID: 2078897399}
   image: {fileID: 643729362}
   cardBack: {fileID: 197414736}
-  player: {fileID: 414189305}
+  player: {fileID: 0}
+  gameManager: {fileID: 522628964}
 --- !u!114 &197414736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3005,7 +3006,7 @@ GameObject:
   - component: {fileID: 200202321}
   m_Layer: 5
   m_Name: P1 Energy
-  m_TagString: P1 UI
+  m_TagString: P1 Energy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5027,135 +5028,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386193922}
   m_CullTransparentMesh: 1
---- !u!1 &414189301
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 414189302}
-  - component: {fileID: 414189304}
-  - component: {fileID: 414189303}
-  - component: {fileID: 414189305}
-  m_Layer: 0
-  m_Name: P2
-  m_TagString: P2
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &414189302
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414189301}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9522892, y: 3.4707363, z: 0.72307}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 850381696}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 519.6001, y: 25}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &414189303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414189301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b63169b7242e6b54baf9e59669b0275a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &414189304
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414189301}
-  m_CullTransparentMesh: 1
---- !u!114 &414189305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414189301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41ddfebed37c28643b385c2945135c4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherPlayer: {fileID: 2047355258}
-  flipCheck: 0
-  stagePositions:
-  - {fileID: 1149378342}
-  - {fileID: 62926195}
-  - {fileID: 311326304}
-  - {fileID: 876843449}
-  - {fileID: 750614282}
-  - {fileID: 2095953492}
-  - {fileID: 1291670235}
-  - {fileID: 1082858929}
-  - {fileID: 1907631757}
-  position: 0
-  isBlockingHigh: 0
-  isBlockingLow: 0
-  isDodging: 0
-  isMoving: 0
-  isPushing: 0
-  isHit: 0
-  unitsActual: 0
-  gameManager: {fileID: 522628964}
-  opponent: {fileID: 2047355261}
-  character: {fileID: 0}
-  installText: {fileID: 4284195}
-  dragonInstall: 0
-  forceBreak: 0
-  empowered: 0
-  distance: 4
-  revealedCard: {fileID: 104080861}
-  revealedCardScript: {fileID: 104080863}
-  revealedCardCostText: {fileID: 2061320990}
-  waitingForOpponent: {fileID: 1381863111}
-  playedCard: {fileID: 0}
-  health: 30
-  energy: 5
-  plusFrames: 0
-  healthText: {fileID: 2030163351}
-  energyText: {fileID: 1453486345}
-  plusFramesText: {fileID: 881705959}
-  abilityOneButton: {fileID: 872167951}
-  abilityTwoButton: {fileID: 2043070839}
 --- !u!1 &452527440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5170,7 +5042,7 @@ GameObject:
   - component: {fileID: 452527442}
   m_Layer: 5
   m_Name: Ability 1 Button
-  m_TagString: Untagged
+  m_TagString: P1 Ability 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5239,7 +5111,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2047355261}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: AbilityOne
         m_Mode: 1
@@ -5641,7 +5513,7 @@ GameObject:
   - component: {fileID: 522628965}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: Untagged
+  m_TagString: Game Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7417,7 +7289,7 @@ GameObject:
   - component: {fileID: 806464938}
   m_Layer: 5
   m_Name: P1 Health
-  m_TagString: P1 UI
+  m_TagString: P1 Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7771,8 +7643,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1289547341}
-  - {fileID: 414189302}
-  - {fileID: 2047355258}
   - {fileID: 1110705316}
   - {fileID: 1623642696}
   - {fileID: 2138413577}
@@ -7799,7 +7669,7 @@ GameObject:
   - component: {fileID: 872167951}
   m_Layer: 5
   m_Name: Ability 1 Button
-  m_TagString: Untagged
+  m_TagString: P2 Ability 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7868,7 +7738,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 414189305}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: AbilityOne
         m_Mode: 1
@@ -8006,7 +7876,7 @@ GameObject:
   - component: {fileID: 881705959}
   m_Layer: 5
   m_Name: P2 Plus Frames
-  m_TagString: Untagged
+  m_TagString: P2 Plus Frames
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12940,11 +12810,11 @@ GameObject:
   - component: {fileID: 1381863111}
   m_Layer: 5
   m_Name: Waiting for Opponent
-  m_TagString: P2 UI
+  m_TagString: Waiting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1381863110
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13756,7 +13626,7 @@ GameObject:
   - component: {fileID: 1453486345}
   m_Layer: 5
   m_Name: P2 Energy
-  m_TagString: P2 UI
+  m_TagString: P2 Energy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13881,6 +13751,110 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453486343}
   m_CullTransparentMesh: 1
+--- !u!1 &1455763522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1455763525}
+  - component: {fileID: 1455763524}
+  - component: {fileID: 1455763523}
+  m_Layer: 0
+  m_Name: Network Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1455763523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455763522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6960e84d07fb87f47956e7a81d71c4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ProtocolType: 0
+  m_UseWebSockets: 0
+  m_UseEncryption: 0
+  m_MaxPacketQueueSize: 128
+  m_MaxPayloadSize: 6144
+  m_HeartbeatTimeoutMS: 500
+  m_ConnectTimeoutMS: 1000
+  m_MaxConnectAttempts: 60
+  m_DisconnectTimeoutMS: 30000
+  ConnectionData:
+    Address: 127.0.0.1
+    Port: 7777
+    ServerListenAddress: 127.0.0.1
+  DebugSimulator:
+    PacketDelayMS: 0
+    PacketJitterMS: 0
+    PacketDropRate: 0
+--- !u!114 &1455763524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455763522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593a2fe42fa9d37498c96f9a383b6521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NetworkManagerExpanded: 0
+  NetworkConfig:
+    ProtocolVersion: 0
+    NetworkTransport: {fileID: 1455763523}
+    PlayerPrefab: {fileID: 8620265329010862024, guid: 7878b822b3bf69d4aac7aebc1f59593b, type: 3}
+    Prefabs:
+      NetworkPrefabsLists:
+      - {fileID: 11400000, guid: 50db29619438f294ebd470ac882a6a9d, type: 2}
+    TickRate: 30
+    ClientConnectionBufferTimeout: 10
+    ConnectionApproval: 0
+    ConnectionData: 
+    EnableTimeResync: 0
+    TimeResyncInterval: 30
+    EnsureNetworkVariableLengthSafety: 0
+    EnableSceneManagement: 1
+    ForceSamePrefabs: 1
+    RecycleNetworkIds: 1
+    NetworkIdRecycleDelay: 120
+    RpcHashSize: 0
+    LoadSceneTimeOut: 120
+    SpawnTimeout: 10
+    EnableNetworkLogs: 1
+    NetworkTopology: 0
+    UseCMBService: 0
+    AutoSpawnPlayerPrefabClientSide: 1
+    NetworkProfilingMetrics: 1
+    OldPrefabList: []
+  RunInBackground: 1
+  LogLevel: 1
+--- !u!4 &1455763525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455763522}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1338.7236, y: 0, z: 4983.7954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1456936718
 GameObject:
   m_ObjectHideFlags: 0
@@ -16985,7 +16959,7 @@ GameObject:
   - component: {fileID: 1971247334}
   m_Layer: 5
   m_Name: P1 Plus Frames
-  m_TagString: Untagged
+  m_TagString: P1 Plus Frames
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17526,7 +17500,7 @@ GameObject:
   - component: {fileID: 2030163351}
   m_Layer: 5
   m_Name: P2 Health
-  m_TagString: P2 UI
+  m_TagString: P2 Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17799,7 +17773,7 @@ GameObject:
   - component: {fileID: 2043070839}
   m_Layer: 5
   m_Name: Ability 2 Button
-  m_TagString: Untagged
+  m_TagString: P2 Ability 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17868,7 +17842,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 414189305}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: AbilityTwo
         m_Mode: 1
@@ -17918,135 +17892,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043070837}
   m_CullTransparentMesh: 1
---- !u!1 &2047355257
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2047355258}
-  - component: {fileID: 2047355260}
-  - component: {fileID: 2047355259}
-  - component: {fileID: 2047355261}
-  m_Layer: 0
-  m_Name: P1
-  m_TagString: P1
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2047355258
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047355257}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9522892, y: 3.4707363, z: 0.72307}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 850381696}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -520.8, y: 30}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2047355259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047355257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 237e8630c9a84064385186db6587925f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &2047355260
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047355257}
-  m_CullTransparentMesh: 1
---- !u!114 &2047355261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047355257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41ddfebed37c28643b385c2945135c4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherPlayer: {fileID: 414189302}
-  flipCheck: 0
-  stagePositions:
-  - {fileID: 1149378342}
-  - {fileID: 62926195}
-  - {fileID: 311326304}
-  - {fileID: 876843449}
-  - {fileID: 750614282}
-  - {fileID: 2095953492}
-  - {fileID: 1291670235}
-  - {fileID: 1082858929}
-  - {fileID: 1907631757}
-  position: 0
-  isBlockingHigh: 0
-  isBlockingLow: 0
-  isDodging: 0
-  isMoving: 0
-  isPushing: 0
-  isHit: 0
-  unitsActual: 0
-  gameManager: {fileID: 522628964}
-  opponent: {fileID: 414189305}
-  character: {fileID: 0}
-  installText: {fileID: 120095122}
-  dragonInstall: 0
-  forceBreak: 0
-  empowered: 0
-  distance: 4
-  revealedCard: {fileID: 8076846152211972896}
-  revealedCardScript: {fileID: 265400256477396693}
-  revealedCardCostText: {fileID: 7768695349213124616}
-  waitingForOpponent: {fileID: 1381863111}
-  playedCard: {fileID: 0}
-  health: 30
-  energy: 5
-  plusFrames: 0
-  healthText: {fileID: 806464938}
-  energyText: {fileID: 200202321}
-  plusFramesText: {fileID: 1971247334}
-  abilityOneButton: {fileID: 452527442}
-  abilityTwoButton: {fileID: 2055026100}
 --- !u!1 &2055026098
 GameObject:
   m_ObjectHideFlags: 0
@@ -18061,7 +17906,7 @@ GameObject:
   - component: {fileID: 2055026100}
   m_Layer: 5
   m_Name: Ability 2 Button
-  m_TagString: Untagged
+  m_TagString: P1 Ability 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18130,7 +17975,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2047355261}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: AbilityTwo
         m_Mode: 1
@@ -18193,7 +18038,7 @@ GameObject:
   - component: {fileID: 2061320990}
   m_Layer: 5
   m_Name: Cost
-  m_TagString: Untagged
+  m_TagString: P2 Revealed Card Cost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22836,11 +22681,11 @@ GameObject:
   - component: {fileID: 265400256477396693}
   m_Layer: 5
   m_Name: P1 Played Card
-  m_TagString: Basic Cards
+  m_TagString: P1 Revealed Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8141316336623793988
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23032,7 +22877,8 @@ MonoBehaviour:
   secondAbilityText: {fileID: 2876554519081181439}
   image: {fileID: 7905946571265996676}
   cardBack: {fileID: 2833719055737114924}
-  player: {fileID: 2047355261}
+  player: {fileID: 0}
+  gameManager: {fileID: 522628964}
 --- !u!224 &8984262592662403074
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23111,7 +22957,7 @@ GameObject:
   - component: {fileID: 7768695349213124616}
   m_Layer: 5
   m_Name: Cost
-  m_TagString: Untagged
+  m_TagString: P1 Revealed Card Cost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23232,3 +23078,4 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 850381696}
   - {fileID: 522628963}
+  - {fileID: 1455763525}

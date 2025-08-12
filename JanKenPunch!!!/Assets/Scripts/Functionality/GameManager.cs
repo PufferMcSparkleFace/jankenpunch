@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Networking;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,13 +29,12 @@ public class GameManager : MonoBehaviour
     public bool cutscene = false;
     public bool isPlayer2 = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         timer = 10;
 
         hand = GameObject.FindGameObjectWithTag("Hand").transform;
-        if(isPlayer2 == false)
+        if (isPlayer2 == false)
         {
             meGameObject = GameObject.FindGameObjectWithTag("P1");
             me = meGameObject.GetComponent<Player>();

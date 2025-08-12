@@ -7,6 +7,7 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public Transform otherPlayer;
+    public GameObject otherPlayerGameObject;
     public float flipCheck;
     public GameObject[] stagePositions;
     public int position;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     public DisplayCard revealedCardScript;
     public TMP_Text revealedCardCostText;
     public TMP_Text waitingForOpponent;
+    public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject, revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject, gameManagerObject;
 
     public NonBasicCard playedCard;
 
@@ -36,6 +38,60 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        waitingGameObject = GameObject.FindGameObjectWithTag("Waiting");
+        waitingForOpponent = waitingGameObject.GetComponent<TMP_Text>();
+        gameManagerObject = GameObject.FindGameObjectWithTag("Game Manager");
+        gameManager = gameManagerObject.GetComponent<GameManager>();
+
+        if(GameObject.FindGameObjectWithTag("P1") == false)
+        {
+            this.gameObject.tag = "P1";
+            installTextGameObject = GameObject.FindGameObjectWithTag("P1 Install");
+            healthTextGameObject = GameObject.FindGameObjectWithTag("P1 Health");
+            energyTextGameObject = GameObject.FindGameObjectWithTag("P1 Energy");
+            plusFramesTextGameObject = GameObject.FindGameObjectWithTag("P1 Plus Frames");
+            installText = installTextGameObject.GetComponent<TMP_Text>();
+            healthText = healthTextGameObject.GetComponent<TMP_Text>();
+            energyText = energyTextGameObject.GetComponent<TMP_Text>();
+            plusFramesText = plusFramesTextGameObject.GetComponent<TMP_Text>();
+            revealedCard = GameObject.FindGameObjectWithTag("P1 Revealed Card");
+            revealedCardScript = revealedCard.GetComponent<DisplayCard>();
+            revealedCardCostTextGameObject = GameObject.FindGameObjectWithTag("P1 Revealed Card Cost");
+            revealedCardCostText = revealedCardCostTextGameObject.GetComponent<TMP_Text>();
+            abilityOneButtonGameObject = GameObject.FindGameObjectWithTag("P1 Ability 1");
+            abilityTwoButtonGameObject = GameObject.FindGameObjectWithTag("P1 Ability 2");
+            abilityOneButton = abilityOneButtonGameObject.GetComponent<Button>();
+            abilityTwoButton = abilityTwoButtonGameObject.GetComponent<Button>();
+            revealedCard.SetActive(false);
+            
+        }
+        else
+        {
+            this.gameObject.tag = "P2";
+            installTextGameObject = GameObject.FindGameObjectWithTag("P2 Install");
+            healthTextGameObject = GameObject.FindGameObjectWithTag("P2 Health");
+            energyTextGameObject = GameObject.FindGameObjectWithTag("P2 Energy");
+            plusFramesTextGameObject = GameObject.FindGameObjectWithTag("P2 Plus Frames");
+            installText = installTextGameObject.GetComponent<TMP_Text>();
+            healthText = healthTextGameObject.GetComponent<TMP_Text>();
+            energyText = energyTextGameObject.GetComponent<TMP_Text>();
+            plusFramesText = plusFramesTextGameObject.GetComponent<TMP_Text>();
+            revealedCard = GameObject.FindGameObjectWithTag("P2 Revealed Card");
+            revealedCardScript = revealedCard.GetComponent<DisplayCard>();
+            revealedCardCostTextGameObject = GameObject.FindGameObjectWithTag("P2 Revealed Card Cost");
+            revealedCardCostText = revealedCardCostTextGameObject.GetComponent<TMP_Text>();
+            abilityOneButtonGameObject = GameObject.FindGameObjectWithTag("P2 Ability 1");
+            abilityTwoButtonGameObject = GameObject.FindGameObjectWithTag("P2 Ability 2");
+            abilityOneButton = abilityOneButtonGameObject.GetComponent<Button>();
+            abilityTwoButton = abilityTwoButtonGameObject.GetComponent<Button>();
+            revealedCard.SetActive(false);
+            otherPlayerGameObject = GameObject.FindGameObjectWithTag("P1");
+            otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
+            opponent = otherPlayerGameObject.GetComponent<Player>();
+            opponent.SetOpponent();
+            waitingGameObject.SetActive(false);
+        }
+
         if(this.gameObject.tag == "P1")
         {
             this.transform.position = stagePositions[2].transform.position;
@@ -50,6 +106,13 @@ public class Player : MonoBehaviour
         healthText.text = health.ToString();
         energyText.text = energy.ToString();
         plusFramesText.text = "";
+    }
+
+    public void SetOpponent()
+    {
+        otherPlayerGameObject = GameObject.FindGameObjectWithTag("P2");
+        otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
+        opponent = otherPlayerGameObject.GetComponent<Player>();
     }
 
     // Update is called once per frame

@@ -17,6 +17,24 @@ TagManager:
   - P2 Sprite
   - P1 Character
   - P2 Character
+  - P1 Install
+  - P2 Install
+  - P1 Revealed Card
+  - P2 Revealed Card
+  - P1 Health
+  - P2 Health
+  - P1 Energy
+  - P2 Energy
+  - P1 Plus Frames
+  - P2 Plus Frames
+  - P1 Ability 1
+  - P2 Ability 1
+  - P1 Ability 2
+  - P2 Ability 2
+  - P1 Revealed Card Cost
+  - P2 Revealed Card Cost
+  - Waiting
+  - Game Manager
   layers:
   - Default
   - TransparentFX
