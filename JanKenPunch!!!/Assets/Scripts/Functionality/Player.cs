@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
             characterCardGameObject = GameObject.FindGameObjectWithTag("P2 Character");
             characterCard = characterCardGameObject.GetComponent<DisplayCharacterCard>();
             characterCard.SetCharacter(2);
-            gameManager.SetPlayer();
+            gameManager.SetPlayer(2);
             opponent.SetOpponent();
             waitingGameObject.SetActive(false);
         }
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
         otherPlayerGameObject = GameObject.FindGameObjectWithTag("P2");
         otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
         opponent = otherPlayerGameObject.GetComponent<Player>();
-        gameManager.SetPlayer();
+        gameManager.SetPlayer(1);
         characterCard.SetCharacter(1);
     }
 
