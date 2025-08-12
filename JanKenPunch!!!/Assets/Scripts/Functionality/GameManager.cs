@@ -36,20 +36,21 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SetPlayer(int player)
+    public void SetPlayer()
     {
-        if(player == 1)
-        {
-            meGameObject = GameObject.FindGameObjectWithTag("P1");
-            me = meGameObject.GetComponent<Player>();
-            opponentGameObject = GameObject.FindGameObjectWithTag("P2");
-            opponent = opponentGameObject.GetComponent<Player>();
-        }
-        else if (player == 2)
+            if(this.gameObject.tag == "Game Manager")
         {
             meGameObject = GameObject.FindGameObjectWithTag("P2");
             me = meGameObject.GetComponent<Player>();
             opponentGameObject = GameObject.FindGameObjectWithTag("P1");
+            opponent = opponentGameObject.GetComponent<Player>();
+            this.gameObject.tag = "Game Manager P2";
+        }
+        else
+        {
+            meGameObject = GameObject.FindGameObjectWithTag("P1");
+            me = meGameObject.GetComponent<Player>();
+            opponentGameObject = GameObject.FindGameObjectWithTag("P2");
             opponent = opponentGameObject.GetComponent<Player>();
         }
     }
