@@ -1898,7 +1898,7 @@ GameObject:
   - component: {fileID: 104080865}
   - component: {fileID: 104080863}
   m_Layer: 5
-  m_Name: P2 Plyed Card
+  m_Name: P2 Played Card
   m_TagString: Basic Cards
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
