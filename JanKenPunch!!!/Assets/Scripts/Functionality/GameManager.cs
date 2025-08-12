@@ -27,21 +27,25 @@ public class GameManager : MonoBehaviour
     public GameObject meGameObject, opponentGameObject;
     public bool discarding;
     public bool cutscene = false;
-    public bool isPlayer2 = false;
 
     public void Start()
     {
         timer = 10;
 
         hand = GameObject.FindGameObjectWithTag("Hand").transform;
-        if (isPlayer2 == false)
+        
+    }
+
+    public void SetPlayer(int player)
+    {
+        if(player == 1)
         {
             meGameObject = GameObject.FindGameObjectWithTag("P1");
             me = meGameObject.GetComponent<Player>();
             opponentGameObject = GameObject.FindGameObjectWithTag("P2");
             opponent = opponentGameObject.GetComponent<Player>();
         }
-        else
+        else if (player == 2)
         {
             meGameObject = GameObject.FindGameObjectWithTag("P2");
             me = meGameObject.GetComponent<Player>();

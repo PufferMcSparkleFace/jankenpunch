@@ -88,6 +88,7 @@ public class Player : MonoBehaviour
             otherPlayerGameObject = GameObject.FindGameObjectWithTag("P1");
             otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
             opponent = otherPlayerGameObject.GetComponent<Player>();
+            gameManager.SetPlayer(2);
             opponent.SetOpponent();
             waitingGameObject.SetActive(false);
         }
@@ -113,6 +114,7 @@ public class Player : MonoBehaviour
         otherPlayerGameObject = GameObject.FindGameObjectWithTag("P2");
         otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
         opponent = otherPlayerGameObject.GetComponent<Player>();
+        gameManager.SetPlayer(1);
     }
 
     // Update is called once per frame

@@ -5564,7 +5564,6 @@ MonoBehaviour:
   opponentGameObject: {fileID: 0}
   discarding: 0
   cutscene: 0
-  isPlayer2: 0
 --- !u!114 &522628965
 MonoBehaviour:
   m_ObjectHideFlags: 0
