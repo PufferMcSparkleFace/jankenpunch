@@ -19,6 +19,7 @@ public class DisplayCharacterCard : MonoBehaviour
     public Image cardBack;
 
     public Player player;
+    public GameObject playerGameObject;
 
     public GameManager gameManager;
 
@@ -45,6 +46,20 @@ public class DisplayCharacterCard : MonoBehaviour
         image.sprite = character.image;
         cardBack.sprite = character.cardBack;
         player.character = character;
+    }
+
+    public void SetCharacter(int playernumber)
+    {
+        if (playernumber == 1)
+        {
+            playerGameObject = GameObject.FindGameObjectWithTag("P1");
+            player = playerGameObject.GetComponent<Player>();
+        }
+        else
+        {
+            playerGameObject = GameObject.FindGameObjectWithTag("P2");
+            player = playerGameObject.GetComponent<Player>();
+        }
     }
 
 }

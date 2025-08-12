@@ -26,7 +26,11 @@ public class Player : MonoBehaviour
     public DisplayCard revealedCardScript;
     public TMP_Text revealedCardCostText;
     public TMP_Text waitingForOpponent;
-    public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject, revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject, gameManagerObject;
+    public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject, 
+    revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject, 
+    gameManagerObject, characterCardGameObject;
+
+    public DisplayCharacterCard characterCard;
 
     public NonBasicCard playedCard;
 
@@ -62,6 +66,8 @@ public class Player : MonoBehaviour
             abilityTwoButtonGameObject = GameObject.FindGameObjectWithTag("P1 Ability 2");
             abilityOneButton = abilityOneButtonGameObject.GetComponent<Button>();
             abilityTwoButton = abilityTwoButtonGameObject.GetComponent<Button>();
+            characterCardGameObject = GameObject.FindGameObjectWithTag("P1 Character");
+            characterCard = characterCardGameObject.GetComponent<DisplayCharacterCard>();
             revealedCard.SetActive(false);
             
         }
@@ -88,6 +94,9 @@ public class Player : MonoBehaviour
             otherPlayerGameObject = GameObject.FindGameObjectWithTag("P1");
             otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
             opponent = otherPlayerGameObject.GetComponent<Player>();
+            characterCardGameObject = GameObject.FindGameObjectWithTag("P2 Character");
+            characterCard = characterCardGameObject.GetComponent<DisplayCharacterCard>();
+            characterCard.SetCharacter(2);
             gameManager.SetPlayer(2);
             opponent.SetOpponent();
             waitingGameObject.SetActive(false);
@@ -115,6 +124,7 @@ public class Player : MonoBehaviour
         otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
         opponent = otherPlayerGameObject.GetComponent<Player>();
         gameManager.SetPlayer(1);
+        characterCard.SetCharacter(1);
     }
 
     // Update is called once per frame
