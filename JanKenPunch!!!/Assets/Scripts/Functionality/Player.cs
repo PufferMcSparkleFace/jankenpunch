@@ -26,9 +26,9 @@ public class Player : MonoBehaviour
     public DisplayCard revealedCardScript;
     public TMP_Text revealedCardCostText;
     public TMP_Text waitingForOpponent;
-    public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject, 
-    revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject, 
-    gameManagerObject, characterCardGameObject;
+    public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject,
+    revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject,
+    gameManagerObject, characterCardGameObject, canvas;
 
 
     public DisplayCharacterCard characterCard;
@@ -56,6 +56,8 @@ public class Player : MonoBehaviour
         stagePositions[6] = GameObject.FindGameObjectWithTag("SP7");
         stagePositions[7] = GameObject.FindGameObjectWithTag("SP8");
         stagePositions[8] = GameObject.FindGameObjectWithTag("SP9");
+        canvas = GameObject.FindGameObjectWithTag("Canvas");
+        this.transform.parent = canvas.transform;
 
         if (GameObject.FindGameObjectWithTag("P1") == false)
         {
