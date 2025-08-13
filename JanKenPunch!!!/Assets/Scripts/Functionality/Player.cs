@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     public TMP_Text waitingForOpponent;
     public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject,
     revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject,
-    gameManagerObject, characterCardGameObject, canvas, characterSelectScreen;
+    gameManagerObject, characterCardGameObject, canvas, characterSelectScreen, waitingPanelGameObject;
 
 
     public DisplayCharacterCard characterCard;
@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
         transform.localScale = new Vector3(2, 3, 0);
         playerSprite = this.GetComponent<Image>();
         playerSprite.enabled = false;
+        waitingPanelGameObject = GameObject.FindGameObjectWithTag("Waiting Panel");
 
         if (GameObject.FindGameObjectWithTag("P1") == false)
         {
@@ -120,6 +121,8 @@ public class Player : MonoBehaviour
             opponent.SetOpponent();
             position = 7;
             this.transform.position = stagePositions[6].transform.position;
+            waitingPanelGameObject.SetActive(false);
+            waitingForOpponent.text = "";
         }
 
         installText.text = "";
@@ -323,6 +326,7 @@ public class Player : MonoBehaviour
 
     IEnumerator WaitForOpponent()
     {
+        waitingPanelGameObject.SetActive(true);
         waitingForOpponent.text = "Waiting for opponent...";
         playedCard = gameManager.card;
         while (opponent.playedCard == null)
@@ -330,11 +334,13 @@ public class Player : MonoBehaviour
             yield return null;
         }
         waitingForOpponent.text = "";
+        waitingPanelGameObject.SetActive(false);
         StartCoroutine("RevealCards");
     }
 
     IEnumerator WaitForOpponentCharacter()
     {
+        waitingPanelGameObject.SetActive(true);
         waitingForOpponent.text = "Waiting for opponent...";
         while (opponent.character == null)
         {
@@ -342,6 +348,7 @@ public class Player : MonoBehaviour
         }
         playerSprite.enabled = true;
         waitingForOpponent.text = "";
+        waitingPanelGameObject.SetActive(false);
         characterSelectScreen.SetActive(false);
     }
 
