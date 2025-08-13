@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
         stagePositions[8] = GameObject.FindGameObjectWithTag("SP9");
         canvas = GameObject.FindGameObjectWithTag("Canvas");
         this.transform.parent = canvas.transform;
+        transform.localScale = new Vector3(2, 3, 0);
 
         if (GameObject.FindGameObjectWithTag("P1") == false)
         {
