@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         stagePositions[8] = GameObject.FindGameObjectWithTag("SP9");
         characterSelectScreen = GameObject.FindGameObjectWithTag("Character Select Screen");
         canvas = GameObject.FindGameObjectWithTag("Canvas");
-        this.transform.parent = canvas.transform;
+        this.transform.SetParent(canvas.transform);
         transform.localScale = new Vector3(2, 3, 0);
         playerSprite = this.GetComponent<Image>();
         playerSprite.enabled = false;
