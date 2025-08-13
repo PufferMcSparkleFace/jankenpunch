@@ -47,8 +47,17 @@ public class Player : MonoBehaviour
         waitingForOpponent = waitingGameObject.GetComponent<TMP_Text>();
         gameManagerObject = GameObject.FindGameObjectWithTag("Game Manager");
         gameManager = gameManagerObject.GetComponent<GameManager>();
+        stagePositions[0] = GameObject.FindGameObjectWithTag("SP1");
+        stagePositions[1] = GameObject.FindGameObjectWithTag("SP2");
+        stagePositions[2] = GameObject.FindGameObjectWithTag("SP3");
+        stagePositions[3] = GameObject.FindGameObjectWithTag("SP4");
+        stagePositions[4] = GameObject.FindGameObjectWithTag("SP5");
+        stagePositions[5] = GameObject.FindGameObjectWithTag("SP6");
+        stagePositions[6] = GameObject.FindGameObjectWithTag("SP7");
+        stagePositions[7] = GameObject.FindGameObjectWithTag("SP8");
+        stagePositions[8] = GameObject.FindGameObjectWithTag("SP9");
 
-        if(GameObject.FindGameObjectWithTag("P1") == false)
+        if (GameObject.FindGameObjectWithTag("P1") == false)
         {
             this.gameObject.tag = "P1";
             installTextGameObject = GameObject.FindGameObjectWithTag("P1 Install");
@@ -70,7 +79,8 @@ public class Player : MonoBehaviour
             characterCardGameObject = GameObject.FindGameObjectWithTag("P1 Character");
             characterCard = characterCardGameObject.GetComponent<DisplayCharacterCard>();
             revealedCard.SetActive(false);
-            
+            position = 3;
+            this.transform.position = stagePositions[2].transform.position;
         }
         else
         {
@@ -101,21 +111,13 @@ public class Player : MonoBehaviour
             gameManager.SetPlayer();
             opponent.SetOpponent();
             waitingGameObject.SetActive(false);
+            position = 7;
+            this.transform.position = stagePositions[6].transform.position;
         }
 
-        if(this.gameObject.tag == "P1")
-        {
-            this.transform.position = stagePositions[2].transform.position;
-            position = 3;
-        }
-        else
-        {
-            this.transform.position = stagePositions[6].transform.position;
-            position = 7;
-        }
         installText.text = "";
-        healthText.text = health.ToString();
-        energyText.text = energy.ToString();
+        healthText.text = "30";
+        energyText.text = "5";
         plusFramesText.text = "";
     }
 
