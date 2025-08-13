@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
         characterSelectScreen = GameObject.FindGameObjectWithTag("Character Select Screen");
         canvas = GameObject.FindGameObjectWithTag("Canvas");
         this.transform.SetParent(canvas.transform);
+        this.transform.SetAsFirstSibling();
         transform.localScale = new Vector3(2, 3, 0);
         playerSprite = this.GetComponent<Image>();
         playerSprite.enabled = false;

@@ -46,6 +46,7 @@ TagManager:
   - SP8
   - SP9
   - Character Select Screen
+  - Background
   layers:
   - Default
   - TransparentFX
