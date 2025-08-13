@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using Unity.Netcode;
+using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +31,10 @@ public class GameManager : MonoBehaviour
     public bool discarding;
     public bool cutscene = false;
 
+    public NetworkManager network;
+
+    public CharacterSelect characterSelect;
+
     public void Start()
     {
         timer = 10;
@@ -36,21 +43,29 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SetPlayer(int player)
+    public void SetPlayer()
     {
-        if(player == 1)
+        if(network.IsHost == true)
         {
             meGameObject = GameObject.FindGameObjectWithTag("P1");
             me = meGameObject.GetComponent<Player>();
             opponentGameObject = GameObject.FindGameObjectWithTag("P2");
             opponent = opponentGameObject.GetComponent<Player>();
+            characterSelect.myCharacterGameObject = GameObject.FindGameObjectWithTag("P1 Character");
+            characterSelect.myCharacter = characterSelect.myCharacterGameObject.GetComponent<DisplayCharacterCard>();
+            characterSelect.mySpriteGameObject = GameObject.FindGameObjectWithTag("P1");
+            characterSelect.mySprite = characterSelect.mySpriteGameObject.GetComponent<Image>();
         }
-        else if (player == 2)
+        else
         {
             meGameObject = GameObject.FindGameObjectWithTag("P2");
             me = meGameObject.GetComponent<Player>();
             opponentGameObject = GameObject.FindGameObjectWithTag("P1");
             opponent = opponentGameObject.GetComponent<Player>();
+            characterSelect.myCharacterGameObject = GameObject.FindGameObjectWithTag("P2 Character");
+            characterSelect.myCharacter = characterSelect.myCharacterGameObject.GetComponent<DisplayCharacterCard>();
+            characterSelect.mySpriteGameObject = GameObject.FindGameObjectWithTag("P2");
+            characterSelect.mySprite = characterSelect.mySpriteGameObject.GetComponent<Image>();
         }
     }
 

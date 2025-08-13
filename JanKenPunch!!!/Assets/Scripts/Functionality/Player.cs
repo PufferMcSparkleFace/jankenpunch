@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject, 
     gameManagerObject, characterCardGameObject;
 
+
     public DisplayCharacterCard characterCard;
 
     public NonBasicCard playedCard;
@@ -97,7 +98,7 @@ public class Player : MonoBehaviour
             characterCardGameObject = GameObject.FindGameObjectWithTag("P2 Character");
             characterCard = characterCardGameObject.GetComponent<DisplayCharacterCard>();
             characterCard.SetCharacter(2);
-            gameManager.SetPlayer(2);
+            gameManager.SetPlayer();
             opponent.SetOpponent();
             waitingGameObject.SetActive(false);
         }
@@ -123,7 +124,7 @@ public class Player : MonoBehaviour
         otherPlayerGameObject = GameObject.FindGameObjectWithTag("P2");
         otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
         opponent = otherPlayerGameObject.GetComponent<Player>();
-        gameManager.SetPlayer(1);
+        gameManager.SetPlayer();
         characterCard.SetCharacter(1);
     }
 
