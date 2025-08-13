@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
 
     public Button abilityOneButton, abilityTwoButton;
 
+    public Image playerSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +61,8 @@ public class Player : MonoBehaviour
         canvas = GameObject.FindGameObjectWithTag("Canvas");
         this.transform.parent = canvas.transform;
         transform.localScale = new Vector3(2, 3, 0);
+        playerSprite = this.GetComponent<Image>();
+        playerSprite.enabled = false;
 
         if (GameObject.FindGameObjectWithTag("P1") == false)
         {
