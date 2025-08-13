@@ -35,6 +35,7 @@ TagManager:
   - P2 Revealed Card Cost
   - Waiting
   - Game Manager
+  - Deck
   layers:
   - Default
   - TransparentFX

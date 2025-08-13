@@ -18,6 +18,24 @@ public class CharacterSelect : MonoBehaviour
     public List<NonBasicCard> taiboDeck = new List<NonBasicCard>();
     public List<NonBasicCard> rynoxDeck = new List<NonBasicCard>();
 
+    private void Start()
+    {
+        if(this.gameObject.tag == "P1")
+        {
+            myCharacterGameObject = GameObject.FindGameObjectWithTag("P1 Character");
+            myCharacter = myCharacterGameObject.GetComponent<DisplayCharacterCard>();
+            mySpriteGameObject = GameObject.FindGameObjectWithTag("P1");
+            mySprite = mySpriteGameObject.GetComponent<Image>();
+        }
+        else
+        {
+            myCharacterGameObject = GameObject.FindGameObjectWithTag("P2 Character");
+            myCharacter = myCharacterGameObject.GetComponent<DisplayCharacterCard>();
+            mySpriteGameObject = GameObject.FindGameObjectWithTag("P2");
+            mySprite = mySpriteGameObject.GetComponent<Image>();
+        }
+    }
+
     /*if you're player 1
         {
             myCharacterGameObject = GameObject.FindGameObjectWithTag("P1 Character");
