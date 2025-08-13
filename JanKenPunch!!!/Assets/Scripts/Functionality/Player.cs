@@ -118,7 +118,6 @@ public class Player : MonoBehaviour
             characterCard.SetCharacter(2);
             gameManager.SetPlayer();
             opponent.SetOpponent();
-            waitingGameObject.SetActive(false);
             position = 7;
             this.transform.position = stagePositions[6].transform.position;
         }
@@ -324,25 +323,25 @@ public class Player : MonoBehaviour
 
     IEnumerator WaitForOpponent()
     {
-        waitingForOpponent.gameObject.SetActive(true);
+        waitingForOpponent.text = "Waiting for opponent...";
         playedCard = gameManager.card;
         while (opponent.playedCard == null)
         {
             yield return null;
         }
-        waitingForOpponent.gameObject.SetActive(false);
+        waitingForOpponent.text = "";
         StartCoroutine("RevealCards");
     }
 
     IEnumerator WaitForOpponentCharacter()
     {
-        waitingForOpponent.gameObject.SetActive(true);
+        waitingForOpponent.text = "Waiting for opponent...";
         while (opponent.character == null)
         {
             yield return null;
         }
         playerSprite.enabled = true;
-        waitingForOpponent.gameObject.SetActive(false);
+        waitingForOpponent.text = "";
         characterSelectScreen.SetActive(false);
     }
 
