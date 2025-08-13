@@ -9,6 +9,7 @@ public class CharacterSelect : MonoBehaviour
     public DisplayCharacterCard myCharacter;
     public GameObject myCharacterGameObject, mySpriteGameObject;
     public Image mySprite;
+    public Player myPlayer;
 
     public Draw deck;
 
@@ -27,9 +28,7 @@ public class CharacterSelect : MonoBehaviour
         deck.DrawHand();
         deck.characterSelected = true;
         mySprite.sprite = zylaSprite;
-
-        mySprite.enabled = true;
-        this.gameObject.SetActive(false);
+        myPlayer.StartCoroutine("WaitForOpponentCharacter");
     }
 
     public void SelectTaibo()
@@ -41,9 +40,7 @@ public class CharacterSelect : MonoBehaviour
         deck.DrawHand();
         deck.characterSelected = true;
         mySprite.sprite = taiboSprite;
-
-        mySprite.enabled = true;
-        this.gameObject.SetActive(false);
+        myPlayer.StartCoroutine("WaitForOpponentCharacter");
     }
 
     public void SelectRynox()
@@ -55,8 +52,6 @@ public class CharacterSelect : MonoBehaviour
         deck.DrawHand();
         deck.characterSelected = true;
         mySprite.sprite = rynoxSprite;
-
-        mySprite.enabled = true;
-        this.gameObject.SetActive(false);
+        myPlayer.StartCoroutine("WaitForOpponentCharacter");
     }
 }

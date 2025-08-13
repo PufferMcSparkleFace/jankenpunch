@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     public TMP_Text waitingForOpponent;
     public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject,
     revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject,
-    gameManagerObject, characterCardGameObject, canvas;
+    gameManagerObject, characterCardGameObject, canvas, characterSelectScreen;
 
 
     public DisplayCharacterCard characterCard;
@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
         stagePositions[6] = GameObject.FindGameObjectWithTag("SP7");
         stagePositions[7] = GameObject.FindGameObjectWithTag("SP8");
         stagePositions[8] = GameObject.FindGameObjectWithTag("SP9");
+        characterSelectScreen = GameObject.FindGameObjectWithTag("Character Select Screen");
         canvas = GameObject.FindGameObjectWithTag("Canvas");
         this.transform.parent = canvas.transform;
         transform.localScale = new Vector3(2, 3, 0);
@@ -336,12 +337,13 @@ public class Player : MonoBehaviour
     IEnumerator WaitForOpponentCharacter()
     {
         waitingForOpponent.gameObject.SetActive(true);
-        while (opponent.playedCard == null)
+        while (opponent.character == null)
         {
             yield return null;
         }
+        playerSprite.enabled = true;
         waitingForOpponent.gameObject.SetActive(false);
-        StartCoroutine("RevealCards");
+        characterSelectScreen.SetActive(false);
     }
 
     IEnumerator RevealCards()
