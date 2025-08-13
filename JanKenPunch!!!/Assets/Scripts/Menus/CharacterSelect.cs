@@ -18,11 +18,6 @@ public class CharacterSelect : MonoBehaviour
     public List<NonBasicCard> taiboDeck = new List<NonBasicCard>();
     public List<NonBasicCard> rynoxDeck = new List<NonBasicCard>();
 
-    public void SelectCharacter(int character)
-    {
-
-    }
-
     public void SelectZyla()
     {
         Debug.Log("Zyla");
@@ -32,6 +27,7 @@ public class CharacterSelect : MonoBehaviour
         deck.DrawHand();
         deck.characterSelected = true;
         mySprite.sprite = zylaSprite;
+
         mySprite.enabled = true;
         this.gameObject.SetActive(false);
     }
@@ -45,6 +41,7 @@ public class CharacterSelect : MonoBehaviour
         deck.DrawHand();
         deck.characterSelected = true;
         mySprite.sprite = taiboSprite;
+
         mySprite.enabled = true;
         this.gameObject.SetActive(false);
     }
@@ -58,6 +55,7 @@ public class CharacterSelect : MonoBehaviour
         deck.DrawHand();
         deck.characterSelected = true;
         mySprite.sprite = rynoxSprite;
+
         mySprite.enabled = true;
         this.gameObject.SetActive(false);
     }

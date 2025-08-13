@@ -8446,7 +8446,7 @@ GameObject:
   - component: {fileID: 920937983}
   m_Layer: 5
   m_Name: Character Select Screen
-  m_TagString: Untagged
+  m_TagString: Character Select Screen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
