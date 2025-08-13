@@ -46,7 +46,6 @@ TagManager:
   - SP8
   - SP9
   - Character Select Screen
-  - Waiting Panel
   layers:
   - Default
   - TransparentFX
