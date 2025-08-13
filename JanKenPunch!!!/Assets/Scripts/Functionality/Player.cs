@@ -333,6 +333,17 @@ public class Player : MonoBehaviour
         StartCoroutine("RevealCards");
     }
 
+    IEnumerator WaitForOpponentCharacter()
+    {
+        waitingForOpponent.gameObject.SetActive(true);
+        while (opponent.playedCard == null)
+        {
+            yield return null;
+        }
+        waitingForOpponent.gameObject.SetActive(false);
+        StartCoroutine("RevealCards");
+    }
+
     IEnumerator RevealCards()
     {
         gameManager.cutscene = true;

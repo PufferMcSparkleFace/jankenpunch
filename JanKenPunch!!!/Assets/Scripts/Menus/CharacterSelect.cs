@@ -18,6 +18,11 @@ public class CharacterSelect : MonoBehaviour
     public List<NonBasicCard> taiboDeck = new List<NonBasicCard>();
     public List<NonBasicCard> rynoxDeck = new List<NonBasicCard>();
 
+    public void SelectCharacter(int character)
+    {
+
+    }
+
     public void SelectZyla()
     {
         Debug.Log("Zyla");
