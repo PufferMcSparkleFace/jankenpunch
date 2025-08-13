@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     public TMP_Text waitingForOpponent;
     public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject,
     revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject,
-    gameManagerObject, characterCardGameObject, canvas, characterSelectScreen;
+    gameManagerObject, characterCardGameObject, canvas, characterSelectScreen, backgroundImage;
 
 
     public DisplayCharacterCard characterCard;
@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
         stagePositions[6] = GameObject.FindGameObjectWithTag("SP7");
         stagePositions[7] = GameObject.FindGameObjectWithTag("SP8");
         stagePositions[8] = GameObject.FindGameObjectWithTag("SP9");
+        backgroundImage = GameObject.FindGameObjectWithTag("Background");
         characterSelectScreen = GameObject.FindGameObjectWithTag("Character Select Screen");
         canvas = GameObject.FindGameObjectWithTag("Canvas");
         this.transform.SetParent(canvas.transform);
@@ -121,6 +122,7 @@ public class Player : MonoBehaviour
             opponent.SetOpponent();
             position = 7;
             this.transform.position = stagePositions[6].transform.position;
+            backgroundImage.transform.SetAsFirstSibling();
         }
 
         installText.text = "";
@@ -136,6 +138,7 @@ public class Player : MonoBehaviour
         opponent = otherPlayerGameObject.GetComponent<Player>();
         gameManager.SetPlayer();
         characterCard.SetCharacter(1);
+        backgroundImage.transform.SetAsFirstSibling();
     }
 
     // Update is called once per frame
