@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public Transform playArea;
     public GameObject lockInButton;
