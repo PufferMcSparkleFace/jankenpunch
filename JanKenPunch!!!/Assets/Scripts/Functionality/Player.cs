@@ -29,7 +29,8 @@ public class Player : NetworkBehaviour
     public TMP_Text waitingForOpponent;
     public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject,
     revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject,
-    gameManagerObject, characterCardGameObject, canvas, characterSelectScreen, backgroundImage;
+    gameManagerObject, characterCardGameObject, canvas, characterSelectScreenGameObject, backgroundImage;
+    public CharacterSelect characetrSelectScreen;
 
 
     public DisplayCharacterCard characterCard;
@@ -60,7 +61,7 @@ public class Player : NetworkBehaviour
         stagePositions[7] = GameObject.FindGameObjectWithTag("SP8");
         stagePositions[8] = GameObject.FindGameObjectWithTag("SP9");
         backgroundImage = GameObject.FindGameObjectWithTag("Background");
-        characterSelectScreen = GameObject.FindGameObjectWithTag("Character Select Screen");
+        characterSelectScreenGameObject = GameObject.FindGameObjectWithTag("Character Select Screen");
         canvas = GameObject.FindGameObjectWithTag("Canvas");
         this.transform.SetParent(canvas.transform);
         this.transform.SetAsFirstSibling();
@@ -347,7 +348,7 @@ public class Player : NetworkBehaviour
         }
         playerSprite.enabled = true;
         waitingForOpponent.text = "";
-        characterSelectScreen.SetActive(false);
+        characterSelectScreenGameObject.SetActive(false);
     }
 
     IEnumerator RevealCards()
