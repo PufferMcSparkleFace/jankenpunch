@@ -5546,6 +5546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3647aec1baf9b040903e7ab21c979ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   playArea: {fileID: 1635508476}
   lockInButton: {fileID: 517004742}
   playedCard: {fileID: 0}
@@ -8523,11 +8524,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566b0e9294346104386ba896a2117d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   myCharacter: {fileID: 0}
+  opponentCharacter: {fileID: 0}
   myCharacterGameObject: {fileID: 0}
   mySpriteGameObject: {fileID: 0}
+  opponentCharacterGameObject: {fileID: 0}
+  opponentSpriteGameObject: {fileID: 0}
   mySprite: {fileID: 0}
+  opponentSprite: {fileID: 0}
   myPlayer: {fileID: 0}
+  network: {fileID: 1455763524}
   deck: {fileID: 1785747173}
   zyla: {fileID: 11400000, guid: 505e518f622d9434ba06e563ab812b74, type: 2}
   taibo: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}

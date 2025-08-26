@@ -30,7 +30,7 @@ public class Player : NetworkBehaviour
     public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject,
     revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject,
     gameManagerObject, characterCardGameObject, canvas, characterSelectScreenGameObject, backgroundImage;
-    public CharacterSelect characetrSelectScreen;
+    public CharacterSelect characterSelectScreen;
 
 
     public DisplayCharacterCard characterCard;
@@ -62,6 +62,7 @@ public class Player : NetworkBehaviour
         stagePositions[8] = GameObject.FindGameObjectWithTag("SP9");
         backgroundImage = GameObject.FindGameObjectWithTag("Background");
         characterSelectScreenGameObject = GameObject.FindGameObjectWithTag("Character Select Screen");
+        characterSelectScreen = characterSelectScreenGameObject.GetComponent<CharacterSelect>();
         canvas = GameObject.FindGameObjectWithTag("Canvas");
         this.transform.SetParent(canvas.transform);
         this.transform.SetAsFirstSibling();
@@ -122,6 +123,7 @@ public class Player : NetworkBehaviour
             characterCard.SetCharacter(2);
             gameManager.SetPlayer();
             opponent.SetOpponent();
+            characterSelectScreen.SetOpponentCharacterSelect();
             position = 7;
             this.transform.position = stagePositions[6].transform.position;
             backgroundImage.transform.SetAsFirstSibling();
@@ -141,6 +143,7 @@ public class Player : NetworkBehaviour
         gameManager.SetPlayer();
         characterCard.SetCharacter(1);
         backgroundImage.transform.SetAsFirstSibling();
+        characterSelectScreen.SetOpponentCharacterSelect();
     }
 
     // Update is called once per frame
