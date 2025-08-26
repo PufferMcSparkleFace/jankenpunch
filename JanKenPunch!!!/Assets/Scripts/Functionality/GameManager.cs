@@ -56,6 +56,10 @@ public class GameManager : NetworkBehaviour
             characterSelect.mySpriteGameObject = GameObject.FindGameObjectWithTag("P1");
             characterSelect.mySprite = characterSelect.mySpriteGameObject.GetComponent<Image>();
             characterSelect.myPlayer = characterSelect.mySpriteGameObject.GetComponent<Player>();
+            characterSelect.myCharacterGameObject = GameObject.FindGameObjectWithTag("P2 Character");
+            characterSelect.myCharacter = characterSelect.myCharacterGameObject.GetComponent<DisplayCharacterCard>();
+            characterSelect.mySpriteGameObject = GameObject.FindGameObjectWithTag("P2");
+            characterSelect.mySprite = characterSelect.mySpriteGameObject.GetComponent<Image>();
         }
         else
         {
@@ -68,6 +72,10 @@ public class GameManager : NetworkBehaviour
             characterSelect.mySpriteGameObject = GameObject.FindGameObjectWithTag("P2");
             characterSelect.mySprite = characterSelect.mySpriteGameObject.GetComponent<Image>();
             characterSelect.myPlayer = characterSelect.mySpriteGameObject.GetComponent<Player>();
+            characterSelect.myCharacterGameObject = GameObject.FindGameObjectWithTag("P1 Character");
+            characterSelect.myCharacter = characterSelect.myCharacterGameObject.GetComponent<DisplayCharacterCard>();
+            characterSelect.mySpriteGameObject = GameObject.FindGameObjectWithTag("P1");
+            characterSelect.mySprite = characterSelect.mySpriteGameObject.GetComponent<Image>();
         }
     }
 

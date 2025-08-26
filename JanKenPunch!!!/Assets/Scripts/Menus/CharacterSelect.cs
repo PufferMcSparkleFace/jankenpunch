@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CharacterSelect : MonoBehaviour
+public class CharacterSelect : NetworkBehaviour
 {
     public DisplayCharacterCard myCharacter;
-    public GameObject myCharacterGameObject, mySpriteGameObject;
-    public Image mySprite;
+    public GameObject myCharacterGameObject, mySpriteGameObject, oppponentCharacterGameObject, opponentSpriteGameObject;
+    public Image mySprite, opponentSprite;
     public Player myPlayer;
 
     public Draw deck;
@@ -29,6 +29,7 @@ public class CharacterSelect : MonoBehaviour
         deck.DrawHand();
         deck.characterSelected = true;
         mySprite.sprite = zylaSprite;
+        SelectZylaRPC();
         myPlayer.StartCoroutine("WaitForOpponentCharacter");
     }
 
@@ -54,5 +55,14 @@ public class CharacterSelect : MonoBehaviour
         deck.characterSelected = true;
         mySprite.sprite = rynoxSprite;
         myPlayer.StartCoroutine("WaitForOpponentCharacter");
+    }
+
+    [Rpc(SendTo.NotMe)]
+    public void SelectZylaRPC()
+    {
+        myCharacter.character = zyla;
+        myCharacter.UpdateCharacter();
+        deck.characterSelected = true;
+        mySprite.sprite = zylaSprite;
     }
 }
