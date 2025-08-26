@@ -42,7 +42,7 @@ public class Player : NetworkBehaviour
 
     public Button abilityOneButton, abilityTwoButton;
 
-    public Image playerSprite;
+    public Image playerSprite, opponentSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -116,6 +116,7 @@ public class Player : NetworkBehaviour
             abilityTwoButton = abilityTwoButtonGameObject.GetComponent<Button>();
             revealedCard.SetActive(false);
             otherPlayerGameObject = GameObject.FindGameObjectWithTag("P1");
+            opponentSprite = otherPlayerGameObject.GetComponent<Image>();
             otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
             opponent = otherPlayerGameObject.GetComponent<Player>();
             characterCardGameObject = GameObject.FindGameObjectWithTag("P2 Character");
@@ -138,6 +139,7 @@ public class Player : NetworkBehaviour
     public void SetOpponent()
     {
         otherPlayerGameObject = GameObject.FindGameObjectWithTag("P2");
+        opponentSprite = otherPlayerGameObject.GetComponent<Image>();
         otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
         opponent = otherPlayerGameObject.GetComponent<Player>();
         gameManager.SetPlayer();
@@ -350,6 +352,7 @@ public class Player : NetworkBehaviour
             yield return null;
         }
         playerSprite.enabled = true;
+        opponentSprite.enabled = true;
         waitingForOpponent.text = "";
         characterSelectScreenGameObject.SetActive(false);
     }
