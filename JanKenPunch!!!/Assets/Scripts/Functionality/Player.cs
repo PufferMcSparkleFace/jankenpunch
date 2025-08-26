@@ -362,7 +362,9 @@ public class Player : NetworkBehaviour
         gameManager.cutscene = true;
         revealedCardScript.card = playedCard;
         revealedCardScript.UpdateCard();
-        if(gameManager.finalCardCost != playedCard.cost)
+        opponent.revealedCardScript.card = opponent.playedCard;
+        opponent.revealedCardScript.UpdateCard();
+        if (gameManager.finalCardCost != playedCard.cost)
         {
             revealedCardCostText.text = gameManager.finalCardCost.ToString();
             revealedCardCostText.color = new Color(255, 115, 0, 255); 
@@ -372,8 +374,10 @@ public class Player : NetworkBehaviour
             revealedCardCostText.color = new Color(0, 0, 0, 255);
         }
         revealedCard.SetActive(true);
+        opponent.revealedCard.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         revealedCard.SetActive(false);
+        opponent.revealedCard.SetActive(false);
         StartCoroutine("FrameDelay");
     }
     
