@@ -12,6 +12,7 @@ public class GameManager : NetworkBehaviour
     public Transform playArea;
     public GameObject lockInButton;
     public GameObject playedCard;
+    [SerializeField]
     public NonBasicCard card;
 
     public int turnTimer;
@@ -219,6 +220,7 @@ public class GameManager : NetworkBehaviour
         {
             Debug.Log("" + card.cardName + " No Cost");
             me.StartCoroutine("WaitForOpponent");
+            me.PlayCardRpc();
         }
         //otherwise, if you can afford the card, play it
         else if(finalCardCost <= me.energy)
@@ -226,7 +228,9 @@ public class GameManager : NetworkBehaviour
             me.energy = me.energy - finalCardCost;
             me.energyText.text = "" + me.energy;
             Debug.Log("" + card.cardName);
+            //make it clear that the card ahs the cost reduced if cast using plus frames
             me.StartCoroutine("WaitForOpponent");
+            me.PlayCardRpc();
         }
         //if you can't afford the card, you do nothing, which costs 1 energy if you have more energy than your opponent
         else if(finalCardCost > me.energy)
@@ -235,6 +239,8 @@ public class GameManager : NetworkBehaviour
             {
                 me.energy--;
                 me.energyText.text = "" + me.energy;
+                me.PlayCardRpc();
+                //make it clear that the card does nothing
             }
             Debug.Log("Do Nothing");
         }

@@ -344,6 +344,12 @@ public class Player : NetworkBehaviour
         StartCoroutine("RevealCards");
     }
 
+    [Rpc(SendTo.NotMe)]
+    public void PlayCardRpc()
+    {
+        Debug.Log("Opponent played a card");
+    }
+
     IEnumerator WaitForOpponentCharacter()
     {
         waitingForOpponent.text = "Waiting for opponent...";
