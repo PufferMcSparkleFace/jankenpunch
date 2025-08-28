@@ -239,9 +239,9 @@ public class GameManager : NetworkBehaviour
             {
                 me.energy--;
                 me.energyText.text = "" + me.energy;
-                me.PlayCardRpc();
-                //make it clear that the card does nothing
             }
+            me.PlayCardRpc();
+            //make it clear that the card does nothing
             Debug.Log("Do Nothing");
         }
 
