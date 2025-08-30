@@ -200,6 +200,7 @@ public class GameManager : NetworkBehaviour
             discarding = false;
             return;
         }
+
         //calculates actual cost of the card with plus frames factored in
         finalCardCost = card.cost - me.plusFrames;
 
