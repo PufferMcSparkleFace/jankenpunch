@@ -203,8 +203,6 @@ public class GameManager : NetworkBehaviour
             return;
         }
 
-        me.StartCoroutine("WaitForOpponent");
-
 
         //if you play a nonbasic card, set the card to null (so that it gets replaced)
         if ((card.type != "Basic Defense" && card.type != "Basic Movement"))
