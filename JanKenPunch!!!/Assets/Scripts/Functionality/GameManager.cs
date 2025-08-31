@@ -216,6 +216,8 @@ public class GameManager : NetworkBehaviour
         playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
         playedCard = null;
         lockInButton.SetActive(false);
+
+        me.StartCoroutine("WaitForOpponent");
   
     }
 
