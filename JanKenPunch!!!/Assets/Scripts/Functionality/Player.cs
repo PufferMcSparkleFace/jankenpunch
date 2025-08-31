@@ -22,6 +22,7 @@ public class Player : NetworkBehaviour
     public int forceBreak = 0;
     public bool empowered = false;
     public int distance = 4;
+    public bool isDone = false;
 
     public GameObject revealedCard;
     public DisplayCard revealedCardScript;
@@ -388,6 +389,21 @@ public class Player : NetworkBehaviour
         }
         revealedCard.SetActive(true);
         opponent.revealedCard.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        revealedCard.SetActive(false);
+        opponent.revealedCard.SetActive(false);
+        StartCoroutine("FrameDelay");
+        opponent.StartCoroutine("FrameDelay");
+    }
+    
+    IEnumerator FrameDelay()
+    {
+        yield return new WaitForSeconds(finalCardCost * 0.1f);
+        PlayCard();
+    }
+
+    public void PlayCard()
+    {
         //if you have less energy than your opponent or 0 energy, basic cards cost 0
         if ((playedCard.type == "Basic Defense" || playedCard.type == "Basic Movement") && (energy < opponent.energy || energy == 0))
         {
@@ -410,21 +426,7 @@ public class Player : NetworkBehaviour
             }
             Debug.Log("Do Nothing");
         }
-        yield return new WaitForSeconds(1.5f);
-        revealedCard.SetActive(false);
-        opponent.revealedCard.SetActive(false);
-        StartCoroutine("FrameDelay");
-        opponent.StartCoroutine("FrameDelay");
-    }
-    
-    IEnumerator FrameDelay()
-    {
-        yield return new WaitForSeconds(finalCardCost * 0.1f);
-        PlayCard();
-    }
 
-    public void PlayCard()
-    {
         if (isHit == true)
         {
             gameManager.EndInteraction();
@@ -650,7 +652,11 @@ public class Player : NetworkBehaviour
             Projectile();
         }
         //check if the other person is still resolving an attack, if not, end interaction
-        gameManager.EndInteraction();
+        isDone = true;
+        if(opponent.isDone == true)
+        {
+            gameManager.EndInteraction();
+        }
     }
 
     public void Strike()

@@ -116,6 +116,8 @@ public class GameManager : NetworkBehaviour
         opponent.forceBreak--;
         me.playedCard = null;
         opponent.playedCard = null;
+        me.isDone = false;
+        opponent.isDone = true;
         Debug.Log("Return to Neutral");
 
         if(me.health <= 0)
