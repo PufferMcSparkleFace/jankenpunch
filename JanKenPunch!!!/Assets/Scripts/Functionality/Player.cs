@@ -37,7 +37,7 @@ public class Player : NetworkBehaviour
 
     public NonBasicCard playedCard;
 
-    public int health, energy, plusFrames;
+    public int health, energy, plusFrames, finalCardCost;
     public TMP_Text healthText, energyText, plusFramesText;
 
     public Button abilityOneButton, abilityTwoButton;
@@ -336,6 +336,13 @@ public class Player : NetworkBehaviour
     {
         waitingForOpponent.text = "Waiting for opponent...";
         playedCard = gameManager.card;
+        finalCardCost = playedCard.cost - plusFrames;
+        plusFrames = 0;
+        plusFramesText.text = "";
+        if (finalCardCost < 0)
+        {
+            finalCardCost = 0;
+        }
         while (opponent.playedCard == null)
         {
             yield return null;
@@ -370,9 +377,9 @@ public class Player : NetworkBehaviour
         revealedCardScript.UpdateCard();
         opponent.revealedCardScript.card = opponent.playedCard;
         opponent.revealedCardScript.UpdateCard();
-        if (gameManager.finalCardCost != playedCard.cost)
+        if (finalCardCost != playedCard.cost)
         {
-            revealedCardCostText.text = gameManager.finalCardCost.ToString();
+            revealedCardCostText.text = finalCardCost.ToString();
             revealedCardCostText.color = new Color(255, 115, 0, 255); 
         }
         else
@@ -381,15 +388,38 @@ public class Player : NetworkBehaviour
         }
         revealedCard.SetActive(true);
         opponent.revealedCard.SetActive(true);
+        //if you have less energy than your opponent or 0 energy, basic cards cost 0
+        if ((playedCard.type == "Basic Defense" || playedCard.type == "Basic Movement") && (energy < opponent.energy || energy == 0))
+        {
+            Debug.Log("" + playedCard.cardName + " No Cost");
+        }
+        //otherwise, if you can afford the card, play it
+        else if (finalCardCost <= energy)
+        {
+            energy = energy - finalCardCost;
+            energyText.text = "" + energy;
+            Debug.Log("" + playedCard.cardName);
+        }
+        //if you can't afford the card, you do nothing, which costs 1 energy if you have more energy than your opponent
+        else if (finalCardCost > energy)
+        {
+            if (energy >= opponent.energy)
+            {
+                energy--;
+                energyText.text = "" + energy;
+            }
+            Debug.Log("Do Nothing");
+        }
         yield return new WaitForSeconds(1.5f);
         revealedCard.SetActive(false);
         opponent.revealedCard.SetActive(false);
         StartCoroutine("FrameDelay");
+        opponent.StartCoroutine("FrameDelay");
     }
     
     IEnumerator FrameDelay()
     {
-        yield return new WaitForSeconds(gameManager.finalCardCost * 0.1f);
+        yield return new WaitForSeconds(finalCardCost * 0.1f);
         PlayCard();
     }
 

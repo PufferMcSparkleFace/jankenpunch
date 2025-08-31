@@ -22,7 +22,6 @@ public class GameManager : NetworkBehaviour
 
     public Draw deck;
 
-    public int finalCardCost;
     public int timer;
     public int spacesBehindP1;
     public int spacesBehindP2;
@@ -89,7 +88,6 @@ public class GameManager : NetworkBehaviour
                 lockInButton.SetActive(true);
                 playedCard = playArea.GetChild(0).gameObject;
                 playedCard.transform.localScale = new Vector3(5, 7, 0);
-                card = playedCard.GetComponent<DisplayCard>().card;
             }
 
     }
@@ -98,6 +96,7 @@ public class GameManager : NetworkBehaviour
     public void EndInteraction()
     {
         //return to neutral
+        card = null; 
         cutscene = false;
         me.isBlockingHigh = false;
         me.isBlockingLow = false;
@@ -181,6 +180,8 @@ public class GameManager : NetworkBehaviour
 
     public void LockIn()
     {
+        card = playedCard.GetComponent<DisplayCard>().card;
+
         if (discarding == true)
         { 
             if(card.type == "Basic Defense" || card.type == "Basic Movement")
@@ -198,52 +199,8 @@ public class GameManager : NetworkBehaviour
             playedCard = null;
             lockInButton.SetActive(false);
             discarding = false;
+            card = null;
             return;
-        }
-
-        //calculates actual cost of the card with plus frames factored in
-        finalCardCost = card.cost - me.plusFrames;
-
-        //sets both players plus frames to 0
-        me.plusFrames = 0;
-        opponent.plusFrames = 0;
-        me.plusFramesText.text = "";
-        opponent.plusFramesText.text = "";
-
-        //makes sure the card doesn't cost a negative number
-        if (finalCardCost < 0)
-        {
-            finalCardCost = 0;
-        }
-
-        //if you have less energy than your opponent or 0 energy, basic cards cost 0
-        if((card.type == "Basic Defense" || card.type == "Basic Movement") && (me.energy < opponent.energy || me.energy == 0))
-        {
-            Debug.Log("" + card.cardName + " No Cost");
-            me.StartCoroutine("WaitForOpponent");
-            me.PlayCardRpc();
-        }
-        //otherwise, if you can afford the card, play it
-        else if(finalCardCost <= me.energy)
-        {
-            me.energy = me.energy - finalCardCost;
-            me.energyText.text = "" + me.energy;
-            Debug.Log("" + card.cardName);
-            //make it clear that the card ahs the cost reduced if cast using plus frames
-            me.StartCoroutine("WaitForOpponent");
-            me.PlayCardRpc();
-        }
-        //if you can't afford the card, you do nothing, which costs 1 energy if you have more energy than your opponent
-        else if(finalCardCost > me.energy)
-        {
-            if(me.energy >= opponent.energy)
-            {
-                me.energy--;
-                me.energyText.text = "" + me.energy;
-            }
-            me.PlayCardRpc();
-            //make it clear that the card does nothing
-            Debug.Log("Do Nothing");
         }
 
 
