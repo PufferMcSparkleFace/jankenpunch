@@ -304,6 +304,14 @@ public class Player : NetworkBehaviour
             energy++;
             energyText.text = "" + energy;
         }
+        AbilityOneRpc();
+
+    }
+
+    [Rpc(SendTo.NotMe)]
+    public void AbilityOneRpc()
+    {
+        Debug.Log("" + character);
     }
 
     public void AbilityTwo()
@@ -331,6 +339,13 @@ public class Player : NetworkBehaviour
             installText.text = "Empowered";
             Debug.Log("Rynox +3");
         }
+        AbilityTwoRpc();
+    }
+
+    [Rpc(SendTo.NotMe)]
+    public void AbilityTwoRpc()
+    {
+        Debug.Log("" + character);
     }
 
     IEnumerator WaitForOpponent()
