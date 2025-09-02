@@ -35,6 +35,8 @@ public class GameManager : NetworkBehaviour
 
     public CharacterSelect characterSelect;
 
+    public List<NonBasicCard> cardDatabase = new List<NonBasicCard>();
+
     public void Start()
     {
         timer = 10;
@@ -205,6 +207,7 @@ public class GameManager : NetworkBehaviour
             return;
         }
 
+        SetOpponentCardRpc(card.id);
 
         //if you play a nonbasic card, set the card to null (so that it gets replaced)
         if ((card.type != "Basic Defense" && card.type != "Basic Movement"))
@@ -219,9 +222,17 @@ public class GameManager : NetworkBehaviour
         playedCard = null;
         lockInButton.SetActive(false);
 
+        
         me.StartCoroutine("WaitForOpponent");
-  
+
     }
 
-    
+    [Rpc(SendTo.NotMe)]
+    public void SetOpponentCardRpc(int cardID)
+    {
+        Debug.Log("" + cardID);
+        opponent.playedCard = cardDatabase[cardID];
+    }
+
+
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class NonBasicCard : ScriptableObject
 {
-    public float id;
+    public int id;
     public string cardName;
     public int cost;
     public Sprite image;
