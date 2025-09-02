@@ -37,6 +37,8 @@ public class GameManager : NetworkBehaviour
 
     public List<NonBasicCard> cardDatabase = new List<NonBasicCard>();
 
+    public GameObject joinLobbyPanel;
+
     public void Start()
     {
         timer = 10;
@@ -71,26 +73,32 @@ public class GameManager : NetworkBehaviour
             characterSelect.mySprite = characterSelect.mySpriteGameObject.GetComponent<Image>();
             characterSelect.myPlayer = characterSelect.mySpriteGameObject.GetComponent<Player>();
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if (playArea.childCount == 0)
-            {
-                if(playedCard != null)
+        {
+            if(playedCard != null)
             {
                 playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
                 playedCard = null;
             }                 
-                lockInButton.SetActive(false);           
-            }
+            lockInButton.SetActive(false);           
+        }
             else
             {
                 lockInButton.SetActive(true);
                 playedCard = playArea.GetChild(0).gameObject;
                 playedCard.transform.localScale = new Vector3(5, 7, 0);
             }
+
+        if(me != null && opponent != null)
+        {
+            joinLobbyPanel.SetActive(false);
+        }
 
     }
 
