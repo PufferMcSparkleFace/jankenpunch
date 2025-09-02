@@ -242,5 +242,123 @@ public class GameManager : NetworkBehaviour
         opponent.playedCard = cardDatabase[cardID];
     }
 
+    public void AbilityOne()
+    {
+        if (discarding == true)
+        {
+            return;
+        }
+        me.plusFrames--;
+        me.plusFramesText.text = "+" + me.plusFrames;
+        if (me.plusFrames == 0)
+        {
+            me.plusFramesText.text = "";
+        }
+        if (me.character.cardName == "Zyla")
+        {
+            Debug.Log("Zyla +1");
+            me.Move(1);
+        }
+        if (me.character.cardName == "Taibo")
+        {
+            Debug.Log("Taibo +1");
+            discarding = true;
+        }
+        if (me.character.cardName == "Rynox")
+        {
+            Debug.Log("Rynox +1");
+            me.energy++;
+            me.energyText.text = "" + me.energy;
+        }
+        AbilityOneRpc();
+
+    }
+
+    [Rpc(SendTo.NotMe)]
+    public void AbilityOneRpc()
+    {
+        if (discarding == true)
+        {
+            return;
+        }
+        opponent.plusFrames--;
+        opponent.plusFramesText.text = "+" + opponent.plusFrames;
+        if (opponent.plusFrames == 0)
+        {
+            opponent.plusFramesText.text = "";
+        }
+        if (opponent.character.cardName == "Zyla")
+        {
+            Debug.Log("Zyla +1");
+            opponent.Move(1);
+        }
+        if (opponent.character.cardName == "Taibo")
+        {
+            Debug.Log("Taibo +1");
+        }
+        if (opponent.character.cardName == "Rynox")
+        {
+            Debug.Log("Rynox +1");
+            opponent.energy++;
+            opponent.energyText.text = "" + opponent.energy;
+        }
+    }
+
+    public void AbilityTwo()
+    {
+        me.plusFrames = me.plusFrames - 3;
+        me.plusFramesText.text = "+" + me.plusFrames;
+        if (me.plusFrames == 0)
+        {
+            me.plusFramesText.text = "";
+        }
+
+        if (me.character.cardName == "Zyla")
+        {
+            me.dragonInstall = 5;
+            Debug.Log("Zyla +3");
+        }
+        if (me.character.cardName == "Taibo")
+        {
+            me.forceBreak = 5;
+            Debug.Log("Taibo +3");
+        }
+        if (me.character.cardName == "Rynox")
+        {
+            me.empowered = true;
+            me.installText.text = "Empowered";
+            Debug.Log("Rynox +3");
+        }
+        AbilityTwoRpc();
+    }
+
+    [Rpc(SendTo.NotMe)]
+    public void AbilityTwoRpc()
+    {
+        opponent.plusFrames = opponent.plusFrames - 3;
+        opponent.plusFramesText.text = "+" + opponent.plusFrames;
+        if (opponent.plusFrames == 0)
+        {
+            opponent.plusFramesText.text = "";
+        }
+
+        if (opponent.character.cardName == "Zyla")
+        {
+            opponent.dragonInstall = 5;
+            Debug.Log("Zyla +3");
+        }
+        if (opponent.character.cardName == "Taibo")
+        {
+            opponent.forceBreak = 5;
+            Debug.Log("Taibo +3");
+        }
+        if (opponent.character.cardName == "Rynox")
+        {
+            opponent.empowered = true;
+            opponent.installText.text = "Empowered";
+            Debug.Log("Rynox +3");
+        }
+    }
+
 
 }
