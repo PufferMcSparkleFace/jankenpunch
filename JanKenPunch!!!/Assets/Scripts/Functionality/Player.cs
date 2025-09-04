@@ -276,31 +276,6 @@ public class Player : NetworkBehaviour
 
     }
 
-    IEnumerator WaitForOpponent()
-    {
-        waitingForOpponent.text = "Waiting for opponent...";
-        playedCard = gameManager.card;
-        finalCardCost = playedCard.cost - plusFrames;
-        plusFrames = 0;
-        plusFramesText.text = "";
-        if (finalCardCost < 0)
-        {
-            finalCardCost = 0;
-        }
-        while (opponent.playedCard == null)
-        {
-            yield return null;
-        }
-        waitingForOpponent.text = "";
-        StartCoroutine("RevealCards");
-    }
-
-    [Rpc(SendTo.NotMe)]
-    public void PlayCardRpc()
-    {
-        Debug.Log("Opponent played a card");
-    }
-
     IEnumerator WaitForOpponentCharacter()
     {
         waitingForOpponent.text = "Waiting for opponent...";
@@ -314,8 +289,28 @@ public class Player : NetworkBehaviour
         characterSelectScreenGameObject.SetActive(false);
     }
 
+    IEnumerator WaitForOpponent()
+    {
+        waitingForOpponent.text = "Waiting for opponent...";
+        playedCard = gameManager.card;
+        finalCardCost = playedCard.cost - plusFrames;
+        if (finalCardCost < 0)
+        {
+            finalCardCost = 0;
+        }
+        while (opponent.playedCard == null)
+        {
+            yield return null;
+        }
+        waitingForOpponent.text = "";
+        StartCoroutine("RevealCards");
+    }
+
+
     IEnumerator RevealCards()
     {
+        plusFrames = 0;
+        plusFramesText.text = "";
         gameManager.cutscene = true;
         revealedCardScript.card = playedCard;
         revealedCardScript.UpdateCard();
