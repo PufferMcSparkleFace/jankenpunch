@@ -216,6 +216,7 @@ public class GameManager : NetworkBehaviour
         }
 
         SetOpponentCardRpc(card.id);
+        me.StartCoroutine("WaitForOpponent");
 
         //if you play a nonbasic card, set the card to null (so that it gets replaced)
         if ((card.type != "Basic Defense" && card.type != "Basic Movement"))
@@ -229,10 +230,6 @@ public class GameManager : NetworkBehaviour
         playedCard.transform.localScale = new Vector3(2.5f, 3.5f, 0);
         playedCard = null;
         lockInButton.SetActive(false);
-
-        
-        me.StartCoroutine("WaitForOpponent");
-
     }
 
     [Rpc(SendTo.NotMe)]

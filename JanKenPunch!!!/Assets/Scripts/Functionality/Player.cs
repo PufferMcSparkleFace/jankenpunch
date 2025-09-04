@@ -293,11 +293,6 @@ public class Player : NetworkBehaviour
     {
         waitingForOpponent.text = "Waiting for opponent...";
         playedCard = gameManager.card;
-        finalCardCost = playedCard.cost - plusFrames;
-        if (finalCardCost < 0)
-        {
-            finalCardCost = 0;
-        }
         while (opponent.playedCard == null)
         {
             yield return null;
@@ -309,22 +304,11 @@ public class Player : NetworkBehaviour
 
     IEnumerator RevealCards()
     {
-        plusFrames = 0;
-        plusFramesText.text = "";
         gameManager.cutscene = true;
         revealedCardScript.card = playedCard;
         revealedCardScript.UpdateCard();
         opponent.revealedCardScript.card = opponent.playedCard;
         opponent.revealedCardScript.UpdateCard();
-        if (finalCardCost != playedCard.cost)
-        {
-            revealedCardCostText.text = finalCardCost.ToString();
-            revealedCardCostText.color = new Color(255, 115, 0, 255); 
-        }
-        else
-        {
-            revealedCardCostText.color = new Color(0, 0, 0, 255);
-        }
         revealedCard.SetActive(true);
         opponent.revealedCard.SetActive(true);
         yield return new WaitForSeconds(1.5f);
@@ -342,6 +326,14 @@ public class Player : NetworkBehaviour
 
     public void PlayCard()
     {
+        finalCardCost = playedCard.cost - plusFrames;
+        if (finalCardCost < 0)
+        {
+            finalCardCost = 0;
+        }
+        plusFrames = 0;
+        plusFramesText.text = "";
+
         //if you have less energy than your opponent or 0 energy, basic cards cost 0
         if ((playedCard.type == "Basic Defense" || playedCard.type == "Basic Movement") && (energy < opponent.energy || energy == 0))
         {
