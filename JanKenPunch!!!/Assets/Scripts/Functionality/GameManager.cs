@@ -215,7 +215,13 @@ public class GameManager : NetworkBehaviour
             return;
         }
 
-        SetOpponentCardRpc(card.id);
+        me.finalCardCost = card.cost - me.plusFrames;
+        if (me.finalCardCost < 0)
+        {
+            me.finalCardCost = 0;
+        }
+
+        SetOpponentCardRpc(card.id, me.finalCardCost);
         me.StartCoroutine("WaitForOpponent");
 
         //if you play a nonbasic card, set the card to null (so that it gets replaced)
@@ -233,10 +239,11 @@ public class GameManager : NetworkBehaviour
     }
 
     [Rpc(SendTo.NotMe)]
-    public void SetOpponentCardRpc(int cardID)
+    public void SetOpponentCardRpc(int cardID, int finalCardCost)
     {
         Debug.Log("" + cardID);
         opponent.playedCard = cardDatabase[cardID];
+        opponent.finalCardCost = finalCardCost;
     }
 
     public void AbilityOne()

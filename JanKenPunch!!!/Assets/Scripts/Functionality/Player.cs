@@ -326,11 +326,6 @@ public class Player : NetworkBehaviour
 
     public void PlayCard()
     {
-        finalCardCost = playedCard.cost - plusFrames;
-        if (finalCardCost < 0)
-        {
-            finalCardCost = 0;
-        }
         plusFrames = 0;
         plusFramesText.text = "";
 
