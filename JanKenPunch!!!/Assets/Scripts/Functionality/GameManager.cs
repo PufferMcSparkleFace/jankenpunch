@@ -16,7 +16,7 @@ public class GameManager : NetworkBehaviour
     public NonBasicCard card;
 
     public int turnTimer;
-    public TMP_Text turnTimerText;
+    public TMP_Text turnTimerText, victoryText, defeatText, drawText;
 
     public Transform hand = null;
 
@@ -132,11 +132,13 @@ public class GameManager : NetworkBehaviour
 
         if(me.health <= 0)
         {
-            Debug.Log("Player 2 Wins");
+            Debug.Log("I lose");
+            defeatText.gameObject.SetActive(true);
         }
         if(opponent.health <= 0)
         {
-            Debug.Log("Player 1 Wins");
+            Debug.Log("I win");
+            victoryText.gameObject.SetActive(true);
         }
 
 
@@ -150,15 +152,18 @@ public class GameManager : NetworkBehaviour
             {
                 if (me.health > opponent.health)
                 {
-                    Debug.Log("Player 1 Wins");
+                    Debug.Log("I win");
+                    victoryText.gameObject.SetActive(true);
                 }
                 else if (me.health < opponent.health)
                 {
-                    Debug.Log("Player 2 Wins");
+                    Debug.Log("I lose");
+                    defeatText.gameObject.SetActive(true);
                 }
                 else if (me.health == opponent.health)
                 {
                     Debug.Log("Draw");
+                    drawText.gameObject.SetActive(true);
                 }
             }
             else
