@@ -1,37 +1,43 @@
 using UnityEngine;
 
-[System.Serializable]
-public class ParallaxLayer
+public class FourLayerParallax : MonoBehaviour
 {
-    public Transform layerTransform;
-    [Range(0f, 1f)]
-    public float parallaxFactor = 0.5f;
-}
+    public Transform layer1;
+    public float factor1 = 0.5f;
 
-public class MultiLayerParallax : MonoBehaviour
-{
-    public ParallaxLayer[] layers;
-    private Transform cam;
-    private Vector3 prevPos;
+    public Transform layer2;
+    public float factor2 = 0.4f;
 
-    void Start()
-    {
-        cam = Camera.main.transform;
-        prevPos = cam.position;
-    }
+    public Transform layer3;
+    public float factor3 = 0.3f;
+
+    public Transform layer4;
+    public float factor4 = 0.2f;
+
+    private Vector3 lastCameraPosition;
+    private bool firstFrame = true;
 
     void LateUpdate()
     {
-        Vector3 delta = cam.position - prevPos;
+        if (Camera.main == null) return;
 
-        foreach (var layer in layers)
+        if (firstFrame)
         {
-            if (layer.layerTransform)
-            {
-                layer.layerTransform.position += new Vector3(delta.x * layer.parallaxFactor, delta.y * layer.parallaxFactor);
-            }
+            lastCameraPosition = Camera.main.transform.position;
+            firstFrame = false;
         }
 
-        prevPos = cam.position;
+        Vector3 delta = Camera.main.transform.position - lastCameraPosition;
+
+        if (layer1 != null)
+            layer1.position += new Vector3(delta.x * factor1, delta.y * factor1, 0);
+        if (layer2 != null)
+            layer2.position += new Vector3(delta.x * factor2, delta.y * factor2, 0);
+        if (layer3 != null)
+            layer3.position += new Vector3(delta.x * factor3, delta.y * factor3, 0);
+        if (layer4 != null)
+            layer4.position += new Vector3(delta.x * factor4, delta.y * factor4, 0);
+
+        lastCameraPosition = Camera.main.transform.position;
     }
 }

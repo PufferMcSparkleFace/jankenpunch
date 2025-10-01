@@ -215,8 +215,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 940980062}
+  - component: {fileID: 940980063}
   m_Layer: 0
-  m_Name: ParallaxController
+  m_Name: ParallaxLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,7 +232,7 @@ Transform:
   m_GameObject: {fileID: 940980061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 449.09927, y: 0, z: 2956.4968}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -241,6 +242,26 @@ Transform:
   - {fileID: 968248726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &940980063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940980061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd9ebd16a6b6db4d9a86f88434ce3d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer1: {fileID: 968248726}
+  factor1: 0.5
+  layer2: {fileID: 1042409881}
+  factor2: 1
+  layer3: {fileID: 1890567376}
+  factor3: 2
+  layer4: {fileID: 777415608}
+  factor4: 4
 --- !u!1 &968248725
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +360,7 @@ GameObject:
   - component: {fileID: 1014265096}
   - component: {fileID: 1014265095}
   - component: {fileID: 1014265094}
+  - component: {fileID: 1014265097}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -414,12 +436,26 @@ Transform:
   m_GameObject: {fileID: 1014265093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 449.0993, y: 0, z: 2938.5}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1014265097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014265093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d83a2c8d2d32240acb261843cbeda6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1014265096}
+  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &1042409880
 GameObject:
   m_ObjectHideFlags: 0
