@@ -143,7 +143,7 @@ public class GameManager : NetworkBehaviour
 
 
         //if both players run out of energy, move on to the next round
-        if (me.energy == 0 && opponent.energy == 0)
+        if (me.energy == 0 && opponent.energy == 0 && me.plusFrames == 0 && opponent.plusFrames == 0)
         {
             timer--;
             timerText.text = "" + timer;
