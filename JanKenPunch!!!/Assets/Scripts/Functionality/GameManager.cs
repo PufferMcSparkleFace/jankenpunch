@@ -221,7 +221,7 @@ public class GameManager : NetworkBehaviour
         }
 
         me.finalCardCost = card.cost - me.plusFrames;
-        if (me.finalCardCost < 0)
+        if (me.finalCardCost < 0 || (card.type == "Basic Defense" || card.type == "Basic Movement") && (me.energy < opponent.energy || me.energy == 0))
         {
             me.finalCardCost = 0;
         }

@@ -329,14 +329,9 @@ public class Player : NetworkBehaviour
         plusFrames = 0;
         plusFramesText.text = "";
         Debug.Log("Cost: " + finalCardCost);
-
-        //if you have less energy than your opponent or 0 energy, basic cards cost 0
-        if ((playedCard.type == "Basic Defense" || playedCard.type == "Basic Movement") && (energy < opponent.energy || energy == 0))
-        {
-            Debug.Log("" + playedCard.cardName + " No Cost");
-        }
-        //otherwise, if you can afford the card, play it
-        else if (finalCardCost <= energy)
+        
+        //if you can afford the card, play it
+        if (finalCardCost <= energy)
         {
             energy = energy - finalCardCost;
             energyText.text = "" + energy;
