@@ -321,7 +321,7 @@ public class Player : NetworkBehaviour
     IEnumerator FrameDelay()
     {
         yield return new WaitForSeconds(finalCardCost * 0.1f);
-        Debug.Log("Going to play" + playedCard);
+        Debug.Log("Going to play " + playedCard);
         PlayCard();
     }
 

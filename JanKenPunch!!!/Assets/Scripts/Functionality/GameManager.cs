@@ -127,7 +127,7 @@ public class GameManager : NetworkBehaviour
         me.playedCard = null;
         opponent.playedCard = null;
         me.isDone = false;
-        opponent.isDone = true;
+        opponent.isDone = false;
         Debug.Log("Return to Neutral");
 
         if(me.health <= 0)
