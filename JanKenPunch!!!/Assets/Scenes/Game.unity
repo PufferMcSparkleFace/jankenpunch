@@ -6486,6 +6486,7 @@ MonoBehaviour:
   turnTimerText: {fileID: 35919525}
   victoryText: {fileID: 622726424}
   defeatText: {fileID: 537955770}
+  drawText: {fileID: 609110937}
   hand: {fileID: 0}
   deck: {fileID: 1785747173}
   timer: 0
