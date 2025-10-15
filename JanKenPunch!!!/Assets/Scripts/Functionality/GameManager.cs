@@ -233,8 +233,19 @@ public class GameManager : NetworkBehaviour
         {
             me.isFree = false;
         }
+        if(me.finalCardCost > me.energy)
+        {
+            if((me.energy < opponent.energy || me.energy == 0))
+            {
+                me.doingNothingCosts = false;
+            }
+            else
+            {
+                me.doingNothingCosts = true;
+            }
+        }
 
-        SetOpponentCardRpc(card.id, me.finalCardCost, me.isFree);
+        SetOpponentCardRpc(card.id, me.finalCardCost, me.isFree, me.doingNothingCosts);
         me.StartCoroutine("WaitForOpponent");
 
         //if you play a nonbasic card, set the card to null (so that it gets replaced)
@@ -252,12 +263,13 @@ public class GameManager : NetworkBehaviour
     }
 
     [Rpc(SendTo.NotMe)]
-    public void SetOpponentCardRpc(int cardID, int finalCardCost, bool isFree)
+    public void SetOpponentCardRpc(int cardID, int finalCardCost, bool isFree, bool doingNothingCosts)
     {
         Debug.Log("" + cardID);
         opponent.playedCard = cardDatabase[cardID];
         opponent.finalCardCost = finalCardCost;
         opponent.isFree = isFree;
+        opponent.doingNothingCosts = doingNothingCosts;
     }
 
     public void AbilityOne()

@@ -24,6 +24,7 @@ public class Player : NetworkBehaviour
     public int distance = 4;
     public bool isDone = false;
     public bool isFree = false;
+    public bool doingNothingCosts = false;
 
     public GameObject revealedCard;
     public DisplayCard revealedCardScript;
@@ -352,7 +353,7 @@ public class Player : NetworkBehaviour
         //if you can't afford the card, you do nothing, which costs 1 energy if you have more energy than your opponent
         else if (finalCardCost > energy)
         {
-            if (energy >= opponent.energy)
+            if (doingNothingCosts == true)
             {
                 energy--;
                 energyText.text = "" + energy;
