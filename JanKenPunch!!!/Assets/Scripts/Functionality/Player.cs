@@ -23,6 +23,7 @@ public class Player : NetworkBehaviour
     public bool empowered = false;
     public int distance = 4;
     public bool isDone = false;
+    public bool isFree = false;
 
     public GameObject revealedCard;
     public DisplayCard revealedCardScript;
@@ -337,8 +338,12 @@ public class Player : NetworkBehaviour
         plusFramesText.text = "";
         Debug.Log("Cost: " + finalCardCost);
         
+        if(isFree == true)
+        {
+            Debug.Log("Card Free");
+        }
         //if you can afford the card, play it
-        if (finalCardCost <= energy)
+        else if (finalCardCost <= energy)
         {
             energy = energy - finalCardCost;
             energyText.text = "" + energy;

@@ -221,12 +221,20 @@ public class GameManager : NetworkBehaviour
         }
 
         me.finalCardCost = card.cost - me.plusFrames;
-        if (me.finalCardCost < 0 || (card.type == "Basic Defense" || card.type == "Basic Movement") && (me.energy < opponent.energy || me.energy == 0))
+        if (me.finalCardCost < 0)
         {
             me.finalCardCost = 0;
         }
+        if((card.type == "Basic Defense" || card.type == "Basic Movement") && (me.energy < opponent.energy || me.energy == 0))
+        {
+            me.isFree = true;
+        }
+        else
+        {
+            me.isFree = false;
+        }
 
-        SetOpponentCardRpc(card.id, me.finalCardCost);
+        SetOpponentCardRpc(card.id, me.finalCardCost, me.isFree);
         me.StartCoroutine("WaitForOpponent");
 
         //if you play a nonbasic card, set the card to null (so that it gets replaced)
@@ -244,11 +252,12 @@ public class GameManager : NetworkBehaviour
     }
 
     [Rpc(SendTo.NotMe)]
-    public void SetOpponentCardRpc(int cardID, int finalCardCost)
+    public void SetOpponentCardRpc(int cardID, int finalCardCost, bool isFree)
     {
         Debug.Log("" + cardID);
         opponent.playedCard = cardDatabase[cardID];
         opponent.finalCardCost = finalCardCost;
+        opponent.isFree = isFree;
     }
 
     public void AbilityOne()
