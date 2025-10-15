@@ -359,6 +359,12 @@ public class Player : NetworkBehaviour
                 energyText.text = "" + energy;
             }
             Debug.Log("Do Nothing");
+            isDone = true;
+            if (opponent.isDone == true)
+            {
+                gameManager.EndInteraction();
+            }
+            return;
         }
 
         if (isHit == true)
