@@ -94,7 +94,6 @@ public class Player : NetworkBehaviour
             abilityTwoButton = abilityTwoButtonGameObject.GetComponent<Button>();
             characterCardGameObject = GameObject.FindGameObjectWithTag("P1 Character");
             characterCard = characterCardGameObject.GetComponent<DisplayCharacterCard>();
-            revealedCard.SetActive(false);
             position = 3;
             this.transform.position = stagePositions[2].transform.position;
         }
@@ -119,7 +118,6 @@ public class Player : NetworkBehaviour
             abilityTwoButtonGameObject = GameObject.FindGameObjectWithTag("P2 Ability 2");
             abilityOneButton = abilityOneButtonGameObject.GetComponent<Button>();
             abilityTwoButton = abilityTwoButtonGameObject.GetComponent<Button>();
-            revealedCard.SetActive(false);
             otherPlayerGameObject = GameObject.FindGameObjectWithTag("P1");
             opponentSprite = otherPlayerGameObject.GetComponent<Image>();
             otherPlayer = otherPlayerGameObject.GetComponent<Transform>();
@@ -151,6 +149,8 @@ public class Player : NetworkBehaviour
         characterCard.SetCharacter(1);
         backgroundImage.transform.SetAsFirstSibling();
         characterSelectScreen.SetOpponentCharacterSelect();
+        revealedCard.SetActive(false);
+        opponent.revealedCard.SetActive(false);
     }
 
     // Update is called once per frame
