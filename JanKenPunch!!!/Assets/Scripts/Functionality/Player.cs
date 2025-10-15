@@ -26,10 +26,10 @@ public class Player : NetworkBehaviour
 
     public GameObject revealedCard;
     public DisplayCard revealedCardScript;
-    public TMP_Text revealedCardCostText;
+    public TMP_Text revealedCardCostText, opponentRevealedCardCostText;
     public TMP_Text waitingForOpponent;
     public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject,
-    revealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject,
+    revealedCardCostTextGameObject, opponentRevealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject,
     gameManagerObject, characterCardGameObject, canvas, characterSelectScreenGameObject, backgroundImage;
     public CharacterSelect characterSelectScreen;
 
@@ -86,6 +86,8 @@ public class Player : NetworkBehaviour
             revealedCardScript = revealedCard.GetComponent<DisplayCard>();
             revealedCardCostTextGameObject = GameObject.FindGameObjectWithTag("P1 Revealed Card Cost");
             revealedCardCostText = revealedCardCostTextGameObject.GetComponent<TMP_Text>();
+            opponentRevealedCardCostTextGameObject = GameObject.FindGameObjectWithTag("P2 Revealed Card Cost");
+            opponentRevealedCardCostText = revealedCardCostTextGameObject.GetComponent<TMP_Text>();
             abilityOneButtonGameObject = GameObject.FindGameObjectWithTag("P1 Ability 1");
             abilityTwoButtonGameObject = GameObject.FindGameObjectWithTag("P1 Ability 2");
             abilityOneButton = abilityOneButtonGameObject.GetComponent<Button>();
@@ -111,6 +113,8 @@ public class Player : NetworkBehaviour
             revealedCardScript = revealedCard.GetComponent<DisplayCard>();
             revealedCardCostTextGameObject = GameObject.FindGameObjectWithTag("P2 Revealed Card Cost");
             revealedCardCostText = revealedCardCostTextGameObject.GetComponent<TMP_Text>();
+            opponentRevealedCardCostTextGameObject = GameObject.FindGameObjectWithTag("P1 Revealed Card Cost");
+            opponentRevealedCardCostText = revealedCardCostTextGameObject.GetComponent<TMP_Text>();
             abilityOneButtonGameObject = GameObject.FindGameObjectWithTag("P2 Ability 1");
             abilityTwoButtonGameObject = GameObject.FindGameObjectWithTag("P2 Ability 2");
             abilityOneButton = abilityOneButtonGameObject.GetComponent<Button>();
@@ -311,6 +315,8 @@ public class Player : NetworkBehaviour
         opponent.revealedCardScript.UpdateCard();
         revealedCard.SetActive(true);
         opponent.revealedCard.SetActive(true);
+        revealedCardCostText.text = "" + finalCardCost;
+        opponentRevealedCardCostText.text = "" + opponent.finalCardCost;
         yield return new WaitForSeconds(1.5f);
         revealedCard.SetActive(false);
         opponent.revealedCard.SetActive(false);
