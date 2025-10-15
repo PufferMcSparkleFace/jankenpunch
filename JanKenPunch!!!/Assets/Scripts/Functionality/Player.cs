@@ -246,6 +246,7 @@ public class Player : NetworkBehaviour
                 this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
                 position = position + unitsActual;
                 distance = Mathf.Abs(position - opponent.position);
+                opponent.distance = Mathf.Abs(position - opponent.position);
             }
             //if you're facing left
             else
@@ -277,6 +278,7 @@ public class Player : NetworkBehaviour
                 this.transform.position = stagePositions[(position - 1) + unitsActual].transform.position;
                 position = position + unitsActual;
                 distance = Mathf.Abs(position - opponent.position);
+                opponent.distance = Mathf.Abs(position - opponent.position);
             }
         }
 
