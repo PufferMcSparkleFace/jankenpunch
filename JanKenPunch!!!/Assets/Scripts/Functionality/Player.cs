@@ -87,7 +87,7 @@ public class Player : NetworkBehaviour
             revealedCardCostTextGameObject = GameObject.FindGameObjectWithTag("P1 Revealed Card Cost");
             revealedCardCostText = revealedCardCostTextGameObject.GetComponent<TMP_Text>();
             opponentRevealedCardCostTextGameObject = GameObject.FindGameObjectWithTag("P2 Revealed Card Cost");
-            opponentRevealedCardCostText = revealedCardCostTextGameObject.GetComponent<TMP_Text>();
+            opponentRevealedCardCostText = opponentRevealedCardCostTextGameObject.GetComponent<TMP_Text>();
             abilityOneButtonGameObject = GameObject.FindGameObjectWithTag("P1 Ability 1");
             abilityTwoButtonGameObject = GameObject.FindGameObjectWithTag("P1 Ability 2");
             abilityOneButton = abilityOneButtonGameObject.GetComponent<Button>();
@@ -114,7 +114,7 @@ public class Player : NetworkBehaviour
             revealedCardCostTextGameObject = GameObject.FindGameObjectWithTag("P2 Revealed Card Cost");
             revealedCardCostText = revealedCardCostTextGameObject.GetComponent<TMP_Text>();
             opponentRevealedCardCostTextGameObject = GameObject.FindGameObjectWithTag("P1 Revealed Card Cost");
-            opponentRevealedCardCostText = revealedCardCostTextGameObject.GetComponent<TMP_Text>();
+            opponentRevealedCardCostText = opponentRevealedCardCostTextGameObject.GetComponent<TMP_Text>();
             abilityOneButtonGameObject = GameObject.FindGameObjectWithTag("P2 Ability 1");
             abilityTwoButtonGameObject = GameObject.FindGameObjectWithTag("P2 Ability 2");
             abilityOneButton = abilityOneButtonGameObject.GetComponent<Button>();
