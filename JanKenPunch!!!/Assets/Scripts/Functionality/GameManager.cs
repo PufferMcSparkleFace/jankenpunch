@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : NetworkBehaviour
 {
@@ -37,7 +38,7 @@ public class GameManager : NetworkBehaviour
 
     public List<NonBasicCard> cardDatabase = new List<NonBasicCard>();
 
-    public GameObject joinLobbyPanel;
+    public GameObject joinLobbyPanel, restartButton;
 
     public void Start()
     {
@@ -134,11 +135,13 @@ public class GameManager : NetworkBehaviour
         {
             Debug.Log("I lose");
             defeatText.gameObject.SetActive(true);
+            restartButton.SetActive(true);
         }
         if(opponent.health <= 0)
         {
             Debug.Log("I win");
             victoryText.gameObject.SetActive(true);
+            restartButton.SetActive(true);
         }
 
 
@@ -154,16 +157,19 @@ public class GameManager : NetworkBehaviour
                 {
                     Debug.Log("I win");
                     victoryText.gameObject.SetActive(true);
+                    restartButton.SetActive(true);
                 }
                 else if (me.health < opponent.health)
                 {
                     Debug.Log("I lose");
                     defeatText.gameObject.SetActive(true);
+                    restartButton.SetActive(true);
                 }
                 else if (me.health == opponent.health)
                 {
                     Debug.Log("Draw");
                     drawText.gameObject.SetActive(true);
+                    restartButton.SetActive(true);
                 }
             }
             else
@@ -193,6 +199,11 @@ public class GameManager : NetworkBehaviour
                 opponent.energyText.text = "" + opponent.energy;
             }
         }
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LockIn()
