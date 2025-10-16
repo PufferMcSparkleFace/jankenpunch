@@ -374,46 +374,49 @@ public class Player : NetworkBehaviour
             if (playedCard.cardName == "Dash Forward" && opponent.playedCard.cardName == "Dash Forward" && distance <= 2)
             {
                 Debug.Log("Fixing Interaction...");
-                gameManager.EndInteraction();             
+                gameManager.EndInteraction();
+                return;
             }
             else if (playedCard.cardName == "CHARGE!!!" && opponent.playedCard.cardName == "CHARGE!!!" && distance < 5)
             {
                 Debug.Log("Fixing Interaction...");
                 gameManager.EndInteraction();
+                return;
             }
             else if (playedCard.cardName == "Warp" && opponent.playedCard.cardName == "Warp")
             {
                 Debug.Log("Fixing Interaction...");
                 gameManager.EndInteraction();
+                return;
             }
             else if (playedCard.subtype == "Strike" && opponent.playedCard.subtype == "Strike")
             {
                 Debug.Log("Fixing Interaction...");
                 gameManager.EndInteraction();
+                return;
             }
             else if (playedCard.subtype == "Throw" && opponent.playedCard.subtype == "Throw")
             {
-                if(distance > 1)
+                Debug.Log("Fixing Interaction...");
+                gameManager.EndInteraction();
+                return;
+            }
+            else if ((playedCard.subtype == "Projectile" && opponent.playedCard.subtype == "Projectile") || (playedCard.subtype == "Projectile Throw" && opponent.playedCard.subtype == "Projectile Throw"))
+            {
+                if (distance > (playedCard.range + opponent.playedCard.range))
                 {
                     Debug.Log("Fixing Interaction...");
+                    gameManager.EndInteraction();
+                    return;
                 }
                 else
                 {
                     energy = energy + finalCardCost;
                     energyText.text = "" + energy;
                     Debug.Log("Clash");
+                    gameManager.EndInteraction();
+                    return;
                 }
-                gameManager.EndInteraction();
-            }
-            else if (playedCard.subtype == "Projectile" && opponent.playedCard.subtype == "Projectile")
-            {
-                Debug.Log("Fixing Interaction...");
-                gameManager.EndInteraction();
-            }
-            else if (playedCard.subtype == "Projectile Throw" && opponent.playedCard.subtype == "Projectile Throw")
-            {
-                Debug.Log("Fixing Interaction...");
-                gameManager.EndInteraction();
             }
 
         }
