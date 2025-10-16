@@ -400,12 +400,6 @@ public class Player : NetworkBehaviour
             }
             else if (playedCard.subtype == "Strike" && opponent.playedCard.subtype == "Strike")
             {
-                Debug.Log("Fixing Interaction...");
-                opponent.wereDone = true;
-                return;
-            }
-            else if (playedCard.subtype == "Throw" && opponent.playedCard.subtype == "Throw")
-            {
                 Debug.Log("Double Whiff");
                 opponent.energy = opponent.energy - opponent.finalCardCost;
                 opponent.energyText.text = "" + opponent.energy;
@@ -434,6 +428,12 @@ public class Player : NetworkBehaviour
                     opponent.plusFrames = 0;
                     opponent.plusFramesText.text = "" + opponent.plusFrames;
                 }
+                opponent.wereDone = true;
+                return;
+            }
+            else if (playedCard.subtype == "Throw" && opponent.playedCard.subtype == "Throw")
+            {
+                Debug.Log("Fixing Interaction...");
                 opponent.wereDone = true;
                 return;
             }
