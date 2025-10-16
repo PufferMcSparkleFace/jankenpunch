@@ -406,9 +406,60 @@ public class Player : NetworkBehaviour
             }
             else if (playedCard.subtype == "Throw" && opponent.playedCard.subtype == "Throw")
             {
-                Debug.Log("Fixing Interaction...");
-                opponent.wereDone = true;
-                return;
+                if(opponent.playedCard.cardName == "Tackle" && playedCard.cardName == "Tackle")
+                {
+
+                }
+                else if(opponent.playedCard.cardName == "Tackle" && playedCard.cardName != "Tackle")
+                {
+
+                }
+                else if(opponent.playedCard.cardName != "Tackle" && playedCard.cardName == "Tackle")
+                {
+
+                }
+
+                if (distance > 1)
+                {
+                    Debug.Log("Double Whiff");
+                    opponent.energy = opponent.energy - opponent.finalCardCost;
+                    opponent.energyText.text = "" + opponent.energy;
+                    plusFrames = plusFrames + Mathf.Abs(opponent.playedCard.onWhiff);
+                    opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
+                    cumulativePlusFrames = plusFrames - opponent.plusFrames;
+                    if (cumulativePlusFrames > 0)
+                    {
+                        plusFrames = cumulativePlusFrames;
+                        plusFramesText.text = "+" + plusFrames;
+                        opponent.plusFrames = 0;
+                        opponent.plusFramesText.text = "";
+
+                    }
+                    else if (cumulativePlusFrames < 0)
+                    {
+                        opponent.plusFrames = Mathf.Abs(cumulativePlusFrames);
+                        opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                        plusFrames = 0;
+                        plusFramesText.text = "";
+                    }
+                    else if (cumulativePlusFrames == 0)
+                    {
+                        plusFrames = cumulativePlusFrames;
+                        plusFramesText.text = "" + plusFrames;
+                        opponent.plusFrames = 0;
+                        opponent.plusFramesText.text = "" + opponent.plusFrames;
+                    }
+                    opponent.wereDone = true;
+                    return;
+                }
+                else
+                {
+                    energy = energy + finalCardCost;
+                    energyText.text = "" + energy;
+                    Debug.Log("Clash");
+                    opponent.wereDone = true;
+                    return;
+                }
             }
             else if ((playedCard.subtype == "Projectile" && opponent.playedCard.subtype == "Projectile") || (playedCard.subtype == "Projectile Throw" && opponent.playedCard.subtype == "Projectile Throw"))
             {
