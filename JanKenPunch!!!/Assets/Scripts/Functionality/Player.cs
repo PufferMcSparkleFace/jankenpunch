@@ -378,7 +378,7 @@ public class Player : NetworkBehaviour
             return;
         }
 
-        if (finalCardCost == opponent.finalCardCost)
+        if ((finalCardCost == opponent.finalCardCost) && opponent.finalCardCost <= opponent.energy)
         {
             if (playedCard.cardName == "Dash Forward" && opponent.playedCard.cardName == "Dash Forward" && distance <= 2)
             {
@@ -415,6 +415,8 @@ public class Player : NetworkBehaviour
                 if (distance > (playedCard.range + opponent.playedCard.range))
                 {
                     Debug.Log("Double Whiff");
+                    opponent.energy = opponent.energy - opponent.finalCardCost;
+                    opponent.energyText.text = "" + opponent.energy;
                     plusFrames = plusFrames + Mathf.Abs(opponent.playedCard.onWhiff);
                     opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
                     cumulativePlusFrames = plusFrames - opponent.plusFrames;
