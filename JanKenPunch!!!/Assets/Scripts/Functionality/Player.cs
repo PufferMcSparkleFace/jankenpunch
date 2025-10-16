@@ -406,7 +406,34 @@ public class Player : NetworkBehaviour
             }
             else if (playedCard.subtype == "Throw" && opponent.playedCard.subtype == "Throw")
             {
-                Debug.Log("Fixing Interaction...");
+                Debug.Log("Double Whiff");
+                opponent.energy = opponent.energy - opponent.finalCardCost;
+                opponent.energyText.text = "" + opponent.energy;
+                plusFrames = plusFrames + Mathf.Abs(opponent.playedCard.onWhiff);
+                opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
+                cumulativePlusFrames = plusFrames - opponent.plusFrames;
+                if (cumulativePlusFrames > 0)
+                {
+                    plusFrames = cumulativePlusFrames;
+                    plusFramesText.text = "+" + plusFrames;
+                    opponent.plusFrames = 0;
+                    opponent.plusFramesText.text = "";
+
+                }
+                else if (cumulativePlusFrames < 0)
+                {
+                    opponent.plusFrames = Mathf.Abs(cumulativePlusFrames);
+                    opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                    plusFrames = 0;
+                    plusFramesText.text = "";
+                }
+                else if (cumulativePlusFrames == 0)
+                {
+                    plusFrames = cumulativePlusFrames;
+                    plusFramesText.text = "" + plusFrames;
+                    opponent.plusFrames = 0;
+                    opponent.plusFramesText.text = "" + opponent.plusFrames;
+                }
                 opponent.wereDone = true;
                 return;
             }
