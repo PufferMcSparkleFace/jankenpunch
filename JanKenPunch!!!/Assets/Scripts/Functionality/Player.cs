@@ -25,6 +25,7 @@ public class Player : NetworkBehaviour
     public bool isDone = false;
     public bool isFree = false;
     public bool doingNothingCosts = false;
+    public bool wereDone = false;
 
     public GameObject revealedCard;
     public DisplayCard revealedCardScript;
@@ -337,6 +338,13 @@ public class Player : NetworkBehaviour
 
     public void PlayCard()
     {
+        if(wereDone == true)
+        {
+            wereDone = false;
+            gameManager.EndInteraction();
+            return;
+        }
+             
         plusFrames = 0;
         plusFramesText.text = "";
         Debug.Log("Cost: " + finalCardCost);
@@ -374,31 +382,31 @@ public class Player : NetworkBehaviour
             if (playedCard.cardName == "Dash Forward" && opponent.playedCard.cardName == "Dash Forward" && distance <= 2)
             {
                 Debug.Log("Fixing Interaction...");
-                gameManager.EndInteraction();
+                opponent.wereDone = true;
                 return;
             }
             else if (playedCard.cardName == "CHARGE!!!" && opponent.playedCard.cardName == "CHARGE!!!" && distance < 5)
             {
                 Debug.Log("Fixing Interaction...");
-                gameManager.EndInteraction();
+                opponent.wereDone = true;
                 return;
             }
             else if (playedCard.cardName == "Warp" && opponent.playedCard.cardName == "Warp")
             {
                 Debug.Log("Fixing Interaction...");
-                gameManager.EndInteraction();
+                opponent.wereDone = true;
                 return;
             }
             else if (playedCard.subtype == "Strike" && opponent.playedCard.subtype == "Strike")
             {
                 Debug.Log("Fixing Interaction...");
-                gameManager.EndInteraction();
+                opponent.wereDone = true;
                 return;
             }
             else if (playedCard.subtype == "Throw" && opponent.playedCard.subtype == "Throw")
             {
                 Debug.Log("Fixing Interaction...");
-                gameManager.EndInteraction();
+                opponent.wereDone = true;
                 return;
             }
             else if ((playedCard.subtype == "Projectile" && opponent.playedCard.subtype == "Projectile") || (playedCard.subtype == "Projectile Throw" && opponent.playedCard.subtype == "Projectile Throw"))
@@ -406,7 +414,7 @@ public class Player : NetworkBehaviour
                 if (distance > (playedCard.range + opponent.playedCard.range))
                 {
                     Debug.Log("Fixing Interaction...");
-                    gameManager.EndInteraction();
+                    opponent.wereDone = true;
                     return;
                 }
                 else
@@ -414,7 +422,7 @@ public class Player : NetworkBehaviour
                     energy = energy + finalCardCost;
                     energyText.text = "" + energy;
                     Debug.Log("Clash");
-                    gameManager.EndInteraction();
+                    opponent.wereDone = true;
                     return;
                 }
             }
