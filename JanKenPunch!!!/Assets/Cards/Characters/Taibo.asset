@@ -19,4 +19,4 @@ MonoBehaviour:
   firstAbility: Discard a card, then draw a card.
   secondAbilityCost: 3
   secondAbility: For the next 5 interactions, your projectiles deal 1 more damage
-    on hit, have 1 extra range, and knock targets back 1 space further.
+    on hit and knock targets back 1 space further.

@@ -582,10 +582,6 @@ public class Player : NetworkBehaviour
         }
         else if (playedCard.cardName == "Force Choke")
         {
-            if (forceBreak > 0)
-            {
-                playedCard.range++;
-            }
             if (playedCard.range < distance || opponent.isDodging == true)
             {
                 Debug.Log("Whiff!");
@@ -845,10 +841,6 @@ public class Player : NetworkBehaviour
 
     public void Projectile()
     {
-        if (forceBreak > 0)
-        {
-            playedCard.range++;
-        }
         if (playedCard.range < distance || opponent.isDodging == true)
         {
             Debug.Log("Whiff!");
