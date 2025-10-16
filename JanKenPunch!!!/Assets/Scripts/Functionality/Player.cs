@@ -414,6 +414,7 @@ public class Player : NetworkBehaviour
             {
                 if (distance > (playedCard.range + opponent.playedCard.range))
                 {
+                    Debug.Log("Double Whiff");
                     plusFrames = plusFrames + Mathf.Abs(opponent.playedCard.onWhiff);
                     opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
                     cumulativePlusFrames = plusFrames - opponent.plusFrames;
