@@ -638,6 +638,7 @@ public class Player : NetworkBehaviour
                     transform.position = stagePositions[opponent.position - 2].transform.position;
                     position = opponent.position - 1;
                     distance = Mathf.Abs(position - opponent.position);
+                    opponent.distance = Mathf.Abs(position - opponent.position);
                     flipCheck = -1;
                 }
                 if (opponent.flipCheck > 0)
@@ -645,6 +646,7 @@ public class Player : NetworkBehaviour
                     transform.position = stagePositions[opponent.position].transform.position;
                     position = opponent.position + 1;
                     distance = Mathf.Abs(position - opponent.position);
+                    opponent.distance = Mathf.Abs(position - opponent.position);
                     flipCheck = 1;
                 }
 
