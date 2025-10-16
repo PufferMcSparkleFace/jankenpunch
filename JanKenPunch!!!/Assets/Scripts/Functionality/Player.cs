@@ -26,6 +26,7 @@ public class Player : NetworkBehaviour
     public bool isFree = false;
     public bool doingNothingCosts = false;
     public bool wereDone = false;
+    public int cumulativePlusFrames;
 
     public GameObject revealedCard;
     public DisplayCard revealedCardScript;
@@ -413,7 +414,31 @@ public class Player : NetworkBehaviour
             {
                 if (distance > (playedCard.range + opponent.playedCard.range))
                 {
-                    Debug.Log("Fixing Interaction...");
+                    plusFrames = plusFrames + Mathf.Abs(opponent.playedCard.onWhiff);
+                    opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
+                    cumulativePlusFrames = plusFrames - opponent.plusFrames;
+                    if(cumulativePlusFrames > 0)
+                    {
+                        plusFrames = cumulativePlusFrames;
+                        plusFramesText.text = "+" + plusFrames;
+                        opponent.plusFrames = 0;
+                        opponent.plusFramesText.text = "";
+
+                    }
+                    else if(cumulativePlusFrames < 0)
+                    {
+                        opponent.plusFrames = Mathf.Abs(cumulativePlusFrames);
+                        opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                        plusFrames = 0;
+                        plusFramesText.text = "";
+                    }
+                    else if(cumulativePlusFrames == 0)
+                    {
+                        plusFrames = cumulativePlusFrames;
+                        plusFramesText.text = "" + plusFrames;
+                        opponent.plusFrames = 0;
+                        opponent.plusFramesText.text = "" + opponent.plusFrames;
+                    }
                     opponent.wereDone = true;
                     return;
                 }
