@@ -408,15 +408,27 @@ public class Player : NetworkBehaviour
             {
                 if(opponent.playedCard.cardName == "Tackle" && playedCard.cardName == "Tackle")
                 {
-
+                    if(distance > 2)
+                    {
+                        opponent.Move(1);
+                        Move(1);
+                    }
+                    else if(distance == 2)
+                    {
+                        energy = energy + finalCardCost;
+                        energyText.text = "" + energy;
+                        Debug.Log("Clash");
+                        opponent.wereDone = true;
+                        return;
+                    }
                 }
                 else if(opponent.playedCard.cardName == "Tackle" && playedCard.cardName != "Tackle")
                 {
-
+                    opponent.Move(1);
                 }
                 else if(opponent.playedCard.cardName != "Tackle" && playedCard.cardName == "Tackle")
                 {
-
+                    Move(1);
                 }
 
                 if (distance > 1)
