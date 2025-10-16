@@ -474,16 +474,8 @@ public class Player : NetworkBehaviour
             Move(2);
             if (opponent.isDodging == true)
             {
-                if (character.cardName == "Rynox")
-                {
                     plusFrames = plusFrames + 4;
                     plusFramesText.text = "+" + plusFrames;
-                }
-                else
-                {
-                    plusFrames = plusFrames + 3;
-                    plusFramesText.text = "+" + plusFrames;
-                }
             }
         }
         else if (playedCard.cardName == "Warp")
@@ -508,16 +500,8 @@ public class Player : NetworkBehaviour
                 Move(-3);
                 if (opponent.isDodging == true)
                 {
-                    if (character.cardName == "Rynox")
-                    {
-                        plusFrames = plusFrames + 4;
-                        plusFramesText.text = "+" + plusFrames;
-                    }
-                    else
-                    {
                         plusFrames = plusFrames + 3;
                         plusFramesText.text = "+" + plusFrames;
-                    }
                 }
             }
         }
