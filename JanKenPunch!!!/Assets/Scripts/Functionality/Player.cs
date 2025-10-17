@@ -538,7 +538,7 @@ public class Player : NetworkBehaviour
                     Move(1);
                 }
 
-                if(opponent.playedCard.cardName == "Dash Attack" && playedCard.cardName != "Dash Attack")
+                if(opponent.playedCard.cardName == "Dash Attack" && playedCard.cardName == "Dash Attack")
                 {
                     if(distance >= 5)
                     {
@@ -551,7 +551,7 @@ public class Player : NetworkBehaviour
                         opponent.Move(1);
                     }
                 }
-                if (opponent.playedCard.cardName == "Dash Attack" && playedCard.cardName != "Hop Kick")
+                if (opponent.playedCard.cardName == "Dash Attack" && playedCard.cardName == "Hop Kick")
                 {
                     if(distance >= 4)
                     {
@@ -568,7 +568,7 @@ public class Player : NetworkBehaviour
                         opponent.Move(1);
                     }
                 }
-                if (opponent.playedCard.cardName == "Hop Kick" && playedCard.cardName != "Dash Attack")
+                if (opponent.playedCard.cardName == "Hop Kick" && playedCard.cardName == "Dash Attack")
                 {
                     if (distance >= 4)
                     {
@@ -585,7 +585,7 @@ public class Player : NetworkBehaviour
                         Move(1);
                     }
                 }
-                if (opponent.playedCard.cardName == "Hop Kick" && playedCard.cardName != "Hop Kick" && distance >= 3)
+                if (opponent.playedCard.cardName == "Hop Kick" && playedCard.cardName == "Hop Kick" && distance >= 3)
                 {
                         Move(1);
                         opponent.Move(1);
