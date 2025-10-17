@@ -26,7 +26,8 @@ public class Player : NetworkBehaviour
     public bool isFree = false;
     public bool doingNothingCosts = false;
     public bool wereDone = false;
-    public int cumulativePlusFrames;
+    public int cumulativePlusFrames, lastPosition, lastStagePosition;
+    public float lastFlipCheck;
 
     public GameObject revealedCard;
     public DisplayCard revealedCardScript;
@@ -444,9 +445,9 @@ public class Player : NetworkBehaviour
                 opponent.energy = opponent.energy - opponent.finalCardCost;
                 opponent.energyText.text = "" + opponent.energy;
 
-                int lastPosition = position;
-                int lastStagePosition = position + 1;
-                float lastFlipCheck = flipCheck;
+                lastPosition = position;
+                lastStagePosition = position + 1;
+                lastFlipCheck = flipCheck;
 
                 if (opponent.position != 1 && opponent.position != 9)
                 {
