@@ -468,9 +468,11 @@ public class Player : NetworkBehaviour
                         flipCheck = 1;
                     }
 
-                    Move(-3);
+                    //Move(-3);
                 }
+
                 Debug.Log("Trying to find where the problem is");
+                
                 if (lastPosition != 1 && lastPosition != 9)
                 {
                     if (lastFlipCheck < 0)
@@ -490,7 +492,7 @@ public class Player : NetworkBehaviour
                         flipCheck = 1;
                     }
 
-                    Move(-3);
+                    //opponent.Move(-3);
                 }
 
                 opponent.wereDone = true;
