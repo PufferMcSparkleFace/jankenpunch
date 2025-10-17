@@ -420,8 +420,7 @@ public class Player : NetworkBehaviour
                         position = opponent.position;
 
                         opponent.transform.position = opponent.stagePositions[position + 1].transform.position;
-                        opponent.position = position + 3;
-                    }
+                        opponent.position = position + 2;
                 }
                 opponent.wereDone = true;
                 return;
