@@ -28,6 +28,7 @@ public class Player : NetworkBehaviour
     public bool wereDone = false;
     public int cumulativePlusFrames, lastPosition, lastStagePosition;
     public float lastFlipCheck;
+    public float meDelay, opponentDelay;
 
     public GameObject revealedCard;
     public DisplayCard revealedCardScript;
@@ -327,13 +328,104 @@ public class Player : NetworkBehaviour
         yield return new WaitForSeconds(1.5f);
         revealedCard.SetActive(false);
         opponent.revealedCard.SetActive(false);
-        StartCoroutine("FrameDelay");
-        opponent.StartCoroutine("FrameDelay");
+
+        if (opponent.playedCard.name == "Dodge")
+        {
+            opponentDelay = 0.001f;
+        }
+        else if(opponent.playedCard.name == "Block High" || opponent.playedCard.name == "Block Low")
+        {
+            opponentDelay = 0.005f;
+        }
+        else if (opponent.playedCard.name == "Dash Back")
+        {
+            opponentDelay = 0.01f;
+        }
+        else if (opponent.playedCard.name == "Dash Forward")
+        {
+            opponentDelay = 0.02f;
+        }
+        else if (opponent.playedCard.name == "CHARGE!!!")
+        {
+            opponentDelay = 0.03f;
+        }
+        else if (opponent.playedCard.name == "Warp")
+        {
+            opponentDelay = 0.04f;
+        }
+        else if (opponent.playedCard.subtype == "Strike")
+        {
+            opponentDelay = 0.05f;
+        }
+        else if (opponent.playedCard.subtype == "Throw")
+        {
+            opponentDelay = 0.06f;
+        }
+        else if (opponent.playedCard.subtype == "Projectile")
+        {
+            opponentDelay = 0.07f;
+        }
+        else if (opponent.playedCard.subtype == "Projectile Throw")
+        {
+            opponentDelay = 0.08f;
+        }
+        else if (opponent.playedCard.type == "Setup")
+        {
+            opponentDelay = 0.09f;
+        }
+
+        if (playedCard.name == "Dodge")
+        {
+            meDelay = 0.001f;
+        }
+        else if (playedCard.name == "Block High" || opponent.playedCard.name == "Block Low")
+        {
+            meDelay = 0.005f;
+        }
+        else if (playedCard.name == "Dash Back")
+        {
+            meDelay = 0.01f;
+        }
+        else if (playedCard.name == "Dash Forward")
+        {
+            meDelay = 0.02f;
+        }
+        else if (playedCard.name == "CHARGE!!!")
+        {
+            meDelay = 0.03f;
+        }
+        else if (playedCard.name == "Warp")
+        {
+            meDelay = 0.04f;
+        }
+        else if (playedCard.subtype == "Strike")
+        {
+            meDelay = 0.05f;
+        }
+        else if (playedCard.subtype == "Throw")
+        {
+            meDelay = 0.06f;
+        }
+        else if (playedCard.subtype == "Projectile")
+        {
+            meDelay = 0.07f;
+        }
+        else if (playedCard.subtype == "Projectile Throw")
+        {
+            meDelay = 0.08f;
+        }
+        else if (playedCard.type == "Setup")
+        {
+            meDelay = 0.09f;
+        }
+
+        StartCoroutine("FrameDelay", meDelay);
+        opponent.StartCoroutine("FrameDelay", opponentDelay);
     }
     
-    IEnumerator FrameDelay()
+    IEnumerator FrameDelay(float delay)
     {
-        yield return new WaitForSeconds(finalCardCost * 0.1f);
+        yield return new WaitForSeconds(finalCardCost * 0.1f + delay);
         Debug.Log("Going to play " + playedCard);
         PlayCard();
     }
