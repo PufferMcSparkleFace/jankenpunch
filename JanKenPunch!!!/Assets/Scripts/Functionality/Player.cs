@@ -406,7 +406,22 @@ public class Player : NetworkBehaviour
                 }
                 else if(distance == 2)
                 {
-                    Debug.Log("Fixing Interaction...");
+                    if (flipCheck < 0)
+                    {
+                        transform.position = stagePositions[opponent.position - 1].transform.position;
+                        position = opponent.position;
+
+                        opponent.transform.position = opponent.stagePositions[position - 3].transform.position;
+                        opponent.position = position - 2;
+                    }
+                    else
+                    {
+                        transform.position = stagePositions[opponent.position - 1].transform.position;
+                        position = opponent.position;
+
+                        opponent.transform.position = opponent.stagePositions[position + 1].transform.position;
+                        opponent.position = position + 3;
+                    }
                 }
                 opponent.wereDone = true;
                 return;
