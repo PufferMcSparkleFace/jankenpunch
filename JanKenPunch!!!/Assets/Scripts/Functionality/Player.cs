@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 using TMPro;
 using Unity.Netcode;
 
@@ -179,14 +180,22 @@ public class Player : NetworkBehaviour
         {
             abilityTwoButton.gameObject.SetActive(false);
         }
+
         if (plusFrames >= 1)
         {
-            abilityOneButton.gameObject.SetActive(true);
+            if((this.gameObject.tag == "P1" && gameManager.network.IsHost == true)||(this.gameObject.tag == "P2" && gameManager.network.IsClient == true))
+            {
+                abilityOneButton.gameObject.SetActive(true);
+            }
         }
         if (plusFrames >= 3)
         {
-            abilityTwoButton.gameObject.SetActive(true);
+            if ((this.gameObject.tag == "P1" && gameManager.network.IsHost == true) || (this.gameObject.tag == "P2" && gameManager.network.IsClient == true))
+            {
+                abilityTwoButton.gameObject.SetActive(true);
+            }
         }
+
         if (gameManager.discarding == true)
         {
             abilityOneButton.gameObject.SetActive(false);
