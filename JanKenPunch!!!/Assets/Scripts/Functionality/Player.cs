@@ -30,6 +30,7 @@ public class Player : NetworkBehaviour
     public int cumulativePlusFrames, lastPosition, lastStagePosition;
     public float lastFlipCheck;
     public float meDelay, opponentDelay;
+    public bool pc = false;
 
     public GameObject revealedCard;
     public DisplayCard revealedCardScript;
@@ -181,19 +182,14 @@ public class Player : NetworkBehaviour
             abilityTwoButton.gameObject.SetActive(false);
         }
 
-        if (plusFrames >= 1)
+        if (plusFrames >= 1 && pc == true)
         {
-            if((this.gameObject.tag == "P1" && gameManager.network.IsHost == true)||(this.gameObject.tag == "P2" && gameManager.network.IsClient == true))
-            {
-                abilityOneButton.gameObject.SetActive(true);
-            }
+            abilityOneButton.gameObject.SetActive(true);
+
         }
-        if (plusFrames >= 3)
+        if (plusFrames >= 3 && pc == true)
         {
-            if ((this.gameObject.tag == "P1" && gameManager.network.IsHost == true) || (this.gameObject.tag == "P2" && gameManager.network.IsClient == true))
-            {
-                abilityTwoButton.gameObject.SetActive(true);
-            }
+            abilityTwoButton.gameObject.SetActive(true);
         }
 
         if (gameManager.discarding == true)
