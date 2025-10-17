@@ -441,7 +441,56 @@ public class Player : NetworkBehaviour
             }
             else if (playedCard.cardName == "Warp" && opponent.playedCard.cardName == "Warp")
             {
-                Debug.Log("Fixing Interaction...");
+                opponent.energy = opponent.energy - opponent.finalCardCost;
+                opponent.energyText.text = "" + opponent.energy;
+
+                int lastPosition = position;
+                int lastStagePosition = position + 1;
+                float lastFlipCheck = flipCheck;
+
+                if (opponent.position != 1 && opponent.position != 9)
+                {
+                    if (opponent.flipCheck < 0)
+                    {
+                        transform.position = stagePositions[opponent.position - 2].transform.position;
+                        position = opponent.position - 1;
+                        distance = Mathf.Abs(position - opponent.position);
+                        opponent.distance = Mathf.Abs(position - opponent.position);
+                        flipCheck = -1;
+                    }
+                    if (opponent.flipCheck > 0)
+                    {
+                        transform.position = stagePositions[opponent.position].transform.position;
+                        position = opponent.position + 1;
+                        distance = Mathf.Abs(position - opponent.position);
+                        opponent.distance = Mathf.Abs(position - opponent.position);
+                        flipCheck = 1;
+                    }
+
+                    Move(-3);
+                }
+                if (lastPosition != 1 && lastPosition != 9)
+                {
+                    if (lastFlipCheck < 0)
+                    {
+                        opponent.transform.position = stagePositions[lastPosition - 2].transform.position;
+                        opponent.position = lastPosition - 1;
+                        distance = Mathf.Abs(position - opponent.position);
+                        opponent.distance = Mathf.Abs(position - opponent.position);
+                        flipCheck = -1;
+                    }
+                    if (lastFlipCheck > 0)
+                    {
+                        opponent.transform.position = stagePositions[lastPosition].transform.position;
+                        opponent.position = lastPosition + 1;
+                        distance = Mathf.Abs(position - opponent.position);
+                        opponent.distance = Mathf.Abs(position - opponent.position);
+                        flipCheck = 1;
+                    }
+
+                    Move(-3);
+                }
+
                 opponent.wereDone = true;
                 return;
             }
