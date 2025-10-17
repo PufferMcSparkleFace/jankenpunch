@@ -388,7 +388,13 @@ public class Player : NetworkBehaviour
             }
             else if (playedCard.cardName == "CHARGE!!!" && opponent.playedCard.cardName == "CHARGE!!!" && distance < 5)
             {
-                Debug.Log("Fixing Interaction...");
+                if(distance == 3 || distance == 4)
+                {
+                    Move(1);
+                    opponent.Move(1);
+                }
+                opponent.energy = opponent.energy - opponent.finalCardCost;
+                opponent.energyText.text = "" + opponent.energy;
                 opponent.wereDone = true;
                 return;
             }
