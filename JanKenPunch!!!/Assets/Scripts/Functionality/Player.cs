@@ -382,11 +382,31 @@ public class Player : NetworkBehaviour
         {
             if (playedCard.cardName == "Dash Forward" && opponent.playedCard.cardName == "Dash Forward" && distance <= 2)
             {
-                Debug.Log("Fixing Interaction...");
                 if(opponent.isFree == false)
                 {
                     opponent.energy--;
                     opponent.energyText.text = "" + opponent.energy;
+                }
+                if(distance == 1)
+                {
+                    if (flipCheck < 0)
+                    {
+                        transform.position = stagePositions[opponent.position - 1].transform.position;
+                        position = opponent.position;
+                        opponent.transform.position = opponent.stagePositions[position - 2].transform.position;
+                        opponent.position = position - 1;
+                    }
+                    else
+                    {
+                        transform.position = stagePositions[opponent.position - 1].transform.position;
+                        position = opponent.position;
+                        opponent.transform.position = opponent.stagePositions[position].transform.position;
+                        opponent.position = position + 1;
+                    }
+                }
+                else if(distance == 2)
+                {
+                    Debug.Log("Fixing Interaction...");
                 }
                 opponent.wereDone = true;
                 return;
