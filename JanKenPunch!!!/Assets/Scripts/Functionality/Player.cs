@@ -421,6 +421,7 @@ public class Player : NetworkBehaviour
 
                         opponent.transform.position = opponent.stagePositions[position + 1].transform.position;
                         opponent.position = position + 2;
+                    }
                 }
                 opponent.wereDone = true;
                 return;
