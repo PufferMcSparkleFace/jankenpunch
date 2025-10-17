@@ -333,7 +333,7 @@ public class Player : NetworkBehaviour
         {
             opponentDelay = 0.001f;
         }
-        else if(opponent.playedCard.cardName == "Block High" || opponent.playedCard.name == "Block Low")
+        else if(opponent.playedCard.cardName == "Block High" || opponent.playedCard.cardName == "Block Low")
         {
             opponentDelay = 0.005f;
         }
@@ -378,7 +378,7 @@ public class Player : NetworkBehaviour
         {
             meDelay = 0.001f;
         }
-        else if (playedCard.cardName == "Block High" || opponent.playedCard.name == "Block Low")
+        else if (playedCard.cardName == "Block High" || opponent.playedCard.cardName == "Block Low")
         {
             meDelay = 0.005f;
         }
