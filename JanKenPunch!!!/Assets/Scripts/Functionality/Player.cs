@@ -329,27 +329,27 @@ public class Player : NetworkBehaviour
         revealedCard.SetActive(false);
         opponent.revealedCard.SetActive(false);
 
-        if (opponent.playedCard.name == "Dodge")
+        if (opponent.playedCard.cardName == "Dodge")
         {
             opponentDelay = 0.001f;
         }
-        else if(opponent.playedCard.name == "Block High" || opponent.playedCard.name == "Block Low")
+        else if(opponent.playedCard.cardName == "Block High" || opponent.playedCard.name == "Block Low")
         {
             opponentDelay = 0.005f;
         }
-        else if (opponent.playedCard.name == "Dash Back")
+        else if (opponent.playedCard.cardName == "Dash Back")
         {
             opponentDelay = 0.01f;
         }
-        else if (opponent.playedCard.name == "Dash Forward")
+        else if (opponent.playedCard.cardName == "Dash Forward")
         {
             opponentDelay = 0.02f;
         }
-        else if (opponent.playedCard.name == "CHARGE!!!")
+        else if (opponent.playedCard.cardName == "CHARGE!!!")
         {
             opponentDelay = 0.03f;
         }
-        else if (opponent.playedCard.name == "Warp")
+        else if (opponent.playedCard.cardName == "Warp")
         {
             opponentDelay = 0.04f;
         }
@@ -374,27 +374,27 @@ public class Player : NetworkBehaviour
             opponentDelay = 0.09f;
         }
 
-        if (playedCard.name == "Dodge")
+        if (playedCard.cardName == "Dodge")
         {
             meDelay = 0.001f;
         }
-        else if (playedCard.name == "Block High" || opponent.playedCard.name == "Block Low")
+        else if (playedCard.cardName == "Block High" || opponent.playedCard.name == "Block Low")
         {
             meDelay = 0.005f;
         }
-        else if (playedCard.name == "Dash Back")
+        else if (playedCard.cardName == "Dash Back")
         {
             meDelay = 0.01f;
         }
-        else if (playedCard.name == "Dash Forward")
+        else if (playedCard.cardName == "Dash Forward")
         {
             meDelay = 0.02f;
         }
-        else if (playedCard.name == "CHARGE!!!")
+        else if (playedCard.cardName == "CHARGE!!!")
         {
             meDelay = 0.03f;
         }
-        else if (playedCard.name == "Warp")
+        else if (playedCard.cardName == "Warp")
         {
             meDelay = 0.04f;
         }
