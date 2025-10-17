@@ -388,6 +388,7 @@ public class Player : NetworkBehaviour
             }
             else if (playedCard.cardName == "CHARGE!!!" && opponent.playedCard.cardName == "CHARGE!!!" && distance < 5)
             {
+                Debug.Log("Bonk");
                 if(distance == 3 || distance == 4)
                 {
                     Move(1);
