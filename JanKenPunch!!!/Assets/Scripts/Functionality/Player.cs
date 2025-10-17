@@ -478,7 +478,7 @@ public class Player : NetworkBehaviour
                         opponent.position = lastPosition - 1;
                         distance = Mathf.Abs(position - opponent.position);
                         opponent.distance = Mathf.Abs(position - opponent.position);
-                        flipCheck = -1;
+                        opponent.flipCheck = -1;
                     }
                     if (lastFlipCheck > 0)
                     {
@@ -486,13 +486,36 @@ public class Player : NetworkBehaviour
                         opponent.position = lastPosition + 1;
                         distance = Mathf.Abs(position - opponent.position);
                         opponent.distance = Mathf.Abs(position - opponent.position);
-                        flipCheck = 1;
+                        opponent.flipCheck = 1;
                     }
 
                 }
 
-                Move(-3);
-                opponent.Move(-3);
+                if(position != 1 && position != 9)
+                {
+                    Move(-1);
+                }
+                if (opponent.position != 1 && opponent.position != 9)
+                {
+                    opponent.Move(-1);
+                }
+                if (position != 1 && position != 9)
+                {
+                    Move(-1);
+                }
+                if (opponent.position != 1 && opponent.position != 9)
+                {
+                    opponent.Move(-1);
+                }
+                if (position != 1 && position != 9)
+                {
+                    Move(-1);
+                }
+                if (opponent.position != 1 && opponent.position != 9)
+                {
+                    opponent.Move(-1);
+                }
+
                 opponent.wereDone = true;
                 return;
             }
