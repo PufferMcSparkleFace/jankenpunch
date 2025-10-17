@@ -408,8 +408,8 @@ public class Player : NetworkBehaviour
                 {
                     if (flipCheck < 0)
                     {
-                        transform.position = stagePositions[opponent.position - 2].transform.position;
-                        position = opponent.position;
+                        transform.position = stagePositions[opponent.position - 1].transform.position;
+                        position = opponent.position -1;
 
                         opponent.transform.position = opponent.stagePositions[position - 3].transform.position;
                         opponent.position = position - 2;
