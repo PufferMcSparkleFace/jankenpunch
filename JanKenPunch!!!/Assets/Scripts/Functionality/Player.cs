@@ -378,7 +378,7 @@ public class Player : NetworkBehaviour
         {
             meDelay = 0.001f;
         }
-        else if (playedCard.cardName == "Block High" || opponent.playedCard.cardName == "Block Low")
+        else if (playedCard.cardName == "Block High" || playedCard.cardName == "Block Low")
         {
             meDelay = 0.005f;
         }
