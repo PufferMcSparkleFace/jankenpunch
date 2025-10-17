@@ -521,6 +521,77 @@ public class Player : NetworkBehaviour
             }
             else if (playedCard.subtype == "Strike" && opponent.playedCard.subtype == "Strike")
             {
+                if(opponent.playedCard.cardName == "Dash Attack" && playedCard.cardName != "Dash Attack" && playedCard.cardName != "Hop Kick")
+                {
+                    opponent.Move(2);
+                }
+                else if (opponent.playedCard.cardName == "Hop Kick" && playedCard.cardName != "Dash Attack" && playedCard.cardName != "Hop Kick")
+                {
+                    opponent.Move(1);
+                }
+                else if (playedCard.cardName == "Dash Attack" && opponent.playedCard.cardName != "Dash Attack" && opponent.playedCard.cardName != "Hop Kick")
+                {
+                    Move(2);
+                }
+                else if (playedCard.cardName == "Hop Kick" && opponent.playedCard.cardName != "Dash Attack" && opponent.playedCard.cardName != "Hop Kick")
+                {
+                    Move(1);
+                }
+
+                if(opponent.playedCard.cardName == "Dash Attack" && playedCard.cardName != "Dash Attack")
+                {
+                    if(distance >= 5)
+                    {
+                        Move(2);
+                        opponent.Move(2);
+                    }
+                    else if (distance == 3 || distance == 4)
+                    {
+                        Move(1);
+                        opponent.Move(1);
+                    }
+                }
+                if (opponent.playedCard.cardName == "Dash Attack" && playedCard.cardName != "Hop Kick")
+                {
+                    if(distance >= 4)
+                    {
+                        opponent.Move(2);
+                        Move(1);
+                    }
+                    else if(distance == 3)
+                    {
+                        opponent.Move(1);
+                        Move(1);
+                    }
+                    else if(distance == 2)
+                    {
+                        opponent.Move(1);
+                    }
+                }
+                if (opponent.playedCard.cardName == "Hop Kick" && playedCard.cardName != "Dash Attack")
+                {
+                    if (distance >= 4)
+                    {
+                        Move(2);
+                        opponent.Move(1);
+                    }
+                    else if (distance == 3)
+                    {
+                        opponent.Move(1);
+                        Move(1);
+                    }
+                    else if (distance == 2)
+                    {
+                        Move(1);
+                    }
+                }
+                if (opponent.playedCard.cardName == "Hop Kick" && playedCard.cardName != "Hop Kick" && distance >= 3)
+                {
+                        Move(1);
+                        opponent.Move(1);
+                }
+
+
                 if (distance > playedCard.range && distance > opponent.playedCard.range)
                 {
                     Debug.Log("Double Whiff");
