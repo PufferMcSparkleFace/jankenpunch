@@ -383,6 +383,11 @@ public class Player : NetworkBehaviour
             if (playedCard.cardName == "Dash Forward" && opponent.playedCard.cardName == "Dash Forward" && distance <= 2)
             {
                 Debug.Log("Fixing Interaction...");
+                if(opponent.isFree == false)
+                {
+                    opponent.energy--;
+                    opponent.energyText.text = "" + opponent.energy;
+                }
                 opponent.wereDone = true;
                 return;
             }
