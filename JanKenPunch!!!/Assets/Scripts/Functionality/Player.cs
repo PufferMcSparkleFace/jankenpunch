@@ -472,6 +472,7 @@ public class Player : NetworkBehaviour
                 }
                 if (lastPosition != 1 && lastPosition != 9)
                 {
+                    Debug.Log("Trying to find where the problem is");
                     if (lastFlipCheck < 0)
                     {
                         opponent.transform.position = stagePositions[lastPosition - 2].transform.position;
