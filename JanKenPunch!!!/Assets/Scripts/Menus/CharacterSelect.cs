@@ -16,7 +16,7 @@ public class CharacterSelect : NetworkBehaviour
     public Draw deck;
 
     public CharacterCards zyla, taibo, rynox;
-    public Sprite zylaSprite, taiboSprite, rynoxSprite;
+    public Sprite zylaSprite, taiboSprite, rynoxSprite, zylaP2Sprite, taiboP2Sprite, rynoxP2Sprite;
     public List<NonBasicCard> zylaDeck = new List<NonBasicCard>();
     public List<NonBasicCard> taiboDeck = new List<NonBasicCard>();
     public List<NonBasicCard> rynoxDeck = new List<NonBasicCard>();
