@@ -47,9 +47,18 @@ public class CharacterSelect : NetworkBehaviour
         deck.deck = zylaDeck;
         deck.DrawHand();
         deck.characterSelected = true;
-        mySprite.sprite = zylaSprite;
-        SelectZylaRpc();
-        myPlayer.StartCoroutine("WaitForOpponentCharacter");
+        if(opponentCharacter.character ==  null || opponentCharacter.character.cardName == "Rynox" || opponentCharacter.character.cardName == "Taibo")
+        {
+            mySprite.sprite = zylaSprite;
+            SelectZylaRpc(false);
+            myPlayer.StartCoroutine("WaitForOpponentCharacter");
+        }
+        else if (opponentCharacter.character.cardName == "Zyla")
+        {
+            mySprite.sprite = zylaP2Sprite;
+            SelectZylaRpc(true);
+            myPlayer.StartCoroutine("WaitForOpponentCharacter");
+        }
     }
 
     public void SelectTaibo()
@@ -60,9 +69,18 @@ public class CharacterSelect : NetworkBehaviour
         deck.deck = taiboDeck;
         deck.DrawHand();
         deck.characterSelected = true;
-        mySprite.sprite = taiboSprite;
-        SelectTaiboRpc();
-        myPlayer.StartCoroutine("WaitForOpponentCharacter");
+        if (opponentCharacter.character == null || opponentCharacter.character.cardName == "Rynox" || opponentCharacter.character.cardName == "Zyla")
+        {
+            mySprite.sprite = taiboSprite;
+            SelectTaiboRpc(false);
+            myPlayer.StartCoroutine("WaitForOpponentCharacter");
+        }
+        else if (opponentCharacter.character.cardName == "Taibo")
+        {
+            mySprite.sprite = taiboP2Sprite;
+            SelectTaiboRpc(true);
+            myPlayer.StartCoroutine("WaitForOpponentCharacter");
+        }
     }
 
     public void SelectRynox()
@@ -73,32 +91,62 @@ public class CharacterSelect : NetworkBehaviour
         deck.deck = rynoxDeck;
         deck.DrawHand();
         deck.characterSelected = true;
-        mySprite.sprite = rynoxSprite;
-        SelectRynoxRpc();
-        myPlayer.StartCoroutine("WaitForOpponentCharacter");
+        if (opponentCharacter.character == null || opponentCharacter.character.cardName == "Taibo" || opponentCharacter.character.cardName == "Zyla")
+        {
+            mySprite.sprite = rynoxSprite;
+            SelectRynoxRpc(false);
+            myPlayer.StartCoroutine("WaitForOpponentCharacter");
+        }
+        else if (opponentCharacter.character.cardName == "Rynox")
+        {
+            mySprite.sprite = rynoxP2Sprite;
+            SelectRynoxRpc(true);
+            myPlayer.StartCoroutine("WaitForOpponentCharacter");
+        }
     }
 
     [Rpc(SendTo.NotMe)]
-    public void SelectZylaRpc()
+    public void SelectZylaRpc(bool isMirror)
     {
         opponentCharacter.character = zyla;
         opponentCharacter.UpdateCharacter();
-        opponentSprite.sprite = zylaSprite;
+        if (isMirror == true)
+        {
+            opponentSprite.sprite = zylaP2Sprite;
+        }
+        else
+        {
+            opponentSprite.sprite = zylaSprite;
+        }
     }
 
     [Rpc(SendTo.NotMe)]
-    public void SelectTaiboRpc()
+    public void SelectTaiboRpc(bool isMirror)
     {
         opponentCharacter.character = taibo;
         opponentCharacter.UpdateCharacter();
-        opponentSprite.sprite = taiboSprite;
+        if(isMirror == true)
+        {
+            opponentSprite.sprite = taiboP2Sprite;
+        }
+        else
+        {
+            opponentSprite.sprite = taiboSprite;
+        }
     }
 
     [Rpc(SendTo.NotMe)]
-    public void SelectRynoxRpc()
+    public void SelectRynoxRpc(bool isMirror)
     {
         opponentCharacter.character = rynox;
         opponentCharacter.UpdateCharacter();
-        opponentSprite.sprite = rynoxSprite;
+        if (isMirror == true)
+        {
+            opponentSprite.sprite = rynoxP2Sprite;
+        }
+        else
+        {
+            opponentSprite.sprite = rynoxSprite;
+        }
     }
 }
