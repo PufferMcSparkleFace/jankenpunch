@@ -38,7 +38,7 @@ public class GameManager : NetworkBehaviour
 
     public List<NonBasicCard> cardDatabase = new List<NonBasicCard>();
 
-    public GameObject joinLobbyPanel, restartButton;
+    public GameObject joinLobbyPanel, restartButton, discardingUI;
 
     public void Start()
     {
@@ -101,6 +101,15 @@ public class GameManager : NetworkBehaviour
         if(me != null && opponent != null)
         {
             joinLobbyPanel.SetActive(false);
+        }
+
+        if(discarding == true)
+        {
+            discardingUI.SetActive(true);
+        }
+        else
+        {
+            discardingUI.SetActive(false);
         }
 
     }
