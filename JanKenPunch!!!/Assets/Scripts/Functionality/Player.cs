@@ -1003,8 +1003,7 @@ public class Player : NetworkBehaviour
         }
         else if (playedCard.cardName == "YOU SCARED, BUD?!")
         {
-            //replace this with "if opponent.card = a block, you're +5, if they played a dodge you're +9"
-            if (opponent.isBlockingHigh == true || opponent.isBlockingLow == true)
+            if (opponent.playedCard.cardName == "Block High" || opponent.playedCard.cardName == "Block Low")
             {
                 plusFrames = plusFrames + 5;
                 plusFramesText.text = "+" + plusFrames;
