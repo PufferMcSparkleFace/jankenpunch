@@ -873,78 +873,39 @@ public class Player : NetworkBehaviour
         {
             isBlockingHigh = true;
             Debug.Log("Blocking High");
-            if (opponent.isDodging == true)
-            {
-                if (character.cardName == "Rynox")
-                {
-                    plusFrames = plusFrames + 4;
-                    plusFramesText.text = "+" + plusFrames;
-                }
-                else
-                {
-                    plusFrames = plusFrames + 3;
-                    plusFramesText.text = "+" + plusFrames;
-                }
-            }
         }
         else if (playedCard.cardName == "Block Low")
         {
             isBlockingLow = true;
             Debug.Log("Blocking Low");
-            if (opponent.isDodging == true)
-            {
-                if (character.cardName == "Rynox")
-                {
-                    plusFrames = plusFrames + 4;
-                    plusFramesText.text = "+" + plusFrames;
-                }
-                else
-                {
-                    plusFrames = plusFrames + 3;
-                    plusFramesText.text = "+" + plusFrames;
-                }
-            }
         }
         else if (playedCard.cardName == "Dodge")
         {
             isDodging = true;
             Debug.Log("Dodging");
+            if(opponent.playedCard.type != "Attack" && opponent.playedCard.cardName != "Dodge" && opponent.playedCard.cardName != "YOU SCARED, BUD?!")
+            {
+                if(opponent.character.cardName == "Rynox")
+                {
+                    opponent.plusFrames = opponent.plusFrames + 4;
+                    opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                }
+                else
+                {
+                    opponent.plusFrames = opponent.plusFrames + 3;
+                    opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                }
+            }
         }
         else if (playedCard.cardName == "Dash Forward")
         {
             isMoving = true;
             Move(1);
-            if (opponent.isDodging == true)
-            {
-                if (character.cardName == "Rynox")
-                {
-                    plusFrames = plusFrames + 4;
-                    plusFramesText.text = "+" + plusFrames;
-                }
-                else
-                {
-                    plusFrames = plusFrames + 3;
-                    plusFramesText.text = "+" + plusFrames;
-                }
-            }
         }
         else if (playedCard.cardName == "Dash Back")
         {
             isMoving = true;
             Move(-1);
-            if (opponent.isDodging == true)
-            {
-                if (character.cardName == "Rynox")
-                {
-                    plusFrames = plusFrames + 4;
-                    plusFramesText.text = "+" + plusFrames;
-                }
-                else
-                {
-                    plusFrames = plusFrames + 3;
-                    plusFramesText.text = "+" + plusFrames;
-                }
-            }
         }
         else if (playedCard.cardName == "Dash Attack")
         {
@@ -966,11 +927,6 @@ public class Player : NetworkBehaviour
             isBlockingHigh = true;
             isPushing = true;
             Move(2);
-            if (opponent.isDodging == true)
-            {
-                    plusFrames = plusFrames + 4;
-                    plusFramesText.text = "+" + plusFrames;
-            }
         }
         else if (playedCard.cardName == "Warp")
         {
@@ -994,11 +950,6 @@ public class Player : NetworkBehaviour
                 }
 
                 Move(-3);
-                if (opponent.isDodging == true)
-                {
-                        plusFrames = plusFrames + 3;
-                        plusFramesText.text = "+" + plusFrames;
-                }
             }
         }
         else if (playedCard.cardName == "YOU SCARED, BUD?!")
@@ -1008,7 +959,7 @@ public class Player : NetworkBehaviour
                 plusFrames = plusFrames + 5;
                 plusFramesText.text = "+" + plusFrames;
             }
-            else if (opponent.isDodging == true)
+            else if (opponent.playedCard.cardName == "Dodge")
             {
                 plusFrames = plusFrames + 9;
                 plusFramesText.text = "+" + plusFrames;
