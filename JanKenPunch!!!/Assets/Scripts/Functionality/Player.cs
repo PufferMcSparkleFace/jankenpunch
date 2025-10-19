@@ -326,6 +326,10 @@ public class Player : NetworkBehaviour
         revealedCardScript.UpdateCard();
         opponent.revealedCardScript.card = opponent.playedCard;
         opponent.revealedCardScript.UpdateCard();
+        plusFrames = 0;
+        plusFramesText.text = "";
+        opponent.plusFrames = 0;
+        opponent.plusFramesText.text = "";
         revealedCard.SetActive(true);
         opponent.revealedCard.SetActive(true);
         revealedCardCostText.text = "" + finalCardCost;
@@ -459,11 +463,8 @@ public class Player : NetworkBehaviour
             gameManager.EndInteraction();
             return;
         }
-             
-        plusFrames = 0;
-        plusFramesText.text = "";
-        Debug.Log("Cost: " + finalCardCost);
-        
+
+
         if(isFree == true)
         {
             Debug.Log("Card Free");
