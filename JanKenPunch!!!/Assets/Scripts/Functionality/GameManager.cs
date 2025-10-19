@@ -117,6 +117,30 @@ public class GameManager : NetworkBehaviour
 
     public void EndInteraction()
     {
+        me.cumulativePlusFrames = me.plusFrames - opponent.plusFrames;
+        if (me.cumulativePlusFrames > 0)
+        {
+            me.plusFrames = me.cumulativePlusFrames;
+            me.plusFramesText.text = "+" + me.plusFrames;
+            opponent.plusFrames = 0;
+            opponent.plusFramesText.text = "";
+
+        }
+        else if (me.cumulativePlusFrames < 0)
+        {
+            opponent.plusFrames = Mathf.Abs(me.cumulativePlusFrames);
+            opponent.plusFramesText.text = "+" + opponent.plusFrames;
+            me.plusFrames = 0;
+            me.plusFramesText.text = "";
+        }
+        else if (me.cumulativePlusFrames == 0)
+        {
+            me.plusFrames = me.cumulativePlusFrames;
+            me.plusFramesText.text = "" + me.plusFrames;
+            opponent.plusFrames = 0;
+            opponent.plusFramesText.text = "" + opponent.plusFrames;
+        }
+
         //return to neutral
         card = null; 
         cutscene = false;
