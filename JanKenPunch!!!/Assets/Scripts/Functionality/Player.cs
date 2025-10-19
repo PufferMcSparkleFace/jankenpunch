@@ -330,6 +330,14 @@ public class Player : NetworkBehaviour
         opponent.revealedCard.SetActive(true);
         revealedCardCostText.text = "" + finalCardCost;
         opponentRevealedCardCostText.text = "" + opponent.finalCardCost;
+        if (playedCard.cost != finalCardCost)
+        {
+            Debug.Log("Played using plus frames");
+        }
+        if (opponent.playedCard.cost != opponent.finalCardCost)
+        {
+            Debug.Log("Played using plus frames");
+        }
         yield return new WaitForSeconds(1.5f);
         revealedCard.SetActive(false);
         opponent.revealedCard.SetActive(false);
