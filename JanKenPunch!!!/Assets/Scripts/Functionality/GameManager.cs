@@ -210,30 +210,35 @@ public class GameManager : NetworkBehaviour
             else
             {
                 //if the timer's not 0, refill energy
-                if(me.flipCheck < 0)
-                {
-                    spacesBehindP1 = me.position - 1;
-                    spacesBehindP2 = 9 - opponent.position;
-                }
-                else
-                {
-                    spacesBehindP1 = 9 - me.position;
-                    spacesBehindP2 = opponent.position - 1;
-                }
-                if(spacesBehindP1 > 4)
-                {
-                    spacesBehindP1 = 4;
-                }
-                if (spacesBehindP2 > 4)
-                {
-                    spacesBehindP2 = 4;
-                }
-                me.energy = 3 + spacesBehindP1;
-                me.energyText.text = "" + me.energy;
-                opponent.energy = 3 + spacesBehindP2;
-                opponent.energyText.text = "" + opponent.energy;
+                RefillEnergy();
             }
         }
+    }
+
+    public void RefillEnergy()
+    {
+        if (me.flipCheck < 0)
+        {
+            spacesBehindP1 = me.position - 1;
+            spacesBehindP2 = 9 - opponent.position;
+        }
+        else
+        {
+            spacesBehindP1 = 9 - me.position;
+            spacesBehindP2 = opponent.position - 1;
+        }
+        if (spacesBehindP1 > 4)
+        {
+            spacesBehindP1 = 4;
+        }
+        if (spacesBehindP2 > 4)
+        {
+            spacesBehindP2 = 4;
+        }
+        me.energy = 3 + spacesBehindP1;
+        me.energyText.text = "" + me.energy;
+        opponent.energy = 3 + spacesBehindP2;
+        opponent.energyText.text = "" + opponent.energy;
     }
 
     public void Restart()
