@@ -351,6 +351,10 @@ public class GameManager : NetworkBehaviour
             me.energy++;
             me.energyText.text = "" + me.energy;
         }
+        if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0)
+        {
+            RefillEnergy();
+        }
         AbilityOneRpc();
 
     }
@@ -383,6 +387,10 @@ public class GameManager : NetworkBehaviour
             opponent.energy++;
             opponent.energyText.text = "" + opponent.energy;
         }
+        if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0)
+        {
+            RefillEnergy();
+        }
     }
 
     public void AbilityTwo()
@@ -409,6 +417,10 @@ public class GameManager : NetworkBehaviour
             me.empowered = true;
             me.installText.text = "Empowered";
             Debug.Log("Rynox +3");
+        }
+        if(me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0)
+        {
+            RefillEnergy();
         }
         AbilityTwoRpc();
     }
@@ -438,6 +450,10 @@ public class GameManager : NetworkBehaviour
             opponent.empowered = true;
             opponent.installText.text = "Empowered";
             Debug.Log("Rynox +3");
+        }
+        if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0)
+        {
+            RefillEnergy();
         }
     }
 
