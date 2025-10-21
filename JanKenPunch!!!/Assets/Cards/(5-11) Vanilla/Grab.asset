@@ -21,7 +21,7 @@ MonoBehaviour:
   subtype: Throw
   range: 1
   guard: N/A
-  effect: Swap spaces with your opponent.
+  effect: On hit, swap spaces with your opponent.
   damage: 3
   onHit: 1
   onBlock: 0
