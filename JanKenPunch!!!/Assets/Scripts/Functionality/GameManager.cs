@@ -296,6 +296,9 @@ public class GameManager : NetworkBehaviour
             }
         }
 
+        me.abilityOneButton.gameObject.SetActive(false);
+        me.abilityTwoButton.gameObject.SetActive(false);
+
         SetOpponentCardRpc(card.id, me.finalCardCost, me.isFree, me.doingNothingCosts);
         me.StartCoroutine("WaitForOpponent");
 

@@ -182,12 +182,12 @@ public class Player : NetworkBehaviour
             abilityTwoButton.gameObject.SetActive(false);
         }
 
-        if (plusFrames >= 1 && pc == true)
+        if (plusFrames >= 1 && pc == true && playedCard == null)
         {
             abilityOneButton.gameObject.SetActive(true);
 
         }
-        if (plusFrames >= 3 && pc == true)
+        if (plusFrames >= 3 && pc == true && playedCard == null)
         {
             abilityTwoButton.gameObject.SetActive(true);
         }
