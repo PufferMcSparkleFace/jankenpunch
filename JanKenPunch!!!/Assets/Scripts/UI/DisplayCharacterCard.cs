@@ -29,7 +29,7 @@ public class DisplayCharacterCard : MonoBehaviour
         nameText.text = character.cardName;
         passiveText.text = character.passiveAbility;
         firstAbilityText.text = character.firstAbility;
-        secondAbilityCostText.text = "+" + character.secondAbilityCost.ToString();
+        secondAbilityCostText.text = "-" + character.secondAbilityCost.ToString();
         secondAbilityText.text = character.secondAbility;
         image.sprite = character.image;
         cardBack.sprite = character.cardBack;
@@ -41,7 +41,7 @@ public class DisplayCharacterCard : MonoBehaviour
         nameText.text = character.cardName;
         passiveText.text = character.passiveAbility;
         firstAbilityText.text = character.firstAbility;
-        secondAbilityCostText.text = "+" + character.secondAbilityCost.ToString();
+        secondAbilityCostText.text = "-" + character.secondAbilityCost.ToString();
         secondAbilityText.text = character.secondAbility;
         image.sprite = character.image;
         cardBack.sprite = character.cardBack;
