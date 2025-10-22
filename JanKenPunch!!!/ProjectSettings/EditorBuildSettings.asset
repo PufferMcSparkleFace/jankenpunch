@@ -15,9 +15,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Card Gallery.unity
     guid: 574d086b288cbaa4b927326b8294cd19
   - enabled: 1
+    path: Assets/Scenes/Card Gallery Zyla.unity
+    guid: 6ab9b85356052184cbd1f9f70bd9db14
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 06b9665630b1e084f8e4dd12256e462c
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 8dad118a8203e574d9dd155326e13603
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
