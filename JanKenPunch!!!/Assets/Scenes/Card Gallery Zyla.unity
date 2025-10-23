@@ -4446,7 +4446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1421736649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4488,6 +4488,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Zyla is the rushdown character of JanKenPunch!!!, specializing in getting
     in quick and pushing you all the way to the corner with lightning-fast combos.
+    Crouching Light Kick and High Heel are the only 2 cost lows and highs in the
+    game, making Zyla incredibly difficult to block. If you want to run your opponent
+    over with unrelenting pressure, pick Zyla.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

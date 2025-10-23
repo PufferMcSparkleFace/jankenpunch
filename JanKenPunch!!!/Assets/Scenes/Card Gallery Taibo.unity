@@ -4446,7 +4446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1421736649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4463,7 +4463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 736.39996, y: 649.3}
+  m_AnchoredPosition: {x: 736.39996, y: 668.28}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1421736650
@@ -4488,12 +4488,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: Taibo is the zoner of JanKenPunch!!!, specializing in keeping your opponent
     at a distance with a wide variety of powerful projectiles. With Force Jab, Force
-    Chop, and Fireball, Taibo has the greatest range in the entire game, making her
-    an absolute nightmare to approach. Of these projectiles, Force Choke is by far
-    the most difficult to avoid, acting as both a projectile and a throw. If your
-    opponent manages to weave their way through your zoning, knock them back with
-    Flash Kick, turn the tables with Grab, or simply teleport away with Warp. If
-    you want to control your opponent's every move, pick Taibo.
+    Chop, and Fireball, Taibo has the greatest range in the entire game, which when
+    combined with her passive ability makes her an absolute nightmare to approach.
+    Of these projectiles, Force Choke is by far the most difficult to avoid, acting
+    as both a projectile and a throw. If your opponent manages to weave their way
+    through your zoning, knock them back with Flash Kick, turn the tables with Grab,
+    or simply teleport away with Warp. Her -1 ability gives her unmatched card selection,
+    and her -3 makes her already terrifying zoning even more oppressive. If you want
+    to control your opponent's every move, pick Taibo.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
