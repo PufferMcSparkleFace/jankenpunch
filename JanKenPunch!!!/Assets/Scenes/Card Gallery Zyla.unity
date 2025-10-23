@@ -1582,9 +1582,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Zyla is the rushdown character of JanKenPunch!!!, a character specializing
-    in getting in quick and pushing you all the way to the corner with lightning-fast
-    combos.
+  m_text: Zyla is the rushdown character of JanKenPunch!!!, specializing in getting
+    in quick and pushing you all the way to the corner with lightning-fast combos.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -2864,7 +2864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &419698775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4545,7 +4545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82341bffd2816c40b99e2ffc300aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 1e500f488d29e5d40a3b2024ff447c6d, type: 2}
+  card: {fileID: 11400000, guid: 8627b8740cb96724bb3d32793fb59b06, type: 2}
   nameText: {fileID: 1278923526}
   costText: {fileID: 419698776}
   image: {fileID: 1265213550}
@@ -8605,7 +8605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1278923525
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16444,7 +16444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &6360339761952164697
 CanvasRenderer:
   m_ObjectHideFlags: 0
