@@ -4486,7 +4486,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Taibo is the zoner of JanKenPunch!!!, specializing in...
+  m_text: Taibo is the zoner of JanKenPunch!!!, specializing in keeping your opponent
+    at a distance with a wide variety of powerful projectiles. With Force Jab, Force
+    Chop, and Fireball, Taibo has the greatest range in the entire game, making her
+    an absolute nightmare to approach. Of these projectiles, Force Choke is by far
+    the most difficult to avoid, acting as both a projectile and a throw. If your
+    opponent manages to weave their way through your zoning, knock them back with
+    Flash Kick, turn the tables with Grab, or simply teleport away with Warp. If
+    you want to control your opponent's every move, pick Taibo.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
