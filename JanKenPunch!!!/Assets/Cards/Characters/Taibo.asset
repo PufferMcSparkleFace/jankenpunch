@@ -15,7 +15,7 @@ MonoBehaviour:
   cardBack: {fileID: 21300000, guid: 2380ef31fe643a44ba45eec0e49c594b, type: 3}
   cardName: Taibo
   image: {fileID: 21300000, guid: ada4cd0adeda08a4082028427ea9138b, type: 3}
-  passiveAbility: Projectiles knock the target back 1 unit on hit.
+  passiveAbility: Projectiles knock the target back 1 space on hit.
   firstAbility: Discard a card, then draw a card.
   secondAbilityCost: 3
   secondAbility: For the next 5 interactions, your projectiles deal 1 more damage
