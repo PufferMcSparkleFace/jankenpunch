@@ -21,7 +21,7 @@ MonoBehaviour:
   subtype: Strike
   range: 1
   guard: Mid
-  effect: On hit, knock the target back 3 spaces.
+  effect: On hit, knock your opponent back 3 spaces.
   damage: 2
   onHit: 1
   onBlock: -5

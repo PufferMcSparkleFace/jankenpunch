@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Card Gallery Zyla.unity
     guid: 6ab9b85356052184cbd1f9f70bd9db14
   - enabled: 1
+    path: Assets/Scenes/Card Gallery Taibo.unity
+    guid: 58dc536d6e2a06341a4a42dc61628700
+  - enabled: 1
+    path: Assets/Scenes/Card Gallery Rynox.unity
+    guid: 3d751217e76509f4c87e0c8ba66a53cc
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 06b9665630b1e084f8e4dd12256e462c
   - enabled: 1
