@@ -47,6 +47,7 @@ TagManager:
   - SP9
   - Character Select Screen
   - Background
+  - Character Sprite
   layers:
   - Default
   - TransparentFX
