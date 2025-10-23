@@ -4446,7 +4446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1421736649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4463,7 +4463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 736.39996, y: 668.28}
+  m_AnchoredPosition: {x: 730.7, y: 657.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1421736650
@@ -4493,7 +4493,7 @@ MonoBehaviour:
     Of these projectiles, Force Choke is by far the most difficult to avoid, acting
     as both a projectile and a throw. If your opponent manages to weave their way
     through your zoning, knock them back with Flash Kick, turn the tables with Grab,
-    or simply teleport away with Warp. Her -1 ability gives her unmatched card selection,
+    or simply teleport away with Warp. Her -1 ability gives her invaluable card selection,
     and her -3 makes her already terrifying zoning even more oppressive. If you want
     to control your opponent's every move, pick Taibo.
   m_isRightToLeft: 0
@@ -4560,7 +4560,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -501.44354, y: 477.9297, z: 465.71033, w: -765.71576}
+  m_margin: {x: -501.44354, y: 477.9297, z: 454.39282, w: -765.71576}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

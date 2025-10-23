@@ -4463,7 +4463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 736.39996, y: 649.3}
+  m_AnchoredPosition: {x: 724.5, y: 660.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1421736650
@@ -4486,7 +4486,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rynox is the grappler of JanKenPunch!!!, specializing in...
+  m_text: Rynox is the grappler of JanKenPunch!!!, specializing in terrorizing your
+    opponent with high-damaging throws. Though these can be expensive, his -1 ability
+    gives you the ability to easily stockpile energy, especially when combined with
+    the extra plus frames from his passive ability. CHARGE!!! allows Rynox to barrel
+    through attacks, letting him close the distance. Once he's in, his suite of throws
+    like Clinch Up, Grab, Tackle, and Spinning Piledriver make blocking a terrifying
+    option for your opponent. If you have the read on your opponent's defensive habits,
+    YOU SCARED, BUD?! can give you an obscene amount of plus frames, letting you
+    punish them HARD. This is only made more true when combined with his -3 ability,
+    letting Rynox deal up to 24 damage in a single move. If you want to strike fear
+    deep into the hearts of your opponents, pick Rynox.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4551,7 +4561,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -501.44354, y: 477.9297, z: 465.71033, w: -765.71576}
+  m_margin: {x: -501.44354, y: 477.9297, z: 444.92227, w: -765.71576}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
