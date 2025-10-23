@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 29669540}
   - component: {fileID: 29669542}
   - component: {fileID: 29669541}
+  - component: {fileID: 29669543}
   m_Layer: 5
   m_Name: Card 7
   m_TagString: Untagged
@@ -332,6 +333,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29669539}
   m_CullTransparentMesh: 1
+--- !u!114 &29669543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29669539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145499e5ba3d13439cba224e02be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardGalleryCards
+  card: {fileID: 11400000, guid: ae08204b66cfe4040a4e0ec24d018219, type: 2}
+  displayCard: {fileID: 1258093416}
+  displayCardScript: {fileID: 1258093418}
 --- !u!1 &101158211
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +359,7 @@ GameObject:
   - component: {fileID: 101158212}
   - component: {fileID: 101158214}
   - component: {fileID: 101158213}
+  - component: {fileID: 101158215}
   m_Layer: 5
   m_Name: Card 2
   m_TagString: Untagged
@@ -409,6 +426,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101158211}
   m_CullTransparentMesh: 1
+--- !u!114 &101158215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101158211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145499e5ba3d13439cba224e02be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardGalleryCards
+  card: {fileID: 11400000, guid: 39ff947736259674ab8c9151d179d0be, type: 2}
+  displayCard: {fileID: 1258093416}
+  displayCardScript: {fileID: 1258093418}
 --- !u!1 &152567915
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +860,7 @@ GameObject:
   - component: {fileID: 315223107}
   - component: {fileID: 315223109}
   - component: {fileID: 315223108}
+  - component: {fileID: 315223110}
   m_Layer: 5
   m_Name: Card 6
   m_TagString: Untagged
@@ -894,6 +927,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315223106}
   m_CullTransparentMesh: 1
+--- !u!114 &315223110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315223106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145499e5ba3d13439cba224e02be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardGalleryCards
+  card: {fileID: 11400000, guid: 8f7273077afa3c54a9a9675294f42424, type: 2}
+  displayCard: {fileID: 1258093416}
+  displayCardScript: {fileID: 1258093418}
 --- !u!1 &515879263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,6 +1089,7 @@ GameObject:
   - component: {fileID: 531313109}
   - component: {fileID: 531313111}
   - component: {fileID: 531313110}
+  - component: {fileID: 531313112}
   m_Layer: 5
   m_Name: Card 1
   m_TagString: Untagged
@@ -1107,6 +1156,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531313108}
   m_CullTransparentMesh: 1
+--- !u!114 &531313112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531313108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145499e5ba3d13439cba224e02be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  card: {fileID: 11400000, guid: 9779d6b0d0c4b874ba181d417304c3ab, type: 2}
+  displayCard: {fileID: 1258093416}
+  displayCardScript: {fileID: 1258093418}
 --- !u!1 &575967000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,7 +1971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91, y: 0.15}
+  m_AnchoredPosition: {x: 91, y: 0.1499939}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &670955750
@@ -2364,6 +2428,7 @@ GameObject:
   - component: {fileID: 920921840}
   - component: {fileID: 920921842}
   - component: {fileID: 920921841}
+  - component: {fileID: 920921843}
   m_Layer: 5
   m_Name: Card 5
   m_TagString: Untagged
@@ -2430,6 +2495,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920921839}
   m_CullTransparentMesh: 1
+--- !u!114 &920921843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920921839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145499e5ba3d13439cba224e02be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardGalleryCards
+  card: {fileID: 11400000, guid: 9b1268002e90480449ec11bf8c0c98f8, type: 2}
+  displayCard: {fileID: 1258093416}
+  displayCardScript: {fileID: 1258093418}
 --- !u!1 &933178554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3393,6 +3473,7 @@ GameObject:
   - component: {fileID: 1141536216}
   - component: {fileID: 1141536218}
   - component: {fileID: 1141536217}
+  - component: {fileID: 1141536219}
   m_Layer: 5
   m_Name: Card 4
   m_TagString: Untagged
@@ -3459,6 +3540,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141536215}
   m_CullTransparentMesh: 1
+--- !u!114 &1141536219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141536215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145499e5ba3d13439cba224e02be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardGalleryCards
+  card: {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
+  displayCard: {fileID: 1258093416}
+  displayCardScript: {fileID: 1258093418}
 --- !u!1 &1258093416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,7 +3601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 653.6, y: -224}
+  m_AnchoredPosition: {x: 653.6, y: -199.37}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258093418
@@ -3597,6 +3693,7 @@ GameObject:
   - component: {fileID: 1261643931}
   - component: {fileID: 1261643933}
   - component: {fileID: 1261643932}
+  - component: {fileID: 1261643934}
   m_Layer: 5
   m_Name: Card 10
   m_TagString: Untagged
@@ -3663,6 +3760,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261643930}
   m_CullTransparentMesh: 1
+--- !u!114 &1261643934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261643930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145499e5ba3d13439cba224e02be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardGalleryCards
+  card: {fileID: 11400000, guid: b5f200ced1d385e43a531da19af8f987, type: 2}
+  displayCard: {fileID: 1258093416}
+  displayCardScript: {fileID: 1258093418}
 --- !u!1 &1272738690
 GameObject:
   m_ObjectHideFlags: 0
@@ -3946,6 +4058,7 @@ GameObject:
   - component: {fileID: 1314871213}
   - component: {fileID: 1314871215}
   - component: {fileID: 1314871214}
+  - component: {fileID: 1314871216}
   m_Layer: 5
   m_Name: Card 9
   m_TagString: Untagged
@@ -4012,6 +4125,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314871212}
   m_CullTransparentMesh: 1
+--- !u!114 &1314871216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314871212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145499e5ba3d13439cba224e02be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardGalleryCards
+  card: {fileID: 11400000, guid: a0b6b6a8f77398246a30ca9000ad22b2, type: 2}
+  displayCard: {fileID: 1258093416}
+  displayCardScript: {fileID: 1258093418}
 --- !u!1 &1320734102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4159,6 +4287,7 @@ GameObject:
   - component: {fileID: 1388950970}
   - component: {fileID: 1388950972}
   - component: {fileID: 1388950971}
+  - component: {fileID: 1388950973}
   m_Layer: 5
   m_Name: Card 8
   m_TagString: Untagged
@@ -4225,6 +4354,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388950969}
   m_CullTransparentMesh: 1
+--- !u!114 &1388950973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388950969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145499e5ba3d13439cba224e02be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardGalleryCards
+  card: {fileID: 11400000, guid: 96cb7ee42d0f9174ebd503387a4fec7d, type: 2}
+  displayCard: {fileID: 1258093416}
+  displayCardScript: {fileID: 1258093418}
 --- !u!1 &1390546281
 GameObject:
   m_ObjectHideFlags: 0
@@ -4382,7 +4526,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 736.39996, y: 625}
+  m_AnchoredPosition: {x: 736.39996, y: 649.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1421736650
@@ -4527,7 +4671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 653.6, y: -224}
+  m_AnchoredPosition: {x: 653.6, y: -199.37}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1491537463
@@ -5510,6 +5654,7 @@ GameObject:
   - component: {fileID: 1785292362}
   - component: {fileID: 1785292364}
   - component: {fileID: 1785292363}
+  - component: {fileID: 1785292365}
   m_Layer: 5
   m_Name: Card 3
   m_TagString: Untagged
@@ -5576,6 +5721,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785292361}
   m_CullTransparentMesh: 1
+--- !u!114 &1785292365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785292361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145499e5ba3d13439cba224e02be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardGalleryCards
+  card: {fileID: 11400000, guid: 8b03a4488de2b994585b4415a394ae71, type: 2}
+  displayCard: {fileID: 1258093416}
+  displayCardScript: {fileID: 1258093418}
 --- !u!1 &1838034036
 GameObject:
   m_ObjectHideFlags: 0
