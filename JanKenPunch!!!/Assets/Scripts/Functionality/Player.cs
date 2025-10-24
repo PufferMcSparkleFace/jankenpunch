@@ -884,7 +884,7 @@ public class Player : NetworkBehaviour
         {
             isDodging = true;
             Debug.Log("Dodging");
-            if(opponent.playedCard.type != "Attack" && opponent.playedCard.cardName != "Dodge" && opponent.playedCard.cardName != "YOU SCARED, BUD?!")
+            if ((opponent.playedCard.type != "Attack" && opponent.playedCard.cardName != "Dodge" && opponent.playedCard.cardName != "YOU SCARED, BUD?!") || opponent.finalCardCost > opponent.energy)
             {
                 if(opponent.character.cardName == "Rynox")
                 {
