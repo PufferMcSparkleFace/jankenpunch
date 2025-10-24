@@ -1114,31 +1114,35 @@ public class Player : NetworkBehaviour
                 }
 
             }
-            if (character.cardName == "Zyla" && (opponent.isBlockingLow == true && playedCard.guard == "High") || (opponent.isBlockingHigh == true && playedCard.guard == "Low"))
+            if (character.cardName == "Zyla")
             {
-                if (dragonInstall > 0)
+
+                if((opponent.isBlockingLow == true && playedCard.guard == "High") || (opponent.isBlockingHigh == true && playedCard.guard == "Low"))
                 {
-                    Debug.Log("Get Mixed!");
-                    opponent.health = opponent.health - (playedCard.damage + 2);
-                    opponent.healthText.text = "" + opponent.health;
-                    plusFrames = plusFrames + playedCard.onHit + 1;
-                    plusFramesText.text = "+" + plusFrames;
-                    isPushing = true;
-                    Move(1);
-                    opponent.isHit = true;
-                    return;
-                }
-                else
-                {
-                    Debug.Log("Get Mixed!");
-                    opponent.health = opponent.health - playedCard.damage;
-                    opponent.healthText.text = "" + opponent.health;
-                    plusFrames = plusFrames + playedCard.onHit + 1;
-                    plusFramesText.text = "+" + plusFrames;
-                    isPushing = true;
-                    Move(1);
-                    opponent.isHit = true;
-                    return;
+                    if (dragonInstall > 0)
+                    {
+                        Debug.Log("Get Mixed!");
+                        opponent.health = opponent.health - (playedCard.damage + 2);
+                        opponent.healthText.text = "" + opponent.health;
+                        plusFrames = plusFrames + playedCard.onHit + 1;
+                        plusFramesText.text = "+" + plusFrames;
+                        isPushing = true;
+                        Move(1);
+                        opponent.isHit = true;
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log("Get Mixed!");
+                        opponent.health = opponent.health - playedCard.damage;
+                        opponent.healthText.text = "" + opponent.health;
+                        plusFrames = plusFrames + playedCard.onHit + 1;
+                        plusFramesText.text = "+" + plusFrames;
+                        isPushing = true;
+                        Move(1);
+                        opponent.isHit = true;
+                        return;
+                    }
                 }
 
             }
