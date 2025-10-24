@@ -243,7 +243,7 @@ public class GameManager : NetworkBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Restarting");
     }
 
     public void GoToCharacterSelect()
