@@ -244,6 +244,9 @@ public class GameManager : NetworkBehaviour
 
     public void Restart()
     {
+        //wait for opponent
+        //if your opponent restarts, restart
+        //if your opponent goes to character select, go to character select
         Debug.Log("Restarting");
         RestartRpc();
     }
@@ -251,11 +254,16 @@ public class GameManager : NetworkBehaviour
     [Rpc(SendTo.NotMe)]
     public void RestartRpc()
     {
+        //wait for opponent
+        //if your opponent restarts, restart
+        //if your opponent goes to character select, go to character select
         Debug.Log("Restarting");
     }
 
     public void GoToCharacterSelect()
     {
+        //wait for opponent
+        //unless they went to main menu, go to character select
         Debug.Log("Going to Character Select");
         GoToCharacterSelectRpc();
     }
@@ -263,6 +271,8 @@ public class GameManager : NetworkBehaviour
     [Rpc(SendTo.NotMe)]
     public void GoToCharacterSelectRpc()
     {
+        //wait for opponent
+        //unless they went to main menu, go to character select
         Debug.Log("Going to Character Select");
     }
 
