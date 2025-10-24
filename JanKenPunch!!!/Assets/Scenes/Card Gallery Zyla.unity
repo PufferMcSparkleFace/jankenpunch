@@ -4488,15 +4488,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Zyla is the rushdown character of JanKenPunch!!!, specializing in getting
     in quick and pushing you all the way to the corner with lightning-fast combos.
-    Dash Attack, Hop Kick, and her -1 ability make her the fastest character in the
-    game, able to close distance with ease. Lighting Jab is the only 1 cost attack
-    in the entire game, allowing her to attack in places no other character can.
-    Similarly, Crouching Light Kick and High Heel are the only 2 cost lows and highs
-    in the game, making Zyla exceedingly difficult to block. If Zyla successfully
-    mixes you up, her passive ability ensures she can always get at least a small
-    combo. Even if you do manage to block everything, her -3 ability makes her pressure
-    incredibly difficult to punish and incredibly rewarding on hit. If you want to
-    run your opponent over with unrelenting offense and unmatched speed, pick Zyla.
+    Dash Attack, Hop Kick, and her -1 ability give her amazing mobility, able to
+    close any distance with ease. Lighting Jab is the only 1 cost attack in the entire
+    game, allowing her to attack in places no other character can. Similarly, Crouching
+    Light Kick and High Heel are the only 2 cost lows and highs in the game, making
+    Zyla exceedingly difficult to block. If Zyla successfully mixes you up, her passive
+    ability ensures she can always get at least a small combo. Even if you do manage
+    to block everything, her -3 ability makes her pressure incredibly difficult to
+    punish and incredibly rewarding on hit. If you want to run your opponent over
+    with unrelenting offense and unmatched speed, pick Zyla.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
