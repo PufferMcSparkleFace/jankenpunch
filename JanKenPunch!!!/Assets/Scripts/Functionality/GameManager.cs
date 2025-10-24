@@ -7,6 +7,8 @@ using UnityEngine.Networking;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.Services.Authentication;
+using Unity.Services.Lobbies;
 
 public class GameManager : NetworkBehaviour
 {
@@ -38,7 +40,7 @@ public class GameManager : NetworkBehaviour
 
     public List<NonBasicCard> cardDatabase = new List<NonBasicCard>();
 
-    public GameObject joinLobbyPanel, restartButton, discardingUI, mainMenuButton;
+    public GameObject joinLobbyPanel, gameOverButtons, discardingUI;
 
     public void Start()
     {
@@ -170,15 +172,13 @@ public class GameManager : NetworkBehaviour
         {
             Debug.Log("I lose");
             defeatText.gameObject.SetActive(true);
-            restartButton.SetActive(true);
-            mainMenuButton.SetActive(true);
+            gameOverButtons.SetActive(true);
         }
         if(opponent.health <= 0)
         {
             Debug.Log("I win");
             victoryText.gameObject.SetActive(true);
-            restartButton.SetActive(true);
-            mainMenuButton.SetActive(true);
+            gameOverButtons.SetActive(true);
         }
 
 
@@ -205,8 +205,7 @@ public class GameManager : NetworkBehaviour
                     Debug.Log("Draw");
                     drawText.gameObject.SetActive(true);
                 }
-                restartButton.SetActive(true);
-                mainMenuButton.SetActive(true);
+                gameOverButtons.SetActive(true);
             }
             else
             {
@@ -245,6 +244,18 @@ public class GameManager : NetworkBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GoToCharacterSelect()
+    {
+        Debug.Log("Going to Character Select");
+        GoToCharacterSelectRpc();
+    }
+
+    [Rpc(SendTo.NotMe)]
+    public void GoToCharacterSelectRpc()
+    {
+        Debug.Log("Going to Character Select");
     }
 
     public void MainMenu()
