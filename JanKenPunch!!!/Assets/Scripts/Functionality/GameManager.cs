@@ -38,7 +38,7 @@ public class GameManager : NetworkBehaviour
 
     public List<NonBasicCard> cardDatabase = new List<NonBasicCard>();
 
-    public GameObject joinLobbyPanel, restartButton, discardingUI;
+    public GameObject joinLobbyPanel, restartButton, discardingUI, mainMenuButton;
 
     public void Start()
     {
@@ -171,12 +171,14 @@ public class GameManager : NetworkBehaviour
             Debug.Log("I lose");
             defeatText.gameObject.SetActive(true);
             restartButton.SetActive(true);
+            mainMenuButton.SetActive(true);
         }
         if(opponent.health <= 0)
         {
             Debug.Log("I win");
             victoryText.gameObject.SetActive(true);
             restartButton.SetActive(true);
+            mainMenuButton.SetActive(true);
         }
 
 
@@ -192,20 +194,19 @@ public class GameManager : NetworkBehaviour
                 {
                     Debug.Log("I win");
                     victoryText.gameObject.SetActive(true);
-                    restartButton.SetActive(true);
                 }
                 else if (me.health < opponent.health)
                 {
                     Debug.Log("I lose");
                     defeatText.gameObject.SetActive(true);
-                    restartButton.SetActive(true);
                 }
                 else if (me.health == opponent.health)
                 {
                     Debug.Log("Draw");
                     drawText.gameObject.SetActive(true);
-                    restartButton.SetActive(true);
                 }
+                restartButton.SetActive(true);
+                mainMenuButton.SetActive(true);
             }
             else
             {
@@ -244,6 +245,18 @@ public class GameManager : NetworkBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Start Menu");
+        SendOpponentToMainMenuRpc();
+    }
+
+    [Rpc(SendTo.NotMe)]
+    public void SendOpponentToMainMenuRpc()
+    {
+        SceneManager.LoadScene("Start Menu");
     }
 
     public void LockIn()
