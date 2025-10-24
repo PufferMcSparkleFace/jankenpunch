@@ -42,6 +42,7 @@ public class GameManager : NetworkBehaviour
 
     public GameObject joinLobbyPanel, gameOverButtons, discardingUI;
 
+
     public void Start()
     {
         timer = 10;
@@ -244,6 +245,13 @@ public class GameManager : NetworkBehaviour
     public void Restart()
     {
         Debug.Log("Restarting");
+        RestartRpc();
+    }
+
+    [Rpc(SendTo.NotMe)]
+    public void RestartRpc()
+    {
+        Debug.Log("Restarting");
     }
 
     public void GoToCharacterSelect()
@@ -260,6 +268,7 @@ public class GameManager : NetworkBehaviour
 
     public void MainMenu()
     {
+        //kick em out of the lobby, set game back to how it was at the start
         SceneManager.LoadScene("Start Menu");
         SendOpponentToMainMenuRpc();
     }
@@ -267,6 +276,7 @@ public class GameManager : NetworkBehaviour
     [Rpc(SendTo.NotMe)]
     public void SendOpponentToMainMenuRpc()
     {
+        //kick em out of the lobby, set game back to how it was at the start
         SceneManager.LoadScene("Start Menu");
     }
 
