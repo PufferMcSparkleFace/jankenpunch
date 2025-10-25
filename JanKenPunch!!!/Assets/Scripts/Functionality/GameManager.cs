@@ -249,6 +249,54 @@ public class GameManager : NetworkBehaviour
         if(postGame == 1)
         {
             Debug.Log("Restarting");
+            victoryText.gameObject.SetActive(false);
+            defeatText.gameObject.SetActive(false);
+            drawText.gameObject.SetActive(false);
+            gameOverButtons.SetActive(false);
+            me.waitingForOpponent.text = "";
+            me.empowered = false;
+            me.forceBreak = 0;
+            me.dragonInstall = 0;
+            me.installText.text = "";
+            me.health = 30;
+            me.healthText.text = "30";
+            me.energy = 30;
+            me.energyText.text = "5";
+            me.plusFrames = 0;
+            me.plusFramesText.text = "";
+            timer = 10;
+            timerText.text = "10";
+            opponent.empowered = false;
+            opponent.forceBreak = 0;
+            opponent.dragonInstall = 0;
+            opponent.installText.text = "";
+            opponent.health = 30;
+            opponent.healthText.text = "30";
+            opponent.energy = 5;
+            opponent.energyText.text = "5";
+            opponent.plusFrames = 0;
+            opponent.plusFramesText.text = "";
+            me.abilityOneButton.gameObject.SetActive(false);
+            me.abilityTwoButton.gameObject.SetActive(false);
+            if (meGameObject.tag == "P1")
+            {
+                me.position = 3;
+                meGameObject.transform.position = me.stagePositions[2].transform.position;
+                me.flipCheck = -1;
+                opponent.position = 7;
+                opponentGameObject.transform.position = opponent.stagePositions[6].transform.position;
+                opponent.flipCheck = 1;
+            }
+            else
+            {
+                me.position = 7;
+                meGameObject.transform.position = me.stagePositions[6].transform.position;
+                me.flipCheck = 1;
+                opponent.position = 3;
+                opponentGameObject.transform.position = opponent.stagePositions[2].transform.position;
+                opponent.flipCheck = -1;
+            }
+            opponent.distance = Mathf.Abs(me.position - opponent.position);
         }
         else
         {
@@ -269,6 +317,54 @@ public class GameManager : NetworkBehaviour
         if(postGame == 1)
         {
             Debug.Log("Restarting");
+            victoryText.gameObject.SetActive(false);
+            defeatText.gameObject.SetActive(false);
+            drawText.gameObject.SetActive(false);
+            gameOverButtons.SetActive(false);
+            me.waitingForOpponent.text = "";
+            me.empowered = false;
+            me.forceBreak = 0;
+            me.dragonInstall = 0;
+            me.installText.text = "";
+            me.health = 30;
+            me.healthText.text = "30";
+            me.energy = 30;
+            me.energyText.text = "5";
+            me.plusFrames = 0;
+            me.plusFramesText.text = "";
+            timer = 10;
+            timerText.text = "10";
+            opponent.empowered = false;
+            opponent.forceBreak = 0;
+            opponent.dragonInstall = 0;
+            opponent.installText.text = "";
+            opponent.health = 30;
+            opponent.healthText.text = "30";
+            opponent.energy = 5;
+            opponent.energyText.text = "5";
+            opponent.plusFrames = 0;
+            opponent.plusFramesText.text = "";
+            me.abilityOneButton.gameObject.SetActive(false);
+            me.abilityTwoButton.gameObject.SetActive(false);
+            if (meGameObject.tag == "P1")
+            {
+                me.position = 3;
+                meGameObject.transform.position = me.stagePositions[2].transform.position;
+                me.flipCheck = -1;
+                opponent.position = 7;
+                opponentGameObject.transform.position = opponent.stagePositions[6].transform.position;
+                opponent.flipCheck = 1;
+            }
+            else
+            {
+                me.position = 7;
+                meGameObject.transform.position = me.stagePositions[6].transform.position;
+                me.flipCheck = 1;
+                opponent.position = 3;
+                opponentGameObject.transform.position = opponent.stagePositions[2].transform.position;
+                opponent.flipCheck = -1;
+            }
+            opponent.distance = Mathf.Abs(me.position - opponent.position);
         }
         else
         {
@@ -434,7 +530,7 @@ public class GameManager : NetworkBehaviour
             me.energy++;
             me.energyText.text = "" + me.energy;
         }
-        if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0)
+        if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
         {
             RefillEnergy();
         }
@@ -470,7 +566,7 @@ public class GameManager : NetworkBehaviour
             opponent.energy++;
             opponent.energyText.text = "" + opponent.energy;
         }
-        if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0)
+        if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
         {
             RefillEnergy();
         }
@@ -501,7 +597,7 @@ public class GameManager : NetworkBehaviour
             me.installText.text = "Empowered";
             Debug.Log("Rynox +3");
         }
-        if(me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0)
+        if(me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
         {
             RefillEnergy();
         }
@@ -534,7 +630,7 @@ public class GameManager : NetworkBehaviour
             opponent.installText.text = "Empowered";
             Debug.Log("Rynox +3");
         }
-        if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0)
+        if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
         {
             RefillEnergy();
         }
