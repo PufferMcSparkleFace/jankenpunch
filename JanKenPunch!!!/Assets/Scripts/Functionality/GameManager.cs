@@ -260,7 +260,7 @@ public class GameManager : NetworkBehaviour
             me.installText.text = "";
             me.health = 30;
             me.healthText.text = "30";
-            me.energy = 30;
+            me.energy = 5;
             me.energyText.text = "5";
             me.plusFrames = 0;
             me.plusFramesText.text = "";
@@ -296,6 +296,7 @@ public class GameManager : NetworkBehaviour
                 opponentGameObject.transform.position = opponent.stagePositions[2].transform.position;
                 opponent.flipCheck = -1;
             }
+            me.distance = Mathf.Abs(me.position - opponent.position);
             opponent.distance = Mathf.Abs(me.position - opponent.position);
         }
         else
@@ -328,7 +329,7 @@ public class GameManager : NetworkBehaviour
             me.installText.text = "";
             me.health = 30;
             me.healthText.text = "30";
-            me.energy = 30;
+            me.energy = 5;
             me.energyText.text = "5";
             me.plusFrames = 0;
             me.plusFramesText.text = "";
@@ -364,6 +365,7 @@ public class GameManager : NetworkBehaviour
                 opponentGameObject.transform.position = opponent.stagePositions[2].transform.position;
                 opponent.flipCheck = -1;
             }
+            me.distance = Mathf.Abs(me.position - opponent.position);
             opponent.distance = Mathf.Abs(me.position - opponent.position);
         }
         else
