@@ -279,19 +279,35 @@ public class GameManager : NetworkBehaviour
 
     public void GoToCharacterSelect()
     {
-        victoryText.gameObject.SetActive(false);
-        defeatText.gameObject.SetActive(false);
-        drawText.gameObject.SetActive(false);
-        gameOverButtons.SetActive(false);
-        me.waitingForOpponent.text = "Waiting for opponent...";
-        Debug.Log("Going to Character Select");
+        if(postGame == 1 || postGame == 2)
+        {
+            Debug.Log("Going to Character Select");
+        }
+        else
+        {
+            postGame = 2;
+            victoryText.gameObject.SetActive(false);
+            defeatText.gameObject.SetActive(false);
+            drawText.gameObject.SetActive(false);
+            gameOverButtons.SetActive(false);
+            me.waitingForOpponent.text = "Waiting for opponent...";
+        }
         GoToCharacterSelectRpc();
     }
 
     [Rpc(SendTo.NotMe)]
     public void GoToCharacterSelectRpc()
     {
-        Debug.Log("Going to Character Select");
+
+        if (postGame == 1 || postGame == 2)
+        {
+            Debug.Log("Going to Character Select");
+        }
+        else
+        {
+            postGame = 2;
+        }
+
     }
 
     public void MainMenu()
