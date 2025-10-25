@@ -308,6 +308,7 @@ public class Player : NetworkBehaviour
 
     IEnumerator WaitForOpponent()
     {
+        gameManager.cutscene = true;
         waitingForOpponent.text = "Waiting for opponent...";
         playedCard = gameManager.card;
         while (opponent.playedCard == null)
