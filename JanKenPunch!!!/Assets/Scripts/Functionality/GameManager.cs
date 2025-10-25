@@ -42,6 +42,8 @@ public class GameManager : NetworkBehaviour
 
     public GameObject joinLobbyPanel, gameOverButtons, discardingUI;
 
+    public int postGame = 0;
+
 
     public void Start()
     {
@@ -244,26 +246,44 @@ public class GameManager : NetworkBehaviour
 
     public void Restart()
     {
-        //wait for opponent
-        //if your opponent restarts, restart
-        //if your opponent goes to character select, go to character select
-        Debug.Log("Restarting");
+        if(postGame == 1)
+        {
+            Debug.Log("Restarting");
+        }
+        else
+        {
+            postGame = 1;
+            victoryText.gameObject.SetActive(false);
+            defeatText.gameObject.SetActive(false);
+            drawText.gameObject.SetActive(false);
+            gameOverButtons.SetActive(false);
+            me.waitingForOpponent.text = "Waiting for opponent...";
+        }
+
         RestartRpc();
     }
 
     [Rpc(SendTo.NotMe)]
     public void RestartRpc()
     {
-        //wait for opponent
-        //if your opponent restarts, restart
-        //if your opponent goes to character select, go to character select
-        Debug.Log("Restarting");
+        if(postGame == 1)
+        {
+            Debug.Log("Restarting");
+        }
+        else
+        {
+            postGame = 1;
+        }
+
     }
 
     public void GoToCharacterSelect()
     {
-        //wait for opponent
-        //unless they went to main menu, go to character select
+        victoryText.gameObject.SetActive(false);
+        defeatText.gameObject.SetActive(false);
+        drawText.gameObject.SetActive(false);
+        gameOverButtons.SetActive(false);
+        me.waitingForOpponent.text = "Waiting for opponent...";
         Debug.Log("Going to Character Select");
         GoToCharacterSelectRpc();
     }
@@ -271,14 +291,13 @@ public class GameManager : NetworkBehaviour
     [Rpc(SendTo.NotMe)]
     public void GoToCharacterSelectRpc()
     {
-        //wait for opponent
-        //unless they went to main menu, go to character select
         Debug.Log("Going to Character Select");
     }
 
     public void MainMenu()
     {
         //kick em out of the lobby, set game back to how it was at the start
+        postGame = 0;
         SceneManager.LoadScene("Start Menu");
         SendOpponentToMainMenuRpc();
     }
@@ -287,6 +306,7 @@ public class GameManager : NetworkBehaviour
     public void SendOpponentToMainMenuRpc()
     {
         //kick em out of the lobby, set game back to how it was at the start
+        postGame = 0;
         SceneManager.LoadScene("Start Menu");
     }
 
