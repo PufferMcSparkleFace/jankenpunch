@@ -646,5 +646,10 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+    public void Back()
+    {
+        SceneManager.LoadScene("Start Menu");
+    }
+
 
 }
