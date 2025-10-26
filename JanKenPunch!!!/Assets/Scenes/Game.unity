@@ -7158,6 +7158,7 @@ MonoBehaviour:
   playArea: {fileID: 1635508476}
   lockInButton: {fileID: 517004742}
   playedCard: {fileID: 0}
+  backButton: {fileID: 2046014302}
   card: {fileID: 0}
   cardsInHand:
   - {fileID: 5828346619697330584}

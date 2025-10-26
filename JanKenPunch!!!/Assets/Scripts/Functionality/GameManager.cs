@@ -14,7 +14,7 @@ public class GameManager : NetworkBehaviour
 {
     public Transform playArea;
     public GameObject lockInButton;
-    public GameObject playedCard;
+    public GameObject playedCard, backButton;
     [SerializeField]
     public NonBasicCard card;
     public GameObject[] cardsInHand;
@@ -648,6 +648,10 @@ public class GameManager : NetworkBehaviour
 
     public void Back()
     {
+        if (network.IsHost == true)
+        {
+            Debug.Log("DELETE THE LOBBY KILL IT");
+        }
         SceneManager.LoadScene("Start Menu");
     }
 
