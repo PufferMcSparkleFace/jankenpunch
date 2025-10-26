@@ -474,6 +474,10 @@ public class Player : NetworkBehaviour
         else if (finalCardCost <= energy)
         {
             energy = energy - finalCardCost;
+            if(energy < 0)
+            {
+                energy = 0;
+            }
             energyText.text = "" + energy;
             Debug.Log("" + playedCard.cardName);
         }
@@ -483,6 +487,10 @@ public class Player : NetworkBehaviour
             if (doingNothingCosts == true)
             {
                 energy--;
+                if (energy < 0)
+                {
+                    energy = 0;
+                }
                 energyText.text = "" + energy;
             }
             Debug.Log("Do Nothing");
