@@ -332,6 +332,8 @@ public class GameManager : NetworkBehaviour
         cardsInHand[0].transform.SetAsFirstSibling();
         if (characterSelect == true)
         {
+            me.characterSelectScreenGameObject.SetActive(true);
+            deck.discardPile.Clear();
             Debug.Log("Going to character select");
         }
     }
