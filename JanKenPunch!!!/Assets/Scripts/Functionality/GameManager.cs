@@ -242,6 +242,28 @@ public class GameManager : NetworkBehaviour
         me.energyText.text = "" + me.energy;
         opponent.energy = 3 + spacesBehindP2;
         opponent.energyText.text = "" + opponent.energy;
+        timer--;
+        timerText.text = "" + timer;
+        //if the timer gets to 0, game over
+        if (timer == 0)
+        {
+            if (me.health > opponent.health)
+            {
+                Debug.Log("I win");
+                victoryText.gameObject.SetActive(true);
+            }
+            else if (me.health < opponent.health)
+            {
+                Debug.Log("I lose");
+                defeatText.gameObject.SetActive(true);
+            }
+            else if (me.health == opponent.health)
+            {
+                Debug.Log("Draw");
+                drawText.gameObject.SetActive(true);
+            }
+            gameOverButtons.SetActive(true);
+        }
     }
 
     public void RestartGame(bool characterSelect)
