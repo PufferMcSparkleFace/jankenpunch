@@ -772,6 +772,16 @@ public class Player : NetworkBehaviour
                         energyText.text = "" + energy;
                         Debug.Log("Clash");
                         opponent.wereDone = true;
+                        if (empowered == true)
+                        {
+                            installText.text = "";
+                            empowered = false;
+                        }
+                        if (opponent.empowered == true)
+                        {
+                            opponent.installText.text = "";
+                            opponent.empowered = false;
+                        }
                         return;
                     }
                 }
@@ -815,6 +825,16 @@ public class Player : NetworkBehaviour
                         opponent.plusFramesText.text = "" + opponent.plusFrames;
                     }
                     opponent.wereDone = true;
+                    if(empowered == true)
+                    {
+                        installText.text = "";
+                        empowered = false;
+                    }
+                    if (opponent.empowered == true)
+                    {
+                        opponent.installText.text = "";
+                        opponent.empowered = false;
+                    }
                     return;
                 }
                 else
@@ -822,6 +842,16 @@ public class Player : NetworkBehaviour
                     energy = energy + finalCardCost;
                     energyText.text = "" + energy;
                     Debug.Log("Clash");
+                    if (empowered == true)
+                    {
+                        installText.text = "";
+                        empowered = false;
+                    }
+                    if (opponent.empowered == true)
+                    {
+                        opponent.installText.text = "";
+                        opponent.empowered = false;
+                    }
                     opponent.wereDone = true;
                     return;
                 }
