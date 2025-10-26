@@ -58,12 +58,17 @@ public class Draw : MonoBehaviour
         }
         if (deck.Count == 0)
         {
-            foreach(NonBasicCard card in discardPile)
-            {
-                deck.Add(card);
-            }
-            discardPile.Clear();
+            ShuffleUp();
         }
+    }
+
+    public void ShuffleUp()
+    {
+        foreach (NonBasicCard card in discardPile)
+        {
+            deck.Add(card);
+        }
+        discardPile.Clear();
     }
 
 }

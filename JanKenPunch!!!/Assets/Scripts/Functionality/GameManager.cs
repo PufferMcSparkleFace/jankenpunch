@@ -341,6 +341,12 @@ public class GameManager : NetworkBehaviour
             deck.discardPile.Clear();
             Debug.Log("Going to character select");
         }
+        else
+        {
+            deck.ShuffleUp();
+            deck.DrawHand();
+            Debug.Log("Restarting...");
+        }
         postGame = 0;
     }
 
