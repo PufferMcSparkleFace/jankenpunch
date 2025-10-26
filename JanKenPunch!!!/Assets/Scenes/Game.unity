@@ -7023,6 +7023,15 @@ MonoBehaviour:
   lockInButton: {fileID: 517004742}
   playedCard: {fileID: 0}
   card: {fileID: 0}
+  cardsInHand:
+  - {fileID: 5828346619697330584}
+  - {fileID: 289268848}
+  - {fileID: 201240461}
+  - {fileID: 1781080412}
+  - {fileID: 761092626}
+  - {fileID: 6461534}
+  - {fileID: 1532640082}
+  - {fileID: 650671326}
   turnTimer: 0
   turnTimerText: {fileID: 35919525}
   victoryText: {fileID: 622726424}

@@ -17,6 +17,7 @@ public class GameManager : NetworkBehaviour
     public GameObject playedCard;
     [SerializeField]
     public NonBasicCard card;
+    public GameObject[] cardsInHand;
 
     public int turnTimer;
     public TMP_Text turnTimerText, victoryText, defeatText, drawText;
@@ -213,12 +214,12 @@ public class GameManager : NetworkBehaviour
             else
             {
                 //if the timer's not 0, refill energy
-                RefillEnergy();
+                RefillEnergy(false);
             }
         }
     }
 
-    public void RefillEnergy()
+    public void RefillEnergy(bool plusFrames)
     {
         if (me.flipCheck < 0)
         {
@@ -242,8 +243,11 @@ public class GameManager : NetworkBehaviour
         me.energyText.text = "" + me.energy;
         opponent.energy = 3 + spacesBehindP2;
         opponent.energyText.text = "" + opponent.energy;
-        timer--;
-        timerText.text = "" + timer;
+        if (plusFrames == true)
+        {
+            timer--;
+            timerText.text = "" + timer;
+        }
         //if the timer gets to 0, game over
         if (timer == 0)
         {
@@ -318,6 +322,14 @@ public class GameManager : NetworkBehaviour
         }
         me.distance = Mathf.Abs(me.position - opponent.position);
         opponent.distance = Mathf.Abs(me.position - opponent.position);
+        cardsInHand[7].transform.SetAsFirstSibling();
+        cardsInHand[6].transform.SetAsFirstSibling();
+        cardsInHand[5].transform.SetAsFirstSibling();
+        cardsInHand[4].transform.SetAsFirstSibling();
+        cardsInHand[3].transform.SetAsFirstSibling();
+        cardsInHand[2].transform.SetAsFirstSibling();
+        cardsInHand[1].transform.SetAsFirstSibling();
+        cardsInHand[0].transform.SetAsFirstSibling();
         if (characterSelect == true)
         {
             Debug.Log("Going to character select");
@@ -516,7 +528,7 @@ public class GameManager : NetworkBehaviour
         }
         if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
         {
-            RefillEnergy();
+            RefillEnergy(true);
         }
         AbilityOneRpc();
 
@@ -552,7 +564,7 @@ public class GameManager : NetworkBehaviour
         }
         if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
         {
-            RefillEnergy();
+            RefillEnergy(true);
         }
     }
 
