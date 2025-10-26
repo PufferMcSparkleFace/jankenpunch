@@ -7073,6 +7073,7 @@ MonoBehaviour:
   joinLobbyPanel: {fileID: 797387264}
   gameOverButtons: {fileID: 1855345650}
   discardingUI: {fileID: 770935189}
+  postGame: 0
 --- !u!114 &522628965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21003,7 +21004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 434b744bb24be284eb592fbf9848a878, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e87559a67dd10a24190bbe0b48b7af15, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
