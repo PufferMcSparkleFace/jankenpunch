@@ -595,7 +595,7 @@ public class GameManager : NetworkBehaviour
         }
         if(me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
         {
-            RefillEnergy();
+            RefillEnergy(true);
         }
         AbilityTwoRpc();
     }
@@ -628,7 +628,7 @@ public class GameManager : NetworkBehaviour
         }
         if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
         {
-            RefillEnergy();
+            RefillEnergy(true);
         }
     }
 
