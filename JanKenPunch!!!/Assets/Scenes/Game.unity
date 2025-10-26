@@ -7049,6 +7049,8 @@ MonoBehaviour:
   opponentGameObject: {fileID: 0}
   discarding: 0
   cutscene: 0
+  p1Card: {fileID: 8915374461827077188}
+  p2Card: {fileID: 197414735}
   network: {fileID: 1455763524}
   characterSelect: {fileID: 920937983}
   cardDatabase:

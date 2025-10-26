@@ -34,6 +34,7 @@ public class GameManager : NetworkBehaviour
     public GameObject meGameObject, opponentGameObject;
     public bool discarding;
     public bool cutscene = false;
+    public DisplayCharacterCard p1Card, p2Card;
 
     public NetworkManager network;
 
@@ -332,10 +333,15 @@ public class GameManager : NetworkBehaviour
         cardsInHand[0].transform.SetAsFirstSibling();
         if (characterSelect == true)
         {
+            me.character = null;
+            opponent.character = null;
+            p1Card.character = null;
+            p2Card.character = null;
             me.characterSelectScreenGameObject.SetActive(true);
             deck.discardPile.Clear();
             Debug.Log("Going to character select");
         }
+        postGame = 0;
     }
 
     public void Restart()
