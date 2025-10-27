@@ -29,7 +29,7 @@ public class DisplayCharacterCard : MonoBehaviour, IPointerEnterHandler, IPointe
     // Start is called before the first frame update
     void Start()
     {
-        if(this.gameObject.tag != "Untagged")
+        if(this.gameObject.tag == "Untagged")
         {
             nameText.text = character.cardName;
             passiveText.text = character.passiveAbility;

@@ -48,6 +48,7 @@ TagManager:
   - Character Select Screen
   - Background
   - Character Sprite
+  - Big Card
   layers:
   - Default
   - TransparentFX

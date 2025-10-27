@@ -4585,7 +4585,7 @@ GameObject:
   - component: {fileID: 1491537462}
   - component: {fileID: 1491537465}
   - component: {fileID: 1491537464}
-  - component: {fileID: 1491537463}
+  - component: {fileID: 1491537466}
   m_Layer: 5
   m_Name: Character Card
   m_TagString: Untagged
@@ -4619,29 +4619,6 @@ RectTransform:
   m_AnchoredPosition: {x: 653.6, y: -199.37}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1491537463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491537461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfd92aa3f7b15434c98fb483f518d28d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}
-  nameText: {fileID: 2081802800}
-  passiveText: {fileID: 1064259531}
-  firstAbilityText: {fileID: 1513766858}
-  secondAbilityCostText: {fileID: 623749662}
-  secondAbilityText: {fileID: 1919389583}
-  image: {fileID: 2002419572}
-  cardBack: {fileID: 1491537464}
-  player: {fileID: 0}
-  playerGameObject: {fileID: 0}
-  gameManager: {fileID: 0}
 --- !u!114 &1491537464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4680,6 +4657,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491537461}
   m_CullTransparentMesh: 1
+--- !u!114 &1491537466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491537461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f841079c3c9282f488cf96e92ba8ded9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterGalleryCard
+  character: {fileID: 11400000, guid: f8660564a843c2e40ab2478775c7ffca, type: 2}
+  nameText: {fileID: 2081802800}
+  passiveText: {fileID: 1064259531}
+  firstAbilityText: {fileID: 1513766858}
+  secondAbilityCostText: {fileID: 623749662}
+  secondAbilityText: {fileID: 1919389583}
+  image: {fileID: 2002419572}
+  cardBack: {fileID: 1491537464}
 --- !u!1 &1513766856
 GameObject:
   m_ObjectHideFlags: 0
