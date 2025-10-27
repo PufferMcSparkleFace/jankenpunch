@@ -16,7 +16,7 @@ MonoBehaviour:
   cardName: Dash Forward
   cost: 1
   image: {fileID: 21300000, guid: 5773b5d5765e8394392c409f2fc2420d, type: 3}
-  cardBack: {fileID: 21300000, guid: 31dcdb6ddd2318741bf0536b1e1dc6c6, type: 3}
+  cardBack: {fileID: 21300000, guid: 2b128b4607704e5439e334296530f814, type: 3}
   type: Basic Movement
   subtype: 
   range: 0
