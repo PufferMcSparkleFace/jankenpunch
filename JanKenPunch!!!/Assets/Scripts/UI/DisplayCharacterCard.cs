@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class DisplayCharacterCard : MonoBehaviour
+public class DisplayCharacterCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public CharacterCards character;
 
@@ -23,16 +23,22 @@ public class DisplayCharacterCard : MonoBehaviour
 
     public GameManager gameManager;
 
+    public GameObject enlargedCard;
+    public DisplayCharacterCard enlargedCardScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        nameText.text = character.cardName;
-        passiveText.text = character.passiveAbility;
-        firstAbilityText.text = character.firstAbility;
-        secondAbilityCostText.text = "-" + character.secondAbilityCost.ToString();
-        secondAbilityText.text = character.secondAbility;
-        image.sprite = character.image;
-        cardBack.sprite = character.cardBack;
+        if(this.gameObject.tag != "Untagged")
+        {
+            nameText.text = character.cardName;
+            passiveText.text = character.passiveAbility;
+            firstAbilityText.text = character.firstAbility;
+            secondAbilityCostText.text = "-" + character.secondAbilityCost.ToString();
+            secondAbilityText.text = character.secondAbility;
+            image.sprite = character.image;
+            cardBack.sprite = character.cardBack;
+        }
 
     }
 
@@ -45,7 +51,10 @@ public class DisplayCharacterCard : MonoBehaviour
         secondAbilityText.text = character.secondAbility;
         image.sprite = character.image;
         cardBack.sprite = character.cardBack;
-        player.character = character;
+        if(this.gameObject.tag != "Untagged")
+        {
+            player.character = character;
+        }
     }
 
     public void SetCharacter(int playerNumber)
@@ -60,6 +69,35 @@ public class DisplayCharacterCard : MonoBehaviour
             playerGameObject = GameObject.FindGameObjectWithTag("P2");
             player = playerGameObject.GetComponent<Player>();
         }
+    }
+
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (gameManager.cutscene == false)
+        {
+           StartCoroutine("Enlarge");
+        }
+
+
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+       StopCoroutine("Enlarge");
+       enlargedCard.SetActive(false);
+    }
+
+    IEnumerator Enlarge()
+    {
+        if (gameManager.cutscene == false)
+        {
+            yield return new WaitForSeconds(0.5f);     
+            enlargedCardScript.character = character;
+            enlargedCardScript.UpdateCharacter();
+            enlargedCard.SetActive(true);
+        }
+
     }
 
 }
