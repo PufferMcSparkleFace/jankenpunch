@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 22
   cardName: CHARGE!!!
   cost: 3
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: a35a8eee5f6f75e489a95a5cdc53fe1a, type: 3}
   cardBack: {fileID: 21300000, guid: fd47bbff29484084e93a66e3f8e168be, type: 3}
   type: Movement
   subtype: 

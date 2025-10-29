@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 24
   cardName: Spinning Piledriver
   cost: 6
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 96d234a99495a2541b4fac7b056f26ab, type: 3}
   cardBack: {fileID: 21300000, guid: fe5893b5d8fbe4645b38a6bac48b44ac, type: 3}
   type: Attack
   subtype: Throw

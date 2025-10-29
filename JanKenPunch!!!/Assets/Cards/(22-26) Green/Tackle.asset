@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 25
   cardName: Tackle
   cost: 4
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 866360c0f4c97414aafc60b28c3fbf64, type: 3}
   cardBack: {fileID: 21300000, guid: fe5893b5d8fbe4645b38a6bac48b44ac, type: 3}
   type: Attack
   subtype: Throw
