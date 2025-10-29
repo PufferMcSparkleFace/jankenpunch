@@ -8,6 +8,12 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject characterSelectScreen;
+    public AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = GameObject.FindFirstObjectByType<AudioManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +38,11 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        audioManager.StopPlaying("Fight (Unlooped)");
+        audioManager.StopPlaying("Fight (Looped)");
+        audioManager.StopAllCoroutines();
+        audioManager.Play("Menu (Unlooped)");
+        audioManager.StartCoroutine("PlayMenuTheme");
         SceneManager.LoadScene("Start Menu");
     }
 

@@ -38,7 +38,7 @@ public class Player : NetworkBehaviour
     public TMP_Text waitingForOpponent;
     public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject,
     revealedCardCostTextGameObject, opponentRevealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject,
-    gameManagerObject, characterCardGameObject, canvas, characterSelectScreenGameObject, backgroundImage;
+    gameManagerObject, characterCardGameObject, canvas, characterSelectScreenGameObject, backgroundImage, dragonInstallGameObject, forceBreakGameObject, empoweredGameObject;
     public CharacterSelect characterSelectScreen;
 
 
@@ -52,6 +52,8 @@ public class Player : NetworkBehaviour
     public Button abilityOneButton, abilityTwoButton;
 
     public Image playerSprite, opponentSprite;
+
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -78,11 +80,15 @@ public class Player : NetworkBehaviour
         transform.localScale = new Vector3(2, 3, 0);
         playerSprite = this.GetComponent<Image>();
         playerSprite.enabled = false;
+        audioManager = GameObject.FindFirstObjectByType<AudioManager>();
 
         if (GameObject.FindGameObjectWithTag("P1") == false)
         {
             this.gameObject.tag = "P1";
             installTextGameObject = GameObject.FindGameObjectWithTag("P1 Install");
+            dragonInstallGameObject = GameObject.FindGameObjectWithTag("P1 Dragon Install");
+            forceBreakGameObject = GameObject.FindGameObjectWithTag("P1 Force Break");
+            empoweredGameObject = GameObject.FindGameObjectWithTag("P1 Empowered");
             healthTextGameObject = GameObject.FindGameObjectWithTag("P1 Health");
             energyTextGameObject = GameObject.FindGameObjectWithTag("P1 Energy");
             plusFramesTextGameObject = GameObject.FindGameObjectWithTag("P1 Plus Frames");
@@ -109,6 +115,9 @@ public class Player : NetworkBehaviour
         {
             this.gameObject.tag = "P2";
             installTextGameObject = GameObject.FindGameObjectWithTag("P2 Install");
+            dragonInstallGameObject = GameObject.FindGameObjectWithTag("P2 Dragon Install");
+            forceBreakGameObject = GameObject.FindGameObjectWithTag("P2 Force Break");
+            empoweredGameObject = GameObject.FindGameObjectWithTag("P2 Empowered");
             healthTextGameObject = GameObject.FindGameObjectWithTag("P2 Health");
             energyTextGameObject = GameObject.FindGameObjectWithTag("P2 Energy");
             plusFramesTextGameObject = GameObject.FindGameObjectWithTag("P2 Plus Frames");
@@ -142,6 +151,9 @@ public class Player : NetworkBehaviour
         }
 
         installText.text = "";
+        dragonInstallGameObject.SetActive(false);
+        forceBreakGameObject.SetActive(false);
+        empoweredGameObject.SetActive(false);
         healthText.text = "30";
         energyText.text = "5";
         plusFramesText.text = "";
@@ -203,14 +215,19 @@ public class Player : NetworkBehaviour
         if (empowered == false && dragonInstall <= 0 && forceBreak <= 0)
         {
             installText.text = "";
+            dragonInstallGameObject.SetActive(false);
+            forceBreakGameObject.SetActive(false);
+            empoweredGameObject.SetActive(false);
         }
         if(dragonInstall > 0)
         {
-            installText.text = "Dragon Install: " + dragonInstall;
+            dragonInstallGameObject.SetActive(true);
+            installText.text = "" + dragonInstall;
         }
         if (forceBreak > 0)
         {
-            installText.text = "Force Break: " + forceBreak;
+            forceBreakGameObject.SetActive(true);
+            installText.text = "" + forceBreak;
         }
         if (plusFrames == 0)
         {
@@ -304,6 +321,11 @@ public class Player : NetworkBehaviour
         opponentSprite.enabled = true;
         waitingForOpponent.text = "";
         characterSelectScreenGameObject.SetActive(false);
+        audioManager.StopAllCoroutines();
+        audioManager.StopPlaying("Menu (Unlooped)");
+        audioManager.StopPlaying("Menu (Looped)");
+        audioManager.Play("Fight (Unlooped)");
+        audioManager.StartCoroutine("PlayFightTheme");
     }
 
     IEnumerator WaitForOpponent()
@@ -774,12 +796,12 @@ public class Player : NetworkBehaviour
                         opponent.wereDone = true;
                         if (empowered == true)
                         {
-                            installText.text = "";
+                            empoweredGameObject.SetActive(false);
                             empowered = false;
                         }
                         if (opponent.empowered == true)
                         {
-                            opponent.installText.text = "";
+                            opponent.empoweredGameObject.SetActive(false);
                             opponent.empowered = false;
                         }
                         return;
@@ -827,12 +849,12 @@ public class Player : NetworkBehaviour
                     opponent.wereDone = true;
                     if(empowered == true)
                     {
-                        installText.text = "";
+                        empoweredGameObject.SetActive(false);
                         empowered = false;
                     }
                     if (opponent.empowered == true)
                     {
-                        opponent.installText.text = "";
+                        opponent.empoweredGameObject.SetActive(false);
                         opponent.empowered = false;
                     }
                     return;
@@ -844,12 +866,12 @@ public class Player : NetworkBehaviour
                     Debug.Log("Clash");
                     if (empowered == true)
                     {
-                        installText.text = "";
+                        empoweredGameObject.SetActive(false);
                         empowered = false;
                     }
                     if (opponent.empowered == true)
                     {
-                        opponent.installText.text = "";
+                        opponent.empoweredGameObject.SetActive(false);
                         opponent.empowered = false;
                     }
                     opponent.wereDone = true;

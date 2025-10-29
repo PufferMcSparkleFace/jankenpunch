@@ -46,13 +46,17 @@ public class GameManager : NetworkBehaviour
 
     public int postGame = 0;
 
+    public AudioManager audioManager;
+
 
     public void Start()
     {
         timer = 10;
 
         hand = GameObject.FindGameObjectWithTag("Hand").transform;
-        
+
+        audioManager = GameObject.FindFirstObjectByType<AudioManager>();
+
     }
 
     public void SetPlayer()
@@ -338,6 +342,11 @@ public class GameManager : NetworkBehaviour
             p1Card.character = null;
             p2Card.character = null;
             me.characterSelectScreenGameObject.SetActive(true);
+            audioManager.StopPlaying("Fight (Unlooped)");
+            audioManager.StopPlaying("Fight (Looped)");
+            audioManager.StopAllCoroutines();
+            audioManager.Play("Menu (Unlooped)");
+            audioManager.StartCoroutine("PlayMenuTheme");
             deck.discardPile.Clear();
             Debug.Log("Going to character select");
         }
@@ -420,6 +429,11 @@ public class GameManager : NetworkBehaviour
     {
         //kick em out of the lobby, set game back to how it was at the start
         postGame = 0;
+        audioManager.StopPlaying("Fight (Unlooped)");
+        audioManager.StopPlaying("Fight (Looped)");
+        audioManager.StopAllCoroutines();
+        audioManager.Play("Menu (Unlooped)");
+        audioManager.StartCoroutine("PlayMenuTheme");
         SceneManager.LoadScene("Start Menu");
         SendOpponentToMainMenuRpc();
     }
@@ -429,6 +443,11 @@ public class GameManager : NetworkBehaviour
     {
         //kick em out of the lobby, set game back to how it was at the start
         postGame = 0;
+        audioManager.StopPlaying("Fight (Unlooped)");
+        audioManager.StopPlaying("Fight (Looped)");
+        audioManager.StopAllCoroutines();
+        audioManager.Play("Menu (Unlooped)");
+        audioManager.StartCoroutine("PlayMenuTheme");
         SceneManager.LoadScene("Start Menu");
     }
 
@@ -604,7 +623,7 @@ public class GameManager : NetworkBehaviour
         if (me.character.cardName == "Rynox")
         {
             me.empowered = true;
-            me.installText.text = "Empowered";
+            me.empoweredGameObject.SetActive(true);
             Debug.Log("Rynox +3");
         }
         if(me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
@@ -637,7 +656,7 @@ public class GameManager : NetworkBehaviour
         if (opponent.character.cardName == "Rynox")
         {
             opponent.empowered = true;
-            opponent.installText.text = "Empowered";
+            opponent.empoweredGameObject.SetActive(true);
             Debug.Log("Rynox +3");
         }
         if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
