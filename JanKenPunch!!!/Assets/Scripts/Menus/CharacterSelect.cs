@@ -21,6 +21,12 @@ public class CharacterSelect : NetworkBehaviour
     public List<NonBasicCard> taiboDeck = new List<NonBasicCard>();
     public List<NonBasicCard> rynoxDeck = new List<NonBasicCard>();
 
+    public Image background;
+
+    public List<Sprite> backgrounds = new List<Sprite>();
+
+    public int stageSelected;
+
     public void SetOpponentCharacterSelect()
     {
         if(network.IsHost == true)
@@ -39,6 +45,19 @@ public class CharacterSelect : NetworkBehaviour
         }
     }
 
+    public void SetStage()
+    {
+        stageSelected = UnityEngine.Random.Range(0, 6);
+        background.sprite = backgrounds[stageSelected];
+        SetStageRpc(stageSelected);
+    }
+
+    [Rpc(SendTo.NotMe)]
+    public void SetStageRpc(int stage)
+    {
+        background.sprite = backgrounds[stage];
+    }
+
     public void SelectZyla()
     {
         Debug.Log("Zyla");
@@ -47,6 +66,7 @@ public class CharacterSelect : NetworkBehaviour
         deck.deck = zylaDeck;
         deck.DrawHand();
         deck.characterSelected = true;
+        SetStage();
         if(opponentCharacter.character ==  null || opponentCharacter.character.cardName == "Rynox" || opponentCharacter.character.cardName == "Taibo")
         {
             mySprite.sprite = zylaSprite;
@@ -69,6 +89,7 @@ public class CharacterSelect : NetworkBehaviour
         deck.deck = taiboDeck;
         deck.DrawHand();
         deck.characterSelected = true;
+        SetStage();
         if (opponentCharacter.character == null || opponentCharacter.character.cardName == "Rynox" || opponentCharacter.character.cardName == "Zyla")
         {
             mySprite.sprite = taiboSprite;
@@ -91,6 +112,7 @@ public class CharacterSelect : NetworkBehaviour
         deck.deck = rynoxDeck;
         deck.DrawHand();
         deck.characterSelected = true;
+        SetStage();
         if (opponentCharacter.character == null || opponentCharacter.character.cardName == "Taibo" || opponentCharacter.character.cardName == "Zyla")
         {
             mySprite.sprite = rynoxSprite;
