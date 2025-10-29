@@ -49,6 +49,8 @@ TagManager:
   - Background
   - Character Sprite
   - Big Card
+  - P1 Health Bar
+  - P2 Health Bar
   layers:
   - Default
   - TransparentFX
