@@ -71,8 +71,8 @@ public class AudioManager : MonoBehaviour
     IEnumerator PlayFightTheme()
     {
         Debug.Log("Playing Fight Theme");
-        yield return new WaitForSeconds(134.5f);
-        Play("Card Gallery (Looped)");
+        yield return new WaitForSeconds(139.4f);
+        Play("Fight (Looped)");
     }
 
     public void Play(string name)
