@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce3767ee2b81474ca9c6203cc1d4ba8, type: 3}
   m_Name: Rynox
   m_EditorClassIdentifier: 
-  cardBack: {fileID: 21300000, guid: 9ab3493ebb7f56b47b57a9f80c605614, type: 3}
+  cardBack: {fileID: 21300000, guid: 8e3a80c027c8e794481d1acfb9935523, type: 3}
   cardName: Rynox
   image: {fileID: 21300000, guid: 1d8413dfef4a4574eaffa5c528f32e5c, type: 3}
   passiveAbility: When your opponent plays Dodge, if you did not play an attack,

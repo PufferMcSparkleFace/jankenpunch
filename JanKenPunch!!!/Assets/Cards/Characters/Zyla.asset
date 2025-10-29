@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce3767ee2b81474ca9c6203cc1d4ba8, type: 3}
   m_Name: Zyla
   m_EditorClassIdentifier: 
-  cardBack: {fileID: 21300000, guid: aba3ce4c2caa8f845a55d433ae3bf6ee, type: 3}
+  cardBack: {fileID: 21300000, guid: f9584542b8a43a04db7d1259aadd3287, type: 3}
   cardName: Zyla
   image: {fileID: 21300000, guid: fcb628d7c380e5b4383fe3dfef029f7b, type: 3}
   passiveAbility: "Strikes that beat the opponent\u2019s block get +1/+0/+0."
