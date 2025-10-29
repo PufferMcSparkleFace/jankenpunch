@@ -604,7 +604,7 @@ public class GameManager : NetworkBehaviour
         if (me.character.cardName == "Rynox")
         {
             me.empowered = true;
-            me.installText.text = "Empowered";
+            me.empoweredGameObject.SetActive(true);
             Debug.Log("Rynox +3");
         }
         if(me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)
@@ -637,7 +637,7 @@ public class GameManager : NetworkBehaviour
         if (opponent.character.cardName == "Rynox")
         {
             opponent.empowered = true;
-            opponent.installText.text = "Empowered";
+            opponent.empoweredGameObject.SetActive(true);
             Debug.Log("Rynox +3");
         }
         if (me.plusFrames == 0 && me.energy == 0 && opponent.energy == 0 && opponent.plusFrames == 0)

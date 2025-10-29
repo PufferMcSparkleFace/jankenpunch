@@ -51,6 +51,12 @@ TagManager:
   - Big Card
   - P1 Health Bar
   - P2 Health Bar
+  - P1 Dragon Install
+  - P1 Force Break
+  - P1 Empowered
+  - P2 Dragon Install
+  - P2 Force Break
+  - P2 Empowered
   layers:
   - Default
   - TransparentFX
