@@ -321,6 +321,11 @@ public class Player : NetworkBehaviour
         opponentSprite.enabled = true;
         waitingForOpponent.text = "";
         characterSelectScreenGameObject.SetActive(false);
+        audioManager.StopAllCoroutines();
+        audioManager.StopPlaying("Menu (Unlooped)");
+        audioManager.StopPlaying("Menu (Looped)");
+        audioManager.Play("Fight (Unlooped)");
+        audioManager.StartCoroutine("PlayFightTheme");
     }
 
     IEnumerator WaitForOpponent()

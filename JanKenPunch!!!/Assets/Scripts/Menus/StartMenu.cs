@@ -19,11 +19,21 @@ public class StartMenu : MonoBehaviour
 
     public void CardGallery()
     {
+        audioManager.Play("Card Gallery (Unlooped)");
+        audioManager.StopAllCoroutines();
+        audioManager.StartCoroutine("PlayCardGalleryTheme");
+        audioManager.StopPlaying("Menu (Unlooped)");
+        audioManager.StopPlaying("Menu (Looped)");
         SceneManager.LoadScene("Card Gallery");
     }
 
     public void Tutorial()
     {
+        audioManager.Play("Tutorial (Unlooped)");
+        audioManager.StopAllCoroutines();
+        audioManager.StartCoroutine("PlayTutorialTheme");
+        audioManager.StopPlaying("Menu (Unlooped)");
+        audioManager.StopPlaying("Menu (Looped)");
         SceneManager.LoadScene("Tutorial");
     }
 
@@ -35,6 +45,19 @@ public class StartMenu : MonoBehaviour
 
     public void Back()
     {
+        if(SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            audioManager.StopPlaying("Tutorial (Unlooped)");
+            audioManager.StopPlaying("Tutorial (Looped)");
+        }
+        if(SceneManager.GetActiveScene().name == "Card Gallery")
+        {
+            audioManager.StopPlaying("Card Gallery (Unlooped)");
+            audioManager.StopPlaying("Card Gallery (Looped)");
+        }
+        audioManager.StopAllCoroutines();
+        audioManager.Play("Menu (Unlooped)");
+        audioManager.StartCoroutine("PlayMenuTheme");
         SceneManager.LoadScene("Start Menu");
     }
 }

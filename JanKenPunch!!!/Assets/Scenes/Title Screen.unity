@@ -414,13 +414,49 @@ MonoBehaviour:
   sounds:
   - name: Menu (Unlooped)
     clip: {fileID: 8300000, guid: 29a2c09cd3f632645bb7c62c9ddafaa5, type: 3}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: Menu (Looped)
     clip: {fileID: 8300000, guid: 4154893341ba3d74d977ee10bab8565c, type: 3}
-    volume: 0.5
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Tutorial (Unlooped)
+    clip: {fileID: 8300000, guid: e6ed25e204fcd8b47be04d13f1a9c3d6, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Tutorial (Looped)
+    clip: {fileID: 8300000, guid: 8c72675887d824641973fba2c351aca5, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Card Gallery (Unlooped)
+    clip: {fileID: 8300000, guid: 84b9afe7a58943f4f96e6d8334ed1392, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Card Gallery (Looped)
+    clip: {fileID: 8300000, guid: f85fa58abfeb747469ccc845630121fd, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Card Gallery (Looped)
+    clip: {fileID: 8300000, guid: f85fa58abfeb747469ccc845630121fd, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Card Gallery (Looped)
+    clip: {fileID: 8300000, guid: f85fa58abfeb747469ccc845630121fd, type: 3}
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     loop: 1

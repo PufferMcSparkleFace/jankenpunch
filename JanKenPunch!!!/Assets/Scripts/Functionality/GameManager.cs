@@ -342,6 +342,11 @@ public class GameManager : NetworkBehaviour
             p1Card.character = null;
             p2Card.character = null;
             me.characterSelectScreenGameObject.SetActive(true);
+            audioManager.StopPlaying("Fight (Unlooped)");
+            audioManager.StopPlaying("Fight (Looped)");
+            audioManager.StopAllCoroutines();
+            audioManager.Play("Menu (Unlooped)");
+            audioManager.StartCoroutine("PlayMenuTheme");
             deck.discardPile.Clear();
             Debug.Log("Going to character select");
         }
@@ -424,6 +429,11 @@ public class GameManager : NetworkBehaviour
     {
         //kick em out of the lobby, set game back to how it was at the start
         postGame = 0;
+        audioManager.StopPlaying("Fight (Unlooped)");
+        audioManager.StopPlaying("Fight (Looped)");
+        audioManager.StopAllCoroutines();
+        audioManager.Play("Menu (Unlooped)");
+        audioManager.StartCoroutine("PlayMenuTheme");
         SceneManager.LoadScene("Start Menu");
         SendOpponentToMainMenuRpc();
     }
@@ -433,6 +443,11 @@ public class GameManager : NetworkBehaviour
     {
         //kick em out of the lobby, set game back to how it was at the start
         postGame = 0;
+        audioManager.StopPlaying("Fight (Unlooped)");
+        audioManager.StopPlaying("Fight (Looped)");
+        audioManager.StopAllCoroutines();
+        audioManager.Play("Menu (Unlooped)");
+        audioManager.StartCoroutine("PlayMenuTheme");
         SceneManager.LoadScene("Start Menu");
     }
 

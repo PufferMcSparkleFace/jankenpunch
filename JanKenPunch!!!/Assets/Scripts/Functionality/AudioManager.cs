@@ -44,6 +44,35 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         Play("Menu (Unlooped)");
+        StartCoroutine("PlayMenuTheme");
+    }
+
+    IEnumerator PlayMenuTheme()
+    {
+        Debug.Log("Playing Menu Theme");
+        yield return new WaitForSeconds(78.5f);
+        Play("Menu (Looped)");
+    }
+
+    IEnumerator PlayTutorialTheme()
+    {
+        Debug.Log("Playing Tutorial Theme");
+        yield return new WaitForSeconds(127.8f);
+        Play("Tutorial (Looped)");
+    }
+
+    IEnumerator PlayCardGalleryTheme()
+    {
+        Debug.Log("Playing Card Gallery Theme");
+        yield return new WaitForSeconds(90.7f);
+        Play("Card Gallery (Looped)");
+    }
+
+    IEnumerator PlayFightTheme()
+    {
+        Debug.Log("Playing Fight Theme");
+        yield return new WaitForSeconds(134.5f);
+        Play("Card Gallery (Looped)");
     }
 
     public void Play(string name)
