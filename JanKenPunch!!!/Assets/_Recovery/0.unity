@@ -7715,7 +7715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2627990909
+  GlobalObjectIdHash: 1729004785
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -11418,7 +11418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1340449923
+  GlobalObjectIdHash: 477404392
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -12900,9 +12900,9 @@ MonoBehaviour:
   zylaSprite: {fileID: 21300000, guid: 4c08ec0dfce8c5e44a1c1e65ef3897f1, type: 3}
   taiboSprite: {fileID: 21300000, guid: 237e8630c9a84064385186db6587925f, type: 3}
   rynoxSprite: {fileID: 21300000, guid: b63169b7242e6b54baf9e59669b0275a, type: 3}
-  zylaP2Sprite: {fileID: 21300000, guid: b6b1acc964b2db345807e8d662f0e93b, type: 3}
-  taiboP2Sprite: {fileID: 21300000, guid: 6e046a0abdd023540ad8ee901c473821, type: 3}
-  rynoxP2Sprite: {fileID: 21300000, guid: 5e7f4f0451fbcec429605df5c9d277e9, type: 3}
+  zylaP2Sprite: {fileID: 21300000, guid: 78a9f59a22a789a4583a8ae1716cfa5a, type: 3}
+  taiboP2Sprite: {fileID: 21300000, guid: 3bf12af6c8bbece4b86313e2361f1ad6, type: 3}
+  rynoxP2Sprite: {fileID: 21300000, guid: ff966368d27e7e9418e427747515eed3, type: 3}
   zylaDeck:
   - {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
   - {fileID: 11400000, guid: 54fe6e37169327a4bb137ad86d3ef66d, type: 2}
