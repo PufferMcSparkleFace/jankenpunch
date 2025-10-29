@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
+    public AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = GameObject.FindFirstObjectByType<AudioManager>();
+    }
+
     public void CharacterSelect()
     {
         SceneManager.LoadScene("Game");

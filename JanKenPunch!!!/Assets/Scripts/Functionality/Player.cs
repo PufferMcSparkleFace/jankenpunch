@@ -53,6 +53,8 @@ public class Player : NetworkBehaviour
 
     public Image playerSprite, opponentSprite;
 
+    public AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +80,7 @@ public class Player : NetworkBehaviour
         transform.localScale = new Vector3(2, 3, 0);
         playerSprite = this.GetComponent<Image>();
         playerSprite.enabled = false;
+        audioManager = GameObject.FindFirstObjectByType<AudioManager>();
 
         if (GameObject.FindGameObjectWithTag("P1") == false)
         {

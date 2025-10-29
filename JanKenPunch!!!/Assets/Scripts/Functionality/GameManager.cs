@@ -46,13 +46,17 @@ public class GameManager : NetworkBehaviour
 
     public int postGame = 0;
 
+    public AudioManager audioManager;
+
 
     public void Start()
     {
         timer = 10;
 
         hand = GameObject.FindGameObjectWithTag("Hand").transform;
-        
+
+        audioManager = GameObject.FindFirstObjectByType<AudioManager>();
+
     }
 
     public void SetPlayer()
