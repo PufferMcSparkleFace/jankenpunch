@@ -1,6 +1,12 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.Networking;
+using TMPro;
+using Unity.Netcode;
 
 public class AudioManager : MonoBehaviour
 {
@@ -37,7 +43,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        //play theme music
+        Play("Menu (Unlooped)");
     }
 
     public void Play(string name)
@@ -47,6 +53,7 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
+        Debug.Log("Playing Sound");
         s.source.Play();
     }
 
