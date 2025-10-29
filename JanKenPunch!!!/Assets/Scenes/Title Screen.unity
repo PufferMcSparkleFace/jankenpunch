@@ -448,18 +448,18 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - name: Card Gallery (Looped)
-    clip: {fileID: 8300000, guid: f85fa58abfeb747469ccc845630121fd, type: 3}
+  - name: Fight (Looped)
+    clip: {fileID: 8300000, guid: f3997434bf4360644850223d5ea987cc, type: 3}
     volume: 0.3
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - name: Card Gallery (Looped)
-    clip: {fileID: 8300000, guid: f85fa58abfeb747469ccc845630121fd, type: 3}
+  - name: Fight (Unlooped)
+    clip: {fileID: 8300000, guid: 10ff2177289b9d741926a2e2c6a912f0, type: 3}
     volume: 0.3
     pitch: 1
     source: {fileID: 0}
-    loop: 1
+    loop: 0
 --- !u!4 &691754817
 Transform:
   m_ObjectHideFlags: 0
