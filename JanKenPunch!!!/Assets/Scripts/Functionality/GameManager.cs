@@ -182,12 +182,14 @@ public class GameManager : NetworkBehaviour
             Debug.Log("I lose");
             defeatText.gameObject.SetActive(true);
             gameOverButtons.SetActive(true);
+            cutscene = true;
         }
         if(opponent.health <= 0)
         {
             Debug.Log("I win");
             victoryText.gameObject.SetActive(true);
             gameOverButtons.SetActive(true);
+            cutscene = true;
         }
 
 
@@ -214,6 +216,7 @@ public class GameManager : NetworkBehaviour
                     Debug.Log("Draw");
                     drawText.gameObject.SetActive(true);
                 }
+                cutscene = true;
                 gameOverButtons.SetActive(true);
             }
             else
@@ -272,12 +275,14 @@ public class GameManager : NetworkBehaviour
                 drawText.gameObject.SetActive(true);
             }
             gameOverButtons.SetActive(true);
+            cutscene = true;
         }
     }
 
     public void RestartGame(bool characterSelect)
     {
         Debug.Log("Restarting");
+        cutscene = false;
         victoryText.gameObject.SetActive(false);
         defeatText.gameObject.SetActive(false);
         drawText.gameObject.SetActive(false);
@@ -293,6 +298,7 @@ public class GameManager : NetworkBehaviour
         me.energyText.text = "5";
         me.plusFrames = 0;
         me.plusFramesText.text = "";
+        me.healthBar.ChangeHealth(30);
         timer = 10;
         timerText.text = "10";
         opponent.empowered = false;
@@ -305,6 +311,7 @@ public class GameManager : NetworkBehaviour
         opponent.energyText.text = "5";
         opponent.plusFrames = 0;
         opponent.plusFramesText.text = "";
+        opponent.healthBar.ChangeHealth(30);
         me.abilityOneButton.gameObject.SetActive(false);
         me.abilityTwoButton.gameObject.SetActive(false);
         if (meGameObject.tag == "P1")
@@ -434,6 +441,7 @@ public class GameManager : NetworkBehaviour
         audioManager.StopAllCoroutines();
         audioManager.Play("Menu (Unlooped)");
         audioManager.StartCoroutine("PlayMenuTheme");
+        cutscene = false;
         SceneManager.LoadScene("Start Menu");
         SendOpponentToMainMenuRpc();
     }
@@ -448,6 +456,7 @@ public class GameManager : NetworkBehaviour
         audioManager.StopAllCoroutines();
         audioManager.Play("Menu (Unlooped)");
         audioManager.StartCoroutine("PlayMenuTheme");
+        cutscene = false;
         SceneManager.LoadScene("Start Menu");
     }
 

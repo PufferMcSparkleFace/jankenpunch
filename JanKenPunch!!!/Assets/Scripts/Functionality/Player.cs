@@ -38,8 +38,9 @@ public class Player : NetworkBehaviour
     public TMP_Text waitingForOpponent;
     public GameObject installTextGameObject, healthTextGameObject, energyTextGameObject, plusFramesTextGameObject,
     revealedCardCostTextGameObject, opponentRevealedCardCostTextGameObject, abilityOneButtonGameObject, abilityTwoButtonGameObject, waitingGameObject,
-    gameManagerObject, characterCardGameObject, canvas, characterSelectScreenGameObject, backgroundImage, dragonInstallGameObject, forceBreakGameObject, empoweredGameObject;
+    gameManagerObject, characterCardGameObject, canvas, characterSelectScreenGameObject, backgroundImage, dragonInstallGameObject, forceBreakGameObject, empoweredGameObject, healthBarGameObject;
     public CharacterSelect characterSelectScreen;
+    public HealthBar healthBar;
 
 
     public DisplayCharacterCard characterCard;
@@ -107,6 +108,8 @@ public class Player : NetworkBehaviour
             abilityOneButton = abilityOneButtonGameObject.GetComponent<Button>();
             abilityTwoButton = abilityTwoButtonGameObject.GetComponent<Button>();
             characterCardGameObject = GameObject.FindGameObjectWithTag("P1 Character");
+            healthBarGameObject = GameObject.FindGameObjectWithTag("P1 Health Bar");
+            healthBar = healthBarGameObject.GetComponent<HealthBar>();
             characterCard = characterCardGameObject.GetComponent<DisplayCharacterCard>();
             position = 3;
             this.transform.position = stagePositions[2].transform.position;
@@ -141,6 +144,8 @@ public class Player : NetworkBehaviour
             opponent = otherPlayerGameObject.GetComponent<Player>();
             characterCardGameObject = GameObject.FindGameObjectWithTag("P2 Character");
             characterCard = characterCardGameObject.GetComponent<DisplayCharacterCard>();
+            healthBarGameObject = GameObject.FindGameObjectWithTag("P2 Health Bar");
+            healthBar = healthBarGameObject.GetComponent<HealthBar>();
             characterCard.SetCharacter(2);
             gameManager.SetPlayer();
             opponent.SetOpponent();
@@ -176,6 +181,7 @@ public class Player : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+
         flipCheck = this.transform.position.x - otherPlayer.position.x;
         if(flipCheck > 0)
         {
@@ -1042,11 +1048,13 @@ public class Player : NetworkBehaviour
                 {
                     opponent.health = opponent.health - (playedCard.damage + 1);
                     opponent.healthText.text = "" + opponent.health;
+                    opponent.healthBar.ChangeHealth(opponent.health);
                 }
                 else
                 {
                     opponent.health = opponent.health - playedCard.damage;
                     opponent.healthText.text = "" + opponent.health;
+                    opponent.healthBar.ChangeHealth(opponent.health);
                 }
                 Debug.Log("Hit!");
                 plusFrames = plusFrames + playedCard.onHit;
@@ -1185,6 +1193,7 @@ public class Player : NetworkBehaviour
                         Debug.Log("Get Mixed!");
                         opponent.health = opponent.health - (playedCard.damage + 2);
                         opponent.healthText.text = "" + opponent.health;
+                        opponent.healthBar.ChangeHealth(opponent.health);
                         plusFrames = plusFrames + playedCard.onHit + 1;
                         plusFramesText.text = "+" + plusFrames;
                         isPushing = true;
@@ -1197,6 +1206,7 @@ public class Player : NetworkBehaviour
                         Debug.Log("Get Mixed!");
                         opponent.health = opponent.health - playedCard.damage;
                         opponent.healthText.text = "" + opponent.health;
+                        opponent.healthBar.ChangeHealth(opponent.health);
                         plusFrames = plusFrames + playedCard.onHit + 1;
                         plusFramesText.text = "+" + plusFrames;
                         isPushing = true;
@@ -1212,6 +1222,7 @@ public class Player : NetworkBehaviour
                 Debug.Log("Hit!");
                 opponent.health = opponent.health - (playedCard.damage + 2);
                 opponent.healthText.text = "" + opponent.health;
+                opponent.healthBar.ChangeHealth(opponent.health);
                 plusFrames = plusFrames + playedCard.onHit;
                 plusFramesText.text = "+" + plusFrames;
                 isPushing = true;
@@ -1223,6 +1234,7 @@ public class Player : NetworkBehaviour
                 Debug.Log("Hit!");
                 opponent.health = opponent.health - playedCard.damage;
                 opponent.healthText.text = "" + opponent.health;
+                opponent.healthBar.ChangeHealth(opponent.health);
                 plusFrames = plusFrames + playedCard.onHit;
                 plusFramesText.text = "+" + plusFrames;
                 isPushing = true;
@@ -1257,6 +1269,7 @@ public class Player : NetworkBehaviour
                 Debug.Log("Empowered Hit!");
                 opponent.health = opponent.health - (playedCard.damage * 3);
                 opponent.healthText.text = "" + opponent.health;
+                opponent.healthBar.ChangeHealth(opponent.health);
                 plusFrames = plusFrames + playedCard.onHit;
                 plusFramesText.text = "+" + plusFrames;
                 empowered = false;
@@ -1267,6 +1280,7 @@ public class Player : NetworkBehaviour
                 Debug.Log("Hit!");
                 opponent.health = opponent.health - playedCard.damage;
                 opponent.healthText.text = "" + opponent.health;
+                opponent.healthBar.ChangeHealth(opponent.health);
                 plusFrames = plusFrames + playedCard.onHit;
                 plusFramesText.text = "+" + plusFrames;
                 opponent.isHit = true;
@@ -1320,6 +1334,7 @@ public class Player : NetworkBehaviour
                 Debug.Log("Hit!");
                 opponent.health = opponent.health - (playedCard.damage + 1);
                 opponent.healthText.text = "" + opponent.health;
+                opponent.healthBar.ChangeHealth(opponent.health);
                 plusFrames = plusFrames + playedCard.onHit;
                 plusFramesText.text = "+" + plusFrames;
                 opponent.energy = opponent.energy - playedCard.cost;
@@ -1330,6 +1345,7 @@ public class Player : NetworkBehaviour
                 Debug.Log("Hit!");
                 opponent.health = opponent.health - playedCard.damage;
                 opponent.healthText.text = "" + opponent.health;
+                opponent.healthBar.ChangeHealth(opponent.health);
                 plusFrames = plusFrames + playedCard.onHit;
                 plusFramesText.text = "+" + plusFrames;
                 opponent.energy = opponent.energy - playedCard.cost;
