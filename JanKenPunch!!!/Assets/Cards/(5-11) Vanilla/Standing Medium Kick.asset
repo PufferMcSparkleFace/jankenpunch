@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 11
   cardName: Standing Medium Kick
   cost: 3
-  image: {fileID: 21300000, guid: fa55be08207fdd441b36decdc9733f18, type: 3}
+  image: {fileID: 21300000, guid: 2a88c5f285222604abd1d0f6ec791b11, type: 3}
   cardBack: {fileID: 21300000, guid: cde783cecd5c759449c1e9704f1a7741, type: 3}
   type: Attack
   subtype: Strike

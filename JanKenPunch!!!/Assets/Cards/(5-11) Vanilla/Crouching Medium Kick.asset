@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 6
   cardName: Crouching Medium Kick
   cost: 3
-  image: {fileID: 21300000, guid: 20b5d6711ca060c4aac1e8a7c633b31a, type: 3}
+  image: {fileID: 21300000, guid: 5026a588b6c7c5c4f9e292d315a2825e, type: 3}
   cardBack: {fileID: 21300000, guid: cde783cecd5c759449c1e9704f1a7741, type: 3}
   type: Attack
   subtype: Strike

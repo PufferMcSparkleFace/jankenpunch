@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 10
   cardName: Jab
   cost: 2
-  image: {fileID: 21300000, guid: 3e8b80d39962f044ab630ea325e79672, type: 3}
+  image: {fileID: 21300000, guid: 5ed315b190bca9841aeb3e37c523f9a5, type: 3}
   cardBack: {fileID: 21300000, guid: cde783cecd5c759449c1e9704f1a7741, type: 3}
   type: Attack
   subtype: Strike
