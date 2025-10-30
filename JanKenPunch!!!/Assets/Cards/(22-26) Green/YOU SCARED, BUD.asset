@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 26
   cardName: YOU SCARED, BUD?!
   cost: 3
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 5830e31d5dfefc347817db63c4b08850, type: 3}
   cardBack: {fileID: 21300000, guid: fd47bbff29484084e93a66e3f8e168be, type: 3}
   type: Setup
   subtype: 
