@@ -368,7 +368,8 @@ public class GameManager : NetworkBehaviour
 
     public void Restart()
     {
-        if(postGame == 1)
+        FindFirstObjectByType<AudioManager>().Play("Click");
+        if (postGame == 1)
         {
             RestartGame(false);
         }
@@ -401,7 +402,8 @@ public class GameManager : NetworkBehaviour
 
     public void GoToCharacterSelect()
     {
-        if(postGame == 1 || postGame == 2)
+        FindFirstObjectByType<AudioManager>().Play("Click");
+        if (postGame == 1 || postGame == 2)
         {
             RestartGame(true);
         }
@@ -434,6 +436,7 @@ public class GameManager : NetworkBehaviour
 
     public void MainMenu()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         //kick em out of the lobby, set game back to how it was at the start
         postGame = 0;
         audioManager.StopPlaying("Fight (Unlooped)");
@@ -462,6 +465,7 @@ public class GameManager : NetworkBehaviour
 
     public void LockIn()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         card = playedCard.GetComponent<DisplayCard>().card;
 
         if (discarding == true)
@@ -542,6 +546,7 @@ public class GameManager : NetworkBehaviour
 
     public void AbilityOne()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         if (discarding == true)
         {
             return;
@@ -579,6 +584,7 @@ public class GameManager : NetworkBehaviour
     [Rpc(SendTo.NotMe)]
     public void AbilityOneRpc()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         if (discarding == true)
         {
             return;
@@ -612,6 +618,7 @@ public class GameManager : NetworkBehaviour
 
     public void AbilityTwo()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         me.plusFrames = me.plusFrames - 3;
         me.plusFramesText.text = "+" + me.plusFrames;
         if (me.plusFrames == 0)
@@ -645,6 +652,7 @@ public class GameManager : NetworkBehaviour
     [Rpc(SendTo.NotMe)]
     public void AbilityTwoRpc()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         opponent.plusFrames = opponent.plusFrames - 3;
         opponent.plusFramesText.text = "+" + opponent.plusFrames;
         if (opponent.plusFrames == 0)
@@ -680,6 +688,7 @@ public class GameManager : NetworkBehaviour
         {
             Debug.Log("DELETE THE LOBBY KILL IT");
         }
+        FindFirstObjectByType<AudioManager>().Play("Click");
         SceneManager.LoadScene("Start Menu");
     }
 

@@ -14,6 +14,7 @@ public class StartMenu : MonoBehaviour
 
     public void CharacterSelect()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         SceneManager.LoadScene("Game");
     }
 
@@ -24,6 +25,7 @@ public class StartMenu : MonoBehaviour
         audioManager.StartCoroutine("PlayCardGalleryTheme");
         audioManager.StopPlaying("Menu (Unlooped)");
         audioManager.StopPlaying("Menu (Looped)");
+        FindFirstObjectByType<AudioManager>().Play("Click");
         SceneManager.LoadScene("Card Gallery");
     }
 
@@ -34,11 +36,13 @@ public class StartMenu : MonoBehaviour
         audioManager.StartCoroutine("PlayTutorialTheme");
         audioManager.StopPlaying("Menu (Unlooped)");
         audioManager.StopPlaying("Menu (Looped)");
+        FindFirstObjectByType<AudioManager>().Play("Click");
         SceneManager.LoadScene("Tutorial");
     }
 
     public void Quit()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         Debug.Log("Quit");
         Application.Quit();
     }
@@ -58,6 +62,7 @@ public class StartMenu : MonoBehaviour
         audioManager.StopAllCoroutines();
         audioManager.Play("Menu (Unlooped)");
         audioManager.StartCoroutine("PlayMenuTheme");
+        FindFirstObjectByType<AudioManager>().Play("Click");
         SceneManager.LoadScene("Start Menu");
     }
 }

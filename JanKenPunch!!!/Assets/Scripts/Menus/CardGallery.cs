@@ -21,6 +21,7 @@ public class CardGallery : MonoBehaviour
 
     public void Back()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         SceneManager.LoadScene("Card Gallery");
     }
 

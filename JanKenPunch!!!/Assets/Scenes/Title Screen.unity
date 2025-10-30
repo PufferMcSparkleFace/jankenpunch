@@ -433,7 +433,7 @@ MonoBehaviour:
     loop: 0
   - name: Tutorial (Looped)
     clip: {fileID: 8300000, guid: 8c72675887d824641973fba2c351aca5, type: 3}
-    volume: 0.3
+    volume: 0.6
     pitch: 1
     source: {fileID: 0}
     loop: 1
@@ -458,6 +458,42 @@ MonoBehaviour:
   - name: Fight (Unlooped)
     clip: {fileID: 8300000, guid: 10ff2177289b9d741926a2e2c6a912f0, type: 3}
     volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Click
+    clip: {fileID: 8300000, guid: affb0a4b46c41b44b8d53388afd93a51, type: 3}
+    volume: 0.6
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Zyla Hit
+    clip: {fileID: 8300000, guid: d5afd93ce9f484b4f8d4a4b2b411473a, type: 3}
+    volume: 0.6
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Taibo Hit
+    clip: {fileID: 8300000, guid: 30864729a02f1da419de26f37e387d82, type: 3}
+    volume: 0.6
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Rynox Hit
+    clip: {fileID: 8300000, guid: 21d95a8a26b4cd744a072a498662530e, type: 3}
+    volume: 0.6
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Blocked
+    clip: {fileID: 8300000, guid: ff7fad2c740e3964b83e9c110e52b8ed, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Whiff
+    clip: {fileID: 8300000, guid: ac03a362834ae964bb8bc61b17510aa8, type: 3}
+    volume: 0.6
     pitch: 1
     source: {fileID: 0}
     loop: 0

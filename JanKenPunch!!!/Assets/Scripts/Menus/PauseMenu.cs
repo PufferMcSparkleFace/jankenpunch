@@ -33,11 +33,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         pauseMenu.SetActive(false);
     }
 
     public void MainMenu()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         audioManager.StopPlaying("Fight (Unlooped)");
         audioManager.StopPlaying("Fight (Looped)");
         audioManager.StopAllCoroutines();
@@ -48,6 +50,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
+        FindFirstObjectByType<AudioManager>().Play("Click");
         Debug.Log("Quit");
         Application.Quit();
     }

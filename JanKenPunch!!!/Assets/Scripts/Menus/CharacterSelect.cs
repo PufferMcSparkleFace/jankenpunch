@@ -61,6 +61,7 @@ public class CharacterSelect : NetworkBehaviour
     public void SelectZyla()
     {
         Debug.Log("Zyla");
+        FindFirstObjectByType<AudioManager>().Play("Click");
         myCharacter.character = zyla;
         myCharacter.UpdateCharacter();
         deck.deck = zylaDeck;
@@ -84,6 +85,7 @@ public class CharacterSelect : NetworkBehaviour
     public void SelectTaibo()
     {
         Debug.Log("Taibo");
+        FindFirstObjectByType<AudioManager>().Play("Click");
         myCharacter.character = taibo;
         myCharacter.UpdateCharacter();
         deck.deck = taiboDeck;
@@ -107,6 +109,7 @@ public class CharacterSelect : NetworkBehaviour
     public void SelectRynox()
     {
         Debug.Log("Rynox");
+        FindFirstObjectByType<AudioManager>().Play("Click");
         myCharacter.character = rynox;
         myCharacter.UpdateCharacter();
         deck.deck = rynoxDeck;

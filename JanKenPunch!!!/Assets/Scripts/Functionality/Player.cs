@@ -751,6 +751,7 @@ public class Player : NetworkBehaviour
                     plusFrames = plusFrames + Mathf.Abs(opponent.playedCard.onWhiff);
                     opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
                     cumulativePlusFrames = plusFrames - opponent.plusFrames;
+                    audioManager.Play("Whiff");
                     if (cumulativePlusFrames > 0)
                     {
                         plusFrames = cumulativePlusFrames;
@@ -782,6 +783,7 @@ public class Player : NetworkBehaviour
                     energyText.text = "" + energy;
                     Debug.Log("Clash");
                     opponent.wereDone = true;
+                    audioManager.Play("Blocked");
                     return;
                 }
             }
@@ -799,6 +801,7 @@ public class Player : NetworkBehaviour
                         energy = energy + finalCardCost;
                         energyText.text = "" + energy;
                         Debug.Log("Clash");
+                        audioManager.Play("Blocked");
                         opponent.wereDone = true;
                         if (empowered == true)
                         {
@@ -830,6 +833,7 @@ public class Player : NetworkBehaviour
                     plusFrames = plusFrames + Mathf.Abs(opponent.playedCard.onWhiff);
                     opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
                     cumulativePlusFrames = plusFrames - opponent.plusFrames;
+                    audioManager.Play("Whiff");
                     if (cumulativePlusFrames > 0)
                     {
                         plusFrames = cumulativePlusFrames;
@@ -870,6 +874,7 @@ public class Player : NetworkBehaviour
                     energy = energy + finalCardCost;
                     energyText.text = "" + energy;
                     Debug.Log("Clash");
+                    audioManager.Play("Blocked");
                     if (empowered == true)
                     {
                         empoweredGameObject.SetActive(false);
@@ -894,7 +899,8 @@ public class Player : NetworkBehaviour
                     plusFrames = plusFrames + Mathf.Abs(opponent.playedCard.onWhiff);
                     opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
                     cumulativePlusFrames = plusFrames - opponent.plusFrames;
-                    if(cumulativePlusFrames > 0)
+                    audioManager.Play("Whiff");
+                    if (cumulativePlusFrames > 0)
                     {
                         plusFrames = cumulativePlusFrames;
                         plusFramesText.text = "+" + plusFrames;
@@ -924,6 +930,7 @@ public class Player : NetworkBehaviour
                     energy = energy + finalCardCost;
                     energyText.text = "" + energy;
                     Debug.Log("Clash");
+                    audioManager.Play("Blocked");
                     opponent.wereDone = true;
                     return;
                 }
@@ -1041,6 +1048,7 @@ public class Player : NetworkBehaviour
                 Debug.Log("Whiff!");
                 opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
                 opponent.plusFramesText.text = "+" + opponent.plusFrames;
+                audioManager.Play("Whiff");
             }
             else
             {
@@ -1061,6 +1069,7 @@ public class Player : NetworkBehaviour
                 plusFramesText.text = "+" + plusFrames;
                 opponent.energy = opponent.energy - playedCard.cost;
                 opponent.isHit = true;
+                audioManager.Play("Projectile");
                 if (opponent.energy < 0)
                 {
                     opponent.energy = 0;
@@ -1104,6 +1113,7 @@ public class Player : NetworkBehaviour
             Debug.Log("Whiff!");
             opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
             opponent.plusFramesText.text = "+" + opponent.plusFrames;
+            audioManager.Play("Whiff");
         }
         if (playedCard.range >= distance && opponent.isDodging == false)
         {
@@ -1112,6 +1122,7 @@ public class Player : NetworkBehaviour
                 if (dragonInstall > 0)
                 {
                     Debug.Log("Blocked!");
+                    audioManager.Play("Blocked");
                     if (playedCard.onBlock + 1 >= 0)
                     {
                         plusFrames = plusFrames + Mathf.Abs(playedCard.onBlock + 1);
@@ -1129,6 +1140,7 @@ public class Player : NetworkBehaviour
                 else
                 {
                     Debug.Log("Blocked!");
+                    audioManager.Play("Blocked");
                     if (playedCard.onBlock >= 0)
                     {
                         plusFrames = plusFrames + Mathf.Abs(playedCard.onBlock);
@@ -1160,6 +1172,7 @@ public class Player : NetworkBehaviour
                         opponent.plusFramesText.text = "+" + opponent.plusFrames;
                     }
                     Debug.Log("Blocked!");
+                    audioManager.Play("Blocked");
                     energy = energy + playedCard.cost;
                     energyText.text = "" + energy;
                     return;
@@ -1167,6 +1180,7 @@ public class Player : NetworkBehaviour
                 else
                 {
                     Debug.Log("Blocked!");
+                    audioManager.Play("Blocked");
                     if (playedCard.onBlock >= 0)
                     {
                         plusFrames = plusFrames + Mathf.Abs(playedCard.onBlock);
@@ -1199,6 +1213,7 @@ public class Player : NetworkBehaviour
                         isPushing = true;
                         Move(1);
                         opponent.isHit = true;
+                        audioManager.Play("Zyla Hit");
                         return;
                     }
                     else
@@ -1212,6 +1227,7 @@ public class Player : NetworkBehaviour
                         isPushing = true;
                         Move(1);
                         opponent.isHit = true;
+                        audioManager.Play("Zyla Hit");
                         return;
                     }
                 }
@@ -1228,6 +1244,18 @@ public class Player : NetworkBehaviour
                 isPushing = true;
                 Move(1);
                 opponent.isHit = true;
+                if(character.cardName == "Zyla")
+                {
+                    audioManager.Play("Zyla Hit");
+                }
+                if (character.cardName == "Taibo")
+                {
+                    audioManager.Play("Taibo Hit");
+                }
+                if (character.cardName == "Rynox")
+                {
+                    audioManager.Play("Rynox Hit");
+                }
             }
             else
             {
@@ -1240,6 +1268,18 @@ public class Player : NetworkBehaviour
                 isPushing = true;
                 Move(1);
                 opponent.isHit = true;
+                if (character.cardName == "Zyla")
+                {
+                    audioManager.Play("Zyla Hit");
+                }
+                if (character.cardName == "Taibo")
+                {
+                    audioManager.Play("Taibo Hit");
+                }
+                if (character.cardName == "Rynox")
+                {
+                    audioManager.Play("Rynox Hit");
+                }
             }
 
             if (playedCard.cardName == "Flash Kick")
@@ -1257,6 +1297,7 @@ public class Player : NetworkBehaviour
             Debug.Log("Whiff!");
             opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
             opponent.plusFramesText.text = "+" + opponent.plusFrames;
+            audioManager.Play("Whiff");
             if (empowered == true)
             {
                 empowered = false;
@@ -1312,12 +1353,14 @@ public class Player : NetworkBehaviour
             Debug.Log("Whiff!");
             opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onWhiff);
             opponent.plusFramesText.text = "+" + opponent.plusFrames;
+            audioManager.Play("Whiff");
         }
         if (playedCard.range >= distance && opponent.isDodging == false)
         {
             if (opponent.isBlockingHigh == true && (playedCard.guard == "High" || playedCard.guard == "Mid"))
             {
                 Debug.Log("Blocked!");
+                audioManager.Play("Blocked");
                 opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onBlock);
                 opponent.plusFramesText.text = "+" + opponent.plusFrames;
                 return;
@@ -1325,6 +1368,7 @@ public class Player : NetworkBehaviour
             if (opponent.isBlockingLow == true && (playedCard.guard == "Low" || playedCard.guard == "Mid"))
             {
                 Debug.Log("Blocked!");
+                audioManager.Play("Blocked");
                 opponent.plusFrames = opponent.plusFrames + Mathf.Abs(playedCard.onBlock);
                 opponent.plusFramesText.text = "+" + opponent.plusFrames;
                 return;
@@ -1339,6 +1383,7 @@ public class Player : NetworkBehaviour
                 plusFramesText.text = "+" + plusFrames;
                 opponent.energy = opponent.energy - playedCard.cost;
                 opponent.isHit = true;
+                audioManager.Play("Projectile");
             }
             else
             {
@@ -1350,6 +1395,7 @@ public class Player : NetworkBehaviour
                 plusFramesText.text = "+" + plusFrames;
                 opponent.energy = opponent.energy - playedCard.cost;
                 opponent.isHit = true;
+                audioManager.Play("Projectile");
             }
             if (opponent.energy < 0)
             {

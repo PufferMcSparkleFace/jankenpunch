@@ -22,6 +22,7 @@ public class TitleScreen : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            FindFirstObjectByType<AudioManager>().Play("Click");
             SceneManager.LoadScene("Start Menu");
         }
     }
